@@ -1,12 +1,25 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Smartphone, Heart, Shield } from "lucide-react";
+import { ArrowRight, Smartphone, Heart, Shield, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import appPreview2 from "@/assets/app-preview-2.jpg";
+import appPreview3 from "@/assets/app-preview-3.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
 
 export const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const appImages = [appPreview1, appPreview2, appPreview3];
+  
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % appImages.length);
+  };
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + appImages.length) % appImages.length);
   };
 
   return (
@@ -75,19 +88,44 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Right side - App previews */}
+          {/* Right side - App previews carousel */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
               <img 
-                src={appPreview1} 
-                alt="MaPa-Aur-Hum App Interface" 
-                className="w-64 h-auto rounded-2xl shadow-trust transform rotate-3 hover:rotate-0 transition-transform duration-500"
+                src={appImages[currentImageIndex]} 
+                alt={`MaPa-Aur-Hum App Preview ${currentImageIndex + 1}`}
+                className="w-80 h-auto rounded-2xl shadow-trust transition-all duration-500"
               />
-              <img 
-                src={appPreview2} 
-                alt="MaPa-Aur-Hum Features" 
-                className="w-56 h-auto rounded-2xl shadow-warm absolute -bottom-8 -left-8 transform -rotate-6 hover:rotate-0 transition-transform duration-500"
-              />
+              
+              {/* Carousel controls */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors"
+              >
+                <ChevronLeft className="h-5 w-5 text-white" />
+              </button>
+              
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors"
+              >
+                <ChevronRight className="h-5 w-5 text-white" />
+              </button>
+              
+              {/* Dots indicator */}
+              <div className="flex justify-center mt-4 space-x-2">
+                {appImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex 
+                        ? 'bg-white scale-125' 
+                        : 'bg-white/50 hover:bg-white/70'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

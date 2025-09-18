@@ -71,43 +71,17 @@ export const Champions = () => {
           </p>
         </div>
 
-        {/* Main carousel */}
-        <div className="relative max-w-4xl mx-auto">
-          <Card className="p-8 lg:p-12 border-border/50 shadow-elegant overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
-              {/* Champion image */}
-              <div className="text-center">
-                <div className="relative inline-block">
-                  <img 
-                    src={champions[currentIndex].image} 
-                    alt={champions[currentIndex].name}
-                    className="w-64 h-64 rounded-2xl object-cover mx-auto shadow-warm"
-                  />
-                  <div className="absolute top-4 right-4 bg-gradient-warm rounded-full p-2">
-                    <Quote className="h-4 w-4 text-white" />
-                  </div>
-                </div>
-              </div>
-              
-              {/* Champion content */}
-              <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-3 py-1 mb-4">
-                  <span className="text-primary text-sm font-medium">{champions[currentIndex].type}</span>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  {champions[currentIndex].name}
-                </h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  {champions[currentIndex].role}
-                </p>
-                
-                <blockquote className="text-lg text-foreground italic leading-relaxed">
-                  "{champions[currentIndex].testimonial}"
-                </blockquote>
-              </div>
+        {/* Main carousel - Images only */}
+        <div className="relative max-w-2xl mx-auto">
+          <div className="text-center">
+            <div className="relative inline-block">
+              <img 
+                src={champions[currentIndex].image} 
+                alt={champions[currentIndex].name}
+                className="w-80 h-80 rounded-2xl object-cover mx-auto shadow-warm"
+              />
             </div>
-          </Card>
+          </div>
 
           {/* Navigation buttons */}
           <Button
