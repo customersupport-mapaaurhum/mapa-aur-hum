@@ -22,7 +22,7 @@ export const About = () => {
             </div>
             <h3 className="text-lg font-semibold text-foreground mb-2">For Families</h3>
             <p className="text-muted-foreground text-sm">
-              Designed for urban working parents who need reliable childcare solutions
+              Designed for urban working parents delegating childcare at home
             </p>
           </Card>
           

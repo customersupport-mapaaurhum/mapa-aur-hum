@@ -111,63 +111,86 @@ export const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">How We Help</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
             Our innovative features are designed to address the real challenges faced by modern parents in India.
           </p>
+          
+          {/* Three main tenets */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
+              <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4">
+                <UserCheck className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Build Better Trust</h3>
+              <p className="text-muted-foreground">Transparent communication and real-time updates foster trust between parents and caregivers</p>
+            </Card>
+            
+            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
+              <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-4">
+                <Camera className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Parent Closely Even in Physical Absence</h3>
+              <p className="text-muted-foreground">Stay connected with your child's daily activities through picture evidence and real-time updates</p>
+            </Card>
+            
+            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
+              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                <Navigation className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-foreground mb-2">Save Time</h3>
+              <p className="text-muted-foreground">Streamlined communication and standardized routines reduce time spent on coordination</p>
+            </Card>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Features list */}
-          <div className="space-y-6">
-            {features.map((feature, index) => (
-              <Card key={index} className="p-6 border-border/50 hover:shadow-elegant transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                    <feature.icon className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </div>
+        {/* Features list */}
+        <div className="space-y-6 mb-16">
+          {features.map((feature, index) => (
+            <Card key={index} className="p-6 border-border/50 hover:shadow-elegant transition-all duration-300">
+              <div className="flex items-start space-x-4">
+                <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                  <feature.icon className="h-6 w-6 text-white" />
                 </div>
-              </Card>
-            ))}
-          </div>
-          
-          {/* Features Image Carousel */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-md">
-              <Carousel className="w-full">
-                <CarouselContent>
-                  {featureImages.map((image, index) => (
-                    <CarouselItem key={index}>
-                      <Card className="border-0 shadow-trust">
-                        <div className="relative group cursor-pointer" onClick={() => setSelectedImage(image.src)}>
-                          <img 
-                            src={image.src} 
-                            alt={image.alt}
-                            className="w-full h-auto rounded-lg transition-all duration-300 group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                            <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                              <ZoomIn className="h-6 w-6 text-white" />
-                            </div>
-                          </div>
-                          <div className="absolute bottom-4 left-4 right-4">
-                            <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3">
-                              <h4 className="text-white font-medium text-sm">{image.title}</h4>
-                            </div>
-                          </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+        
+        {/* Full-width Features Image Carousel */}
+        <div className="w-full">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-1">
+              {featureImages.map((image, index) => (
+                <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                  <Card className="border-0 shadow-trust">
+                    <div className="relative group cursor-pointer" onClick={() => setSelectedImage(image.src)}>
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-auto rounded-lg transition-all duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                          <ZoomIn className="h-6 w-6 text-white" />
                         </div>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2" />
-              </Carousel>
-            </div>
-          </div>
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="bg-black/50 backdrop-blur-sm rounded-lg p-3">
+                          <h4 className="text-white font-medium text-sm">{image.title}</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
         </div>
 
         {/* Image Zoom Dialog */}

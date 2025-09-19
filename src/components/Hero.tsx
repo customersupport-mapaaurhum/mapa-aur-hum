@@ -37,10 +37,6 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
-              <Heart className="h-4 w-4 text-white" />
-              <span className="text-white text-sm font-medium">Trusted by Indian families</span>
-            </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Building Trust for 
@@ -49,8 +45,7 @@ export const Hero = () => {
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
               We understand managing childcare for urban working parents is a daily challenge. 
-              Join us in our journey to ease day-to-day childcare management with local language support, 
-              audio guides, and picture evidence.
+              Join us in our journey to ease personalised day-to-day childcare management with tech.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -68,24 +63,13 @@ export const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-lg border-white/30 text-white hover:bg-white/10"
+                className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
               >
                 <Smartphone className="h-5 w-5" />
                 Learn More
               </Button>
             </div>
             
-            {/* Features highlights */}
-            <div className="grid grid-cols-2 gap-4 mt-12 max-w-md mx-auto lg:mx-0">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                <Shield className="h-8 w-8 text-primary-glow mx-auto mb-2" />
-                <p className="text-white text-sm font-medium">Picture Evidence</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                <Heart className="h-8 w-8 text-primary-glow mx-auto mb-2" />
-                <p className="text-white text-sm font-medium">Local Language</p>
-              </div>
-            </div>
           </div>
           
           {/* Right side - App previews carousel */}

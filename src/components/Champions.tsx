@@ -11,50 +11,39 @@ import championSubhra from "@/assets/champion-subhra.jpg";
 export const Champions = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const champions = [
-    {
-      name: "Ashish Bansal",
-      role: "Father of 2 young children",
-      image: championAshish,
-      testimonial: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution",
-      type: "Pa Champion"
-    },
-    {
-      name: "Pooja Singh", 
-      role: "Mother of 2 kids",
-      image: championPooja,
-      testimonial: "We thank our Ma Champion for her views on the initial design of the MaPaAurHum solution",
-      type: "Ma Champion"
-    },
+  const testimonials = [
     {
       name: "Thejas R",
-      role: "Father of an infant child", 
+      role: "Father of an infant child",
       image: championThejas,
-      testimonial: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution",
-      type: "Pa Champion"
+      testimonial: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution"
     },
     {
       name: "Simala Rawat",
       role: "Babysitter",
-      image: championSimala, 
-      testimonial: "We thank our Didi for views on usability of the solution",
-      type: "Didi Champion"
+      image: championSimala,
+      testimonial: "We thank our Didi for views on usability of the solution"
     },
     {
       name: "Subhra Sarker",
       role: "Mother of a 9 yr old",
       image: championSubhra,
-      testimonial: "We thank our Ma Champion for views on the initial design of the MaPaAurHum solution", 
-      type: "Ma Champion"
+      testimonial: "We thank our Ma Champion for views on the initial design of the MaPaAurHum solution"
+    },
+    {
+      name: "Pooja Singh",
+      role: "Mother of 2 kids",
+      image: championPooja,
+      testimonial: "We thank our Ma Champion for her views on the initial design of the MaPaAurHum solution"
     }
   ];
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % champions.length);
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + champions.length) % champions.length);
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToSlide = (index: number) => {
@@ -71,17 +60,34 @@ export const Champions = () => {
           </p>
         </div>
 
-        {/* Main carousel - Images only */}
-        <div className="relative max-w-2xl mx-auto">
-          <div className="text-center">
-            <div className="relative inline-block">
-              <img 
-                src={champions[currentIndex].image} 
-                alt={champions[currentIndex].name}
-                className="w-80 h-80 rounded-2xl object-cover mx-auto shadow-warm"
-              />
+        {/* Testimonial carousel */}
+        <div className="relative max-w-4xl mx-auto">
+          <Card className="p-8 shadow-elegant border-border/50">
+            <div className="text-center">
+              <div className="relative inline-block mb-6">
+                <img 
+                  src={testimonials[currentIndex].image} 
+                  alt={testimonials[currentIndex].name}
+                  className="w-24 h-24 rounded-full object-cover mx-auto shadow-warm"
+                />
+              </div>
+              
+              <Quote className="h-8 w-8 text-primary mx-auto mb-4" />
+              
+              <blockquote className="text-xl text-foreground mb-6 italic leading-relaxed">
+                "{testimonials[currentIndex].testimonial}"
+              </blockquote>
+              
+              <div className="text-center">
+                <h4 className="text-lg font-semibold text-foreground">
+                  {testimonials[currentIndex].name}
+                </h4>
+                <p className="text-muted-foreground">
+                  {testimonials[currentIndex].role}
+                </p>
+              </div>
             </div>
-          </div>
+          </Card>
 
           {/* Navigation buttons */}
           <Button
@@ -105,7 +111,7 @@ export const Champions = () => {
 
         {/* Dots indicator */}
         <div className="flex justify-center mt-8 space-x-2">
-          {champions.map((_, index) => (
+          {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
@@ -115,31 +121,6 @@ export const Champions = () => {
                   : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
               }`}
             />
-          ))}
-        </div>
-
-        {/* Thumbnail grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-12 max-w-4xl mx-auto">
-          {champions.map((champion, index) => (
-            <Card 
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`p-3 cursor-pointer transition-all duration-300 border-border/50 hover:shadow-elegant ${
-                index === currentIndex ? 'ring-2 ring-primary' : ''
-              }`}
-            >
-              <img 
-                src={champion.image} 
-                alt={champion.name}
-                className="w-full h-20 object-cover rounded-lg mb-2"
-              />
-              <p className="text-xs font-medium text-foreground text-center truncate">
-                {champion.name}
-              </p>
-              <p className="text-xs text-muted-foreground text-center truncate">
-                {champion.type}
-              </p>
-            </Card>
           ))}
         </div>
       </div>
