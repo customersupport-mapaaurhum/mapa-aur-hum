@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Users, Clock, AlertTriangle, MessageSquare, HeartHandshake, Calendar, UserX, RotateCcw, Baby } from "lucide-react";
 
+// WhyMaPa component
 export const WhyMaPa = () => {
   const problems = [
     {
