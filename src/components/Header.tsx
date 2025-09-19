@@ -25,6 +25,12 @@ export const Header = () => {
             About Us
           </button>
           <button 
+            onClick={() => scrollToSection('why-mapa')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Why MaPa-Aur-Hum
+          </button>
+          <button 
             onClick={() => scrollToSection('features')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >

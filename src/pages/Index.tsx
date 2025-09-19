@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
-import { WhoShouldUse } from "@/components/WhoShouldUse";
+import { WhyMaPa } from "@/components/WhyMaPa";
 import { Features } from "@/components/Features";
 import { Founder } from "@/components/Founder";
 import { Champions } from "@/components/Champions";
@@ -15,7 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
-        <WhoShouldUse />
+        <WhyMaPa />
         <Features />
         <Founder />
         <Champions />

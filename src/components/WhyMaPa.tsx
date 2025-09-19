@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Users, Clock, AlertTriangle, MessageSquare, HeartHandshake, Calendar, UserX, RotateCcw, Baby } from "lucide-react";
 
-export const WhoShouldUse = () => {
+export const WhyMaPa = () => {
   const problems = [
     {
       icon: Users,
@@ -66,10 +66,10 @@ export const WhoShouldUse = () => {
   ];
 
   return (
-    <section id="who-should-use" className="py-20 bg-background">
+    <section id="why-mapa" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Who Should Use MaPa-Aur-Hum</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">Why MaPa-Aur-Hum</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             If any of these situations sound familiar, MaPa-Aur-Hum is designed for you
           </p>

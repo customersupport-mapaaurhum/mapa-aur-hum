@@ -8,10 +8,8 @@ export const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">About MaPa-Aur-Hum</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We understand managing childcare for urban working parents is a daily challenge. 
-            MaPa-Aur-Hum is built to tackle daily parenting challenges faced by parents of young kids 
-            and babysitters in India. We invite you to join us in our journey to ease day-to-day 
-            childcare management and standardize childcare in your absence.
+            MaPa-Aur-Hum is a technology platform piloting soon on the google app store. 
+            Built with inputs from parents, we invite you to join us in this journey.
           </p>
         </div>
         

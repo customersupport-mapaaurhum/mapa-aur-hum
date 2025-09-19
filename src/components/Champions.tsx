@@ -64,14 +64,6 @@ export const Champions = () => {
         <div className="relative max-w-4xl mx-auto">
           <Card className="p-8 shadow-elegant border-border/50">
             <div className="text-center">
-              <div className="relative inline-block mb-6">
-                <img 
-                  src={testimonials[currentIndex].image} 
-                  alt={testimonials[currentIndex].name}
-                  className="w-24 h-24 rounded-full object-cover mx-auto shadow-warm"
-                />
-              </div>
-              
               <Quote className="h-8 w-8 text-primary mx-auto mb-4" />
               
               <blockquote className="text-xl text-foreground mb-6 italic leading-relaxed">
