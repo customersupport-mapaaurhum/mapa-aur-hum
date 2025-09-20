@@ -122,13 +122,13 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name *</Label>
+            <Label htmlFor="name">Name of Parent *</Label>
             <Input
               id="name"
               type="text"
               value={formData.name}
               onChange={(e) => handleInputChange("name", e.target.value)}
-              placeholder="Enter your full name"
+              placeholder="Enter parent's full name"
               required
             />
           </div>
@@ -169,7 +169,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
           </div>
 
           <div className="space-y-3">
-            <Label>Do you have children less than 5 years?</Label>
+            <Label>I intend to use the app to manage kids less than 5 yrs</Label>
             <RadioGroup
               value={formData.hasChildrenUnder5}
               onValueChange={(value) => handleInputChange("hasChildrenUnder5", value)}
