@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Send, Phone, Mail } from "lucide-react";
+import { Send, MessageCircle, Mail } from "lucide-react";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
 
 export const Contact = () => {
@@ -11,7 +11,7 @@ export const Contact = () => {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to join our pilot program or have questions? We'd love to hear from you.
+            Ready to join our pilot program, partner with us or have any questions? We'd love to hear from you.
           </p>
         </div>
 
@@ -24,10 +24,10 @@ export const Contact = () => {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-warm rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-white" />
+                    <MessageCircle className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">Phone</h4>
+                    <h4 className="font-semibold text-foreground mb-1">WhatsApp</h4>
                     <p className="text-muted-foreground">(91)-7217615508</p>
                   </div>
                 </div>
