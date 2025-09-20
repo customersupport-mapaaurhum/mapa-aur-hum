@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { RegistrationDialog } from "@/components/RegistrationDialog";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Languages, Camera, Navigation, Volume2, UserCheck, ArrowRight, ZoomIn } from "lucide-react";
@@ -214,15 +215,16 @@ export const Features = () => {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Join our pilot program and be among the first families to experience the future of childcare management.
           </p>
-          <Button 
-            variant="hero" 
-            size="lg"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-white/20 hover:bg-white/30 border-white/30"
-          >
-            Register for Pilot Program
-            <ArrowRight className="h-5 w-5" />
-          </Button>
+          <RegistrationDialog>
+            <Button 
+              variant="hero" 
+              size="lg"
+              className="bg-white/20 hover:bg-white/30 border-white/30"
+            >
+              Register for Pilot Program
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+          </RegistrationDialog>
         </div>
       </div>
     </section>

@@ -16,9 +16,9 @@ export const Founder = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 lg:p-12 border-border/50 shadow-elegant">
-            <div className="flex justify-center">
+            <div className="flex justify-start">
               {/* Founder content */}
-              <div className="text-center max-w-2xl">
+              <div className="text-left max-w-2xl">
                 <h3 className="text-2xl font-bold text-foreground mb-2">Sumita Sarkar</h3>
                 <p className="text-lg text-primary font-medium mb-6">Founder</p>
                 

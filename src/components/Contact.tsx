@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { RegistrationDialog } from "@/components/RegistrationDialog";
 
 export const Contact = () => {
 
@@ -65,15 +66,16 @@ export const Contact = () => {
                 Be among the first families to experience the future of childcare management. 
                 Limited spots available for our pilot run.
               </p>
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="w-full bg-white/20 hover:bg-white/30 border-white/30"
-                
-              >
-                Register Now
-                <Send className="h-5 w-5" />
-              </Button>
+              <RegistrationDialog>
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="w-full bg-white/20 hover:bg-white/30 border-white/30"
+                >
+                  Register Now
+                  <Send className="h-5 w-5" />
+                </Button>
+              </RegistrationDialog>
             </Card>
           </div>
         </div>

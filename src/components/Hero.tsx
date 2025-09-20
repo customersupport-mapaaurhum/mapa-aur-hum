@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { RegistrationDialog } from "@/components/RegistrationDialog";
 import { ArrowRight, Smartphone, Heart, Shield, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
@@ -49,15 +50,16 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                variant="hero" 
-                size="lg"
-                onClick={scrollToContact}
-                className="text-lg"
-              >
-                Register for Pilot Run
-                <ArrowRight className="h-5 w-5" />
-              </Button>
+              <RegistrationDialog>
+                <Button 
+                  variant="hero" 
+                  size="lg"
+                  className="text-lg"
+                >
+                  Register for Pilot Run
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </RegistrationDialog>
               
               <Button 
                 variant="outline"
