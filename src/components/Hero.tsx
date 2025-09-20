@@ -93,14 +93,20 @@ export const Hero = () => {
             
           </div>
           
-          {/* Right side - Single app preview */}
+          {/* Right side - Company Logo */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <img 
-                src={appPreview1} 
-                alt="MaPa-Aur-Hum App Preview"
-                className="w-80 h-auto rounded-2xl shadow-trust"
-              />
+              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+                <img 
+                  src={logoImg} 
+                  alt="MaPa-Aur-Hum Company Logo"
+                  className="w-64 h-64 rounded-2xl object-cover shadow-xl"
+                />
+                <div className="text-center mt-4">
+                  <h3 className="text-2xl font-bold text-white">MaPa-Aur-Hum</h3>
+                  <p className="text-white/80">Childcare Technology</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
