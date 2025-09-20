@@ -41,7 +41,7 @@ export const Founder = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
                     variant="default"
-                    onClick={() => window.open('https://linkedin.com/in/sumita-sarkar', '_blank')}
+                    onClick={() => window.open('https://www.linkedin.com/in/sumitasarkar/', '_blank')}
                   >
                     <Linkedin className="h-4 w-4" />
                     Connect on LinkedIn
