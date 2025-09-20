@@ -23,16 +23,6 @@ export const Hero = () => {
           {/* Left side - Content */}
           <div className="text-center lg:text-left">
             
-            {/* Logo prominently displayed */}
-            <div className="flex justify-center lg:justify-start mb-8">
-              <div className="flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/20">
-                <img src={logoImg} alt="MaPa-Aur-Hum Logo" className="h-16 w-16 rounded-xl object-cover shadow-lg" />
-                <div className="text-left">
-                  <h2 className="text-2xl font-bold text-white">MaPa-Aur-Hum</h2>
-                  <p className="text-white/80 text-sm">Childcare Made Simple</p>
-                </div>
-              </div>
-            </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Building Trust for 
               <span className="text-primary-glow"> Better Childcare</span>
