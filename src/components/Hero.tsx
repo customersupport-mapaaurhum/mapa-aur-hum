@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
-import { ArrowRight, Smartphone, Instagram, Linkedin, Facebook } from "lucide-react";
+import { ArrowRight, Smartphone, Instagram, Linkedin } from "lucide-react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -76,15 +76,6 @@ export const Hero = () => {
                 >
                   <Linkedin className="h-5 w-5" />
                   <span>LinkedIn</span>
-                </a>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white hover:text-primary-glow transition-all"
-                >
-                  <Facebook className="h-5 w-5" />
-                  <span>Facebook</span>
                 </a>
               </div>
             </div>
