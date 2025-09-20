@@ -56,9 +56,9 @@ Please contact me with further details about the pilot program.
 Best regards,
 ${formData.name}`);
 
-    // Open Gmail compose
-    const gmailUrl = `https://mail.google.com/mail/u/0/?fs=1&to=customer.support@mapaaurhum.com&su=${emailSubject}&body=${emailBody}&tf=cm`;
-    window.open(gmailUrl, '_blank');
+    // Use mailto URL for universal email client support
+    const mailtoUrl = `mailto:customer.support@mapaaurhum.com?subject=${emailSubject}&body=${emailBody}`;
+    window.location.href = mailtoUrl;
 
     // Close dialog and reset form
     setIsOpen(false);
