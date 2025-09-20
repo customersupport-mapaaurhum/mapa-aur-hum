@@ -97,7 +97,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('champions')}
                   className="text-background/80 hover:text-background transition-colors"
                 >
-                  Testimonials
+                  Champions
                 </button>
               </li>
             </ul>
