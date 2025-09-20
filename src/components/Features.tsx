@@ -167,7 +167,7 @@ export const Features = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt}
-                        className="w-full h-auto rounded-lg transition-all duration-300 group-hover:scale-105"
+                        className="w-full min-h-[400px] h-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
