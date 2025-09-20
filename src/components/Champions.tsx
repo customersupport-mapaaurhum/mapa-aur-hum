@@ -6,13 +6,13 @@ export const Champions = () => {
       name: "Thejas R",
       city: "Bangalore",
       role: "Father of an infant child",
-      contribution: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution"
+      contribution: "We thank our Pa Champion for his views on the initial design of the MaPa-Aur-Hum solution"
     },
     {
       name: "Subhra Sarker",
       city: "Delhi",
       role: "Mother of a 9 yr old",
-      contribution: "We thank our Ma Champion for views on the initial design of the MaPaAurHum solution"
+      contribution: "We thank our Ma Champion for views on the initial design of the MaPa-Aur-Hum solution"
     },
     {
       name: "Simala Rawat",
@@ -24,13 +24,13 @@ export const Champions = () => {
       name: "Pooja Singh",
       city: "Gurgaon",
       role: "Mother of 2 kids",
-      contribution: "We thank our Ma Champion for her views on the initial design of the MaPaAurHum solution"
+      contribution: "We thank our Ma Champion for her views on the initial design of the MaPa-Aur-Hum solution"
     },
     {
       name: "Ashish Bansal",
       city: "Gurgaon",
       role: "Father of 2 kids",
-      contribution: "We thank our Pa Champion for her views on the initial design of the MaPaAurHum solution"
+      contribution: "We thank our Pa Champion for her views on the initial design of the MaPa-Aur-Hum solution"
     }
   ];
 
