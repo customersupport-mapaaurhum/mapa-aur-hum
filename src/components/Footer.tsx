@@ -40,7 +40,7 @@ export const Footer = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                onClick={() => window.open('https://linkedin.com/in/sumita-sarkar', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/company/mapaaurhum/', '_blank')}
                 className="text-background hover:bg-background/10"
               >
                 <Linkedin className="h-5 w-5" />
