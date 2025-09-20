@@ -3,8 +3,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Send, Mail } from "lucide-react";
+import { Send, Mail, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface RegistrationDialogProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ interface RegistrationDialogProps {
 
 export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     city: "",
@@ -25,7 +27,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate mandatory fields
@@ -38,42 +40,48 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
       return;
     }
 
-    // Create email content
-    const emailSubject = encodeURIComponent("Pilot Program Registration - " + formData.name);
-    const emailBody = encodeURIComponent(`Hello,
+    setIsSubmitting(true);
 
-I would like to register for the MaPa-Aur-Hum pilot program.
+    try {
+      // Save to database
+      const { error } = await supabase
+        .from('registrations')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone_number: formData.phoneNumber,
+          city: formData.city || null,
+          age_of_child: formData.ageOfChild || null
+        });
 
-Registration Details:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Phone Number: ${formData.phoneNumber}
-- City: ${formData.city || "Not provided"}
-- Age of Child: ${formData.ageOfChild || "Not provided"}
+      if (error) {
+        throw error;
+      }
 
-Please contact me with further details about the pilot program.
+      // Close dialog and reset form
+      setIsOpen(false);
+      setFormData({
+        name: "",
+        city: "",
+        ageOfChild: "",
+        email: "",
+        phoneNumber: ""
+      });
 
-Best regards,
-${formData.name}`);
-
-    // Use mailto URL for universal email client support
-    const mailtoUrl = `mailto:customer.support@mapaaurhum.com?subject=${emailSubject}&body=${emailBody}`;
-    window.location.href = mailtoUrl;
-
-    // Close dialog and reset form
-    setIsOpen(false);
-    setFormData({
-      name: "",
-      city: "",
-      ageOfChild: "",
-      email: "",
-      phoneNumber: ""
-    });
-
-    toast({
-      title: "Registration Initiated",
-      description: "Gmail has been opened with your registration details. Please send the email to complete your registration.",
-    });
+      toast({
+        title: "Registration Successful",
+        description: "Thank you for registering! We'll contact you soon with pilot program details.",
+      });
+    } catch (error) {
+      console.error('Registration error:', error);
+      toast({
+        title: "Registration Failed",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -157,9 +165,13 @@ ${formData.name}`);
             >
               Cancel
             </Button>
-            <Button type="submit" className="flex-1">
-              <Send className="h-4 w-4" />
-              Send Registration
+            <Button type="submit" className="flex-1" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : (
+                <Send className="h-4 w-4" />
+              )}
+              {isSubmitting ? "Saving..." : "Register Now"}
             </Button>
           </div>
         </form>

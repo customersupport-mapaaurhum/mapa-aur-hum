@@ -1,9 +1,3 @@
-import { Card } from "@/components/ui/card";
-import championAshish from "@/assets/champion-ashish.jpg";
-import championPooja from "@/assets/champion-pooja.jpg";
-import championThejas from "@/assets/champion-thejas.jpg";
-import championSimala from "@/assets/champion-simala.jpg";
-import championSubhra from "@/assets/champion-subhra.jpg";
 
 export const Champions = () => {
   
@@ -11,26 +5,22 @@ export const Champions = () => {
     {
       name: "Thejas R",
       role: "Father of an infant child",
-      image: championThejas,
-      contribution: "Provided valuable insights on the initial design and father's perspective"
+      contribution: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution"
     },
     {
       name: "Simala Rawat",
-      role: "Babysitter",
-      image: championSimala,
-      contribution: "Shared expertise on childcare practices and usability feedback"
+      role: "Babysitter", 
+      contribution: "We thank our Didi for views on usability of the solution"
     },
     {
       name: "Subhra Sarker",
       role: "Mother of a 9 yr old",
-      image: championSubhra,
-      contribution: "Contributed mother's perspective and design recommendations"
+      contribution: "We thank our Ma Champion for views on the initial design of the MaPaAurHum solution"
     },
     {
       name: "Pooja Singh",
       role: "Mother of 2 kids",
-      image: championPooja,
-      contribution: "Provided multi-child family insights and user experience feedback"
+      contribution: "We thank our Ma Champion for her views on the initial design of the MaPaAurHum solution"
     }
   ];
 
@@ -45,28 +35,43 @@ export const Champions = () => {
           </p>
         </div>
 
-        {/* Contributors grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        {/* Contributors innovative layout */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {contributors.map((contributor, index) => (
-            <Card key={index} className="p-6 text-center shadow-elegant border-border/50 hover:shadow-lg transition-shadow">
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-warm">
-                <img 
-                  src={contributor.image} 
-                  alt={contributor.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div key={index} className="group relative">
+              {/* Decorative element */}
+              <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-primary-glow rounded-full"></div>
               
-              <h4 className="text-lg font-semibold text-foreground mb-1">
-                {contributor.name}
-              </h4>
-              <p className="text-primary text-sm font-medium mb-3">
-                {contributor.role}
-              </p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {contributor.contribution}
-              </p>
-            </Card>
+              {/* Quote-style design */}
+              <div className="pl-8 py-6 bg-card/50 rounded-lg border-l-4 border-primary/20 hover:border-primary/40 transition-colors">
+                {/* Large quote mark */}
+                <div className="text-4xl text-primary/20 font-serif leading-none mb-2">"</div>
+                
+                {/* Content */}
+                <div className="space-y-3">
+                  <p className="text-muted-foreground text-sm leading-relaxed italic">
+                    {contributor.contribution}
+                  </p>
+                  
+                  {/* Attribution */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-lg font-semibold text-foreground">
+                        {contributor.name}
+                      </h4>
+                      <p className="text-primary text-sm font-medium">
+                        {contributor.role}
+                      </p>
+                    </div>
+                    
+                    {/* Decorative accent */}
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center">
+                      <div className="w-6 h-6 rounded-full bg-primary/40"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
