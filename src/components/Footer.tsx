@@ -24,11 +24,6 @@ export const Footer = () => {
               </div>
             </div>
             
-            <p className="text-background/80 mb-6 max-w-md">
-              Innovative childcare solutions for modern Indian families. 
-              Building trust through technology to create safer, more connected childcare experiences.
-            </p>
-            
             <div className="flex space-x-4">
               <Button 
                 variant="ghost" 
