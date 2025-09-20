@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Phone, Mail } from "lucide-react";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
 
 export const Contact = () => {
@@ -42,18 +42,6 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">Address</h4>
-                    <p className="text-muted-foreground">
-                      Sector 4, Urban Estate<br />
-                      Gurgaon, Haryana - 122001
-                    </p>
-                  </div>
-                </div>
               </div>
             </Card>
 
