@@ -6,10 +6,10 @@ import { RegistrationDialog } from "@/components/RegistrationDialog";
 export const Contact = () => {
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-12 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Contact Us</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to join our pilot program or have questions? We'd love to hear from you.
           </p>

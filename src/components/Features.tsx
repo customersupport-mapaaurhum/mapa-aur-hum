@@ -103,16 +103,16 @@ export const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-12 bg-muted/30">
+    <section id="features" className="py-8 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">How We Help</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-4">How We Help</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             Our innovative features are designed to address the real challenges faced by modern parents in India.
           </p>
           
           {/* Three main tenets */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
             <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
               <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4">
                 <UserCheck className="h-8 w-8 text-white" />

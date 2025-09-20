@@ -3,10 +3,10 @@ import { Users, Clock, MapPin, Smartphone } from "lucide-react";
 
 export const About = () => {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-12 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">About MaPa-Aur-Hum</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-4">About MaPa-Aur-Hum</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             MaPa-Aur-Hum is a technology platform piloting soon on the google app store. 
             Built with inputs from parents, we invite you to join us in this journey.

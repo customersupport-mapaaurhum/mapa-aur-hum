@@ -67,10 +67,10 @@ export const WhyMaPa = () => {
   ];
 
   return (
-    <section id="why-mapa" className="py-20 bg-background">
+    <section id="why-mapa" className="py-12 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Why MaPa-Aur-Hum</h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Why MaPa-Aur-Hum</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             If any of these situations sound familiar, MaPa-Aur-Hum is designed for you
           </p>
