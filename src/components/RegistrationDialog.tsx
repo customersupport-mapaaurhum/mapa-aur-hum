@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Send, Mail, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -17,7 +18,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
   const [formData, setFormData] = useState({
     name: "",
     city: "",
-    ageOfChild: "",
+    hasChildrenUnder5: "",
     email: "",
     phoneNumber: ""
   });
@@ -73,7 +74,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
           email: formData.email,
           phone_number: formData.phoneNumber,
           city: formData.city || null,
-          age_of_child: formData.ageOfChild || null
+          age_of_child: formData.hasChildrenUnder5 === "yes" ? "Under 5 years" : null
         });
 
       if (error) {
@@ -85,7 +86,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
       setFormData({
         name: "",
         city: "",
-        ageOfChild: "",
+        hasChildrenUnder5: "",
         email: "",
         phoneNumber: ""
       });
@@ -167,15 +168,21 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="ageOfChild">Age of Child</Label>
-            <Input
-              id="ageOfChild"
-              type="text"
-              value={formData.ageOfChild}
-              onChange={(e) => handleInputChange("ageOfChild", e.target.value)}
-              placeholder="Enter your child's age"
-            />
+          <div className="space-y-3">
+            <Label>Do you have children less than 5 years?</Label>
+            <RadioGroup
+              value={formData.hasChildrenUnder5}
+              onValueChange={(value) => handleInputChange("hasChildrenUnder5", value)}
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="yes" id="yes" />
+                <Label htmlFor="yes">Yes</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="no" id="no" />
+                <Label htmlFor="no">No</Label>
+              </div>
+            </RadioGroup>
           </div>
 
           <div className="flex gap-3 pt-4">
