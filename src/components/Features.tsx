@@ -25,7 +25,7 @@ export const Features = () => {
     {
       icon: Languages,
       title: "Local Language Support",
-      description: "Communicate with maids and grandparents in their preferred local language for better understanding. Currently available in English and Hindi for the pilot.",
+      description: "Communicate with maids and grandparents in their preferred local language for better understanding. Currently available in English and Hindi for the free pilot.",
       color: "bg-gradient-warm"
     },
     {
@@ -210,7 +210,7 @@ export const Features = () => {
             Ready to Transform Your Childcare Experience?
           </h3>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join our pilot program and be among the first families to experience the future of childcare management.
+            Join our free pilot program and be among the first families to experience the future of childcare management.
           </p>
           <RegistrationDialog>
             <Button 
@@ -218,7 +218,7 @@ export const Features = () => {
               size="lg"
               className="bg-white/20 hover:bg-white/30 border-white/30"
             >
-              Register for Pilot Program
+              Register for Free Pilot Program
               <ArrowRight className="h-5 w-5" />
             </Button>
           </RegistrationDialog>

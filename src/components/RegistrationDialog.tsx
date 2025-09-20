@@ -92,7 +92,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
 
       toast({
         title: "Registration Successful",
-        description: "Thank you for registering! We'll contact you soon with pilot program details.",
+        description: "Thank you for registering! We'll contact you soon with free pilot program details.",
       });
     } catch (error) {
       console.error('Registration error:', error);
@@ -115,7 +115,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Mail className="h-5 w-5 text-primary" />
-            Register for Pilot Program
+            Register for Free Pilot Program
           </DialogTitle>
         </DialogHeader>
         

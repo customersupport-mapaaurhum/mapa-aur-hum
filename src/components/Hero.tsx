@@ -39,7 +39,7 @@ export const Hero = () => {
                   size="lg"
                   className="text-lg"
                 >
-                  Register for Pilot Run
+                  Register for Free Pilot Run
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </RegistrationDialog>

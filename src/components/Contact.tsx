@@ -11,7 +11,7 @@ export const Contact = () => {
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to join our pilot program, partner with us or have any questions? We'd love to hear from you.
+            Ready to join our free pilot program, partner with us or have any questions? We'd love to hear from you.
           </p>
         </div>
 
@@ -48,11 +48,11 @@ export const Contact = () => {
             {/* Quick registration CTA */}
             <Card className="p-8 bg-gradient-hero border-0">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Join Our Pilot Program
+                Join Our Free Pilot Program
               </h3>
               <p className="text-white/90 mb-6">
                 Be among the first families to experience the future of childcare management. 
-                Limited spots available for our pilot run.
+                Limited spots available for our free pilot run.
               </p>
               <RegistrationDialog>
                 <Button 
