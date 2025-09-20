@@ -76,11 +76,6 @@ export const Features = () => {
       title: "Food Plan Management"
     },
     {
-      src: featureVideo,
-      alt: "Video calling support for babysitters during emergencies",
-      title: "Video Call Support"
-    },
-    {
       src: featureStreamlined,
       alt: "Streamlined care with task notifications and activities",
       title: "Streamlined Care"
@@ -108,7 +103,7 @@ export const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-muted/30">
+    <section id="features" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">How We Help</h2>
@@ -196,13 +191,15 @@ export const Features = () => {
 
         {/* Image Zoom Dialog */}
         <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl max-h-[90vh] p-2">
+          <DialogContent className="max-w-6xl max-h-[95vh] p-4">
             {selectedImage && (
-              <img 
-                src={selectedImage} 
-                alt="Feature preview"
-                className="w-full h-auto rounded-lg"
-              />
+              <div className="flex items-center justify-center">
+                <img 
+                  src={selectedImage} 
+                  alt="Feature preview"
+                  className="w-full h-auto rounded-lg shadow-elegant"
+                />
+              </div>
             )}
           </DialogContent>
         </Dialog>

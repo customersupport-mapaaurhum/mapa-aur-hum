@@ -4,29 +4,39 @@ export const Champions = () => {
   const contributors = [
     {
       name: "Thejas R",
+      city: "Bangalore",
       role: "Father of an infant child",
       contribution: "We thank our Pa Champion for his views on the initial design of the MaPaAurHum solution"
     },
     {
-      name: "Simala Rawat",
-      role: "Babysitter", 
-      contribution: "We thank our Didi for views on usability of the solution"
-    },
-    {
       name: "Subhra Sarker",
+      city: "Delhi",
       role: "Mother of a 9 yr old",
       contribution: "We thank our Ma Champion for views on the initial design of the MaPaAurHum solution"
     },
     {
+      name: "Simala Rawat",
+      city: "Delhi",
+      role: "Babysitter", 
+      contribution: "We thank our Didi for views on usability of the solution"
+    },
+    {
       name: "Pooja Singh",
+      city: "Gurgaon",
       role: "Mother of 2 kids",
       contribution: "We thank our Ma Champion for her views on the initial design of the MaPaAurHum solution"
+    },
+    {
+      name: "Ashish Bansal",
+      city: "Gurgaon",
+      role: "Father of 2 kids",
+      contribution: "We thank our Pa Champion for her views on the initial design of the MaPaAurHum solution"
     }
   ];
 
 
   return (
-    <section id="champions" className="py-20 bg-muted/30">
+    <section id="champions" className="py-12 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-6">Thank You to Our Contributors</h2>
@@ -54,15 +64,18 @@ export const Champions = () => {
                   </p>
                   
                   {/* Attribution */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h4 className="text-lg font-semibold text-foreground">
-                        {contributor.name}
-                      </h4>
-                      <p className="text-primary text-sm font-medium">
-                        {contributor.role}
-                      </p>
-                    </div>
+                   <div className="flex items-center justify-between">
+                     <div>
+                       <h4 className="text-lg font-semibold text-foreground">
+                         {contributor.name}
+                       </h4>
+                       <p className="text-primary text-sm font-medium">
+                         {contributor.city}
+                       </p>
+                       <p className="text-muted-foreground text-sm">
+                         {contributor.role}
+                       </p>
+                     </div>
                     
                     {/* Decorative accent */}
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center">
