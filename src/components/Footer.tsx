@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import logoImg from "@/assets/logo.jpg";
+import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -137,9 +138,11 @@ export const Footer = () => {
               © {currentYear} Mapaaurhum Technologies OPC Pvt Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <button className="text-background/60 hover:text-background text-sm transition-colors">
-                Privacy Policy
-              </button>
+              <PrivacyPolicyDialog>
+                <button className="text-background/60 hover:text-background text-sm transition-colors">
+                  Privacy Policy
+                </button>
+              </PrivacyPolicyDialog>
               <button className="text-background/60 hover:text-background text-sm transition-colors">
                 Terms of Service
               </button>
