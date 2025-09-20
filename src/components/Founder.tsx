@@ -16,25 +16,11 @@ export const Founder = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 lg:p-12 border-border/50 shadow-elegant">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Founder image */}
-              <div className="text-center lg:text-left">
-                <div className="relative inline-block">
-                  <img 
-                    src={founderImg} 
-                    alt="Sumita Sarkar, Founder of MaPa-Aur-Hum" 
-                    className="w-64 h-64 rounded-2xl object-cover mx-auto shadow-warm"
-                  />
-                  <div className="absolute -bottom-4 -right-4 bg-gradient-warm rounded-full p-3">
-                    <ExternalLink className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-              </div>
-              
+            <div className="flex justify-center">
               {/* Founder content */}
-              <div>
+              <div className="text-center max-w-2xl">
                 <h3 className="text-2xl font-bold text-foreground mb-2">Sumita Sarkar</h3>
-                <p className="text-lg text-primary font-medium mb-6">Founder & CEO</p>
+                <p className="text-lg text-primary font-medium mb-6">Founder</p>
                 
                 <div className="space-y-4 text-muted-foreground mb-8">
                   <p>

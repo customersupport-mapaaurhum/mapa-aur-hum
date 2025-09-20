@@ -70,6 +70,14 @@ export const Footer = () => {
               </li>
               <li>
                 <button 
+                  onClick={() => scrollToSection('why-mapa')}
+                  className="text-background/80 hover:text-background transition-colors"
+                >
+                  Why MaPa-Aur-Hum
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => scrollToSection('features')}
                   className="text-background/80 hover:text-background transition-colors"
                 >
