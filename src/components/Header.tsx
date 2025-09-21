@@ -37,23 +37,29 @@ export const Header = () => {
             How We Help
           </button>
           <button 
-            onClick={() => scrollToSection('founder')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Founder
-          </button>
-          <button 
             onClick={() => scrollToSection('champions')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             Champions
           </button>
-          <Button 
+          <button 
             onClick={() => scrollToSection('contact')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Contact Us
+          </button>
+          <button 
+            onClick={() => scrollToSection('founder')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Founder
+          </button>
+          <Button 
+            onClick={() => scrollToSection('founder')}
             variant="default" 
             size="sm"
           >
-            Contact Us
+            Meet Founder
           </Button>
         </nav>
       </div>

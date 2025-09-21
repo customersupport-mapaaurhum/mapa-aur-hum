@@ -17,9 +17,9 @@ const Index = () => {
         <About />
         <WhyMaPa />
         <Features />
-        <Founder />
         <Champions />
         <Contact />
+        <Founder />
       </main>
       <Footer />
     </div>
