@@ -9,9 +9,6 @@ export const Founder = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-4">Meet the Founder</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Driven by a mother's concern and backed by industry experience
-          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
