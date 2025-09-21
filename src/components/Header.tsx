@@ -55,11 +55,11 @@ export const Header = () => {
             Founder
           </button>
           <Button 
-            onClick={() => scrollToSection('founder')}
+            onClick={() => scrollToSection('contact')}
             variant="default" 
             size="sm"
           >
-            Meet Founder
+            Contact Us
           </Button>
         </nav>
       </div>
