@@ -30,7 +30,7 @@ export const Hero = () => {
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
               We understand managing childcare for urban working parents is a daily challenge. 
-              Join us in our journey to ease personalised day-to-day childcare management with tech.
+              Now ensure personalised day-to-day childcare management with tech.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
