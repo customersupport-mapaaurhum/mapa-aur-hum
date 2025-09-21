@@ -48,7 +48,7 @@ export const Hero = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                 className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
               >
                 <Smartphone className="h-5 w-5" />
