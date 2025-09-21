@@ -74,7 +74,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
           email: formData.email,
           phone_number: formData.phoneNumber,
           city: formData.city || null,
-          age_of_child: formData.hasChildrenUnder5 === "yes" ? "Under 5 years" : null
+          has_existing_caregiver: formData.hasChildrenUnder5 === "yes"
         });
 
       if (error) {

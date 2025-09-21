@@ -16,30 +16,30 @@ export type Database = {
     Tables: {
       registrations: {
         Row: {
-          age_of_child: string | null
           city: string | null
           created_at: string
           email: string
+          has_existing_caregiver: boolean | null
           id: string
           name: string
           phone_number: string
           updated_at: string
         }
         Insert: {
-          age_of_child?: string | null
           city?: string | null
           created_at?: string
           email: string
+          has_existing_caregiver?: boolean | null
           id?: string
           name: string
           phone_number: string
           updated_at?: string
         }
         Update: {
-          age_of_child?: string | null
           city?: string | null
           created_at?: string
           email?: string
+          has_existing_caregiver?: boolean | null
           id?: string
           name?: string
           phone_number?: string
