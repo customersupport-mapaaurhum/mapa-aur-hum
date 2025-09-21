@@ -54,13 +54,6 @@ export const Header = () => {
           >
             Founder
           </button>
-          <Button 
-            onClick={() => scrollToSection('contact')}
-            variant="default" 
-            size="sm"
-          >
-            Contact Us
-          </Button>
         </nav>
       </div>
     </header>
