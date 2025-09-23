@@ -20,6 +20,19 @@
     <meta name="twitter:image" content="/src/assets/hero-background.jpg" />
     
     <link rel="canonical" href="https://mapaaurhum.com" />
+    
+    <!-- 301 redirect handling for www/non-www -->
+    <script>
+      (function() {
+        var canonical = 'https://mapaaurhum.com';
+        var current = window.location.href;
+        
+        // Redirect www to non-www
+        if (window.location.hostname === 'www.mapaaurhum.com') {
+          window.location.replace(canonical + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
   </head>
 
   <body>
