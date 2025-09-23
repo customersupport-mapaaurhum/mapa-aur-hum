@@ -15,4 +15,14 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        app: "./index.html"
+      }
+    }
+  },
+  ssr: {
+    noExternal: ['react-router-dom']
+  }
 }));
