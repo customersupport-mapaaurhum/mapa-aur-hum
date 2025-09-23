@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="flex items-center space-x-3">
           <img src={logoImg} alt="MaPa-Aur-Hum Logo" className="h-10 w-10 rounded-lg object-cover" />
           <div>
-            <h1 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h1>
+            <h2 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h2>
             <p className="text-xs text-muted-foreground">Building trust for better childcare</p>
           </div>
         </div>
