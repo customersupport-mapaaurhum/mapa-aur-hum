@@ -10,7 +10,7 @@ export const Header = () => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src={logoImg} alt="MaPa-Aur-Hum Logo" className="h-10 w-10 rounded-lg object-cover" />
+          <img src={logoImg} alt="MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" />
           <div>
             <h2 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h2>
             <p className="text-xs text-muted-foreground">Building trust for better childcare</p>

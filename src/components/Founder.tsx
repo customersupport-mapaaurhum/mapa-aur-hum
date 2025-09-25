@@ -13,9 +13,21 @@ export const Founder = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="p-8 lg:p-12 border-border/50 shadow-elegant">
-            <div className="flex justify-start">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
+              {/* Founder image */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={founderImg} 
+                  alt="Sumita Sarkar, Founder of MaPa-Aur-Hum - experienced mother and IT professional creating childcare solutions for Indian families"
+                  className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover shadow-elegant"
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
+              </div>
+              
               {/* Founder content */}
-              <div className="text-left max-w-2xl">
+              <div className="text-center lg:text-left flex-1">
                 <h3 className="text-2xl font-bold text-foreground mb-2">Sumita Sarkar</h3>
                 <p className="text-lg text-primary font-medium mb-6">Founder</p>
                 

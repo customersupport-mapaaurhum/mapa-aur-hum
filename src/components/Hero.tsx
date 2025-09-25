@@ -88,8 +88,10 @@ export const Hero = () => {
             <div className="relative">
               <img 
                 src={appPreview1} 
-                alt="MaPa-Aur-Hum App Preview"
+                alt="MaPa-Aur-Hum mobile app interface showing childcare management features for Indian parents"
                 className="w-80 h-auto rounded-2xl shadow-trust"
+                width="320"
+                height="auto"
               />
             </div>
           </div>

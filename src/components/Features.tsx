@@ -57,47 +57,47 @@ export const Features = () => {
   const featureImages = [
     {
       src: featureRoutine,
-      alt: "Child's routine management with scheduled tasks and audio guidance",
+      alt: "MaPa-Aur-Hum routine management screen showing daily childcare tasks with audio guidance for caregivers",
       title: "Routine Management"
     },
     {
       src: featureHealth,
-      alt: "Emergency health preparedness with medicine plans and visual aids",
+      alt: "Health emergency preparedness interface with medicine plans and visual aids for child safety",
       title: "Health Emergency Preparedness"
     },
     {
       src: featureScreentime,
-      alt: "Screen time management and tracking for healthy balance",
+      alt: "Screen time management dashboard tracking children's device usage for healthy digital balance",
       title: "Screen Time Management"
     },
     {
       src: featureFood,
-      alt: "Food plans and meal management with audio instructions",
+      alt: "Food plan management system with meal scheduling and audio instructions for Indian families",
       title: "Food Plan Management"
     },
     {
       src: featureStreamlined,
-      alt: "Streamlined care with task notifications and activities",
+      alt: "Streamlined childcare interface showing task notifications and activity tracking for babysitters",
       title: "Streamlined Care"
     },
     {
       src: featureReadiness,
-      alt: "Health emergency readiness with medicine plans and alerts",
+      alt: "Emergency readiness dashboard with medicine plans and alert system for child safety",
       title: "Emergency Readiness"
     },
     {
       src: featureInsights,
-      alt: "Weekly reports and actionable insights for child care",
+      alt: "Weekly childcare insights and reports providing actionable data for better parenting decisions",
       title: "Weekly Insights"
     },
     {
       src: featureFoodplans,
-      alt: "Comprehensive food plan management with database",
+      alt: "Comprehensive food plan database with nutritional guidance for Indian children's meal planning",
       title: "Food Plans"
     },
     {
       src: featureEmergencies,
-      alt: "Emergency management with first aid and video calling",
+      alt: "Emergency management system with first aid guides and video calling for immediate childcare support",
       title: "Emergency Support"
     }
   ];
@@ -168,6 +168,9 @@ export const Features = () => {
                         src={image.src} 
                         alt={image.alt}
                         className="w-full min-h-[600px] h-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105"
+                        loading="lazy"
+                        width="400"
+                        height="600"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
@@ -196,7 +199,7 @@ export const Features = () => {
               <div className="flex items-center justify-center">
                 <img 
                   src={selectedImage} 
-                  alt="Feature preview"
+                  alt="Detailed view of MaPa-Aur-Hum childcare app feature for better understanding"
                   className="w-full h-auto rounded-lg shadow-elegant"
                 />
               </div>

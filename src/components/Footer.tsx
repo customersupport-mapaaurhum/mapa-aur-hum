@@ -17,7 +17,7 @@ export const Footer = () => {
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img src={logoImg} alt="MaPa-Aur-Hum Logo" className="h-10 w-10 rounded-lg object-cover" />
+              <img src={logoImg} alt="MaPa-Aur-Hum Technologies logo - trusted childcare solutions for Indian families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" loading="lazy" />
               <div>
                 <h3 className="text-xl font-bold text-background">Mapaaurhum Technologies</h3>
                 <p className="text-sm text-background/70">OPC Pvt Ltd</p>
