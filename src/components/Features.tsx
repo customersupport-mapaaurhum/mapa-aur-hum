@@ -106,9 +106,9 @@ export const Features = () => {
     <section id="features" className="py-8 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-4">How We Help</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Complete Childcare Management Solution for Working Parents</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            Our innovative features are designed to address the real challenges faced by modern parents in India.
+            Our innovative babysitter communication features with picture updates and Hindi language support address the real challenges faced by working parents managing home-based childcare in India.
           </p>
           
           {/* Three main tenets */}

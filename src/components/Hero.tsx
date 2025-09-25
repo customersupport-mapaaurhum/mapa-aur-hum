@@ -24,13 +24,13 @@ export const Hero = () => {
           <div className="text-center lg:text-left">
             
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Building Trust for 
-              <span className="text-primary-glow"> Better Childcare</span>
+              Hindi Language Childcare App for 
+              <span className="text-primary-glow"> Working Parents in India</span>
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              We understand managing childcare for urban working parents is a daily challenge. 
-              Now ensure personalised day-to-day childcare management with tech.
+              Real-time babysitter communication with picture updates and audio instructions. 
+              Perfect childcare coordination app for Indian working parents with trusted emergency support and local language features.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
