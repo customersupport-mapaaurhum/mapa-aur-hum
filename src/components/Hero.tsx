@@ -28,8 +28,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              Real-time babysitter communication with picture updates and audio instructions. 
-              Perfect childcare coordination app for Indian working parents with trusted emergency support and local language features.
+              Perfect childcare coordination app for Indian working parents and caregivers.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
