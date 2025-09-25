@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Linkedin, Mail } from "lucide-react";
-import founderImg from "@/assets/founder-sumita-new.jpg";
+import founderImg from "@/assets/founder-sumita-linkedin.png";
 
 export const Founder = () => {
   return (
