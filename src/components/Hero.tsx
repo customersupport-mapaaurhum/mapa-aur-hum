@@ -24,8 +24,8 @@ export const Hero = () => {
           <div className="text-center lg:text-left">
             
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Hindi Language Childcare App for 
-              <span className="text-primary-glow"> Working Parents in India</span>
+              Building trust for better childcare by
+              <span className="text-primary-glow"> working Parents in India</span>
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
