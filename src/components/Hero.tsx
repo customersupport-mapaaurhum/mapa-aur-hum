@@ -28,7 +28,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              Perfect childcare coordination app for Indian working parents and caregivers.
+              Perfect childcare app for Indian working parents and caregivers.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

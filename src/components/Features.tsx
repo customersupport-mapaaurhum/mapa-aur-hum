@@ -134,7 +134,7 @@ export const Features = () => {
                 <Navigation className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-2">Save Time</h3>
-              <p className="text-muted-foreground">Streamlined communication and standardized routines reduce time spent on coordination</p>
+              <p className="text-muted-foreground">Streamlined communication and standardized routines save valuable time</p>
             </Card>
           </div>
         </div>
