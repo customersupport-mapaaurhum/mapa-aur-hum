@@ -22,17 +22,6 @@ export const Contact = () => {
             <Card className="p-8 border-border/50 shadow-elegant">
               <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
               
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-warm rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-1">WhatsApp</h4>
-                    <p className="text-muted-foreground">(91)-7217615508</p>
-                  </div>
-                </div>
-
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-trust rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="h-6 w-6 text-white" />
@@ -42,8 +31,6 @@ export const Contact = () => {
                     <p className="text-muted-foreground">customer.support@mapaaurhum.com</p>
                   </div>
                 </div>
-
-              </div>
               
               {/* Feedback Button */}
               <div className="mt-6 pt-6 border-t border-border/30">
