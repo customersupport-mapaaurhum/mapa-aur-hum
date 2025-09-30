@@ -10,6 +10,7 @@ export const About = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             MaPa-Aur-Hum is a specialized childcare platform designed for working parents in India. 
             Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one trusted app.
+            <span className="block mt-2 font-medium text-primary">Coming soon to Google Play Store!</span>
           </p>
         </div>
         
