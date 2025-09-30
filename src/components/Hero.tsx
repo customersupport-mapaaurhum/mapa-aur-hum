@@ -28,7 +28,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              Perfect childcare app for Indian working parents and caregivers. Available in English for parents and Hindi for caregivers at home as part of our pilot. Soon to be available in more languages. Parents can write to us for features, feedback and language support.
+              The perfect childcare solution for Indian working parents and home caregivers. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon. Share your feedback and language requests with us!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
