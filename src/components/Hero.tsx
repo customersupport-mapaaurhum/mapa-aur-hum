@@ -28,7 +28,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              The perfect childcare solution for Indian working parents and home caregivers. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon. Share your feedback and language requests with us!
+              The perfect childcare solution for Indian working parents and home caregivers. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -51,6 +51,15 @@ export const Hero = () => {
               >
                 <Smartphone className="h-5 w-5" />
                 Learn More
+              </Button>
+              
+              <Button 
+                variant="outline"
+                size="lg"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
+              >
+                Share Feedback
               </Button>
             </div>
 
