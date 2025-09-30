@@ -48,7 +48,7 @@ export const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
+                className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
               >
                 <Smartphone className="h-5 w-5" />
                 Learn More
@@ -58,7 +58,7 @@ export const Hero = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
+                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                 >
                   Share Feedback
                 </Button>
