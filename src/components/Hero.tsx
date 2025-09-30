@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
+import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { ArrowRight, Smartphone, Instagram, Linkedin } from "lucide-react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -53,14 +54,15 @@ export const Hero = () => {
                 Learn More
               </Button>
               
-              <Button 
-                variant="outline"
-                size="lg"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
-              >
-                Share Feedback
-              </Button>
+              <FeedbackDialog>
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="text-lg border-white/30 text-primary bg-white/10 hover:bg-white/20 hover:text-primary"
+                >
+                  Share Feedback
+                </Button>
+              </FeedbackDialog>
             </div>
 
             {/* Social Media Follow Section */}
