@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { ArrowRight, Smartphone, Instagram, Linkedin } from "lucide-react";
+import { ArrowRight, Smartphone } from "lucide-react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
 import logoImg from "@/assets/logo.jpg";
@@ -63,31 +63,6 @@ export const Hero = () => {
                   Share Feedback
                 </Button>
               </FeedbackDialog>
-            </div>
-
-            {/* Social Media Follow Section */}
-            <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-white/90 text-lg mb-4 text-center lg:text-left">Follow us on social media:</p>
-              <div className="flex gap-4 justify-center lg:justify-start">
-                <a 
-                  href="https://www.instagram.com/mapaaurhum" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white hover:text-primary-glow transition-all"
-                >
-                  <Instagram className="h-5 w-5" />
-                  <span>Instagram</span>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/company/mapaaurhum/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white hover:text-primary-glow transition-all"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span>LinkedIn</span>
-                </a>
-              </div>
             </div>
             
           </div>
