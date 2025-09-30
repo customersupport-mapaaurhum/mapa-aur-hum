@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Send, MessageCircle, Mail } from "lucide-react";
 import { RegistrationDialog } from "@/components/RegistrationDialog";
+import { FeedbackDialog } from "@/components/FeedbackDialog";
 
 export const Contact = () => {
 
@@ -42,6 +43,16 @@ export const Contact = () => {
                   </div>
                 </div>
 
+              </div>
+              
+              {/* Feedback Button */}
+              <div className="mt-6 pt-6 border-t border-border/30">
+                <FeedbackDialog>
+                  <Button variant="outline" size="sm" className="w-full">
+                    <MessageCircle className="h-4 w-4 mr-2" />
+                    Share Feedback
+                  </Button>
+                </FeedbackDialog>
               </div>
             </Card>
 
