@@ -32,37 +32,41 @@ export const Hero = () => {
               The perfect childcare solution for Indian working parents and home caregivers managing kids under 5 years. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <RegistrationDialog>
-                <Button 
-                  variant="hero" 
-                  size="lg"
-                  className="text-lg"
-                >
-                  Register for Free Pilot Run
-                  <ArrowRight className="h-5 w-5" />
-                </Button>
-              </RegistrationDialog>
-              
-              <Button 
-                variant="outline"
-                size="lg"
-                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-              >
-                <Smartphone className="h-5 w-5" />
-                Learn More
-              </Button>
-              
-              <FeedbackDialog>
+            <div className="flex flex-col gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <RegistrationDialog>
+                  <Button 
+                    variant="hero" 
+                    size="lg"
+                    className="text-lg"
+                  >
+                    Register for Free Pilot Run
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </RegistrationDialog>
+                
                 <Button 
                   variant="outline"
                   size="lg"
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                 >
-                  Share Feedback
+                  <Smartphone className="h-5 w-5" />
+                  Learn More
                 </Button>
-              </FeedbackDialog>
+              </div>
+              
+              <div className="flex justify-center lg:justify-start">
+                <FeedbackDialog>
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                  >
+                    Share Feedback
+                  </Button>
+                </FeedbackDialog>
+              </div>
             </div>
             
           </div>
