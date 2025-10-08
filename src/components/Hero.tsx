@@ -22,7 +22,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left relative z-20">
             
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Building trust for better childcare
@@ -68,7 +68,7 @@ export const Hero = () => {
           </div>
           
           {/* Right side - App preview placeholder */}
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center lg:justify-end z-10">
             <div className="relative">
               <img 
                 src={appPreview1} 
