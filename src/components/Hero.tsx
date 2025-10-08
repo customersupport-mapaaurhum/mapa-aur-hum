@@ -29,7 +29,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-xl">
-              The perfect childcare solution for Indian working parents and home caregivers. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon.
+              The perfect childcare solution for Indian working parents and home caregivers managing kids under 5 years. Our pilot offers English support for parents and Hindi for caregivers, with more languages coming soon.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
