@@ -13,7 +13,7 @@ const applicationSchema = z.object({
   city: z.string().trim().min(1, "City is required").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
   phone_number: z.string().trim().min(10, "Phone number must be at least 10 digits").max(15),
-  linkedin_profile: z.string().trim().url("Invalid LinkedIn URL").max(500).optional().or(z.literal("")),
+  linkedin_profile: z.string().trim().url("Invalid LinkedIn URL").min(1, "LinkedIn Profile is required").max(500),
 });
 
 interface JobApplicationDialogProps {
@@ -45,10 +45,10 @@ export const JobApplicationDialog = ({ jobId, jobName, open, onOpenChange }: Job
   const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      if (file.size > 5 * 1024 * 1024) {
+      if (file.size > 2 * 1024 * 1024) {
         toast({
           title: "File too large",
-          description: "Resume must be less than 5MB",
+          description: "Resume must be less than 2MB (2-pager recommended)",
           variant: "destructive",
         });
         return;
@@ -99,7 +99,7 @@ export const JobApplicationDialog = ({ jobId, jobName, open, onOpenChange }: Job
           city: validatedData.city,
           email: validatedData.email,
           phone_number: validatedData.phone_number,
-          linkedin_profile: validatedData.linkedin_profile || null,
+          linkedin_profile: validatedData.linkedin_profile,
           resume_url: publicUrl,
         }]);
 
@@ -202,7 +202,7 @@ export const JobApplicationDialog = ({ jobId, jobName, open, onOpenChange }: Job
           </div>
 
           <div>
-            <Label htmlFor="linkedin_profile">LinkedIn Profile</Label>
+            <Label htmlFor="linkedin_profile">LinkedIn Profile *</Label>
             <Input
               id="linkedin_profile"
               name="linkedin_profile"
@@ -210,12 +210,13 @@ export const JobApplicationDialog = ({ jobId, jobName, open, onOpenChange }: Job
               placeholder="https://linkedin.com/in/yourprofile"
               value={formData.linkedin_profile}
               onChange={handleInputChange}
+              required
               maxLength={500}
             />
           </div>
 
           <div>
-            <Label htmlFor="resume">Resume (PDF, DOC, DOCX - Max 5MB) *</Label>
+            <Label htmlFor="resume">Resume (PDF, DOC, DOCX - Max 2MB, 2-pager recommended) *</Label>
             <Input
               id="resume"
               type="file"
