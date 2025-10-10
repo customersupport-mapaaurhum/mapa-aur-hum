@@ -41,6 +41,98 @@ export type Database = {
         }
         Relationships: []
       }
+      job_applications: {
+        Row: {
+          city: string
+          created_at: string
+          email: string
+          id: string
+          job_id: string
+          linkedin_profile: string | null
+          name: string
+          phone_number: string
+          resume_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          city: string
+          created_at?: string
+          email: string
+          id?: string
+          job_id: string
+          linkedin_profile?: string | null
+          name: string
+          phone_number: string
+          resume_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          email?: string
+          id?: string
+          job_id?: string
+          linkedin_profile?: string | null
+          name?: string
+          phone_number?: string
+          resume_url?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_applications_job_id_fkey"
+            columns: ["job_id"]
+            isOneToOne: false
+            referencedRelation: "jobs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      jobs: {
+        Row: {
+          city: string
+          created_at: string
+          description: string
+          employment_type: string
+          experience_required: string
+          id: string
+          is_intern: boolean
+          is_remote: boolean
+          job_name: string
+          minimum_qualification: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          city: string
+          created_at?: string
+          description: string
+          employment_type: string
+          experience_required: string
+          id?: string
+          is_intern?: boolean
+          is_remote?: boolean
+          job_name: string
+          minimum_qualification: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          city?: string
+          created_at?: string
+          description?: string
+          employment_type?: string
+          experience_required?: string
+          id?: string
+          is_intern?: boolean
+          is_remote?: boolean
+          job_name?: string
+          minimum_qualification?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       registrations: {
         Row: {
           city: string | null
