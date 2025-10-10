@@ -68,9 +68,9 @@ export default function AdminApplicationsPage() {
         .select("role")
         .eq("user_id", userId)
         .eq("role", "admin")
-        .single();
+        .maybeSingle();
 
-      if (error && error.code !== "PGRST116") {
+      if (error) {
         throw error;
       }
 
