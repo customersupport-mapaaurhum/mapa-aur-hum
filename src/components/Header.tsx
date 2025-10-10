@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import logoImg from "@/assets/logo.jpg";
 
 export const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   const scrollToSection = (id: string) => {
+    if (!isHomePage) {
+      window.location.href = `/#${id}`;
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -54,6 +62,12 @@ export const Header = () => {
           >
             Founder
           </button>
+          <Link 
+            to="/jobs"
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Careers
+          </Link>
         </nav>
       </div>
     </header>
