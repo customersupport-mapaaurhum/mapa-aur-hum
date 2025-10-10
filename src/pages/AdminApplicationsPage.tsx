@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, ExternalLink, Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Loader2, ExternalLink, Download, Mail, Phone, MapPin, Linkedin, CheckCircle, XCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Session } from "@supabase/supabase-js";
 
@@ -21,6 +21,7 @@ interface JobApplication {
   resume_url: string | null;
   linkedin_profile: string | null;
   created_at: string;
+  status: string;
   jobs: {
     job_name: string;
   };
@@ -99,6 +100,7 @@ export default function AdminApplicationsPage() {
             job_name
           )
         `)
+        .neq("status", "rejected")
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -164,6 +166,32 @@ export default function AdminApplicationsPage() {
     } catch (err) {
       console.error("Resume download error:", err);
       toast({ title: "Download failed", description: "Please try again or contact support.", variant: "destructive" });
+    }
+  };
+
+  const handleUpdateStatus = async (applicationId: string, newStatus: string) => {
+    try {
+      const { error } = await supabase
+        .from("job_applications")
+        .update({ status: newStatus })
+        .eq("id", applicationId);
+
+      if (error) throw error;
+
+      toast({
+        title: "Status updated",
+        description: `Application marked as ${newStatus}`,
+      });
+
+      // Refresh applications list
+      fetchApplications();
+    } catch (error) {
+      console.error("Error updating status:", error);
+      toast({
+        title: "Error",
+        description: "Failed to update application status",
+        variant: "destructive",
+      });
     }
   };
 
@@ -292,16 +320,43 @@ export default function AdminApplicationsPage() {
                       </div>
                     )}
                   </div>
-                  {application.resume_url && (
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      onClick={() => handleDownloadResume(application.resume_url!, `${application.name}_resume`)}
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      Download Resume
-                    </Button>
-                  )}
+                  <div className="flex gap-2 mt-4 flex-wrap">
+                    {application.resume_url && (
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => handleDownloadResume(application.resume_url!, `${application.name}_resume`)}
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Download Resume
+                      </Button>
+                    )}
+                    
+                    {application.status === 'pending' && (
+                      <>
+                        <Button
+                          variant="default"
+                          size="sm"
+                          onClick={() => handleUpdateStatus(application.id, 'approved')}
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2" />
+                          Approve
+                        </Button>
+                        <Button
+                          variant="destructive"
+                          size="sm"
+                          onClick={() => handleUpdateStatus(application.id, 'rejected')}
+                        >
+                          <XCircle className="h-4 w-4 mr-2" />
+                          Reject
+                        </Button>
+                      </>
+                    )}
+                    
+                    {application.status === 'approved' && (
+                      <Badge variant="default">Approved</Badge>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
