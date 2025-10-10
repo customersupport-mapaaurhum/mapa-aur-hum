@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 
 interface Job {
   id: string;
+  job_number: number;
   job_name: string;
   description: string;
   employment_type: string;

@@ -5,6 +5,7 @@ import { MapPin, Briefcase, GraduationCap, Clock, Mail } from "lucide-react";
 interface JobCardProps {
   job: {
     id: string;
+    job_number: number;
     job_name: string;
     description: string;
     employment_type: string;
@@ -23,7 +24,7 @@ export const JobCard = ({ job }: JobCardProps) => {
       <CardHeader>
         <div className="flex items-start justify-between gap-4 mb-2">
           <div className="flex-1">
-            <div className="text-sm text-muted-foreground mb-1">Job ID: {job.id}</div>
+            <div className="text-sm text-muted-foreground mb-1">Job ID: #{job.job_number}</div>
             <CardTitle className="text-2xl">{job.job_name}</CardTitle>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -86,12 +87,12 @@ export const JobCard = ({ job }: JobCardProps) => {
               <p className="text-sm text-muted-foreground">
                 Send your resume to{" "}
                 <a 
-                  href={`mailto:customer.support@mapaaurhum.com?subject=Application for Job ID: ${job.id}`}
+                  href={`mailto:customer.support@mapaaurhum.com?subject=Application for Job ID: ${job.job_number}`}
                   className="text-primary hover:underline font-medium"
                 >
                   customer.support@mapaaurhum.com
                 </a>
-                {" "}with the job ID ({job.id}) in the subject line.
+                {" "}with the job ID (#{job.job_number}) in the subject line.
               </p>
             </div>
           </div>

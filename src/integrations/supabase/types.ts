@@ -102,6 +102,7 @@ export type Database = {
           is_intern: boolean
           is_remote: boolean
           job_name: string
+          job_number: number
           minimum_qualification: string
           status: string
           updated_at: string
@@ -116,6 +117,7 @@ export type Database = {
           is_intern?: boolean
           is_remote?: boolean
           job_name: string
+          job_number?: number
           minimum_qualification: string
           status?: string
           updated_at?: string
@@ -130,6 +132,7 @@ export type Database = {
           is_intern?: boolean
           is_remote?: boolean
           job_name?: string
+          job_number?: number
           minimum_qualification?: string
           status?: string
           updated_at?: string
