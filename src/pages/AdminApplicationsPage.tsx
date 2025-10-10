@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Loader2, ExternalLink, Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Session } from "@supabase/supabase-js";
 
@@ -118,6 +118,53 @@ export default function AdminApplicationsPage() {
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     navigate("/");
+  };
+
+  const extractResumePath = (urlOrPath: string) => {
+    try {
+      if (!urlOrPath) return null;
+      // If it's already a relative path (no protocol), return as-is
+      if (!/^https?:\/\//i.test(urlOrPath)) return urlOrPath;
+      const marker = "/resumes/";
+      const idx = urlOrPath.indexOf(marker);
+      if (idx === -1) return null;
+      return urlOrPath.substring(idx + marker.length);
+    } catch {
+      return null;
+    }
+  };
+
+  const handleDownloadResume = async (urlOrPath: string, preferredName: string) => {
+    try {
+      const path = extractResumePath(urlOrPath) ?? urlOrPath;
+      if (!path) {
+        toast({ title: "Download failed", description: "Invalid resume path.", variant: "destructive" });
+        return;
+      }
+
+      // Generate a short-lived signed URL for private bucket
+      const { data, error } = await supabase.storage
+        .from("resumes")
+        .createSignedUrl(path, 60);
+
+      if (error || !data?.signedUrl) {
+        throw error || new Error("Could not create signed URL");
+      }
+
+      // Trigger download
+      const link = document.createElement("a");
+      link.href = data.signedUrl;
+      // Try to preserve original extension if present in path
+      const extMatch = path.split(".").pop();
+      const ext = extMatch ? `.${extMatch}` : "";
+      link.download = `${preferredName}${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (err) {
+      console.error("Resume download error:", err);
+      toast({ title: "Download failed", description: "Please try again or contact support.", variant: "destructive" });
+    }
   };
 
   if (loading) {
@@ -240,7 +287,7 @@ export default function AdminApplicationsPage() {
                           className="hover:underline flex items-center gap-1"
                         >
                           LinkedIn Profile
-                          <Download className="h-3 w-3" />
+                          <ExternalLink className="h-3 w-3" />
                         </a>
                       </div>
                     )}
@@ -249,14 +296,7 @@ export default function AdminApplicationsPage() {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      onClick={() => {
-                        const link = document.createElement('a');
-                        link.href = application.resume_url!;
-                        link.download = `${application.name}_resume.pdf`;
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                      }}
+                      onClick={() => handleDownloadResume(application.resume_url!, `${application.name}_resume`)}
                     >
                       <Download className="h-4 w-4 mr-2" />
                       Download Resume
