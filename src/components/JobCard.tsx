@@ -30,7 +30,7 @@ export const JobCard = ({ job }: JobCardProps) => {
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
               <CardTitle className="text-2xl mb-2">{job.job_name}</CardTitle>
-              <CardDescription className="text-base">
+              <CardDescription className="text-base whitespace-pre-line">
                 {job.description}
               </CardDescription>
             </div>
