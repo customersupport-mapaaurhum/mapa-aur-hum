@@ -32,7 +32,7 @@ const JobsPage = () => {
       const { data, error } = await supabase
         .from("jobs")
         .select("*")
-        .eq("status", "open")
+        .ilike("status", "open")
         .order("created_at", { ascending: false });
 
       if (error) throw error;
