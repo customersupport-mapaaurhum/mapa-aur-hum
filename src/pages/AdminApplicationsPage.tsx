@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, ExternalLink, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Loader2, Download, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Session } from "@supabase/supabase-js";
 
@@ -240,7 +240,7 @@ export default function AdminApplicationsPage() {
                           className="hover:underline flex items-center gap-1"
                         >
                           LinkedIn Profile
-                          <ExternalLink className="h-3 w-3" />
+                          <Download className="h-3 w-3" />
                         </a>
                       </div>
                     )}
@@ -249,10 +249,17 @@ export default function AdminApplicationsPage() {
                     <Button 
                       variant="outline" 
                       size="sm"
-                      onClick={() => window.open(application.resume_url!, '_blank')}
+                      onClick={() => {
+                        const link = document.createElement('a');
+                        link.href = application.resume_url!;
+                        link.download = `${application.name}_resume.pdf`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Resume
+                      <Download className="h-4 w-4 mr-2" />
+                      Download Resume
                     </Button>
                   )}
                 </CardContent>
