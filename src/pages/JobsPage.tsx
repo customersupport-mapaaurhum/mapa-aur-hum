@@ -58,9 +58,6 @@ const JobsPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Join Our Team
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Help us transform childcare for working parents across India
-          </p>
         </div>
 
         {loading ? (
