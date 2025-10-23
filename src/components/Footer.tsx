@@ -11,12 +11,12 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-foreground text-background py-8">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-6">
           {/* Company info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
+          <div className="md:col-span-2">
+            <div className="flex items-center space-x-3 mb-4">
               <img src={logoImg} alt="MaPa-Aur-Hum Technologies logo - trusted childcare solutions for Indian families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" loading="lazy" />
               <div>
                 <h3 className="text-xl font-bold text-background">Mapaaurhum Technologies</h3>
@@ -62,8 +62,8 @@ export const Footer = () => {
 
           {/* Contact details */}
           <div>
-            <h4 className="text-lg font-semibold text-background mb-4">Contact Details</h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold text-background mb-3">Contact Details</h4>
+            <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-background/60" />
                 <span className="text-background/80 text-sm">(91)-7217615508</span>
@@ -88,8 +88,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="border-t border-background/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t border-background/20 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
             <p className="text-background/60 text-sm">
               © {currentYear} Mapaaurhum Technologies OPC Pvt Ltd. All rights reserved.
             </p>
