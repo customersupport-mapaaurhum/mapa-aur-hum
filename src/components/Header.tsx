@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import { Menu } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logoImg from "@/assets/logo.jpg";
 
 export const Header = () => {
@@ -25,62 +32,46 @@ export const Header = () => {
           </div>
         </div>
         
-        <nav className="hidden md:flex flex-col items-end space-y-2">
-          <button 
-            onClick={() => scrollToSection('about')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            About Us
-          </button>
-          <button 
-            onClick={() => scrollToSection('why-mapa')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Why MaPa-Aur-Hum
-          </button>
-          <button 
-            onClick={() => scrollToSection('features')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            How We Help
-          </button>
-          <button 
-            onClick={() => scrollToSection('downloads')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Download
-          </button>
-          <button 
-            onClick={() => scrollToSection('tutorials')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Tutorials
-          </button>
-          <button 
-            onClick={() => scrollToSection('champions')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Champions
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Contact Us
-          </button>
-          <button 
-            onClick={() => scrollToSection('founder')}
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Founder
-          </button>
-          <Link 
-            to="/jobs"
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-          >
-            Careers
-          </Link>
-        </nav>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="hidden md:flex"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48 bg-background z-50">
+            <DropdownMenuItem onClick={() => scrollToSection('about')}>
+              About Us
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('why-mapa')}>
+              Why MaPa-Aur-Hum
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('features')}>
+              How We Help
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('downloads')}>
+              Download
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('tutorials')}>
+              Tutorials
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('champions')}>
+              Champions
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('contact')}>
+              Contact Us
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection('founder')}>
+              Founder
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/jobs">Careers</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
     </header>
   );
