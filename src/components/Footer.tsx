@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Company info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
@@ -59,85 +59,6 @@ export const Footer = () => {
                 <Mail className="h-5 w-5" />
               </Button>
             </div>
-          </div>
-
-          {/* Quick links */}
-          <div>
-            <h4 className="text-lg font-semibold text-background mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('why-mapa')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Why MaPa-Aur-Hum
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('features')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  How We Help
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('downloads')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Download
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('tutorials')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Tutorials
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('champions')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Champions
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Contact Us
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('founder')}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Founder
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => window.location.href = '/jobs'}
-                  className="text-background/80 hover:text-background transition-colors"
-                >
-                  Careers
-                </button>
-              </li>
-            </ul>
           </div>
 
           {/* Contact details */}
