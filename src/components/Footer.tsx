@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
 import logoImg from "@/assets/logo.jpg";
 import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
 import { TermsDialog } from "@/components/TermsDialog";
@@ -41,6 +41,14 @@ export const Footer = () => {
                 className="text-background hover:bg-background/10"
               >
                 <Linkedin className="h-5 w-5" />
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => window.open('https://www.youtube.com/@MaPa-Aur-Hum', '_blank')}
+                className="text-background hover:bg-background/10"
+              >
+                <Youtube className="h-5 w-5" />
               </Button>
               <Button 
                 variant="ghost" 
