@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
 import logoImg from "@/assets/logo.jpg";
 import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
-import { TermsDialog } from "@/components/TermsDialog";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -100,11 +99,6 @@ export const Footer = () => {
                   Privacy Policy
                 </button>
               </PrivacyPolicyDialog>
-              <TermsDialog>
-                <button className="text-background/60 hover:text-background text-sm transition-colors">
-                  Terms of Service
-                </button>
-              </TermsDialog>
             </div>
           </div>
         </div>
