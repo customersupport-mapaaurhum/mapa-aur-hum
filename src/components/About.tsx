@@ -12,7 +12,7 @@ export const About = () => {
             Set clear personalized and structured instructions for your caregivers based on your home needs. 
             Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one trusted app.
             <span className="block mt-2 font-medium text-primary">
-              Available on Google Play Store for pilot parents.{" "}
+              Available on Google Play Store.{" "}
               <button
                 onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
                 className="underline hover:opacity-80 transition-opacity cursor-pointer"

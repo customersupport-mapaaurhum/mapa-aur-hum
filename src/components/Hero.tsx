@@ -33,7 +33,7 @@ export const Hero = () => {
             </p>
             
             <p className="text-lg font-medium text-white mb-8">
-              Available on Google Play Store for pilot parents.{" "}
+              Available on Google Play Store.{" "}
               <button
                 onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
                 className="underline hover:text-white/80 transition-colors cursor-pointer"
