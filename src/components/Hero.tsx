@@ -19,20 +19,20 @@ export const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 container mx-auto px-4 py-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left relative z-20">
             
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
               Building trust for better childcare
             </h1>
             
-            <p className="text-xl text-white/90 mb-4 max-w-xl">
+            <p className="text-xl text-white/90 mb-3 max-w-xl">
               The perfect childcare solution for Indian working parents and home caregivers managing kids under 5 years. Currently available in English for parents and Hindi for caregivers.
             </p>
             
-            <p className="text-lg font-medium text-white mb-8">
+            <p className="text-lg font-medium text-white mb-6">
               Available on Google Play Store.{" "}
               <button
                 onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
