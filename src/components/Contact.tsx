@@ -7,9 +7,9 @@ import { FeedbackDialog } from "@/components/FeedbackDialog";
 export const Contact = () => {
 
   return (
-    <section id="contact" className="py-12 bg-background">
+    <section id="contact" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to join our free pilot program, partner with us or have any questions? We'd love to hear from you.

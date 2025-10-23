@@ -3,9 +3,9 @@ import { Users, Clock, MapPin, Smartphone } from "lucide-react";
 
 export const About = () => {
   return (
-    <section id="about" className="py-12 bg-background">
+    <section id="about" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-foreground mb-4">Trusted Childcare Management App for Indian Working Parents</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             MaPa-Aur-Hum is a specialized childcare platform designed for working parents in India. 

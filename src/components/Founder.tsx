@@ -5,9 +5,9 @@ import founderImg from "@/assets/founder-sumita-linkedin.png";
 
 export const Founder = () => {
   return (
-    <section id="founder" className="py-12 bg-background">
+    <section id="founder" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-foreground mb-4">Meet the Founder</h2>
         </div>
 

@@ -4,9 +4,9 @@ import qrCode from "@/assets/qr-code-download.jpeg";
 
 export const Downloads = () => {
   return (
-    <section id="downloads" className="py-20 bg-muted/50">
+    <section id="downloads" className="py-8 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Download the App
           </h2>
@@ -17,7 +17,7 @@ export const Downloads = () => {
 
         <div className="max-w-4xl mx-auto">
           <Card className="overflow-hidden">
-            <CardContent className="p-8 md:p-12">
+            <CardContent className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div className="flex-shrink-0">
                   <div className="bg-white p-4 rounded-lg shadow-md">

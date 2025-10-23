@@ -140,7 +140,7 @@ export const Features = () => {
         </div>
 
         {/* Features list */}
-        <div className="space-y-6 mb-16">
+        <div className="space-y-6 mb-8">
           {features.map((feature, index) => (
             <Card key={index} className="p-6 border-border/50 hover:shadow-elegant transition-all duration-300">
               <div className="flex items-start space-x-4">
@@ -208,7 +208,7 @@ export const Features = () => {
         </Dialog>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-hero rounded-2xl p-12">
+        <div className="text-center bg-gradient-hero rounded-2xl p-8 mt-8">
           <h3 className="text-3xl font-bold text-white mb-4">
             Ready to Transform Your Childcare Experience?
           </h3>
