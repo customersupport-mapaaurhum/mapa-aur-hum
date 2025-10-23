@@ -52,15 +52,24 @@ export const Hero = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                 >
                   <Smartphone className="h-5 w-5" />
-                  Learn More
+                  Download App
                 </Button>
               </div>
               
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                >
+                  Learn More
+                </Button>
+                
                 <FeedbackDialog>
                   <Button 
                     variant="outline"
