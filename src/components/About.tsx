@@ -11,7 +11,15 @@ export const About = () => {
             MaPa-Aur-Hum is a specialized childcare platform designed for working parents in India. 
             Set clear personalized and structured instructions for your caregivers based on your home needs. 
             Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one trusted app.
-            <span className="block mt-2 font-medium text-primary">Available on Google play Store for pilot parents, Download MaPa-Aur-Hum</span>
+            <span className="block mt-2 font-medium text-primary">
+              Available on Google Play Store for pilot parents.{" "}
+              <button
+                onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
+                className="underline hover:opacity-80 transition-opacity cursor-pointer"
+              >
+                Download MaPa-Aur-Hum
+              </button>
+            </span>
           </p>
         </div>
         
