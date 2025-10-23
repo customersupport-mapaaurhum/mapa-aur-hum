@@ -82,6 +82,22 @@ export const Footer = () => {
               </li>
               <li>
                 <button 
+                  onClick={() => scrollToSection('downloads')}
+                  className="text-background/80 hover:text-background transition-colors"
+                >
+                  Download
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection('tutorials')}
+                  className="text-background/80 hover:text-background transition-colors"
+                >
+                  Tutorials
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => scrollToSection('champions')}
                   className="text-background/80 hover:text-background transition-colors"
                 >
@@ -102,6 +118,14 @@ export const Footer = () => {
                   className="text-background/80 hover:text-background transition-colors"
                 >
                   Founder
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => window.location.href = '/jobs'}
+                  className="text-background/80 hover:text-background transition-colors"
+                >
+                  Careers
                 </button>
               </li>
             </ul>

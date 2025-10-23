@@ -25,7 +25,7 @@ export const Header = () => {
           </div>
         </div>
         
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex flex-col items-end space-y-2">
           <button 
             onClick={() => scrollToSection('about')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
