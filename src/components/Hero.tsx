@@ -33,7 +33,7 @@ export const Hero = () => {
             </p>
             
             <p className="text-lg font-medium text-white mb-8">
-              Available on Google Play Store for pilot parents, Download MaPa-Aur-Hum
+              Available on Google Play Store for pilot parents. Download MaPa-Aur-Hum
             </p>
             
             <div className="flex flex-col gap-4 justify-center lg:justify-start">
