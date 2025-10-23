@@ -45,6 +45,18 @@ export const Header = () => {
             How We Help
           </button>
           <button 
+            onClick={() => scrollToSection('downloads')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Download
+          </button>
+          <button 
+            onClick={() => scrollToSection('tutorials')}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
+            Tutorials
+          </button>
+          <button 
             onClick={() => scrollToSection('champions')}
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
