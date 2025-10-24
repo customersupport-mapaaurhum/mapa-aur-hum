@@ -44,22 +44,22 @@ export const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-48 bg-background z-50">
             <DropdownMenuItem onClick={() => scrollToSection('about')}>
-              About Us
+              About
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('why-mapa')}>
               Why MaPa-Aur-Hum
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('features')}>
-              How We Help
+              Key Features
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('downloads')}>
-              Download
+              Downloads
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('tutorials')}>
               Tutorials
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('champions')}>
-              Champions
+              Contributors
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection('contact')}>
               Contact Us
