@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Users, Clock, MapPin, Smartphone, Camera, Navigation, Languages, Volume2, UserCheck } from "lucide-react";
+import { Users, Clock, MapPin, Smartphone, Camera, Navigation, Languages, Volume2, UserCheck, Heart } from "lucide-react";
 
 export const About = () => {
   return (
@@ -159,6 +159,18 @@ export const About = () => {
                 <h3 className="text-sm font-semibold text-foreground mb-2">Standardized Care</h3>
                 <p className="text-xs text-muted-foreground">
                   Consistent childcare standards and routines maintained even when parents are away.
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-gradient-trust rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Heart className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Express Daily Gratitude</h3>
+                <p className="text-xs text-muted-foreground">
+                  Show appreciation to caregivers with daily gratitude messages to build positive relationships.
                 </p>
               </Card>
             </CarouselItem>
