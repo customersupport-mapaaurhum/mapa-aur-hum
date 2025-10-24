@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JobCard } from "@/components/JobCard";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 interface Job {
   id: string;
@@ -55,6 +56,10 @@ const JobsPage = () => {
       <Header />
       
       <main className="flex-1 container mx-auto px-4 py-12 mt-20">
+        <div className="mb-6">
+          <Link to="/" className="text-primary hover:underline">← Back to Home</Link>
+        </div>
+        
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Join Our Team
