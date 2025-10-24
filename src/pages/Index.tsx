@@ -5,10 +5,10 @@ import { WhyMaPa } from "@/components/WhyMaPa";
 import { Features } from "@/components/Features";
 import { Downloads } from "@/components/Downloads";
 import { AppTutorials } from "@/components/AppTutorials";
-import { Founder } from "@/components/Founder";
 import { Champions } from "@/components/Champions";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -22,8 +22,15 @@ const Index = () => {
         <Downloads />
         <AppTutorials />
         <Champions />
+        <div className="text-center py-6 bg-background">
+          <Link 
+            to="/founder" 
+            className="text-primary hover:underline font-medium text-base"
+          >
+            Meet Our Founder →
+          </Link>
+        </div>
         <Contact />
-        <Founder />
       </main>
       <Footer />
     </div>
