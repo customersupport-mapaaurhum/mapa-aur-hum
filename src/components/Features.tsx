@@ -104,37 +104,10 @@ export const Features = () => {
     <section id="features" className="py-8 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Complete Childcare Management Solution for Working Parents</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Key Features</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             Our innovative babysitter communication features with picture updates and Hindi language support address the real challenges faced by working parents managing home-based childcare in India.
           </p>
-          
-          {/* Three main tenets */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-              <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserCheck className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Build Better Trust</h3>
-              <p className="text-muted-foreground">Transparent communication and real-time updates foster trust between parents and caregivers</p>
-            </Card>
-            
-            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-              <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-4">
-                <Camera className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Parent Closely Even in Physical Absence</h3>
-              <p className="text-muted-foreground">Stay connected with your child's daily activities through picture evidence and real-time updates</p>
-            </Card>
-            
-            <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                <Navigation className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Save Time</h3>
-              <p className="text-muted-foreground">Streamlined communication and standardized routines save valuable time</p>
-            </Card>
-          </div>
         </div>
 
         {/* Features list */}
