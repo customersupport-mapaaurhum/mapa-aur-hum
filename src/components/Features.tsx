@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Languages, Camera, Navigation, Volume2, UserCheck, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
 import { useState } from "react";
 
 // Feature images
@@ -18,39 +18,6 @@ import featureEmergencies from "@/assets/feature-emergencies.png";
 
 export const Features = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  const features = [
-    {
-      icon: Languages,
-      title: "Local Language Support",
-      description: "Communicate with maids and grandparents in their preferred local language for better understanding. Currently available in English and Hindi for the free pilot.",
-      color: "bg-gradient-warm"
-    },
-    {
-      icon: Volume2,
-      title: "Audio & Visual Support", 
-      description: "Audio instructions and visual guides to help users with varying literacy levels navigate easily.",
-      color: "bg-gradient-trust"
-    },
-    {
-      icon: Camera,
-      title: "Picture Evidence",
-      description: "Real-time photo updates and evidence to build trust and keep you informed about your child's activities.",
-      color: "bg-accent"
-    },
-    {
-      icon: Navigation,
-      title: "Easy Navigation",
-      description: "Intuitive interface designed for all family members, from grandparents to professional caregivers.",
-      color: "bg-secondary"
-    },
-    {
-      icon: UserCheck,
-      title: "Standardized Care",
-      description: "Consistent childcare standards and routines maintained even when parents are away.",
-      color: "bg-gradient-warm"
-    }
-  ];
 
   const featureImages = [
     {
@@ -105,33 +72,9 @@ export const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Key Features</h2>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-6">
-            Our innovative babysitter communication features with picture updates and Hindi language support address the real challenges faced by working parents managing home-based childcare in India.
-          </p>
         </div>
 
-        {/* Features Carousel */}
-        <Carousel className="w-full max-w-5xl mx-auto mb-6">
-          <CarouselContent className="-ml-2">
-            {features.map((feature, index) => (
-              <CarouselItem key={index} className="pl-2 md:basis-1/2 lg:basis-1/3">
-                <Card className="p-4 border-border/50 hover:shadow-elegant transition-all duration-300 h-full">
-                  <div className="flex flex-col items-center text-center">
-                    <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
-                      <feature.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <h3 className="text-sm font-semibold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-xs text-muted-foreground">{feature.description}</p>
-                  </div>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
-        </Carousel>
-        
-        {/* Full-width Features Image Carousel */}
+        {/* Features Image Carousel */}
         <div className="w-full">
           <Carousel className="w-full">
             <CarouselContent className="-ml-1">

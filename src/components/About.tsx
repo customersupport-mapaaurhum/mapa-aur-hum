@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Users, Clock, MapPin, Smartphone, Camera, Navigation } from "lucide-react";
+import { Users, Clock, MapPin, Smartphone, Camera, Navigation, Languages, Volume2, UserCheck } from "lucide-react";
 
 export const About = () => {
   return (
@@ -99,6 +99,66 @@ export const About = () => {
                 <h3 className="text-sm font-semibold text-foreground mb-2">Easy to Use</h3>
                 <p className="text-xs text-muted-foreground">
                   Intuitive interface designed for all family members and caregivers
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Languages className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Local Language Support</h3>
+                <p className="text-xs text-muted-foreground">
+                  Communicate with maids and grandparents in their preferred local language for better understanding. Currently available in English and Hindi for the free pilot.
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-gradient-trust rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Volume2 className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Audio & Visual Support</h3>
+                <p className="text-xs text-muted-foreground">
+                  Audio instructions and visual guides to help users with varying literacy levels navigate easily.
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Camera className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Picture Evidence</h3>
+                <p className="text-xs text-muted-foreground">
+                  Real-time photo updates and evidence to build trust and keep you informed about your child's activities.
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Navigation className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Easy Navigation</h3>
+                <p className="text-xs text-muted-foreground">
+                  Intuitive interface designed for all family members, from grandparents to professional caregivers.
+                </p>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
+              <Card className="p-4 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full">
+                <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <UserCheck className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground mb-2">Standardized Care</h3>
+                <p className="text-xs text-muted-foreground">
+                  Consistent childcare standards and routines maintained even when parents are away.
                 </p>
               </Card>
             </CarouselItem>
