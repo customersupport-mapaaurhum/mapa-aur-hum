@@ -64,8 +64,8 @@ export const Header = () => {
             <DropdownMenuItem onClick={() => scrollToSection('contact')}>
               Contact Us
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => scrollToSection('founder')}>
-              Founder
+            <DropdownMenuItem asChild>
+              <Link to="/founder">Founder</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link to="/jobs">Careers</Link>
