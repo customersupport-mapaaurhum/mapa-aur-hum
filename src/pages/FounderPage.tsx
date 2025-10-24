@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import founderSumita from "@/assets/founder-sumita-new.jpg";
+import founderImg from "@/assets/founder-sumita-linkedin.png";
 
 export default function FounderPage() {
   return (
@@ -30,10 +30,12 @@ export default function FounderPage() {
                 <div className="flex items-center justify-center">
                   <div className="relative w-full max-w-sm">
                     <img 
-                      src={founderSumita} 
-                      alt="Sumita Ranjan, Founder of MaPa-Aur-Hum childcare app for Indian working parents"
+                      src={founderImg} 
+                      alt="Sumita Sarkar, Founder of MaPa-Aur-Hum - experienced mother and IT professional creating childcare solutions for Indian families"
                       className="w-full h-auto rounded-lg shadow-elegant object-cover"
                       loading="lazy"
+                      width="256"
+                      height="256"
                     />
                   </div>
                 </div>
@@ -41,11 +43,11 @@ export default function FounderPage() {
                 {/* Founder Details */}
                 <div className="flex flex-col justify-center space-y-4">
                   <div>
-                    <h2 className="text-2xl font-bold text-foreground mb-2">Sumita Ranjan</h2>
+                    <h2 className="text-2xl font-bold text-foreground mb-2">Sumita Sarkar</h2>
                     <p className="text-primary font-medium mb-4">Founder, MaPa-Aur-Hum</p>
                     
                     <a 
-                      href="https://www.linkedin.com/in/sumita-ranjan-0a6a78/" 
+                      href="https://www.linkedin.com/in/sumitasarkar/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary hover:underline mb-4"
@@ -57,15 +59,18 @@ export default function FounderPage() {
 
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
-                      Sumita brings over 20 years of experience in Product Management and Technology Leadership across domains including Telecom, Retail, and Banking.
+                      Sumita is a mum to a joyful 9-year-old son and is based in Gurgaon.
                     </p>
                     
                     <p className="text-muted-foreground leading-relaxed">
-                      As a working mother herself, Sumita experienced firsthand the challenges of managing childcare while maintaining a demanding career. This personal journey inspired her to create MaPa-Aur-Hum - a solution designed to bridge the communication gap between working parents and their childcare providers.
+                      With an experience of two decades in the IT industry with various well-known firms 
+                      and multiple marquee clients, she is now trying to solve a problem closer to her heart.
                     </p>
                     
                     <p className="text-muted-foreground leading-relaxed">
-                      Her vision is to empower Indian working families with tools that build trust, enable better parenting even in physical absence, and create a standardized approach to home-based childcare management.
+                      Like most mums, knowing exactly how her child was being taken care of at home was 
+                      always a nagging concern. Join her in this journey to simplify this problem and 
+                      be a relaxed, joyful parent.
                     </p>
                   </div>
                 </div>
