@@ -103,29 +103,33 @@ export const Features = () => {
   return (
     <section id="features" className="py-8 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Key Features</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Key Features</h2>
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto mb-6">
             Our innovative babysitter communication features with picture updates and Hindi language support address the real challenges faced by working parents managing home-based childcare in India.
           </p>
         </div>
 
-        {/* Features list */}
-        <div className="space-y-6 mb-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="p-6 border-border/50 hover:shadow-elegant transition-all duration-300">
-              <div className="flex items-start space-x-4">
-                <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                  <feature.icon className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+        {/* Features Carousel */}
+        <Carousel className="w-full max-w-5xl mx-auto mb-6">
+          <CarouselContent className="-ml-2">
+            {features.map((feature, index) => (
+              <CarouselItem key={index} className="pl-2 md:basis-1/2 lg:basis-1/3">
+                <Card className="p-4 border-border/50 hover:shadow-elegant transition-all duration-300 h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-3`}>
+                      <feature.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground mb-2">{feature.title}</h3>
+                    <p className="text-xs text-muted-foreground">{feature.description}</p>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-0" />
+          <CarouselNext className="right-0" />
+        </Carousel>
         
         {/* Full-width Features Image Carousel */}
         <div className="w-full">
