@@ -26,30 +26,30 @@ export const About = () => {
           </p>
         </div>
 
-        {/* Three main tenets */}
-        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-6">
-          <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-            <div className="w-12 h-12 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-3">
-              <Users className="h-6 w-6 text-white" />
+        {/* Three main tenets - Prominent Display */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+          <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-background to-muted/20">
+            <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Users className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-base font-bold text-foreground mb-2">Build Better Trust</h3>
-            <p className="text-sm text-muted-foreground">Transparent communication and real-time updates foster trust between parents and caregivers</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Build Better Trust</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">Transparent communication and real-time updates foster trust between parents and caregivers</p>
           </Card>
           
-          <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-            <div className="w-12 h-12 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-3">
-              <Camera className="h-6 w-6 text-white" />
+          <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-background to-muted/20">
+            <div className="w-16 h-16 bg-gradient-warm rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Camera className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-base font-bold text-foreground mb-2">Parent Closely Even in Physical Absence</h3>
-            <p className="text-sm text-muted-foreground">Stay connected with your child's daily activities through picture evidence and real-time updates</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Parent Closely Even in Physical Absence</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">Stay connected with your child's daily activities through picture evidence and real-time updates</p>
           </Card>
           
-          <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50">
-            <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-3">
-              <Navigation className="h-6 w-6 text-white" />
+          <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-background to-muted/20">
+            <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+              <Navigation className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-base font-bold text-foreground mb-2">Save Time</h3>
-            <p className="text-sm text-muted-foreground">Streamlined communication and standardized routines save valuable time</p>
+            <h3 className="text-lg font-bold text-foreground mb-3">Save Time</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">Streamlined communication and standardized routines save valuable time</p>
           </Card>
         </div>
         
