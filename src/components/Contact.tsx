@@ -11,7 +11,7 @@ export const Contact = () => {
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold text-foreground mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to partner with us or have any questions? We'd love to hear from you.
+            Questions? We'd love to hear from you.
           </p>
         </div>
 

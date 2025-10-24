@@ -8,7 +8,7 @@ export const Downloads = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Download the App
+            Downloads
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Scan the QR code below to download MaPa-Aur-Hum from the Google Play Store
@@ -34,17 +34,12 @@ export const Downloads = () => {
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
                     <Smartphone className="h-6 w-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">For Pilot Parents</h3>
+                    <h3 className="text-2xl font-semibold">MaPa-Aur-Hum mobile app</h3>
                   </div>
                   <p className="text-lg mb-4">
-                    Available now on Google Play Store for pilot participants
+                    Available now on Google Play Store
                   </p>
-                  <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
-                    <p className="text-lg font-medium text-primary">
-                      Enjoy 2 weeks of free access to all features
-                    </p>
-                  </div>
-                  <p className="text-sm text-muted-foreground mt-4">
+                  <p className="text-sm text-muted-foreground">
                     Scan the QR code with your phone's camera or download directly from the Google Play Store
                   </p>
                 </div>

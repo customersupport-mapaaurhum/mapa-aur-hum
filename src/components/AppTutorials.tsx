@@ -4,7 +4,7 @@ export const AppTutorials = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            App Tutorials
+            MaPa-Aur-Hum Tutorials
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Learn how to use MaPa-Aur-Hum with our step-by-step video guides
