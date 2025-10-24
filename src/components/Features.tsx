@@ -1,9 +1,7 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { RegistrationDialog } from "@/components/RegistrationDialog";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Languages, Camera, Navigation, Volume2, UserCheck, ArrowRight, ZoomIn } from "lucide-react";
+import { Languages, Camera, Navigation, Volume2, UserCheck, ZoomIn } from "lucide-react";
 import { useState } from "react";
 
 // Feature images
@@ -207,25 +205,6 @@ export const Features = () => {
           </DialogContent>
         </Dialog>
 
-        {/* CTA Section */}
-        <div className="text-center bg-gradient-hero rounded-2xl p-8 mt-8">
-          <h3 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Childcare Experience?
-          </h3>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Join our free pilot program and be among the first families to experience the future of childcare management.
-          </p>
-          <RegistrationDialog>
-            <Button 
-              variant="hero" 
-              size="lg"
-              className="bg-white/20 hover:bg-white/30 border-white/30"
-            >
-              Register for Free Pilot Program
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-          </RegistrationDialog>
-        </div>
       </div>
     </section>
   );

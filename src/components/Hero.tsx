@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { RegistrationDialog } from "@/components/RegistrationDialog";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { ArrowRight, Smartphone } from "lucide-react";
+import { Smartphone } from "lucide-react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
 import logoImg from "@/assets/logo.jpg";
@@ -42,21 +41,7 @@ export const Hero = () => {
               </button>
             </p>
             
-            <div className="flex flex-col gap-4 justify-center lg:justify-start">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <RegistrationDialog>
-                  <Button 
-                    variant="hero" 
-                    size="lg"
-                    className="text-lg"
-                  >
-                    Register for Free Pilot Run
-                    <ArrowRight className="h-5 w-5" />
-                  </Button>
-                </RegistrationDialog>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
                   variant="outline"
                   size="lg"
@@ -77,8 +62,6 @@ export const Hero = () => {
                 </FeedbackDialog>
               </div>
             </div>
-            
-          </div>
           
           {/* Right side - App preview placeholder */}
           <div className="relative flex justify-center lg:justify-end z-10">
