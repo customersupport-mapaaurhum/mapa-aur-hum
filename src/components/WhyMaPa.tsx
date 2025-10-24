@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { CheckCircle, Users, Clock, AlertTriangle, MessageSquare, HeartHandshake, Calendar, UserX, RotateCcw, Baby } from "lucide-react";
 
 // WhyMaPa component
@@ -70,27 +71,31 @@ export const WhyMaPa = () => {
     <section id="why-mapa" className="py-8 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Why MaPa-Aur-Hum</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Why MaPa-Aur-Hum</h2>
+          <p className="text-base text-muted-foreground max-w-3xl mx-auto">
             If any of these situations sound familiar, MaPa-Aur-Hum is designed for you
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {problems.map((problem, index) => (
-            <Card key={index} className="p-6 hover:shadow-elegant transition-all duration-300 border-border/50 group">
-              <div className="flex items-start space-x-4">
-                <div className={`w-12 h-12 ${problem.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                  <problem.icon className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">{problem.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent className="-ml-2">
+            {problems.map((problem, index) => (
+              <CarouselItem key={index} className="pl-2 md:basis-1/2 lg:basis-1/3">
+                <Card className="p-4 hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+                  <div className="flex flex-col items-center text-center">
+                    <div className={`w-10 h-10 ${problem.color} rounded-lg flex items-center justify-center mb-3`}>
+                      <problem.icon className="h-5 w-5 text-white" />
+                    </div>
+                    <h3 className="text-sm font-semibold text-foreground mb-2">{problem.title}</h3>
+                    <p className="text-xs text-muted-foreground">{problem.description}</p>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-0" />
+          <CarouselNext className="right-0" />
+        </Carousel>
       </div>
     </section>
   );
