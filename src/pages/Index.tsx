@@ -22,14 +22,14 @@ const Index = () => {
         <Downloads />
         <AppTutorials />
         <Champions />
-        <div className="text-center py-6 bg-background">
+        {/* <div className="text-center py-6 bg-background">
           <Link 
             to="/founder" 
             className="text-primary hover:underline font-medium text-base"
           >
             Meet Our Founder →
           </Link>
-        </div>
+        </div> */}
         <Contact />
       </main>
       <Footer />
