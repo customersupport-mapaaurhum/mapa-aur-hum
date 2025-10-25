@@ -48,15 +48,15 @@ export const Champions = () => {
 
         {/* Contributors Carousel */}
         <Carousel className="w-full mx-auto">
-          <CarouselContent className="-ml-2">
+          <CarouselContent className="-ml-1">
             {contributors.map((contributor, index) => (
-              <CarouselItem key={index} className="pl-2 md:basis-1/2">
+              <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
                 <div className="group relative h-full">
                   {/* Decorative element */}
                   <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-primary-glow rounded-full"></div>
                   
                   {/* Content design */}
-                  <div className="pl-8 py-4 bg-card/50 rounded-lg border-l-4 border-primary/20 hover:border-primary/40 transition-colors h-full">
+                  <div className="pl-8 py-4 bg-card/50 rounded-lg border-l-4 border-primary/20 hover:border-primary/40 transition-colors h-full min-h-[220px]">
                     {/* Content */}
                     <div className="space-y-2">
                       <p className="text-muted-foreground text-xs leading-relaxed">

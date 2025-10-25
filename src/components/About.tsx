@@ -54,9 +54,9 @@ export const About = () => {
         </div>
         
         <Carousel className="w-full mx-auto">
-          <CarouselContent className="-ml-2">
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full">
+          <CarouselContent className="-ml-1">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Users className="h-5 w-5 text-white" />
                 </div>
@@ -67,8 +67,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
             
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-trust rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Clock className="h-5 w-5 text-white" />
                 </div>
@@ -79,8 +79,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
             
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mx-auto mb-3">
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
@@ -91,8 +91,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
             
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Smartphone className="h-5 w-5 text-white" />
                 </div>
@@ -103,8 +103,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Languages className="h-5 w-5 text-white" />
                 </div>
@@ -115,8 +115,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-trust rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Volume2 className="h-5 w-5 text-white" />
                 </div>
@@ -127,8 +127,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Camera className="h-5 w-5 text-white" />
                 </div>
@@ -139,8 +139,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Navigation className="h-5 w-5 text-white" />
                 </div>
@@ -151,8 +151,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-trust transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-warm rounded-lg flex items-center justify-center mx-auto mb-3">
                   <UserCheck className="h-5 w-5 text-white" />
                 </div>
@@ -163,8 +163,8 @@ export const About = () => {
               </Card>
             </CarouselItem>
 
-            <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
-              <Card className="p-4 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+            <CarouselItem className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <Card className="p-3 text-center hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                 <div className="w-10 h-10 bg-gradient-trust rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Heart className="h-5 w-5 text-white" />
                 </div>

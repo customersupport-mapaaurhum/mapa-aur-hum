@@ -78,10 +78,10 @@ export const WhyMaPa = () => {
         </div>
         
         <Carousel className="w-full mx-auto">
-          <CarouselContent className="-ml-2">
+          <CarouselContent className="-ml-1">
             {problems.map((problem, index) => (
-              <CarouselItem key={index} className="pl-2 md:basis-1/2 lg:basis-1/3">
-                <Card className="p-4 hover:shadow-elegant transition-all duration-300 border-border/50 h-full">
+              <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
+                <Card className="p-3 hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                   <div className="flex flex-col items-center text-center">
                     <div className={`w-10 h-10 ${problem.color} rounded-lg flex items-center justify-center mb-3`}>
                       <problem.icon className="h-5 w-5 text-white" />

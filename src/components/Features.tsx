@@ -79,16 +79,16 @@ export const Features = () => {
           <Carousel className="w-full">
             <CarouselContent className="-ml-1">
               {featureImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
                   <Card className="border-0 shadow-trust">
                     <div className="relative group cursor-pointer" onClick={() => setSelectedImage(image.src)}>
                       <img 
                         src={image.src} 
                         alt={image.alt}
-                        className="w-full min-h-[600px] h-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105"
+                        className="w-full min-h-[400px] h-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105"
                         loading="lazy"
-                        width="400"
-                        height="600"
+                        width="300"
+                        height="400"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
