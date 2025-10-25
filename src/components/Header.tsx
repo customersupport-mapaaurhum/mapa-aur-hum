@@ -20,7 +20,17 @@ export const Header = () => {
       window.location.href = `/#${id}`;
       return;
     }
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80; // Fixed header height + padding
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -38,8 +48,8 @@ export const Header = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Why MaPa-Aur-Hum</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 bg-background">
+              <NavigationMenuContent className="left-0">
+                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
                   <li>
                     <NavigationMenuLink
                       className={cn(navigationMenuTriggerStyle(), "w-full cursor-pointer justify-start")}
@@ -62,8 +72,8 @@ export const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 bg-background">
+              <NavigationMenuContent className="left-0">
+                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
                   <li>
                     <NavigationMenuLink
                       className={cn(navigationMenuTriggerStyle(), "w-full cursor-pointer justify-start")}
@@ -86,8 +96,8 @@ export const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-3 p-4 bg-background">
+              <NavigationMenuContent className="left-0">
+                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
                   <li>
                     <NavigationMenuLink asChild>
                       <Link
