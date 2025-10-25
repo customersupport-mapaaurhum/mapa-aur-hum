@@ -48,8 +48,8 @@ export const Header = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Why MaPa-Aur-Hum</NavigationMenuTrigger>
-              <NavigationMenuContent className="left-0">
-                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
+              <NavigationMenuContent>
+                <ul className="w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg flex flex-col">
                   <li>
                     <NavigationMenuLink
                       className={cn(navigationMenuTriggerStyle(), "w-full cursor-pointer justify-start")}
@@ -72,8 +72,8 @@ export const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-              <NavigationMenuContent className="left-0">
-                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
+              <NavigationMenuContent>
+                <ul className="w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg flex flex-col">
                   <li>
                     <NavigationMenuLink
                       className={cn(navigationMenuTriggerStyle(), "w-full cursor-pointer justify-start")}
@@ -96,8 +96,8 @@ export const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-              <NavigationMenuContent className="left-0">
-                <ul className="grid w-[200px] gap-3 p-4 bg-background border border-border rounded-md shadow-lg">
+              <NavigationMenuContent>
+                <ul className="w-[200px] gap-1 p-2 bg-background border border-border rounded-md shadow-lg flex flex-col">
                   <li>
                     <NavigationMenuLink asChild>
                       <Link
