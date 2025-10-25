@@ -77,7 +77,7 @@ export const WhyMaPa = () => {
           </p>
         </div>
         
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel className="w-full mx-auto">
           <CarouselContent className="-ml-2">
             {problems.map((problem, index) => (
               <CarouselItem key={index} className="pl-2 md:basis-1/2 lg:basis-1/3">

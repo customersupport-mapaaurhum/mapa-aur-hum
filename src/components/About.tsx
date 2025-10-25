@@ -53,7 +53,7 @@ export const About = () => {
           </Card>
         </div>
         
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel className="w-full mx-auto">
           <CarouselContent className="-ml-2">
             <CarouselItem className="pl-2 md:basis-1/2 lg:basis-1/3">
               <Card className="p-4 text-center hover:shadow-warm transition-all duration-300 border-border/50 h-full">

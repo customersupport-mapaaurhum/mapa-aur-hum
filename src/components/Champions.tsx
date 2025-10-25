@@ -47,7 +47,7 @@ export const Champions = () => {
         </div>
 
         {/* Contributors Carousel */}
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <Carousel className="w-full mx-auto">
           <CarouselContent className="-ml-2">
             {contributors.map((contributor, index) => (
               <CarouselItem key={index} className="pl-2 md:basis-1/2">
