@@ -8,6 +8,19 @@ export const Header = () => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menu: string) => {
+    if (hoverTimeout) clearTimeout(hoverTimeout);
+    setActiveMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200);
+    setHoverTimeout(timeout);
+  };
   
   const scrollToSection = (id: string) => {
     if (!isHomePage) {
@@ -40,22 +53,20 @@ export const Header = () => {
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => handleMouseEnter('why')}
+            onMouseLeave={handleMouseLeave}
+          >
             <Button
               variant="ghost"
               className="font-medium"
-              onMouseEnter={() => setActiveMenu('why')}
-              onMouseLeave={() => setActiveMenu(null)}
             >
               Why MaPa-Aur-Hum
               <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
             {activeMenu === 'why' && (
-              <div 
-                className="absolute top-full left-0 mt-1 flex gap-4 bg-background border border-border rounded-md shadow-lg p-2 whitespace-nowrap"
-                onMouseEnter={() => setActiveMenu('why')}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
+              <div className="absolute top-full left-0 mt-0 flex gap-2 bg-background border border-border rounded-md shadow-lg p-3 whitespace-nowrap">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -74,22 +85,20 @@ export const Header = () => {
             )}
           </div>
 
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => handleMouseEnter('resources')}
+            onMouseLeave={handleMouseLeave}
+          >
             <Button
               variant="ghost"
               className="font-medium"
-              onMouseEnter={() => setActiveMenu('resources')}
-              onMouseLeave={() => setActiveMenu(null)}
             >
               Resources
               <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
             {activeMenu === 'resources' && (
-              <div 
-                className="absolute top-full left-0 mt-1 flex gap-4 bg-background border border-border rounded-md shadow-lg p-2 whitespace-nowrap"
-                onMouseEnter={() => setActiveMenu('resources')}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
+              <div className="absolute top-full left-0 mt-0 flex gap-2 bg-background border border-border rounded-md shadow-lg p-3 whitespace-nowrap">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -108,22 +117,20 @@ export const Header = () => {
             )}
           </div>
 
-          <div className="relative">
+          <div 
+            className="relative"
+            onMouseEnter={() => handleMouseEnter('about')}
+            onMouseLeave={handleMouseLeave}
+          >
             <Button
               variant="ghost"
               className="font-medium"
-              onMouseEnter={() => setActiveMenu('about')}
-              onMouseLeave={() => setActiveMenu(null)}
             >
               About Us
               <ChevronDown className="ml-1 h-4 w-4" />
             </Button>
             {activeMenu === 'about' && (
-              <div 
-                className="absolute top-full left-0 mt-1 flex gap-4 bg-background border border-border rounded-md shadow-lg p-2 whitespace-nowrap"
-                onMouseEnter={() => setActiveMenu('about')}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
+              <div className="absolute top-full left-0 mt-0 flex gap-2 bg-background border border-border rounded-md shadow-lg p-3 whitespace-nowrap">
                 <Button
                   variant="ghost"
                   size="sm"
