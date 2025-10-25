@@ -16,7 +16,7 @@ export const Header = () => {
     }
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 120; // Fixed header height + padding for new layout
+      const headerOffset = 80; // Fixed header height + padding
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -30,18 +30,16 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="container mx-auto px-4">
-        <div className="py-4 flex items-center justify-between border-b border-border/50">
-          <Link to="/" className="flex items-center space-x-3">
-            <img src={logoImg} alt="MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" />
-            <div>
-              <h2 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h2>
-              <p className="text-xs text-muted-foreground">Building trust for better childcare</p>
-            </div>
-          </Link>
-        </div>
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-3">
+          <img src={logoImg} alt="MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" />
+          <div>
+            <h2 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h2>
+            <p className="text-xs text-muted-foreground">Building trust for better childcare</p>
+          </div>
+        </Link>
         
-        <nav className="hidden md:flex items-center justify-center gap-8 py-3">
+        <nav className="hidden md:flex items-center gap-6">
           <div className="relative">
             <Button
               variant="ghost"
