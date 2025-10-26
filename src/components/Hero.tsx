@@ -41,15 +41,10 @@ export const Hero = () => {
               </button>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                >
-                  Learn More
-                </Button>
+            <div className="flex flex-col gap-4 justify-center lg:justify-start">
+                <p className="text-white/90 text-base">
+                  Want more features? Share your thoughts with us.
+                </p>
                 
                 <FeedbackDialog>
                   <Button 
