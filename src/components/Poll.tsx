@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Poll = () => {
   const [selectedOption, setSelectedOption] = useState<string>("");
@@ -15,19 +16,31 @@ export const Poll = () => {
     { id: "languages", label: "More languages" },
     { id: "coach-suggestions", label: "Suggestions based on parent coaches for caregivers" },
     { id: "activities", label: "Play / Activities suggestions" },
+    { id: "age-appropriate", label: "Age-appropriate suggestions by the app" },
+    { id: "general-fixes", label: "General fixes" },
   ];
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!selectedOption) {
       toast.error("Please select an option");
       return;
     }
     
-    setHasVoted(true);
-    toast.success("Thank you for your feedback!");
-    
-    // Here you can add logic to send the poll result to your backend
-    console.log("Poll submission:", selectedOption);
+    try {
+      const { error } = await supabase
+        .from("poll_responses")
+        .insert({
+          selected_option: selectedOption,
+        });
+
+      if (error) throw error;
+
+      setHasVoted(true);
+      toast.success("Thank you for your feedback!");
+    } catch (error) {
+      console.error("Error submitting poll:", error);
+      toast.error("Failed to submit your vote. Please try again.");
+    }
   };
 
   return (
