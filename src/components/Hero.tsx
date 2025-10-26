@@ -31,15 +31,20 @@ export const Hero = () => {
               The perfect childcare solution for Indian working parents and home caregivers managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers.
             </p>
             
-            <p className="text-lg font-medium text-white mb-6">
-              Available on Google Play Store.{" "}
-              <button
+            <div className="mb-6">
+              <p className="text-lg font-medium text-white mb-3">
+                Available on Google Play Store
+              </p>
+              <Button
                 onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
-                className="underline hover:text-white/80 transition-colors cursor-pointer"
+                variant="hero"
+                size="lg"
+                className="text-lg"
               >
+                <Smartphone className="w-5 h-5" />
                 Download MaPa-Aur-Hum
-              </button>
-            </p>
+              </Button>
+            </div>
             
             <div className="flex flex-col gap-4 justify-center lg:justify-start">
                 <p className="text-white/90 text-base">
