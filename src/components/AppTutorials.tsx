@@ -18,7 +18,7 @@ export const AppTutorials = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/kCXD83KhzRQ"
+                src="https://www.youtube.com/embed/Knc1ifxoyiQ"
                 title="App Tutorial for Parents"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -41,7 +41,7 @@ export const AppTutorials = () => {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/LozOGsU1iNg"
+                src="https://www.youtube.com/embed/i8XyMDcN6n0"
                 title="App Tutorial for Caregivers"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
