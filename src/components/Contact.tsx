@@ -17,7 +17,7 @@ export const Contact = () => {
               </a>
             </div>
             <Button asChild variant="default" size="default">
-              <a href="https://calendy.com/mapa-aur-hum" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://calendly.com/mapa-aur-hum" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 Book a Call
               </a>
