@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { Smartphone } from "lucide-react";
+import { Smartphone, PlayCircle } from "lucide-react";
 import appPreview1 from "@/assets/app-preview-1.jpg";
 import heroBackground from "@/assets/hero-background.jpg";
 import logoImg from "@/assets/logo.jpg";
@@ -35,15 +35,26 @@ export const Hero = () => {
               <p className="text-lg font-medium text-white mb-3">
                 Available on Google Play Store
               </p>
-              <Button
-                onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="hero"
-                size="lg"
-                className="text-lg"
-              >
-                <Smartphone className="w-5 h-5" />
-                Download MaPa-Aur-Hum
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="hero"
+                  size="lg"
+                  className="text-lg"
+                >
+                  <Smartphone className="w-5 h-5" />
+                  Download MaPa-Aur-Hum
+                </Button>
+                <Button
+                  onClick={() => document.getElementById('tutorials')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="outline"
+                  size="lg"
+                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                >
+                  <PlayCircle className="w-5 h-5" />
+                  Watch Tutorials
+                </Button>
+              </div>
             </div>
             
             <div className="flex flex-col gap-4 justify-center lg:justify-start">

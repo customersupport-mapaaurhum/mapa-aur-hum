@@ -2,7 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logoImg from "@/assets/logo.jpg";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = () => {
   const location = useLocation();
@@ -164,6 +165,105 @@ export const Header = () => {
             Contact Us
           </Button>
         </nav>
+
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <nav className="flex flex-col gap-4 mt-8">
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">Why MaPa-Aur-Hum</p>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('why-mapa');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Why MaPa-Aur-Hum
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('features');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Key Features
+                </Button>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('downloads');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Downloads
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('tutorials');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Video Tutorials
+                </Button>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/founder">Founder</Link>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/jobs">Careers</Link>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('champions');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Contributors
+                </Button>
+              </div>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                onClick={() => {
+                  scrollToSection('contact');
+                  document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                }}
+              >
+                Contact Us
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
