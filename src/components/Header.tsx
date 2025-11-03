@@ -149,9 +149,9 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => scrollToSection('champions')}
+                  asChild
                 >
-                  Contributors
+                  <Link to="/contributors">Contributors</Link>
                 </Button>
               </div>
             )}
@@ -160,9 +160,9 @@ export const Header = () => {
           <Button
             variant="ghost"
             className="font-medium"
-            onClick={() => scrollToSection('contact')}
+            asChild
           >
-            Contact Us
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </nav>
 
@@ -242,24 +242,18 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   className="justify-start"
-                  onClick={() => {
-                    scrollToSection('champions');
-                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                  }}
+                  asChild
                 >
-                  Contributors
+                  <Link to="/contributors">Contributors</Link>
                 </Button>
               </div>
 
               <Button
                 variant="ghost"
                 className="justify-start"
-                onClick={() => {
-                  scrollToSection('contact');
-                  document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                }}
+                asChild
               >
-                Contact Us
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </nav>
           </SheetContent>

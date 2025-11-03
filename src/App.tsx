@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import WhyMaPaPage from "./pages/WhyMaPaPage";
 import JobsPage from "./pages/JobsPage";
 import FounderPage from "./pages/FounderPage";
+import ContributorsPage from "./pages/ContributorsPage";
+import ContactUsPage from "./pages/ContactUsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +23,8 @@ const App = () => (
         <Route path="/why-mapa" element={<WhyMaPaPage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/founder" element={<FounderPage />} />
+        <Route path="/contributors" element={<ContributorsPage />} />
+        <Route path="/contact" element={<ContactUsPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
