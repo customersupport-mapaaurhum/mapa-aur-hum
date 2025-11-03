@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -20,6 +21,25 @@ export const Header = () => {
       setActiveMenu(null);
     }, 200);
     setHoverTimeout(timeout);
+  };
+  
+  const scrollToSection = (id: string) => {
+    if (!isHomePage) {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80; // Fixed header height + padding
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setActiveMenu(null);
   };
 
   return (
@@ -51,16 +71,16 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  asChild
+                  onClick={() => scrollToSection('why-mapa')}
                 >
-                  <Link to="/why-mapa">Why MaPa-Aur-Hum</Link>
+                  Why MaPa-Aur-Hum
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  asChild
+                  onClick={() => scrollToSection('features')}
                 >
-                  <Link to="/features">Key Features</Link>
+                  Key Features
                 </Button>
               </div>
             )}
@@ -83,16 +103,16 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="sm"
-                  asChild
+                  onClick={() => scrollToSection('downloads')}
                 >
-                  <Link to="/downloads">Downloads</Link>
+                  Downloads
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
-                  asChild
+                  onClick={() => scrollToSection('tutorials')}
                 >
-                  <Link to="/tutorials">Video Tutorials</Link>
+                  Video Tutorials
                 </Button>
               </div>
             )}
@@ -117,13 +137,6 @@ export const Header = () => {
                   size="sm"
                   asChild
                 >
-                  <Link to="/about">About</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
                   <Link to="/founder">Founder</Link>
                 </Button>
                 <Button
@@ -133,6 +146,13 @@ export const Header = () => {
                 >
                   <Link to="/jobs">Careers</Link>
                 </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => scrollToSection('champions')}
+                >
+                  Contributors
+                </Button>
               </div>
             )}
           </div>
@@ -140,9 +160,9 @@ export const Header = () => {
           <Button
             variant="ghost"
             className="font-medium"
-            asChild
+            onClick={() => scrollToSection('contact')}
           >
-            <Link to="/contact">Contact Us</Link>
+            Contact Us
           </Button>
         </nav>
 
@@ -160,16 +180,22 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   className="justify-start"
-                  asChild
+                  onClick={() => {
+                    scrollToSection('why-mapa');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
                 >
-                  <Link to="/why-mapa">Why MaPa-Aur-Hum</Link>
+                  Why MaPa-Aur-Hum
                 </Button>
                 <Button
                   variant="ghost"
                   className="justify-start"
-                  asChild
+                  onClick={() => {
+                    scrollToSection('features');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
                 >
-                  <Link to="/features">Key Features</Link>
+                  Key Features
                 </Button>
               </div>
 
@@ -178,28 +204,27 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   className="justify-start"
-                  asChild
+                  onClick={() => {
+                    scrollToSection('downloads');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
                 >
-                  <Link to="/downloads">Downloads</Link>
+                  Downloads
                 </Button>
                 <Button
                   variant="ghost"
                   className="justify-start"
-                  asChild
+                  onClick={() => {
+                    scrollToSection('tutorials');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
                 >
-                  <Link to="/tutorials">Video Tutorials</Link>
+                  Video Tutorials
                 </Button>
               </div>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/about">About</Link>
-                </Button>
                 <Button
                   variant="ghost"
                   className="justify-start"
@@ -214,14 +239,27 @@ export const Header = () => {
                 >
                   <Link to="/jobs">Careers</Link>
                 </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('champions');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Contributors
+                </Button>
               </div>
 
               <Button
                 variant="ghost"
                 className="justify-start"
-                asChild
+                onClick={() => {
+                  scrollToSection('contact');
+                  document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                }}
               >
-                <Link to="/contact">Contact Us</Link>
+                Contact Us
               </Button>
             </nav>
           </SheetContent>

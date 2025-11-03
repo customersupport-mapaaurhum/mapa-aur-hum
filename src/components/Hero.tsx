@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Smartphone, PlayCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 import appPreview1 from "@/assets/Parenting-app-1.jpg";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
@@ -38,26 +37,22 @@ export const Hero = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
-                  asChild
+                  onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
                   variant="hero"
                   size="lg"
                   className="text-lg"
                 >
-                  <Link to="/downloads">
-                    <Smartphone className="w-5 h-5" />
-                    Download MaPa-Aur-Hum
-                  </Link>
+                  <Smartphone className="w-5 h-5" />
+                  Download MaPa-Aur-Hum
                 </Button>
                 <Button
-                  asChild
+                  onClick={() => document.getElementById('tutorials')?.scrollIntoView({ behavior: 'smooth' })}
                   variant="outline"
                   size="lg"
                   className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                 >
-                  <Link to="/tutorials">
-                    <PlayCircle className="w-5 h-5" />
-                    Watch Tutorials
-                  </Link>
+                  <PlayCircle className="w-5 h-5" />
+                  Watch Tutorials
                 </Button>
               </div>
             </div>
