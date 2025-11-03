@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
-import logoImg from "@/assets/logo.jpg";
+import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
 
 export const Footer = () => {

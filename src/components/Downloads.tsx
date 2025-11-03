@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Smartphone } from "lucide-react";
-import qrCode from "@/assets/qr-code-download.jpeg";
+import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 export const Downloads = () => {
   return (

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import founderImg from "@/assets/founder-sumita-linkedin.png";
+import founderImg from "@/assets/mapa-aur-hum-sumita-linkedin.png";
 
 export default function FounderPage() {
   return (

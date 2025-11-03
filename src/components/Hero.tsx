@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Smartphone, PlayCircle } from "lucide-react";
-import appPreview1 from "@/assets/app-preview-1.jpg";
-import heroBackground from "@/assets/hero-background.jpg";
-import logoImg from "@/assets/logo.jpg";
+import appPreview1 from "@/assets/Parenting-app-1.jpg";
+import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
+import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 
 export const Hero = () => {
 

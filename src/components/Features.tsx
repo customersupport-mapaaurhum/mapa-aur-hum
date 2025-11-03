@@ -5,16 +5,16 @@ import { ZoomIn } from "lucide-react";
 import { useState } from "react";
 
 // Feature images
-import featureRoutine from "@/assets/feature-routine.png";
-import featureHealth from "@/assets/feature-health.png";
-import featureScreentime from "@/assets/feature-screentime.png";
-import featureFood from "@/assets/feature-food.png";
-import featureVideo from "@/assets/feature-video.png";
-import featureStreamlined from "@/assets/feature-streamlined.png";
-import featureReadiness from "@/assets/feature-readiness.png";
-import featureInsights from "@/assets/feature-insights.png";
-import featureFoodplans from "@/assets/feature-foodplans.png";
-import featureEmergencies from "@/assets/feature-emergencies.png";
+import featureRoutine from "@/assets/mapa-aur-hum-routine.png";
+import featureHealth from "@/assets/mapa-aur-hum-health.png";
+import featureScreentime from "@/assets/mapa-aur-hum-screentime.png";
+import featureFood from "@/assets/mapa-aur-hum-food.png";
+import featureVideo from "@/assets/mapa-aur-hum-video.png";
+import featureStreamlined from "@/assets/mapa-aur-hum-streamlined.png";
+import featureReadiness from "@/assets/mapa-aur-hum-readiness.png";
+import featureInsights from "@/assets/mapa-aur-hum-insights.png";
+import featureFoodplans from "@/assets/mapa-aur-hum-foodplans.png";
+import featureEmergencies from "@/assets/mapa-aur-hum-emergencies.png";
 
 export const Features = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
