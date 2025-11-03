@@ -1,15 +1,15 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { WhyMaPa } from "@/components/WhyMaPa";
+import { AppTutorials } from "@/components/AppTutorials";
 import { Helmet } from "react-helmet";
 
-const WhyMaPaPage = () => {
+export default function TutorialsPage() {
   return (
     <>
       <Helmet>
-        <title>Why MaPa-Aur-Hum | Solving Childcare Challenges for Indian Parents</title>
-        <meta name="description" content="Discover why Indian working parents choose MaPa-Aur-Hum to solve childcare challenges, build trust with caregivers, and ensure child safety." />
-        <meta name="keywords" content="why choose MaPa-Aur-Hum, childcare challenges, parenting problems India, working parent solutions, caregiver trust" />
+        <title>Video Tutorials | Learn How to Use MaPa-Aur-Hum Childcare App</title>
+        <meta name="description" content="Watch step-by-step video tutorials to master MaPa-Aur-Hum childcare app features. Learn routine management, health tracking, and communication tools." />
+        <meta name="keywords" content="childcare app tutorials, MaPa-Aur-Hum guide, parenting app how to, video tutorials, app training" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
@@ -17,19 +17,17 @@ const WhyMaPaPage = () => {
           <section className="py-12 bg-gradient-to-b from-primary/5 to-background">
             <div className="container mx-auto px-4">
               <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
-                Why MaPa-Aur-Hum
+                Video Tutorials
               </h1>
               <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto mb-8">
-                Understanding the challenges faced by urban working parents and how we solve them.
+                Learn how to use MaPa-Aur-Hum effectively with our comprehensive video guides for parents and caregivers.
               </p>
             </div>
           </section>
-          <WhyMaPa />
+          <AppTutorials />
         </main>
         <Footer />
       </div>
     </>
   );
-};
-
-export default WhyMaPaPage;
+}

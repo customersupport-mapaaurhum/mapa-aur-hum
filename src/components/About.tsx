@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Users, Clock, MapPin, Smartphone, Camera, Navigation, Languages, Volume2, UserCheck, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
@@ -17,12 +18,12 @@ export const About = () => {
           </p>
           <p className="text-sm font-medium text-primary">
             Available on Google Play Store.{" "}
-            <button
-              onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
-              className="underline hover:opacity-80 transition-opacity cursor-pointer"
+            <Link
+              to="/downloads"
+              className="underline hover:opacity-80 transition-opacity"
             >
               Download MaPa-Aur-Hum
-            </button>
+            </Link>
           </p>
         </div>
 

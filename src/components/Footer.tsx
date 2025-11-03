@@ -6,10 +6,6 @@ import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-foreground text-background py-8">
       <div className="container mx-auto px-4">
