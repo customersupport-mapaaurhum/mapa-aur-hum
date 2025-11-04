@@ -6,7 +6,7 @@ import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 export const Hero = () => {
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,7 +16,7 @@ export const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-8">
+      <div className="relative z-10 container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Content */}
           <div className="text-center lg:text-left relative z-20">
