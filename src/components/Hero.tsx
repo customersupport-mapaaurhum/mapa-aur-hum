@@ -74,7 +74,7 @@ export const Hero = () => {
           
           {/* Right side - Video */}
           <div className="relative flex justify-center lg:justify-end z-10">
-            <div className="relative w-full max-w-md">
+            <div className="relative w-full max-w-xs">
               <iframe
                 className="w-full aspect-[9/16] rounded-2xl shadow-trust"
                 src="https://www.youtube.com/embed/NzepriK04JI"
