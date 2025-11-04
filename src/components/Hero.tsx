@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Smartphone, PlayCircle } from "lucide-react";
-import appPreview1 from "@/assets/Parenting-app-1.jpg";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
-import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 
 export const Hero = () => {
 
@@ -74,15 +72,15 @@ export const Hero = () => {
               </div>
             </div>
           
-          {/* Right side - App preview placeholder */}
+          {/* Right side - Video */}
           <div className="relative flex justify-center lg:justify-end z-10">
-            <div className="relative">
-              <img 
-                src={appPreview1} 
-                alt="MaPa-Aur-Hum mobile app interface showing childcare management features for Indian parents"
-                className="w-80 h-auto rounded-2xl shadow-trust"
-                width="320"
-                height="auto"
+            <div className="relative w-full max-w-md">
+              <iframe
+                className="w-full aspect-[9/16] rounded-2xl shadow-trust"
+                src="https://www.youtube.com/embed/NzepriK04JI"
+                title="MaPa-Aur-Hum App Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
             </div>
           </div>
