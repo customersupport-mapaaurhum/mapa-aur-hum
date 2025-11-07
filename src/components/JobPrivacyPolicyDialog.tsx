@@ -95,8 +95,8 @@ export const JobPrivacyPolicyDialog = ({ children }: JobPrivacyPolicyDialogProps
               </ul>
               <p className="mt-2">
                 To exercise these rights, please email us at{" "}
-                <a href="mailto:customer.support@mapa-aur-hum.com" className="text-primary hover:underline">
-                  customer.support@mapa-aur-hum.com
+                <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
+                  customer.support@mapaaurhum.com
                 </a>
               </p>
             </section>
@@ -118,8 +118,8 @@ export const JobPrivacyPolicyDialog = ({ children }: JobPrivacyPolicyDialogProps
               <p>If you have any questions about this policy or your data, please contact:</p>
               <p className="mt-2">
                 Email:{" "}
-                <a href="mailto:customer.support@mapa-aur-hum.com" className="text-primary hover:underline">
-                  customer.support@mapa-aur-hum.com
+                <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
+                  customer.support@mapaaurhum.com
                 </a>
               </p>
             </section>
