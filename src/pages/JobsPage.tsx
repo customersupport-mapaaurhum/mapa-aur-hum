@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { JobCard } from "@/components/JobCard";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { JobPrivacyPolicyDialog } from "@/components/JobPrivacyPolicyDialog";
+import { Button } from "@/components/ui/button";
 
 interface Job {
   id: string;
@@ -65,6 +67,11 @@ const JobsPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Join Our Team
           </h1>
+          <JobPrivacyPolicyDialog>
+            <Button variant="link" className="text-primary">
+              🔒 Privacy Policy for Job Applicants
+            </Button>
+          </JobPrivacyPolicyDialog>
         </div>
 
         {loading ? (
