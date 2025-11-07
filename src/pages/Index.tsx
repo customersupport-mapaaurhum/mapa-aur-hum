@@ -6,6 +6,7 @@ import { Features } from "@/components/Features";
 import { Downloads } from "@/components/Downloads";
 import { AppTutorials } from "@/components/AppTutorials";
 import { Champions } from "@/components/Champions";
+import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -43,6 +44,7 @@ const Index = () => {
         <Downloads />
         <AppTutorials />
         <Champions />
+        <FAQ />
         {/* <div className="text-center py-6 bg-background">
           <Link 
             to="/founder" 

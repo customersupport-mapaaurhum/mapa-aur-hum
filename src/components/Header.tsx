@@ -159,6 +159,14 @@ export const Header = () => {
 
           <Button
             variant="ghost"
+            onClick={() => scrollToSection('faq')}
+            className="font-medium"
+          >
+            FAQ
+          </Button>
+
+          <Button
+            variant="ghost"
             className="font-medium"
             asChild
           >
@@ -247,6 +255,17 @@ export const Header = () => {
                   <Link to="/contributors">Contributors</Link>
                 </Button>
               </div>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                onClick={() => {
+                  scrollToSection('faq');
+                  document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                }}
+              >
+                FAQ
+              </Button>
 
               <Button
                 variant="ghost"
