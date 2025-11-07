@@ -15,6 +15,7 @@ interface JobCardProps {
     city: string;
     is_remote: boolean;
     status: string;
+    "Key Requirements"?: string | null;
   };
 }
 
@@ -44,6 +45,15 @@ export const JobCard = ({ job }: JobCardProps) => {
             {job.description}
           </p>
         </div>
+
+        {job["Key Requirements"] && (
+          <div>
+            <h3 className="font-semibold text-lg mb-2">Key Requirements</h3>
+            <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
+              {job["Key Requirements"]}
+            </p>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
           <div>

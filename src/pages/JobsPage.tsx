@@ -18,6 +18,7 @@ interface Job {
   city: string;
   is_remote: boolean;
   status: string;
+  "Key Requirements"?: string | null;
 }
 
 const JobsPage = () => {
