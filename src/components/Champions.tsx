@@ -36,8 +36,8 @@ export const Champions = () => {
     {
       name: "Special thanks",
       city: "",
-      role: "Pilot Builders",
-      contribution: "Tithi, Nitya, Rakshit, Sandesh, Varun - for building the MaPa-Aur-Hum pilot and bringing this vision to life"
+      role: "Contribution to the Pilot",
+      contribution: "Tithi, Nitya, Rakshit, Sandesh, Varun - for bringing this vision to life"
     }
   ];
 
