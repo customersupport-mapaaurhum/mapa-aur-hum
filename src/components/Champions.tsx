@@ -34,34 +34,10 @@ export const Champions = () => {
       contribution: "We thank our Pa Champion for her views on the initial design of the MaPa-Aur-Hum solution"
     },
     {
-      name: "Tithi Mandal",
+      name: "Special thanks",
       city: "",
-      role: "Pilot Builder",
-      contribution: "Special thanks for building the MaPa-Aur-Hum pilot and bringing this vision to life"
-    },
-    {
-      name: "Nitya Venkataraman",
-      city: "",
-      role: "Pilot Builder",
-      contribution: "Special thanks for building the MaPa-Aur-Hum pilot and bringing this vision to life"
-    },
-    {
-      name: "Rakshit Kanwal",
-      city: "",
-      role: "Pilot Builder",
-      contribution: "Special thanks for building the MaPa-Aur-Hum pilot and bringing this vision to life"
-    },
-    {
-      name: "Sandesh Jaikrishan",
-      city: "",
-      role: "Pilot Builder",
-      contribution: "Special thanks for building the MaPa-Aur-Hum pilot and bringing this vision to life"
-    },
-    {
-      name: "Varun",
-      city: "",
-      role: "Pilot Builder",
-      contribution: "Special thanks for building the MaPa-Aur-Hum pilot and bringing this vision to life"
+      role: "Pilot Builders",
+      contribution: "Tithi Mandal, Nitya Venkataraman, Rakshit Kanwal, Sandesh Jaikrishan, Varun - for building the MaPa-Aur-Hum pilot and bringing this vision to life"
     }
   ];
 
