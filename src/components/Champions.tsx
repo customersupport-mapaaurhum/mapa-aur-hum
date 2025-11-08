@@ -91,6 +91,39 @@ export const Champions = () => {
           <CarouselPrevious className="left-0" />
           <CarouselNext className="right-0" />
         </Carousel>
+
+        {/* Thank You Card for Pilot Builders */}
+        <div className="mt-12 max-w-3xl mx-auto">
+          <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 via-background to-primary-glow/10 border border-primary/20 p-8 shadow-elegant">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary-glow/5 rounded-full blur-3xl"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">Special Thanks</h3>
+                <p className="text-muted-foreground">
+                  To the amazing team who built the MaPa-Aur-Hum pilot
+                </p>
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-4 mt-6">
+                {["Tithi Mandal", "Nitya Venkataraman", "Rakshit Kanwal", "Sandesh Jaikrishan", "Varun"].map((name, index) => (
+                  <div 
+                    key={index}
+                    className="px-4 py-2 bg-card/80 backdrop-blur-sm rounded-lg border border-primary/10 hover:border-primary/30 transition-colors"
+                  >
+                    <p className="text-foreground font-medium">{name}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <p className="text-center text-muted-foreground mt-6 text-sm">
+                Your dedication and hard work brought this vision to life 🙏
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
