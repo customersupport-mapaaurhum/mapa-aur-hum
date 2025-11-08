@@ -37,7 +37,7 @@ export const Champions = () => {
       name: "Special thanks",
       city: "",
       role: "Pilot Builders",
-      contribution: "Tithi Mandal, Nitya Venkataraman, Rakshit Kanwal, Sandesh Jaikrishan, Varun - for building the MaPa-Aur-Hum pilot and bringing this vision to life"
+      contribution: "Tithi, Nitya, Rakshit, Sandesh, Varun - for building the MaPa-Aur-Hum pilot and bringing this vision to life"
     }
   ];
 
