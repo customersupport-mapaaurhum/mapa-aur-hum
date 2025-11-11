@@ -26,7 +26,7 @@ export const Hero = () => {
             </h1>
             
             <p className="text-xl text-white/90 mb-3 max-w-xl">
-              The perfect childcare solution for Indian working parents and home caregivers managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers.
+              The perfect childcare solution for Indian working parents and home caregivers (maids, babysitters, daycares, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, daycares, relatives).
             </p>
             
             <div className="mb-6">

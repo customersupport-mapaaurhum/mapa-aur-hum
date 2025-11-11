@@ -169,7 +169,7 @@ export const RegistrationDialog = ({ children }: RegistrationDialogProps) => {
           </div>
 
           <div className="space-y-3">
-            <Label>I have an existing caregiver at my home and we are willing to use and provide feedback for the technology platform</Label>
+            <Label>I have an existing caregiver (maid, babysitter, daycare, relative) at my home and we are willing to use and provide feedback for the technology platform</Label>
             <RadioGroup
               value={formData.hasChildrenUnder5}
               onValueChange={(value) => handleInputChange("hasChildrenUnder5", value)}

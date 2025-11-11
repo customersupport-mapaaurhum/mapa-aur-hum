@@ -22,7 +22,7 @@ export const Features = () => {
   const featureImages = [
     {
       src: featureRoutine,
-      alt: "MaPa-Aur-Hum routine management screen showing daily childcare tasks with audio guidance for caregivers",
+      alt: "MaPa-Aur-Hum routine management screen showing daily childcare tasks with audio guidance for caregivers (maids, babysitters, daycares, relatives)",
       title: "Routine Management"
     },
     {

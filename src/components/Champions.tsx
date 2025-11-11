@@ -48,7 +48,7 @@ export const Champions = () => {
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Thank You to Our Contributors</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            We're grateful to the parents and caregivers who helped shape MaPa-Aur-Hum with their valuable insights
+            We're grateful to the parents and caregivers (maids, babysitters, daycares, relatives) who helped shape MaPa-Aur-Hum with their valuable insights
           </p>
         </div>
 
