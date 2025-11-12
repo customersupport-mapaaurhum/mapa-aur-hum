@@ -95,7 +95,7 @@ export const Hero = () => {
             <div className="relative w-full max-w-xs">
               <iframe
                 className="w-full aspect-[9/16] rounded-2xl shadow-trust"
-                src="https://www.youtube.com/embed/NzepriK04JI"
+                src="https://www.youtube.com/embed/lyWGdj88Pwc"
                 title="MaPa-Aur-Hum App Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
