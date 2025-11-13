@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { Smartphone, PlayCircle, HelpCircle, Star } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Star, Vote } from "lucide-react";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 
 export const Hero = () => {
@@ -69,6 +69,15 @@ export const Hero = () => {
                 >
                   <HelpCircle className="w-5 h-5" />
                   FAQs
+                </Button>
+                <Button
+                  onClick={() => document.getElementById('poll')?.scrollIntoView({ behavior: 'smooth' })}
+                  variant="outline"
+                  size="lg"
+                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                >
+                  <Vote className="w-5 h-5" />
+                  Vote on New Feature
                 </Button>
               </div>
             </div>
