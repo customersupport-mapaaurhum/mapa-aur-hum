@@ -9,15 +9,12 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="about-content" className="border-none">
-            <AccordionTrigger className="hover:no-underline py-4 [&[data-state=open]>div>svg]:rotate-180">
-              <div className="flex items-center justify-center gap-3 w-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center">
-                  Complete Childcare Management Solution<br />for Indian Working Parents
-                </h2>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 shrink-0 transition-transform duration-200 text-primary">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </div>
+            <AccordionTrigger className="hover:no-underline py-4 flex-col gap-2 [&[data-state=open]_.expand-text]:hidden [&[data-state=closed]_.collapse-text]:hidden">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center">
+                Complete Childcare Management Solution<br />for Indian Working Parents
+              </h2>
+              <span className="expand-text text-sm font-medium text-primary underline">Expand</span>
+              <span className="collapse-text text-sm font-medium text-primary underline">Collapse</span>
             </AccordionTrigger>
             <AccordionContent>
               <div className="text-center mb-6 mt-4">
