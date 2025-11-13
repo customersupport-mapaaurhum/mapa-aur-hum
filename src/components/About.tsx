@@ -1,33 +1,39 @@
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Users, Clock, MapPin, Smartphone, Camera, Navigation, Languages, Volume2, UserCheck, Heart } from "lucide-react";
 
 export const About = () => {
   return (
     <section id="about" className="py-8 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Complete Childcare Management Solution for Indian Working Parents
-          </h2>
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-            MaPa-Aur-Hum is a trusted, specialized childcare platform designed for working parents in India. 
-            Set clear personalized and structured instructions for your caregivers (maids, babysitters, daycares, relatives) based on your home needs. 
-            Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one app.
-          </p>
-          <p className="text-sm font-medium text-primary">
-            Available on Google Play Store.{" "}
-            <button
-              onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
-              className="underline hover:opacity-80 transition-opacity cursor-pointer"
-            >
-              Download MaPa-Aur-Hum
-            </button>
-          </p>
-        </div>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="about-content" className="border-none">
+            <AccordionTrigger className="hover:no-underline">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground text-center w-full">
+                Complete Childcare Management Solution for Indian Working Parents
+              </h2>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="text-center mb-6 mt-4">
+                <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
+                  MaPa-Aur-Hum is a trusted, specialized childcare platform designed for working parents in India. 
+                  Set clear personalized and structured instructions for your caregivers (maids, babysitters, daycares, relatives) based on your home needs. 
+                  Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one app.
+                </p>
+                <p className="text-sm font-medium text-primary">
+                  Available on Google Play Store.{" "}
+                  <button
+                    onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="underline hover:opacity-80 transition-opacity cursor-pointer"
+                  >
+                    Download MaPa-Aur-Hum
+                  </button>
+                </p>
+              </div>
 
-        {/* Three main tenets - Prominent Display */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+              {/* Three main tenets - Prominent Display */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-background to-muted/20">
             <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
               <Users className="h-8 w-8 text-white" />
@@ -178,6 +184,9 @@ export const About = () => {
           <CarouselPrevious className="left-0" />
           <CarouselNext className="right-0" />
         </Carousel>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </section>
   );
