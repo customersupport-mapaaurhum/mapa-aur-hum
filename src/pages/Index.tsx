@@ -38,8 +38,8 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <About />
         <WhyMaPa />
+        <About />
         <Features />
         <Downloads />
         <AppTutorials />
