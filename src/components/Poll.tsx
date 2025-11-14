@@ -57,19 +57,6 @@ export const Poll = () => {
                   <span className="flex-1 text-left">No, we don't need daily coaching</span>
                 </div>
               </Button>
-
-              <Button
-                onClick={() => handleVote("maybe")}
-                variant={voted === "maybe" ? "default" : "outline"}
-                size="lg"
-                className="w-full text-lg h-auto py-4 justify-start"
-                disabled={voted !== null}
-              >
-                <div className="flex items-center gap-3 w-full">
-                  {voted === "maybe" && <CheckCircle className="h-5 w-5 text-white" />}
-                  <span className="flex-1 text-left">Maybe, depends on the coaching content and topics</span>
-                </div>
-              </Button>
             </div>
 
             {voted && (
