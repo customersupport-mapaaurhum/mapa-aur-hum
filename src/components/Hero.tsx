@@ -70,15 +70,6 @@ export const Hero = () => {
                   <HelpCircle className="w-5 h-5" />
                   FAQs
                 </Button>
-                <Button
-                  onClick={() => document.getElementById('poll')?.scrollIntoView({ behavior: 'smooth' })}
-                  variant="outline"
-                  size="lg"
-                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                >
-                  <Vote className="w-5 h-5" />
-                  Vote on New Feature
-                </Button>
               </div>
             </div>
             
@@ -87,15 +78,27 @@ export const Hero = () => {
                   Want more features? Share your thoughts with us.
                 </p>
                 
-                <FeedbackDialog>
-                  <Button 
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <FeedbackDialog>
+                    <Button 
+                      variant="outline"
+                      size="lg"
+                      className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                    >
+                      Share Feedback
+                    </Button>
+                  </FeedbackDialog>
+                  
+                  <Button
+                    onClick={() => document.getElementById('poll')?.scrollIntoView({ behavior: 'smooth' })}
                     variant="outline"
                     size="lg"
                     className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                   >
-                    Share Feedback
+                    <Vote className="w-5 h-5" />
+                    Vote on New Feature
                   </Button>
-                </FeedbackDialog>
+                </div>
               </div>
             </div>
           

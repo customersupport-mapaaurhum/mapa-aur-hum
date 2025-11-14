@@ -3,15 +3,29 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { CheckCircle, Video } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Poll = () => {
   const [voted, setVoted] = useState<string | null>(null);
 
-  const handleVote = (option: string) => {
-    setVoted(option);
-    toast.success("Thank you for your feedback!", {
-      description: "Your vote has been recorded."
-    });
+  const handleVote = async (option: string) => {
+    try {
+      const { error } = await supabase
+        .from('poll_responses')
+        .insert({ vote_option: option });
+
+      if (error) throw error;
+
+      setVoted(option);
+      toast.success("Thank you for your feedback!", {
+        description: "Your vote has been recorded."
+      });
+    } catch (error) {
+      console.error('Error submitting vote:', error);
+      toast.error("Failed to submit vote", {
+        description: "Please try again later."
+      });
+    }
   };
 
   return (
