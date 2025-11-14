@@ -27,7 +27,7 @@ export const Poll = () => {
                 We Want Your Opinion!
               </h2>
               <p className="text-lg text-muted-foreground">
-                Would you like MaPa-Aur-Hum to provide coaching videos for your caregivers (maids, babysitters, daycares, relatives) for day-to-day baby care guidance?
+                Would you like MaPa-Aur-Hum to provide daily coaching for you and caregivers (maids, babysitters, daycares, relatives) for day-to-day baby care guidance?
               </p>
             </div>
 
@@ -41,7 +41,7 @@ export const Poll = () => {
               >
                 <div className="flex items-center gap-3 w-full">
                   {voted === "yes" && <CheckCircle className="h-5 w-5 text-white" />}
-                  <span className="flex-1 text-left">Yes, coaching videos for caregivers would be very helpful!</span>
+                  <span className="flex-1 text-left">Yes, daily coaching for us would be very helpful!</span>
                 </div>
               </Button>
 
@@ -54,7 +54,7 @@ export const Poll = () => {
               >
                 <div className="flex items-center gap-3 w-full">
                   {voted === "no" && <CheckCircle className="h-5 w-5 text-white" />}
-                  <span className="flex-1 text-left">No, my caregivers don't need coaching videos</span>
+                  <span className="flex-1 text-left">No, we don't need daily coaching</span>
                 </div>
               </Button>
 
@@ -67,7 +67,7 @@ export const Poll = () => {
               >
                 <div className="flex items-center gap-3 w-full">
                   {voted === "maybe" && <CheckCircle className="h-5 w-5 text-white" />}
-                  <span className="flex-1 text-left">Maybe, depends on the video content and topics</span>
+                  <span className="flex-1 text-left">Maybe, depends on the coaching content and topics</span>
                 </div>
               </Button>
             </div>
