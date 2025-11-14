@@ -20,12 +20,12 @@ export const Poll = () => {
     try {
       const { data, error } = await supabase
         .from('poll_responses')
-        .select('selected_option');
+        .select('vote_option');
 
       if (error) throw error;
 
-      const yes = data?.filter(r => r.selected_option === 'yes').length || 0;
-      const no = data?.filter(r => r.selected_option === 'no').length || 0;
+      const yes = data?.filter(r => r.vote_option === 'yes').length || 0;
+      const no = data?.filter(r => r.vote_option === 'no').length || 0;
       const total = yes + no;
 
       setResults({ yes, no, total });
@@ -38,7 +38,7 @@ export const Poll = () => {
     try {
       const { error } = await supabase
         .from('poll_responses')
-        .insert({ selected_option: option });
+        .insert({ vote_option: option });
 
       if (error) throw error;
 
