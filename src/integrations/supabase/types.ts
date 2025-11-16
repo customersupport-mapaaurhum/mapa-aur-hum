@@ -96,17 +96,17 @@ export type Database = {
         Row: {
           created_at: string
           id: string
-          vote_option: string
+          selected_option: string
         }
         Insert: {
           created_at?: string
           id?: string
-          vote_option: string
+          selected_option: string
         }
         Update: {
           created_at?: string
           id?: string
-          vote_option?: string
+          selected_option?: string
         }
         Relationships: []
       }
