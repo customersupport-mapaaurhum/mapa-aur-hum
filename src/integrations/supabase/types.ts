@@ -53,6 +53,7 @@ export type Database = {
           is_remote: boolean
           job_name: string
           job_number: number
+          "Key Requirements": string | null
           minimum_qualification: string
           status: string
           updated_at: string
@@ -68,6 +69,7 @@ export type Database = {
           is_remote?: boolean
           job_name: string
           job_number?: number
+          "Key Requirements"?: string | null
           minimum_qualification: string
           status?: string
           updated_at?: string
@@ -83,6 +85,7 @@ export type Database = {
           is_remote?: boolean
           job_name?: string
           job_number?: number
+          "Key Requirements"?: string | null
           minimum_qualification?: string
           status?: string
           updated_at?: string
@@ -93,23 +96,17 @@ export type Database = {
         Row: {
           created_at: string
           id: string
-          selected_option: string
-          user_email: string | null
-          user_name: string | null
+          vote_option: string
         }
         Insert: {
           created_at?: string
           id?: string
-          selected_option: string
-          user_email?: string | null
-          user_name?: string | null
+          vote_option: string
         }
         Update: {
           created_at?: string
           id?: string
-          selected_option?: string
-          user_email?: string | null
-          user_name?: string | null
+          vote_option?: string
         }
         Relationships: []
       }
