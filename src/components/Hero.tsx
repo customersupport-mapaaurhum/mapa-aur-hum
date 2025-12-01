@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { Smartphone, PlayCircle, HelpCircle, Star, Vote } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Star, Vote, Baby } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 
 export const Hero = () => {
@@ -33,7 +34,7 @@ export const Hero = () => {
               <p className="text-lg font-medium text-white mb-3">
                 Available on Google Play Store
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
                 <Button
                   onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
                   variant="hero"
@@ -43,6 +44,16 @@ export const Hero = () => {
                   <Smartphone className="w-5 h-5" />
                   Download MaPa-Aur-Hum
                 </Button>
+                <Link to="/caregiver-game">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="text-lg w-full sm:w-auto"
+                  >
+                    <Baby className="w-5 h-5" />
+                    Play Detective Game
+                  </Button>
+                </Link>
                 <Button
                   onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum', '_blank')}
                   variant="outline"
