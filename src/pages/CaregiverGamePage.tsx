@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -365,10 +366,12 @@ const CaregiverGamePage = () => {
                           <p className="text-muted-foreground mb-4">
                             Your excellent score shows great dedication to your child's care! Would you like to be featured on our social media channels to inspire other parents?
                           </p>
-                          <Button className="w-full sm:w-auto gap-2">
-                            <Share2 className="w-4 h-4" />
-                            Yes, Feature My Achievement!
-                          </Button>
+                          <FeedbackDialog>
+                            <Button className="w-full sm:w-auto gap-2">
+                              <Share2 className="w-4 h-4" />
+                              Yes, Feature My Achievement!
+                            </Button>
+                          </FeedbackDialog>
                         </div>
                       </div>
                     </motion.div>
