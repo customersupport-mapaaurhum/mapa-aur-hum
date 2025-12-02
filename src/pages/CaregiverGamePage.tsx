@@ -286,12 +286,12 @@ const CaregiverGamePage = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">4️⃣</span>
-                  <p className="text-base">Get your score and personalized feedback to improve your caregiver's care quality</p>
+                  <p className="text-base">Get your score and a chance to feature as mapa-aur-hum champion</p>
                 </div>
                 <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700">
                   <p className="text-sm flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-green-600" />
-                    <span className="font-semibold">Powered by AI</span> - Get intelligent coaching recommendations!
+                    <span className="font-semibold">Powered by AI</span>
                   </p>
                 </div>
                 <Button 
@@ -450,11 +450,8 @@ const CaregiverGamePage = () => {
                       <div className="flex items-start gap-3 mb-4">
                         <Download className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                         <div>
-                          <h3 className="font-semibold text-lg mb-2 text-red-700">
-                            🎄 Download Our App for Daily Coaching! 🎁
-                          </h3>
                           <p className="text-muted-foreground mb-4">
-                            Get personalized coaching tips and improve your caregiver's practices with our mobile app!
+                            Download our app to instruct and collaborate better with your caregiver (maid, babysitter, daycares, relatives) for childcare. Earn reward points for better collaboration.
                           </p>
                           <Button 
                             onClick={() => window.location.href = "/#downloads"} 
