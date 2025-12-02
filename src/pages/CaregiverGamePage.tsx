@@ -7,8 +7,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Baby, Trophy, Share2, RotateCcw } from "lucide-react";
+import { Baby, Trophy, Share2, RotateCcw, Download, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/mapa-aur-hum-logo.jpg";
 
 // Coaching practices data organized by age in months
 const coachingData = {
@@ -134,6 +135,7 @@ const coachingData = {
 };
 
 const CaregiverGamePage = () => {
+  const [showRules, setShowRules] = useState(true);
   const [selectedAge, setSelectedAge] = useState<string>("");
   const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set());
   const [showResults, setShowResults] = useState(false);
@@ -166,35 +168,75 @@ const CaregiverGamePage = () => {
     setShowResults(false);
     setShowSocialMediaPrompt(false);
     setSelectedAge("");
+    setShowRules(true);
   };
 
   const getResultMessage = () => {
     if (scorePercentage >= 80) {
       return {
-        title: "🎉 Outstanding Detective Work!",
+        title: "🎄 Outstanding Detective Work!",
         message: "Congratulations! Your caregiver is providing excellent care in your absence. You've done a fantastic job instructing them!",
-        color: "text-green-600"
+        color: "text-green-600",
+        showDownload: false
       };
     } else if (scorePercentage >= 60) {
       return {
-        title: "👍 Good Progress!",
+        title: "🎁 Good Progress!",
         message: "Great start! There are a few more practices you can discuss with your caregiver to ensure comprehensive care.",
-        color: "text-blue-600"
+        color: "text-blue-600",
+        showDownload: false
       };
     } else {
       return {
-        title: "📚 Time to Coach Better!",
-        message: "It looks like there's room for improvement. Please spend more time instructing your caregiver on these essential childcare practices.",
-        color: "text-orange-600"
+        title: "🎅 Time to Coach Better!",
+        message: "It looks like there's room for improvement. Download our app to get daily coaching tips and improve your caregiver's practices!",
+        color: "text-red-600",
+        showDownload: true
       };
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-primary/5 to-background">
+    <div className="min-h-screen bg-gradient-to-b from-red-50 via-green-50 to-red-50 dark:from-red-950/20 dark:via-green-950/20 dark:to-red-950/20 relative overflow-hidden">
+      {/* Christmas Snowflakes */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-red-300/30 dark:text-red-200/20 text-2xl"
+            initial={{ 
+              top: -50, 
+              left: `${Math.random() * 100}%`,
+              rotate: 0 
+            }}
+            animate={{ 
+              top: "100vh",
+              rotate: 360
+            }}
+            transition={{
+              duration: 10 + Math.random() * 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "linear"
+            }}
+          >
+            ❄️
+          </motion.div>
+        ))}
+      </div>
+      
       <Header />
       
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12 relative z-10">
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex justify-center mb-6"
+        >
+          <img src={logo} alt="MaPa-Aur-Hum Logo" className="w-32 h-32 rounded-full shadow-lg border-4 border-red-500" />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -205,29 +247,76 @@ const CaregiverGamePage = () => {
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
             >
-              <Baby className="w-24 h-24 text-primary" />
+              <Baby className="w-24 h-24 text-red-600" />
             </motion.div>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-            Caregiver Detective Game
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 via-green-600 to-red-600 bg-clip-text text-transparent">
+            🎄 Caregiver Detective Game 🎅
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             Be a detective! Check off all the childcare practices your caregiver (maid, babysitter, daycares, relatives) is doing while you're away. Let's see how well you've coached them! 🕵️
           </p>
         </motion.div>
 
-        {!selectedAge && (
+        {showRules && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-2xl mx-auto mb-8"
+          >
+            <Card className="shadow-elegant border-2 border-green-500 bg-gradient-to-br from-red-50/80 to-green-50/80 dark:from-red-950/40 dark:to-green-950/40">
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2 text-red-600">
+                  🎁 Game Rules
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">1️⃣</span>
+                  <p className="text-base">Select your child's age in months to see age-appropriate childcare practices</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">2️⃣</span>
+                  <p className="text-base">Check off all the practices your caregiver is currently doing</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">3️⃣</span>
+                  <p className="text-base">Each checked practice earns you 1 point</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">4️⃣</span>
+                  <p className="text-base">Get your score and personalized feedback to improve your caregiver's care quality</p>
+                </div>
+                <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700">
+                  <p className="text-sm flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-green-600" />
+                    <span className="font-semibold">Powered by AI</span> - Get intelligent coaching recommendations!
+                  </p>
+                </div>
+                <Button 
+                  onClick={() => setShowRules(false)} 
+                  className="w-full mt-4 bg-gradient-to-r from-red-600 to-green-600 hover:from-red-700 hover:to-green-700"
+                  size="lg"
+                >
+                  Start Playing! 🎮
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+
+        {!selectedAge && !showRules && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-md mx-auto"
           >
-            <Card className="shadow-elegant">
+            <Card className="shadow-elegant border-2 border-red-500 bg-gradient-to-br from-red-50 to-green-50 dark:from-red-950/40 dark:to-green-950/40">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
+                <CardTitle className="text-2xl flex items-center gap-2 text-green-600">
                   <Baby className="w-6 h-6" />
-                  Select Your Child's Age
+                  🎄 Select Your Child's Age
                 </CardTitle>
                 <CardDescription>
                   Choose your child's age in months to start the game
@@ -235,7 +324,7 @@ const CaregiverGamePage = () => {
               </CardHeader>
               <CardContent>
                 <Select onValueChange={setSelectedAge} value={selectedAge}>
-                  <SelectTrigger className="w-full">
+                  <SelectTrigger className="w-full border-green-500">
                     <SelectValue placeholder="Select age..." />
                   </SelectTrigger>
                   <SelectContent>
@@ -262,22 +351,23 @@ const CaregiverGamePage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="max-w-4xl mx-auto"
             >
-              <Card className="shadow-elegant mb-6">
+              <Card className="shadow-elegant mb-6 border-2 border-green-500 bg-gradient-to-br from-red-50/50 to-green-50/50 dark:from-red-950/20 dark:to-green-950/20">
                 <CardHeader>
                   <div className="flex justify-between items-center">
-                    <CardTitle className="text-2xl">
-                      Detective Checklist
+                    <CardTitle className="text-2xl text-red-600">
+                      🎅 Detective Checklist
                       <span className="text-sm font-normal text-muted-foreground ml-2">
                         (Age: {selectedAge} months)
                       </span>
                     </CardTitle>
-                    <Button variant="outline" size="sm" onClick={handleReset}>
+                    <Button variant="outline" size="sm" onClick={handleReset} className="border-red-500 text-red-600 hover:bg-red-50">
                       <RotateCcw className="w-4 h-4 mr-2" />
                       Start Over
                     </Button>
                   </div>
-                  <CardDescription>
-                    Check all the practices your caregiver is doing correctly
+                  <CardDescription className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-green-600" />
+                    Check all the practices your caregiver is doing correctly • Powered by AI
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -304,15 +394,15 @@ const CaregiverGamePage = () => {
                     </motion.div>
                   ))}
 
-                  <div className="pt-6 flex justify-between items-center border-t">
-                    <div className="text-lg font-semibold">
-                      Score: {score} / {totalItems}
+                  <div className="pt-6 flex justify-between items-center border-t border-green-200">
+                    <div className="text-lg font-semibold text-green-700">
+                      🎁 Score: {score} / {totalItems}
                     </div>
                     <Button
                       onClick={handleSubmit}
                       size="lg"
                       disabled={score === 0}
-                      className="gap-2"
+                      className="gap-2 bg-gradient-to-r from-red-600 to-green-600 hover:from-red-700 hover:to-green-700"
                     >
                       <Trophy className="w-5 h-5" />
                       See My Results
@@ -331,19 +421,19 @@ const CaregiverGamePage = () => {
               exit={{ opacity: 0, scale: 0.9 }}
               className="max-w-2xl mx-auto"
             >
-              <Card className="shadow-elegant border-2 border-primary/20">
+              <Card className="shadow-elegant border-2 border-red-500 bg-gradient-to-br from-red-50 to-green-50 dark:from-red-950/40 dark:to-green-950/40">
                 <CardHeader className="text-center pb-8">
                   <motion.div
                     animate={{ rotate: [0, 360] }}
                     transition={{ duration: 1 }}
                     className="flex justify-center mb-4"
                   >
-                    <Trophy className="w-20 h-20 text-primary" />
+                    <Trophy className="w-20 h-20 text-yellow-500" />
                   </motion.div>
                   <CardTitle className={`text-3xl mb-3 ${getResultMessage().color}`}>
                     {getResultMessage().title}
                   </CardTitle>
-                  <div className="text-6xl font-bold text-primary mb-4">
+                  <div className="text-6xl font-bold bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent mb-4">
                     {score} / {totalItems}
                   </div>
                   <CardDescription className="text-lg">
@@ -351,6 +441,32 @@ const CaregiverGamePage = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  {getResultMessage().showDownload && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-6 bg-gradient-to-r from-red-100 to-green-100 dark:from-red-900/30 dark:to-green-900/30 rounded-lg border-2 border-red-300"
+                    >
+                      <div className="flex items-start gap-3 mb-4">
+                        <Download className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-semibold text-lg mb-2 text-red-700">
+                            🎄 Download Our App for Daily Coaching! 🎁
+                          </h3>
+                          <p className="text-muted-foreground mb-4">
+                            Get personalized coaching tips and improve your caregiver's practices with our mobile app!
+                          </p>
+                          <Button 
+                            onClick={() => window.location.href = "/#downloads"} 
+                            className="w-full sm:w-auto gap-2 bg-gradient-to-r from-red-600 to-green-600 hover:from-red-700 hover:to-green-700"
+                          >
+                            <Download className="w-4 h-4" />
+                            Download App Now
+                          </Button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
                   {showSocialMediaPrompt && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -382,7 +498,7 @@ const CaregiverGamePage = () => {
                       onClick={handleReset}
                       variant="outline"
                       size="lg"
-                      className="flex-1 gap-2"
+                      className="flex-1 gap-2 border-red-500 text-red-600 hover:bg-red-50"
                     >
                       <RotateCcw className="w-5 h-5" />
                       Play Again
@@ -390,7 +506,7 @@ const CaregiverGamePage = () => {
                     <Button
                       onClick={() => window.location.href = "/"}
                       size="lg"
-                      className="flex-1"
+                      className="flex-1 bg-gradient-to-r from-red-600 to-green-600 hover:from-red-700 hover:to-green-700"
                     >
                       Back to Home
                     </Button>
