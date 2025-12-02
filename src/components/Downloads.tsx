@@ -37,7 +37,15 @@ export const Downloads = () => {
                     <h3 className="text-2xl font-semibold">MaPa-Aur-Hum mobile app</h3>
                   </div>
                   <p className="text-lg mb-4">
-                    Available now on Google Play Store
+                    Available now on{" "}
+                    <a 
+                      href="https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-semibold"
+                    >
+                      Google Play Store
+                    </a>
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Scan the QR code with your phone's camera or download directly from the Google Play Store
