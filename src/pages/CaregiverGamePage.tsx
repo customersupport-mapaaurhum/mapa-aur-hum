@@ -190,7 +190,7 @@ const CaregiverGamePage = () => {
     } else {
       return {
         title: "🎅 Time to Coach Better!",
-        message: "It looks like there's room for improvement. Download our app to get daily coaching tips and improve your caregiver's practices!",
+        message: "It looks like there's room for improvement. Instruct your caregiver better!",
         color: "text-red-600",
         showDownload: true
       };
