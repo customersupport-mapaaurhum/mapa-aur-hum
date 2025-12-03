@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
@@ -197,7 +198,15 @@ const CaregiverGamePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-red-50 via-green-50 to-red-50 dark:from-red-950/20 dark:via-green-950/20 dark:to-red-950/20 relative overflow-hidden">
+    <>
+      <Helmet>
+        <title>Caregiver Detective Game - MaPa-Aur-Hum | Check Your Childcare Quality</title>
+        <meta name="description" content="Play the Caregiver Detective Game to assess your babysitter or maid's childcare practices. Get a score and coaching tips based on your child's age." />
+        <meta property="og:title" content="Caregiver Detective Game - MaPa-Aur-Hum" />
+        <meta property="og:description" content="Interactive game for parents to check childcare practices when they're away. Score your caregiver and get coaching tips." />
+        <link rel="canonical" href="https://www.mapaaurhum.com/caregiver-game" />
+      </Helmet>
+      <div className="min-h-screen bg-gradient-to-b from-red-50 via-green-50 to-red-50 dark:from-red-950/20 dark:via-green-950/20 dark:to-red-950/20 relative overflow-hidden">
       {/* Christmas Snowflakes */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(30)].map((_, i) => (
@@ -516,7 +525,8 @@ const CaregiverGamePage = () => {
       </main>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 
