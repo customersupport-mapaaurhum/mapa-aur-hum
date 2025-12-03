@@ -42,7 +42,7 @@ const Index = () => {
         <meta name="description" content="Trusted childcare app for Indian working parents and secondary caregivers. Communication with picture updates, Hindi language support, and modules for personalized home-based care." />
         <meta property="og:title" content="MaPa-Aur-Hum - Building Trust for Better Childcare" />
         <meta property="og:description" content="Real-time babysitter communication app with picture updates and audio instructions for working parents in India." />
-        <link rel="canonical" href="https://www.mapaaurhum.com/" />
+        <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
