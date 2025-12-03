@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://mapa-aur-hum.lovable.app/sitemap.xml
+Sitemap: https://www.mapaaurhum.com/sitemap.xml

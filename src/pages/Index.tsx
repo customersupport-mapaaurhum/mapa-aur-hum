@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -35,30 +36,31 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <Hero />
-        <WhyMaPa />
-        <About />
-        <Features />
-        <Downloads />
-        <AppTutorials />
-        <Champions />
-        <FAQ />
-        <Poll />
-        {/* <div className="text-center py-6 bg-background">
-          <Link 
-            to="/founder" 
-            className="text-primary hover:underline font-medium text-base"
-          >
-            Meet Our Founder →
-          </Link>
-        </div> */}
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>MaPa-Aur-Hum - Building Trust for Better Childcare in India</title>
+        <meta name="description" content="Trusted childcare app for Indian working parents and secondary caregivers. Communication with picture updates, Hindi language support, and modules for personalized home-based care." />
+        <meta property="og:title" content="MaPa-Aur-Hum - Building Trust for Better Childcare" />
+        <meta property="og:description" content="Real-time babysitter communication app with picture updates and audio instructions for working parents in India." />
+        <link rel="canonical" href="https://www.mapaaurhum.com/" />
+      </Helmet>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <Hero />
+          <WhyMaPa />
+          <About />
+          <Features />
+          <Downloads />
+          <AppTutorials />
+          <Champions />
+          <FAQ />
+          <Poll />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
