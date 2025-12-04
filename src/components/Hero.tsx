@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { FeedbackDialog } from "@/components/FeedbackDialog";
-import { Smartphone, PlayCircle, HelpCircle, Star, Vote, Baby } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Star, Baby } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 
@@ -89,27 +89,15 @@ export const Hero = () => {
                   Want more features? Share your thoughts with us.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <FeedbackDialog>
-                    <Button 
-                      variant="outline"
-                      size="lg"
-                      className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                    >
-                      Share Feedback
-                    </Button>
-                  </FeedbackDialog>
-                  
-                  <Button
-                    onClick={() => document.getElementById('poll')?.scrollIntoView({ behavior: 'smooth' })}
+                <FeedbackDialog>
+                  <Button 
                     variant="outline"
                     size="lg"
                     className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                   >
-                    <Vote className="w-5 h-5" />
-                    Vote on New Feature
+                    Share Feedback
                   </Button>
-                </div>
+                </FeedbackDialog>
               </div>
             </div>
           

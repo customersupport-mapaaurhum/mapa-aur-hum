@@ -8,7 +8,6 @@ import { Downloads } from "@/components/Downloads";
 import { AppTutorials } from "@/components/AppTutorials";
 import { Champions } from "@/components/Champions";
 import { FAQ } from "@/components/FAQ";
-import { Poll } from "@/components/Poll";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
@@ -55,7 +54,6 @@ const Index = () => {
           <AppTutorials />
           <Champions />
           <FAQ />
-          <Poll />
           <Contact />
         </main>
         <Footer />
