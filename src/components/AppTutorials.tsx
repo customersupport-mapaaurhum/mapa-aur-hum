@@ -42,7 +42,7 @@ export const AppTutorials = () => {
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/i8XyMDcN6n0"
-                title="App Tutorial for Caregivers (maids, babysitters, daycares, relatives)"
+                title="App Tutorial for Caregivers (maids, babysitters, relatives)"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"
@@ -50,10 +50,10 @@ export const AppTutorials = () => {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-foreground">
-                For Caregivers (maids, babysitters, daycares, relatives)
+                For Caregivers (maids, babysitters, relatives)
               </h3>
               <p className="text-muted-foreground">
-                Essential guide for caregivers (maids, babysitters, daycares, relatives) to effectively use the app
+                Essential guide for caregivers (maids, babysitters, relatives) to effectively use the app
               </p>
             </div>
           </div>

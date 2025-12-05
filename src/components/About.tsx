@@ -13,7 +13,7 @@ export const About = () => {
         <div className="text-center mb-6">
           <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
             MaPa-Aur-Hum is a trusted, specialized childcare platform designed for working parents in India. 
-            Set clear personalized and structured instructions for your caregivers (maids, babysitters, daycares, relatives) based on your home needs. 
+            Set clear personalized and structured instructions for your caregivers (maids, babysitters, relatives) based on your home needs. 
             Get real-time babysitter updates with picture evidence, Hindi language support, and emergency childcare management - all in one app.
           </p>
           <p className="text-sm font-medium text-primary">
@@ -34,7 +34,7 @@ export const About = () => {
               <Users className="h-8 w-8 text-white" />
             </div>
             <h3 className="text-lg font-bold text-foreground mb-3">Build Better Trust</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Transparent communication and real-time updates foster trust between parents and caregivers (maids, babysitters, daycares, relatives)</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Transparent communication and real-time updates foster trust between parents and caregivers (maids, babysitters, relatives)</p>
           </Card>
           
           <Card className="p-6 text-center hover:shadow-elegant transition-all duration-300 border-2 border-primary/20 bg-gradient-to-br from-background to-muted/20">
@@ -63,7 +63,7 @@ export const About = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">For Working Indian Families</h3>
                 <p className="text-xs text-muted-foreground">
-                  Specialized childcare app designed for urban working parents managing home-based childcare with trusted babysitters and family caregivers (maids, babysitters, daycares, relatives)
+                  Specialized childcare app designed for urban working parents managing home-based childcare with trusted babysitters and family caregivers (maids, babysitters, relatives)
                 </p>
               </Card>
             </CarouselItem>
@@ -87,7 +87,7 @@ export const About = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">Hindi Language Childcare Support</h3>
                 <p className="text-xs text-muted-foreground">
-                  Audio instructions and Hindi language support specifically designed for Indian households with local caregivers (maids, babysitters, daycares, relatives) and grandparents
+                  Audio instructions and Hindi language support specifically designed for Indian households with local caregivers (maids, babysitters, relatives) and grandparents
                 </p>
               </Card>
             </CarouselItem>
@@ -99,7 +99,7 @@ export const About = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">Easy to Use</h3>
                 <p className="text-xs text-muted-foreground">
-                  Intuitive interface designed for all family members and caregivers (maids, babysitters, daycares, relatives)
+                  Intuitive interface designed for all family members and caregivers (maids, babysitters, relatives)
                 </p>
               </Card>
             </CarouselItem>
@@ -147,7 +147,7 @@ export const About = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">Easy Navigation</h3>
                 <p className="text-xs text-muted-foreground">
-                  Intuitive interface designed for all family members, from grandparents to professional caregivers (maids, babysitters, daycares, relatives).
+                  Intuitive interface designed for all family members, from grandparents to professional caregivers (maids, babysitters, relatives).
                 </p>
               </Card>
             </CarouselItem>
@@ -171,7 +171,7 @@ export const About = () => {
                 </div>
                 <h3 className="text-sm font-semibold text-foreground mb-2">Express Daily Gratitude</h3>
                 <p className="text-xs text-muted-foreground">
-                  Show appreciation to caregivers (maids, babysitters, daycares, relatives) with daily gratitude messages to build positive relationships.
+                  Show appreciation to caregivers (maids, babysitters, relatives) with daily gratitude messages to build positive relationships.
                 </p>
               </Card>
             </CarouselItem>
