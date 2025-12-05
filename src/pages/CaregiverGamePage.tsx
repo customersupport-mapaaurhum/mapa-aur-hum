@@ -264,7 +264,7 @@ const CaregiverGamePage = () => {
             🎄 Caregiver Detective Game 🎅
           </h1>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Be a detective! Check off all the childcare practices your caregiver (maid, babysitter, daycares, relatives) is doing while you're away. Let's see how well you've coached them! 🕵️
+            Be a detective! Check off all the childcare practices your caregiver (maid, babysitter, relatives) is doing while you're away. Let's see how well you've coached them! 🕵️
           </p>
         </motion.div>
 
@@ -460,7 +460,7 @@ const CaregiverGamePage = () => {
                         <Download className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                         <div>
                           <p className="text-muted-foreground mb-4">
-                            Download our app to instruct and collaborate better with your caregiver (maid, babysitter, daycares, relatives) for childcare. Earn reward points for better collaboration.
+                            Download our app to instruct and collaborate better with your caregiver (maid, babysitter, relatives) for childcare. Earn reward points for better collaboration.
                           </p>
                           <Button 
                             onClick={() => window.location.href = "/#downloads"} 

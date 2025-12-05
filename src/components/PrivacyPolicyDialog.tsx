@@ -86,7 +86,7 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
               <section>
                 <h3 className="text-lg font-semibold text-foreground mb-2">6. Children's Privacy</h3>
                 <p className="text-muted-foreground">
-                  Our site is meant for parents and caregivers (maids, babysitters, daycares, relatives), not children. We do not knowingly collect data from 
+                  Our site is meant for parents and caregivers (maids, babysitters, relatives), not children. We do not knowingly collect data from 
                   children under 18. If we learn that a child's information has been shared, we will delete it.
                 </p>
               </section>
