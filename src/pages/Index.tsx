@@ -4,7 +4,6 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { WhyMaPa } from "@/components/WhyMaPa";
 import { Features } from "@/components/Features";
-import { Champions } from "@/components/Champions";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { useEffect } from "react";
@@ -46,7 +45,6 @@ const Index = () => {
           <WhyMaPa />
           <About />
           <Features />
-          <Champions />
           <Contact />
         </main>
         <Footer />
