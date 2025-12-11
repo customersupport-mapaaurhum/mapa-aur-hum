@@ -3,6 +3,7 @@ import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Smartphone, PlayCircle, HelpCircle, Star, Baby } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
+import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 export const Hero = () => {
 
@@ -36,7 +37,7 @@ export const Hero = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
                 <Button
-                  onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
                   variant="hero"
                   size="lg"
                   className="text-lg"
@@ -63,24 +64,26 @@ export const Hero = () => {
                   <Star className="w-5 h-5" />
                   Review Us
                 </Button>
-                <Button
-                  onClick={() => document.getElementById('tutorials')?.scrollIntoView({ behavior: 'smooth' })}
-                  variant="outline"
-                  size="lg"
-                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                >
-                  <PlayCircle className="w-5 h-5" />
-                  Watch Tutorials
-                </Button>
-                <Button
-                  onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
-                  variant="outline"
-                  size="lg"
-                  className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                >
-                  <HelpCircle className="w-5 h-5" />
-                  FAQs
-                </Button>
+                <Link to="/tutorials">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white w-full sm:w-auto"
+                  >
+                    <PlayCircle className="w-5 h-5" />
+                    Watch Tutorials
+                  </Button>
+                </Link>
+                <Link to="/faq">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white w-full sm:w-auto"
+                  >
+                    <HelpCircle className="w-5 h-5" />
+                    FAQs
+                  </Button>
+                </Link>
               </div>
             </div>
             
@@ -101,16 +104,21 @@ export const Hero = () => {
               </div>
             </div>
           
-          {/* Right side - Video */}
+          {/* Right side - QR Code Download */}
           <div className="relative flex justify-center lg:justify-end z-10">
-            <div className="relative w-full max-w-xs">
-              <iframe
-                className="w-full aspect-[9/16] rounded-2xl shadow-trust"
-                src="https://www.youtube.com/embed/lyWGdj88Pwc"
-                title="MaPa-Aur-Hum App Demo"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust">
+              <div className="bg-white p-4 rounded-xl">
+                <img
+                  src={qrCode}
+                  alt="QR code to download MaPa-Aur-Hum app from Google Play Store"
+                  className="w-56 h-56 object-contain"
+                  width="224"
+                  height="224"
+                />
+              </div>
+              <p className="text-white text-center mt-4 font-medium">
+                Scan to Download
+              </p>
             </div>
           </div>
         </div>

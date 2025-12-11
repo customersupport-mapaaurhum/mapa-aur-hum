@@ -4,13 +4,9 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { WhyMaPa } from "@/components/WhyMaPa";
 import { Features } from "@/components/Features";
-import { Downloads } from "@/components/Downloads";
-import { AppTutorials } from "@/components/AppTutorials";
 import { Champions } from "@/components/Champions";
-import { FAQ } from "@/components/FAQ";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -50,10 +46,7 @@ const Index = () => {
           <WhyMaPa />
           <About />
           <Features />
-          <Downloads />
-          <AppTutorials />
           <Champions />
-          <FAQ />
           <Contact />
         </main>
         <Footer />
