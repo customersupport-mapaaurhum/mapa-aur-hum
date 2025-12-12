@@ -160,19 +160,9 @@ export const Hero = memo(() => {
                 Building trust for better childcare
               </h1>
               
-              <p className="text-sm sm:text-base lg:text-xl text-muted-foreground mb-4 lg:mb-6 max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
                 The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, relatives).
               </p>
-              
-              {/* Play Caregiver Game button only */}
-              <div className="flex justify-center lg:justify-start">
-                <Link to="/caregiver-game" className="w-full sm:w-auto">
-                  <Button variant="default" size="default" className="w-full sm:w-auto text-sm lg:text-lg">
-                    <Baby className="w-4 h-4 lg:w-5 lg:h-5" />
-                    Play New Caregiver Game
-                  </Button>
-                </Link>
-              </div>
             </div>
             
             {/* Right side - QR Code for mobile */}
