@@ -1,15 +1,17 @@
+import { lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { FeedbackDialog } from "@/components/FeedbackDialog";
 import { Smartphone, PlayCircle, HelpCircle, Star, Baby } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
-export const Hero = () => {
+// Lazy load FeedbackDialog since it's not immediately needed
+const FeedbackDialog = lazy(() => import("@/components/FeedbackDialog").then(m => ({ default: m.FeedbackDialog })));
 
+export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background */}
+      {/* Background with lazy loading */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBackground})` }}
@@ -92,15 +94,17 @@ export const Hero = () => {
                   Want more features? Share your thoughts with us.
                 </p>
                 
-                <FeedbackDialog>
-                  <Button 
-                    variant="outline"
-                    size="lg"
-                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                  >
-                    Share Feedback
-                  </Button>
-                </FeedbackDialog>
+                <Suspense fallback={<Button variant="outline" size="lg" className="text-lg border-white/30 text-white bg-white/10">Share Feedback</Button>}>
+                  <FeedbackDialog>
+                    <Button 
+                      variant="outline"
+                      size="lg"
+                      className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+                    >
+                      Share Feedback
+                    </Button>
+                  </FeedbackDialog>
+                </Suspense>
               </div>
             </div>
           
@@ -114,6 +118,9 @@ export const Hero = () => {
                   className="w-56 h-56 object-contain"
                   width="224"
                   height="224"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
               <p className="text-white text-center mt-4 font-medium">

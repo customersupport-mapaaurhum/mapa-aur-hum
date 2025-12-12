@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AppTutorials } from "@/components/AppTutorials";
+import { YouTubeFacade } from "@/components/YouTubeFacade";
 
 const TutorialsPage = () => {
   return (
@@ -32,15 +33,10 @@ const TutorialsPage = () => {
             <div className="max-w-2xl mx-auto">
               <div className="bg-card rounded-lg overflow-hidden shadow-lg">
                 <div className="aspect-video">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src="https://www.youtube.com/embed/lyWGdj88Pwc"
+                  <YouTubeFacade
+                    videoId="lyWGdj88Pwc"
                     title="MaPa-Aur-Hum App Demo"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  ></iframe>
+                  />
                 </div>
               </div>
             </div>
