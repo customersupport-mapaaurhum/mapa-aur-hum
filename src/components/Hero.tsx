@@ -1,12 +1,9 @@
-import { lazy, Suspense, memo } from "react";
+import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Smartphone, PlayCircle, HelpCircle, Star, Baby } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
-
-// Lazy load FeedbackDialog since it's not immediately needed
-const FeedbackDialog = lazy(() => import("@/components/FeedbackDialog").then(m => ({ default: m.FeedbackDialog })));
 
 // Memoized QR section to prevent re-renders
 const QRSection = memo(() => (
@@ -160,27 +157,9 @@ export const Hero = memo(() => {
               </div>
               
               {/* Feedback section */}
-              <div className="flex flex-col gap-2 lg:gap-4 items-center lg:items-start">
-                <p className="text-white text-xs sm:text-sm lg:text-base drop-shadow-md text-center lg:text-left">
-                  Want more features? Share your thoughts with us.
-                </p>
-                
-                <Suspense fallback={
-                  <Button variant="outline" size="default" className="text-sm lg:text-lg border-white/30 text-white bg-white/10">
-                    Share Feedback
-                  </Button>
-                }>
-                  <FeedbackDialog>
-                    <Button 
-                      variant="outline"
-                      size="default"
-                      className="text-sm lg:text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                    >
-                      Share Feedback
-                    </Button>
-                  </FeedbackDialog>
-                </Suspense>
-              </div>
+              <p className="text-white text-xs sm:text-sm lg:text-base drop-shadow-md text-center lg:text-left mt-2">
+                Want more features? Share your thoughts in the Contact section below.
+              </p>
             </div>
             
             {/* Right side - QR Code for mobile */}
