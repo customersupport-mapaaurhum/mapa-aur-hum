@@ -8,6 +8,9 @@ import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 const QRSection = memo(() => (
   <div className="flex justify-center w-full">
     <div className="bg-primary/10 backdrop-blur-sm p-4 rounded-2xl shadow-trust w-full max-w-[280px] border border-primary/20">
+      <p className="text-sm font-semibold text-foreground mb-2 text-center">
+        Available on Google Play Store
+      </p>
       <div className="bg-white p-2 rounded-xl mx-auto w-fit">
         <img
           src={qrCode}
@@ -73,6 +76,9 @@ QRSection.displayName = "QRSection";
 const QRSectionDesktop = memo(() => (
   <div className="hidden lg:flex justify-end w-full">
     <div className="bg-primary/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust max-w-sm border border-primary/20">
+      <p className="text-lg font-semibold text-foreground mb-3 text-center">
+        Available on Google Play Store
+      </p>
       <div className="bg-white p-4 rounded-xl mx-auto w-fit">
         <img
           src={qrCode}
