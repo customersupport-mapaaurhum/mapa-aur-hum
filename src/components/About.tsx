@@ -11,9 +11,17 @@ export const About = () => {
         </h2>
         
         <div className="text-center mb-6">
-          <p className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-            MaPa-Aur-Hum is the trusted, specialized childcare platform designed for working parents in India, offering a complete management solution to build trust and consistency in your home care. Easily set clear, structured, and personalized instructions for your caregiver (maid, babysitter, relative), and receive real-time updates with picture evidence to ensure transparency and peace of mind. Crucially, the app integrates tools for showing gratitude and offering rewards, recognizing their efforts as an integral part of maintaining a positive and effective partnership with your child's caregiver, all while supporting them with native Hindi language options.
-          </p>
+          <div className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4 space-y-3">
+            <p>
+              MaPa-Aur-Hum is the trusted, specialized childcare platform designed for working parents in India, offering a complete management solution to build trust and consistency in your home care.
+            </p>
+            <p>
+              Easily set clear, structured, and personalized instructions for your caregiver (maid, babysitter, relative), and receive real-time updates with picture evidence to ensure transparency and peace of mind.
+            </p>
+            <p>
+              Crucially, the app integrates tools for showing gratitude and offering rewards, recognizing their efforts as an integral part of maintaining a positive and effective partnership with your child's caregiver, all while supporting them with native Hindi language options.
+            </p>
+          </div>
           <p className="text-sm font-medium text-primary">
             Available on Google Play Store.{" "}
             <button
