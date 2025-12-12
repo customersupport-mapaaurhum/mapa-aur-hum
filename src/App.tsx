@@ -17,6 +17,8 @@ const CaregiverGamePage = lazy(() => import("./pages/CaregiverGamePage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const TutorialsPage = lazy(() => import("./pages/TutorialsPage"));
 const ChampionsPage = lazy(() => import("./pages/ChampionsPage"));
+const DownloadPage = lazy(() => import("./pages/DownloadPage"));
+const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
           <Route path="/champions" element={<ChampionsPage />} />
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/why-mapa" element={<WhyMaPaPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
