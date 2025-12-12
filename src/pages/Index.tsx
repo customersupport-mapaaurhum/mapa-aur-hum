@@ -1,12 +1,21 @@
+import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { WhyMaPa } from "@/components/WhyMaPa";
-import { Features } from "@/components/Features";
-import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { useEffect } from "react";
+
+// Lazy load below-the-fold components
+const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
+const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
+const Features = lazy(() => import("@/components/Features").then(m => ({ default: m.Features })));
+const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
+
+// Section loading placeholder
+const SectionLoader = () => (
+  <div className="py-16 flex items-center justify-center">
+    <div className="w-6 h-6 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   useEffect(() => {
@@ -42,10 +51,18 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <WhyMaPa />
-          <About />
-          <Features />
-          <Contact />
+          <Suspense fallback={<SectionLoader />}>
+            <WhyMaPa />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <Features />
+          </Suspense>
+          <Suspense fallback={<SectionLoader />}>
+            <Contact />
+          </Suspense>
         </main>
         <Footer />
       </div>

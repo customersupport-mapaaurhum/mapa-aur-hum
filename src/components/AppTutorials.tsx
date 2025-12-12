@@ -1,3 +1,5 @@
+import { YouTubeFacade } from "@/components/YouTubeFacade";
+
 export const AppTutorials = () => {
   return (
     <section id="tutorials" className="py-8 px-4 bg-muted/30">
@@ -15,15 +17,10 @@ export const AppTutorials = () => {
           {/* Parents Tutorial */}
           <div className="bg-card rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/Knc1ifxoyiQ"
+              <YouTubeFacade
+                videoId="Knc1ifxoyiQ"
                 title="App Tutorial for Parents"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
+              />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -38,15 +35,10 @@ export const AppTutorials = () => {
           {/* Caregivers Tutorial */}
           <div className="bg-card rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-video">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/i8XyMDcN6n0"
+              <YouTubeFacade
+                videoId="i8XyMDcN6n0"
                 title="App Tutorial for Caregivers (maids, babysitters, relatives)"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
+              />
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-foreground">
