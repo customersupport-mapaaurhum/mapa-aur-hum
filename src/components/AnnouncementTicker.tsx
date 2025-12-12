@@ -4,7 +4,7 @@ import { Sparkles, Trophy, Star } from "lucide-react";
 
 export const AnnouncementTicker = memo(() => {
   return (
-    <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-2 overflow-hidden">
+    <div className="fixed top-[72px] left-0 right-0 z-40 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white py-2 overflow-hidden">
       <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
         {/* Repeat content for seamless loop */}
         {[1, 2, 3].map((i) => (
