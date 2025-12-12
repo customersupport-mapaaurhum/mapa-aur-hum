@@ -45,15 +45,15 @@ export const Header = () => {
   return (
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-3">
+        <Link to="/" className="flex items-center space-x-2 shrink-0">
           <img src={logoImg} alt="MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width="40" height="40" loading="eager" decoding="async" />
-          <div>
-            <h2 className="text-xl font-bold text-foreground">MaPa-Aur-Hum</h2>
-            <p className="text-xs text-muted-foreground">Building trust for better childcare</p>
+          <div className="hidden sm:block">
+            <h2 className="text-lg lg:text-xl font-bold text-foreground whitespace-nowrap">MaPa-Aur-Hum</h2>
+            <p className="text-xs text-muted-foreground whitespace-nowrap">Building trust for better childcare</p>
           </div>
         </Link>
         
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
           <div 
             className="relative"
             onMouseEnter={() => handleMouseEnter('why')}
@@ -176,7 +176,7 @@ export const Header = () => {
 
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="lg:hidden">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
