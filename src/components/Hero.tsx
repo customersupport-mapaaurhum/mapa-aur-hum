@@ -164,11 +164,19 @@ export const Hero = memo(() => {
                 The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers.
               </p>
               
-              <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
+              <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-3">
                 Are you a caregiver agency or staffing firm? Partner with us to offer a seamless childcare experience to your customers.{" "}
                 <Link to="/contact" className="text-primary hover:underline font-medium">
                   Contact us today
                 </Link>
+              </p>
+              
+              <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                Meet the amazing{" "}
+                <Link to="/contributors" className="text-primary hover:underline font-medium">
+                  contributors
+                </Link>
+                {" "}who helped shape MaPa-Aur-Hum.
               </p>
             </div>
             
