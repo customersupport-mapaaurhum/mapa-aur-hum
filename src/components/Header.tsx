@@ -33,37 +33,6 @@ export const Header = () => {
         </Link>
         
         <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
-          <div 
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('why')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Button
-              variant="ghost"
-              className="font-medium"
-            >
-              Why MaPa-Aur-Hum
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-            {activeMenu === 'why' && (
-              <div className="absolute top-full left-0 mt-0 flex gap-2 bg-background border border-border rounded-md shadow-lg p-3 whitespace-nowrap">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
-                  <Link to="/why-mapa">Why MaPa-Aur-Hum</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
-                  <Link to="/why-mapa">Key Features</Link>
-                </Button>
-              </div>
-            )}
-          </div>
 
           <div 
             className="relative"
@@ -155,23 +124,6 @@ export const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-64">
             <nav className="flex flex-col gap-4 mt-8">
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold text-sm text-muted-foreground px-2">Why MaPa-Aur-Hum</p>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/why-mapa">Why MaPa-Aur-Hum</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/why-mapa">Key Features</Link>
-                </Button>
-              </div>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
