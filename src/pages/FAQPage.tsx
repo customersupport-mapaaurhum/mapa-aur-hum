@@ -15,13 +15,15 @@ const FAQPage = () => {
         <link rel="canonical" href="https://mapaaurhum.com/faq" />
       </Helmet>
 
-      <Header />
+      <div className="min-h-screen flex flex-col bg-background">
+        <Header />
 
-      <main className="min-h-screen bg-background pt-20">
-        <FAQ />
-      </main>
+        <main className="flex-1 pt-20">
+          <FAQ />
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };
