@@ -23,16 +23,16 @@ export const Hero = () => {
           {/* Left side - Content */}
           <div className="text-center lg:text-left relative z-20">
             
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
               Building trust for better childcare
             </h1>
             
-            <p className="text-xl text-white/90 mb-3 max-w-xl">
+            <p className="text-xl text-white mb-3 max-w-xl drop-shadow-md">
               The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, relatives).
             </p>
             
             <div className="mb-6">
-              <p className="text-lg font-medium text-white mb-3">
+              <p className="text-lg font-semibold text-white mb-3 drop-shadow-md">
                 Available on Google Play Store
               </p>
               <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
@@ -88,7 +88,7 @@ export const Hero = () => {
             </div>
             
             <div className="flex flex-col gap-4 justify-center lg:justify-start">
-                <p className="text-white/90 text-base">
+                <p className="text-white text-base drop-shadow-md">
                   Want more features? Share your thoughts with us.
                 </p>
                 
