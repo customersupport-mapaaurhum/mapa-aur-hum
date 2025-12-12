@@ -157,7 +157,7 @@ export const Hero = memo(() => {
             {/* Left side - Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-foreground mb-3 lg:mb-4 leading-tight">
-                Building trust for better childcare
+                <span className="text-primary">MaPa-Aur-Hum</span> — Building trust for better childcare
               </h1>
               
               <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4">
