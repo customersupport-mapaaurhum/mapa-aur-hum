@@ -236,14 +236,14 @@ const CaregiverGamePage = () => {
       
       <Header />
       
-      <main className="container mx-auto px-4 py-12 relative z-10">
+      <main className="container mx-auto px-4 py-12 pt-24 relative z-10">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           className="flex justify-center mb-6"
         >
-          <img src={logo} alt="MaPa-Aur-Hum Logo" className="w-32 h-32 rounded-full shadow-lg border-4 border-red-500" />
+          <img src={logo} alt="MaPa-Aur-Hum Logo" className="w-32 h-32 rounded-full shadow-lg" />
         </motion.div>
 
         <motion.div
