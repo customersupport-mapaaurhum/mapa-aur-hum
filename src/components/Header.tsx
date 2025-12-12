@@ -1,13 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, lazy, Suspense, memo } from "react";
+import { useState } from "react";
 import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
-
-// Lazy load Sheet for mobile - not needed on desktop
-const Sheet = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.Sheet })));
-const SheetContent = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.SheetContent })));
-const SheetTrigger = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.SheetTrigger })));
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = () => {
   const location = useLocation();
@@ -178,115 +174,109 @@ export const Header = () => {
           </Button>
         </nav>
 
-        {/* Mobile Menu - Lazy loaded */}
-        <Suspense fallback={
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-6 w-6" />
-          </Button>
-        }>
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-64">
-              <nav className="flex flex-col gap-4 mt-8">
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-sm text-muted-foreground px-2">Why MaPa-Aur-Hum</p>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    onClick={() => {
-                      scrollToSection('why-mapa');
-                      document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                    }}
-                  >
-                    Why MaPa-Aur-Hum
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    onClick={() => {
-                      scrollToSection('features');
-                      document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                    }}
-                  >
-                    Key Features
-                  </Button>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    onClick={() => {
-                      scrollToSection('downloads');
-                      document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                    }}
-                  >
-                    Downloads
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    onClick={() => {
-                      scrollToSection('tutorials');
-                      document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
-                    }}
-                  >
-                    Video Tutorials
-                  </Button>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/founder">Founder</Link>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/jobs">Careers</Link>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/contributors">Contributors</Link>
-                  </Button>
-                </div>
-
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <nav className="flex flex-col gap-4 mt-8">
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">Why MaPa-Aur-Hum</p>
                 <Button
                   variant="ghost"
                   className="justify-start"
                   onClick={() => {
-                    scrollToSection('faq');
+                    scrollToSection('why-mapa');
                     document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
                   }}
                 >
-                  FAQ
+                  Why MaPa-Aur-Hum
                 </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('features');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Key Features
+                </Button>
+              </div>
 
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('downloads');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Downloads
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  onClick={() => {
+                    scrollToSection('tutorials');
+                    document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                  }}
+                >
+                  Video Tutorials
+                </Button>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
                 <Button
                   variant="ghost"
                   className="justify-start"
                   asChild
                 >
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/founder">Founder</Link>
                 </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </Suspense>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/jobs">Careers</Link>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/contributors">Contributors</Link>
+                </Button>
+              </div>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                onClick={() => {
+                  scrollToSection('faq');
+                  document.querySelector('[data-state="open"]')?.querySelector('button')?.click();
+                }}
+              >
+                FAQ
+              </Button>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
