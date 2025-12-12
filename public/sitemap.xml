@@ -1,45 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://mapaaurhum.com/</loc>
+    <lastmod>2025-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/why-mapa</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://mapaaurhum.com/faq</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mapaaurhum.com/tutorials</loc>
+    <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/jobs</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://mapaaurhum.com/caregiver-game</loc>
+    <lastmod>2025-12-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/founder</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/contributors</loc>
-    <lastmod>2025-12-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/contact</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://mapaaurhum.com/contact</loc>
+    <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.mapa-aur-hum.lovable.app/caregiver-game</loc>
-    <lastmod>2025-12-03</lastmod>
+    <loc>https://mapaaurhum.com/jobs</loc>
+    <lastmod>2025-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mapaaurhum.com/founder</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mapaaurhum.com/contributors</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mapaaurhum.com/champions</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
