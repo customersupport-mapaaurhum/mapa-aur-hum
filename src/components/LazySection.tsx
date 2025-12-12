@@ -8,9 +8,7 @@ interface LazySectionProps {
 }
 
 const DefaultFallback = memo(() => (
-  <div className="py-8 flex items-center justify-center" aria-hidden="true">
-    <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
+  <div className="min-h-[100px]" aria-hidden="true" />
 ));
 
 DefaultFallback.displayName = "DefaultFallback";

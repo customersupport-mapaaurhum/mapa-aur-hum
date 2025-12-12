@@ -81,9 +81,9 @@ export const Hero = memo(() => {
             </p>
             
             <div className="mb-6">
-              <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
+              <div className="flex flex-row gap-3 flex-wrap justify-center lg:justify-start">
                 <Link to="/caregiver-game">
-                  <Button variant="hero" size="lg" className="text-lg w-full sm:w-auto">
+                  <Button variant="hero" size="lg" className="text-lg">
                     <Baby className="w-5 h-5" />
                     Play Detective Game
                   </Button>
@@ -92,7 +92,7 @@ export const Hero = memo(() => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white w-full sm:w-auto"
+                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                   >
                     <PlayCircle className="w-5 h-5" />
                     Watch Tutorials
@@ -102,7 +102,7 @@ export const Hero = memo(() => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white w-full sm:w-auto"
+                    className="text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
                   >
                     <HelpCircle className="w-5 h-5" />
                     FAQs
@@ -111,13 +111,13 @@ export const Hero = memo(() => {
               </div>
             </div>
             
-            <div className="flex flex-col gap-4 justify-center lg:justify-start">
-              <p className="text-white text-base drop-shadow-md">
+            <div className="flex flex-col gap-4 items-center lg:items-start">
+              <p className="text-white text-base drop-shadow-md text-center lg:text-left">
                 Want more features? Share your thoughts with us.
               </p>
               
               <Suspense fallback={
-                <Button variant="outline" size="lg" className="text-lg border-white/30 text-white bg-white/10 w-fit">
+                <Button variant="outline" size="lg" className="text-lg border-white/30 text-white bg-white/10">
                   Share Feedback
                 </Button>
               }>
