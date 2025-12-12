@@ -1,15 +1,14 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Star, Baby } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Baby } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBackground from "@/assets/mapa-aur-hum-hero-background.jpg";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 // Memoized QR section to prevent re-renders
 const QRSection = memo(() => (
   <div className="flex justify-center w-full">
-    <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl shadow-trust w-full max-w-[280px]">
-      <p className="text-sm font-semibold text-white mb-2 drop-shadow-md text-center">
+    <div className="bg-primary/10 backdrop-blur-sm p-4 rounded-2xl shadow-trust w-full max-w-[280px] border border-primary/20">
+      <p className="text-sm font-semibold text-foreground mb-2 text-center">
         Available on Google Play Store
       </p>
       <div className="bg-white p-2 rounded-xl mx-auto w-fit">
@@ -23,33 +22,34 @@ const QRSection = memo(() => (
           decoding="async"
         />
       </div>
-      <p className="text-white text-center mt-2 font-medium text-xs">
+      <p className="text-muted-foreground text-center mt-2 font-medium text-xs">
         Scan to Download
       </p>
       <div className="flex flex-col gap-2 mt-3">
         <Button
           onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
-          variant="hero"
+          variant="default"
           size="default"
           className="w-full text-sm"
         >
           <Smartphone className="w-4 h-4" />
           Download App
         </Button>
-        <Button
-          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum', '_blank')}
-          variant="outline"
-          size="sm"
-          className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white text-xs"
-        >
-          <Star className="w-3 h-3" />
-          Review Us
-        </Button>
+        <Link to="/caregiver-game" className="w-full">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full text-xs"
+          >
+            <Baby className="w-3 h-3" />
+            Play New Caregiver Game
+          </Button>
+        </Link>
         <Link to="/tutorials" className="w-full">
           <Button
             variant="outline"
             size="sm"
-            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white text-xs"
+            className="w-full text-xs"
           >
             <PlayCircle className="w-3 h-3" />
             Watch Tutorials
@@ -59,7 +59,7 @@ const QRSection = memo(() => (
           <Button
             variant="outline"
             size="sm"
-            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white text-xs"
+            className="w-full text-xs"
           >
             <HelpCircle className="w-3 h-3" />
             FAQs
@@ -75,8 +75,8 @@ QRSection.displayName = "QRSection";
 // Desktop QR section with larger sizing
 const QRSectionDesktop = memo(() => (
   <div className="hidden lg:flex justify-end w-full">
-    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust max-w-sm">
-      <p className="text-lg font-semibold text-white mb-3 drop-shadow-md text-center">
+    <div className="bg-primary/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust max-w-sm border border-primary/20">
+      <p className="text-lg font-semibold text-foreground mb-3 text-center">
         Available on Google Play Store
       </p>
       <div className="bg-white p-4 rounded-xl mx-auto w-fit">
@@ -90,33 +90,34 @@ const QRSectionDesktop = memo(() => (
           decoding="async"
         />
       </div>
-      <p className="text-white text-center mt-3 font-medium text-sm">
+      <p className="text-muted-foreground text-center mt-3 font-medium text-sm">
         Scan to Download
       </p>
       <div className="flex flex-col gap-2 mt-4">
         <Button
           onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
-          variant="hero"
+          variant="default"
           size="lg"
           className="w-full"
         >
           <Smartphone className="w-5 h-5" />
           Download App
         </Button>
-        <Button
-          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum', '_blank')}
-          variant="outline"
-          size="default"
-          className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-        >
-          <Star className="w-4 h-4" />
-          Review Us
-        </Button>
+        <Link to="/caregiver-game" className="w-full">
+          <Button
+            variant="outline"
+            size="default"
+            className="w-full"
+          >
+            <Baby className="w-4 h-4" />
+            Play New Caregiver Game
+          </Button>
+        </Link>
         <Link to="/tutorials" className="w-full">
           <Button
             variant="outline"
             size="default"
-            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+            className="w-full"
           >
             <PlayCircle className="w-4 h-4" />
             Watch Tutorials
@@ -126,7 +127,7 @@ const QRSectionDesktop = memo(() => (
           <Button
             variant="outline"
             size="default"
-            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+            className="w-full"
           >
             <HelpCircle className="w-4 h-4" />
             FAQs
@@ -141,13 +142,12 @@ QRSectionDesktop.displayName = "QRSectionDesktop";
 
 export const Hero = memo(() => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20">
-      {/* Background */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero" />
+    <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      {/* Decorative elements matching logo colors */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
       </div>
       
       {/* Content */}
@@ -156,20 +156,20 @@ export const Hero = memo(() => {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             {/* Left side - Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-white mb-3 lg:mb-4 leading-tight drop-shadow-lg">
+              <h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-foreground mb-3 lg:mb-4 leading-tight">
                 Building trust for better childcare
               </h1>
               
-              <p className="text-sm sm:text-base lg:text-xl text-white mb-4 lg:mb-6 drop-shadow-md max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base lg:text-xl text-muted-foreground mb-4 lg:mb-6 max-w-xl mx-auto lg:mx-0">
                 The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, relatives).
               </p>
               
-              {/* Play Detective Game button only */}
+              {/* Play Caregiver Game button only */}
               <div className="flex justify-center lg:justify-start">
                 <Link to="/caregiver-game" className="w-full sm:w-auto">
-                  <Button variant="hero" size="default" className="w-full sm:w-auto text-sm lg:text-lg">
+                  <Button variant="default" size="default" className="w-full sm:w-auto text-sm lg:text-lg">
                     <Baby className="w-4 h-4 lg:w-5 lg:h-5" />
-                    Play Detective Game
+                    Play New Caregiver Game
                   </Button>
                 </Link>
               </div>
