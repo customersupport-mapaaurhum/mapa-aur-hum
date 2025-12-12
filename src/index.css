@@ -132,20 +132,29 @@ Inspired by warmth, trust, safety, and Indian family values.
   }
 }
 
-/* Marquee animation for ticker */
+/* Marquee animation for ticker - GPU accelerated */
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-33.33%);
+    transform: translate3d(-33.33%, 0, 0);
   }
 }
 
 .animate-marquee {
   animation: marquee 20s linear infinite;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

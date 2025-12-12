@@ -207,31 +207,12 @@ const CaregiverGamePage = () => {
         <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/caregiver-game" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-red-50 via-green-50 to-red-50 dark:from-red-950/20 dark:via-green-950/20 dark:to-red-950/20 relative overflow-hidden">
-      {/* Christmas Snowflakes */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-red-300/30 dark:text-red-200/20 text-2xl"
-            initial={{ 
-              top: -50, 
-              left: `${Math.random() * 100}%`,
-              rotate: 0 
-            }}
-            animate={{ 
-              top: "100vh",
-              rotate: 360
-            }}
-            transition={{
-              duration: 10 + Math.random() * 10,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "linear"
-            }}
-          >
-            ❄️
-          </motion.div>
-        ))}
+      {/* Simplified decorative elements - CSS only, no JS animations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-10 left-[10%] w-3 h-3 bg-red-300/20 rounded-full animate-pulse" />
+        <div className="absolute top-20 right-[20%] w-2 h-2 bg-green-300/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-40 left-[30%] w-4 h-4 bg-red-300/15 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-60 right-[40%] w-2 h-2 bg-green-300/20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
       </div>
       
       <Header />

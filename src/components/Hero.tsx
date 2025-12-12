@@ -36,17 +36,14 @@ const QRSection = memo(() => (
           Download App
         </Button>
         <Link to="/caregiver-game" className="w-full group">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-            <Button
-              size="sm"
-              className="relative w-full text-xs bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg"
-            >
-              <Sparkles className="w-3 h-3 animate-spin" style={{ animationDuration: '3s' }} />
-              🎮 Play Caregiver Game
-              <span className="ml-1 px-1.5 py-0.5 text-[10px] bg-white/20 rounded-full">NEW</span>
-            </Button>
-          </div>
+          <Button
+            size="sm"
+            className="w-full text-xs bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg transition-transform hover:scale-[1.02]"
+          >
+            <Sparkles className="w-3 h-3" />
+            🎮 Play Caregiver Game
+            <span className="ml-1 px-1.5 py-0.5 text-[10px] bg-white/20 rounded-full">NEW</span>
+          </Button>
         </Link>
         <Link to="/tutorials" className="w-full">
           <Button
@@ -107,17 +104,14 @@ const QRSectionDesktop = memo(() => (
           Download App
         </Button>
         <Link to="/caregiver-game" className="w-full group">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-            <Button
-              size="default"
-              className="relative w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg"
-            >
-              <Sparkles className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} />
-              🎮 Play Caregiver Game
-              <span className="ml-2 px-2 py-0.5 text-xs bg-white/20 rounded-full">NEW</span>
-            </Button>
-          </div>
+          <Button
+            size="default"
+            className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg transition-transform hover:scale-[1.02]"
+          >
+            <Sparkles className="w-4 h-4" />
+            🎮 Play Caregiver Game
+            <span className="ml-2 px-2 py-0.5 text-xs bg-white/20 rounded-full">NEW</span>
+          </Button>
         </Link>
         <Link to="/tutorials" className="w-full">
           <Button
