@@ -5,8 +5,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
 
-// Lazy load pages for code splitting
-const Index = lazy(() => import("./pages/Index"));
+// Load Index eagerly - it's the critical landing page
+import Index from "./pages/Index";
+
+// Lazy load other pages for code splitting
 const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const JobsPage = lazy(() => import("./pages/JobsPage"));
 const FounderPage = lazy(() => import("./pages/FounderPage"));
