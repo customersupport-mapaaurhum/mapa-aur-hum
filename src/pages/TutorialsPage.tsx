@@ -6,7 +6,7 @@ import { YouTubeFacade } from "@/components/YouTubeFacade";
 
 const TutorialsPage = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
         <title>Tutorials | MaPa-Aur-Hum - Learn How to Use the App</title>
         <meta
@@ -18,7 +18,7 @@ const TutorialsPage = () => {
 
       <Header />
 
-      <main className="min-h-screen bg-background pt-20">
+      <main className="flex-1 pt-20">
         {/* Website Demo Video */}
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
@@ -47,7 +47,7 @@ const TutorialsPage = () => {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
