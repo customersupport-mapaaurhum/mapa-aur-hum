@@ -68,7 +68,7 @@ export const WhyMaPa = () => {
   ];
 
   return (
-    <section id="why-mapa" className="py-8 bg-background">
+    <section id="why-mapa" className="py-8 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Why MaPa-Aur-Hum</h2>
@@ -77,10 +77,10 @@ export const WhyMaPa = () => {
           </p>
         </div>
         
-        <Carousel className="w-full mx-auto">
-          <CarouselContent className="-ml-1">
+        <Carousel className="w-full mx-auto px-8 md:px-12">
+          <CarouselContent className="-ml-2 md:-ml-4">
             {problems.map((problem, index) => (
-              <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                 <Card className="p-3 hover:shadow-elegant transition-all duration-300 border-border/50 h-full min-h-[200px]">
                   <div className="flex flex-col items-center text-center">
                     <div className={`w-10 h-10 ${problem.color} rounded-lg flex items-center justify-center mb-3`}>
@@ -93,8 +93,8 @@ export const WhyMaPa = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
+          <CarouselPrevious className="left-0 md:left-2" />
+          <CarouselNext className="right-0 md:right-2" />
         </Carousel>
       </div>
     </section>
