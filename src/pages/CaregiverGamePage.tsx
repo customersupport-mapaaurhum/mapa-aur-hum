@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Baby, Trophy, Share2, RotateCcw, Download, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/mapa-aur-hum-logo.jpg";
+
 
 // Coaching practices data organized by age in months
 const coachingData = {
@@ -236,35 +236,17 @@ const CaregiverGamePage = () => {
       
       <Header />
       
-      <main className="container mx-auto px-4 py-12 pt-24 relative z-10">
-        {/* Logo */}
+      <main className="container mx-auto px-4 py-4 pt-20 relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="flex justify-center mb-6"
-        >
-          <img src={logo} alt="MaPa-Aur-Hum Logo" className="w-32 h-32 rounded-full shadow-lg" />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-4"
         >
-          <div className="flex justify-center mb-6">
-            <motion.div
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-            >
-              <Baby className="w-24 h-24 text-red-600" />
-            </motion.div>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 via-green-600 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-red-600 via-green-600 to-red-600 bg-clip-text text-transparent">
             🎄 Caregiver Detective Game 🎅
           </h1>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            Be a detective! Check off all the childcare practices your caregiver (maid, babysitter, relatives) is doing while you're away. Let's see how well you've coached them! 🕵️
+          <p className="text-sm text-foreground/80 max-w-2xl mx-auto">
+            Check off all the childcare practices your caregiver (maid, babysitter, relatives) is doing while you're away. 🕵️
           </p>
         </motion.div>
 
