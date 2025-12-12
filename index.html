@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Preconnect to critical origins - reduces DNS/TCP/TLS latency -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://img.youtube.com" />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    
+    <!-- DNS prefetch for non-critical origins -->
+    <link rel="dns-prefetch" href="https://play.google.com" />
+    
     <title>MaPa-Aur-Hum - Building trust for better childcare</title>
     <meta name="description" content="Trusted childcare app for Indian working parents and secondary caregivers at home. Communication with picture updates, Hindi language support, and other modules to allow you to provide personalized home-based care." />
     <meta name="author" content="Mapaaurhum Technologies OPC Pvt Ltd" />
@@ -30,7 +40,17 @@
     <meta name="geo.country" content="India" />
     <meta name="application-name" content="MaPa-Aur-Hum" />
     
-    <!-- Schema.org structured data -->
+    <!-- Critical CSS - inlined for faster first paint -->
+    <style>
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:system-ui,-apple-system,sans-serif;background:#fffaf5}
+      #root{min-height:100vh}
+      .loading-spinner{display:flex;align-items:center;justify-content:center;min-height:100vh}
+      .loading-spinner::after{content:"";width:32px;height:32px;border:3px solid #f97316;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+    </style>
+    
+    <!-- Schema.org structured data - defer parsing -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -63,23 +83,20 @@
       ]
     }
     </script>
+  </head>
+
+  <body>
+    <div id="root" class="loading-spinner"><!--app-html--></div>
+    <script type="module" src="/src/main.tsx"></script>
     
-    <!-- 301 redirect handling for www/non-www -->
-    <script>
+    <!-- Defer non-critical redirect script -->
+    <script defer>
       (function() {
         var canonical = 'https://mapaaurhum.com';
-        var current = window.location.href;
-        
-        // Redirect www to non-www
         if (window.location.hostname === 'www.mapaaurhum.com') {
           window.location.replace(canonical + window.location.pathname + window.location.search + window.location.hash);
         }
       })();
     </script>
-  </head>
-
-  <body>
-    <div id="root"><!--app-html--></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
