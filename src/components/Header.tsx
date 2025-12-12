@@ -84,13 +84,6 @@ export const Header = () => {
                   size="sm"
                   asChild
                 >
-                  <Link to="/downloads">Downloads</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
                   <Link to="/tutorials">Video Tutorials</Link>
                 </Button>
               </div>
@@ -182,13 +175,6 @@ export const Header = () => {
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/downloads">Downloads</Link>
-                </Button>
                 <Button
                   variant="ghost"
                   className="justify-start"

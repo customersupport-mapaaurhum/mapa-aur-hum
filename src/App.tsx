@@ -15,7 +15,7 @@ const FounderPage = lazy(() => import("./pages/FounderPage"));
 const ContributorsPage = lazy(() => import("./pages/ContributorsPage"));
 const ContactUsPage = lazy(() => import("./pages/ContactUsPage"));
 const CaregiverGamePage = lazy(() => import("./pages/CaregiverGamePage"));
-const DownloadsPage = lazy(() => import("./pages/DownloadsPage"));
+
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const TutorialsPage = lazy(() => import("./pages/TutorialsPage"));
 const ChampionsPage = lazy(() => import("./pages/ChampionsPage"));
@@ -44,7 +44,7 @@ const App = () => (
           <Route path="/contributors" element={<ContributorsPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/caregiver-game" element={<CaregiverGamePage />} />
-          <Route path="/downloads" element={<DownloadsPage />} />
+          
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/tutorials" element={<TutorialsPage />} />
           <Route path="/champions" element={<ChampionsPage />} />
