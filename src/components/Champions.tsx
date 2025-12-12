@@ -53,38 +53,37 @@ export const Champions = () => {
         </div>
 
         {/* Contributors Carousel */}
-        <Carousel className="w-full mx-auto">
-          <CarouselContent className="-ml-1">
+        <Carousel className="w-full max-w-5xl mx-auto px-8">
+          <CarouselContent className="ml-0">
             {contributors.map((contributor, index) => (
-              <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                 <div className="group relative h-full">
-                  {/* Decorative element */}
-                  <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-primary to-primary-glow rounded-full"></div>
-                  
                   {/* Content design */}
-                  <div className="pl-8 py-4 bg-card/50 rounded-lg border-l-4 border-primary/20 hover:border-primary/40 transition-colors h-full min-h-[220px]">
+                  <div className="p-4 bg-card rounded-lg border border-border/50 hover:border-primary/40 transition-colors h-full min-h-[200px]">
                     {/* Content */}
-                    <div className="space-y-2">
-                      <p className="text-muted-foreground text-xs leading-relaxed">
+                    <div className="space-y-3">
+                      <p className="text-muted-foreground text-sm leading-relaxed">
                         {contributor.contribution}
                       </p>
                       
                       {/* Attribution */}
-                       <div className="flex items-center justify-between">
-                         <div>
-                           <h4 className="text-sm font-semibold text-foreground">
-                             {contributor.name}
-                           </h4>
-                           <p className="text-primary text-xs font-medium">
-                             {contributor.city}
-                           </p>
-                           <p className="text-muted-foreground text-xs">
-                             {contributor.role}
-                           </p>
-                         </div>
+                      <div className="flex items-center justify-between pt-2 border-t border-border/30">
+                        <div>
+                          <h4 className="text-sm font-semibold text-foreground">
+                            {contributor.name}
+                          </h4>
+                          {contributor.city && (
+                            <p className="text-primary text-xs font-medium">
+                              {contributor.city}
+                            </p>
+                          )}
+                          <p className="text-muted-foreground text-xs">
+                            {contributor.role}
+                          </p>
+                        </div>
                         
                         {/* Decorative accent */}
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
                           <div className="w-4 h-4 rounded-full bg-primary/40"></div>
                         </div>
                       </div>
@@ -94,8 +93,8 @@ export const Champions = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
+          <CarouselPrevious className="-left-4" />
+          <CarouselNext className="-right-4" />
         </Carousel>
       </div>
     </section>
