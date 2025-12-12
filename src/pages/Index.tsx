@@ -1,21 +1,21 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, memo } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 
 // Lazy load below-the-fold components
-const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
+const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
 const Features = lazy(() => import("@/components/Features").then(m => ({ default: m.Features })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 
-// Section loading placeholder
-const SectionLoader = () => (
-  <div className="py-16 flex items-center justify-center">
-    <div className="w-6 h-6 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+// Lightweight section loader - no extra DOM weight
+const SectionLoader = memo(() => (
+  <div className="py-12 flex items-center justify-center" aria-hidden="true">
+    <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
   </div>
-);
+));
 
 const Index = () => {
   useEffect(() => {
