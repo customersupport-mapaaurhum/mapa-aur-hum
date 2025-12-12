@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 import { LazySection } from "@/components/LazySection";
+import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
@@ -44,6 +45,7 @@ const Index = () => {
         <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/" />
       </Helmet>
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
+        <AnnouncementTicker />
         <Header />
         <main>
           <Hero />
