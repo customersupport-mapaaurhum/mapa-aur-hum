@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Baby } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
@@ -35,15 +35,18 @@ const QRSection = memo(() => (
           <Smartphone className="w-4 h-4" />
           Download App
         </Button>
-        <Link to="/caregiver-game" className="w-full">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full text-xs"
-          >
-            <Baby className="w-3 h-3" />
-            Play New Caregiver Game
-          </Button>
+        <Link to="/caregiver-game" className="w-full group">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+            <Button
+              size="sm"
+              className="relative w-full text-xs bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg"
+            >
+              <Sparkles className="w-3 h-3 animate-spin" style={{ animationDuration: '3s' }} />
+              🎮 Play Caregiver Game
+              <span className="ml-1 px-1.5 py-0.5 text-[10px] bg-white/20 rounded-full">NEW</span>
+            </Button>
+          </div>
         </Link>
         <Link to="/tutorials" className="w-full">
           <Button
@@ -103,15 +106,18 @@ const QRSectionDesktop = memo(() => (
           <Smartphone className="w-5 h-5" />
           Download App
         </Button>
-        <Link to="/caregiver-game" className="w-full">
-          <Button
-            variant="outline"
-            size="default"
-            className="w-full"
-          >
-            <Baby className="w-4 h-4" />
-            Play New Caregiver Game
-          </Button>
+        <Link to="/caregiver-game" className="w-full group">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+            <Button
+              size="default"
+              className="relative w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg"
+            >
+              <Sparkles className="w-4 h-4 animate-spin" style={{ animationDuration: '3s' }} />
+              🎮 Play Caregiver Game
+              <span className="ml-2 px-2 py-0.5 text-xs bg-white/20 rounded-full">NEW</span>
+            </Button>
+          </div>
         </Link>
         <Link to="/tutorials" className="w-full">
           <Button
