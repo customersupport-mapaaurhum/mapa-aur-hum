@@ -43,7 +43,7 @@ const Index = () => {
         <meta property="og:description" content="Real-time babysitter communication app with picture updates and audio instructions for working parents in India." />
         <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
         <Header />
         <main>
           <Hero />
