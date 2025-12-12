@@ -1,8 +1,9 @@
-import { lazy, Suspense, useEffect, memo } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
+import { LazySection } from "@/components/LazySection";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
@@ -10,31 +11,26 @@ const About = lazy(() => import("@/components/About").then(m => ({ default: m.Ab
 const Features = lazy(() => import("@/components/Features").then(m => ({ default: m.Features })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 
-// Lightweight section loader - no extra DOM weight
-const SectionLoader = memo(() => (
-  <div className="py-12 flex items-center justify-center" aria-hidden="true">
-    <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
-));
-
 const Index = () => {
   useEffect(() => {
     // Handle hash navigation on page load
     if (window.location.hash) {
       const id = window.location.hash.substring(1);
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          const headerOffset = 80;
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 50);
+      });
     }
   }, []);
 
@@ -51,18 +47,26 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <Suspense fallback={<SectionLoader />}>
-            <WhyMaPa />
-          </Suspense>
-          <Suspense fallback={<SectionLoader />}>
-            <About />
-          </Suspense>
-          <Suspense fallback={<SectionLoader />}>
-            <Features />
-          </Suspense>
-          <Suspense fallback={<SectionLoader />}>
-            <Contact />
-          </Suspense>
+          <LazySection>
+            <Suspense fallback={null}>
+              <WhyMaPa />
+            </Suspense>
+          </LazySection>
+          <LazySection>
+            <Suspense fallback={null}>
+              <About />
+            </Suspense>
+          </LazySection>
+          <LazySection>
+            <Suspense fallback={null}>
+              <Features />
+            </Suspense>
+          </LazySection>
+          <LazySection>
+            <Suspense fallback={null}>
+              <Contact />
+            </Suspense>
+          </LazySection>
         </main>
         <Footer />
       </div>
