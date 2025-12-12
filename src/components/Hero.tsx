@@ -148,7 +148,7 @@ QRSectionDesktop.displayName = "QRSectionDesktop";
 
 export const Hero = memo(() => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 lg:pt-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+    <section className="relative min-h-screen flex items-center justify-center pt-28 lg:pt-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       {/* Decorative elements matching logo colors */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
