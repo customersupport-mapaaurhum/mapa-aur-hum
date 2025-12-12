@@ -10,21 +10,20 @@ const FeedbackDialog = lazy(() => import("@/components/FeedbackDialog").then(m =
 
 // Memoized QR section to prevent re-renders
 const QRSection = memo(() => (
-  <div className="relative flex justify-center lg:justify-end z-10">
-    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust">
-      <p className="text-lg font-semibold text-white mb-3 drop-shadow-md text-center">
+  <div className="relative flex justify-center lg:justify-end z-10 w-full">
+    <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-trust w-full max-w-xs sm:max-w-sm">
+      <p className="text-base sm:text-lg font-semibold text-white mb-3 drop-shadow-md text-center">
         Available on Google Play Store
       </p>
-      <div className="bg-white p-4 rounded-xl">
+      <div className="bg-white p-3 sm:p-4 rounded-xl mx-auto w-fit">
         <img
           src={qrCode}
           alt="QR code to download MaPa-Aur-Hum app"
-          className="w-56 h-56 object-contain"
+          className="w-40 h-40 sm:w-56 sm:h-56 object-contain"
           width="224"
           height="224"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
         />
       </div>
       <p className="text-white text-center mt-3 font-medium text-sm">
@@ -58,7 +57,7 @@ QRSection.displayName = "QRSection";
 
 export const Hero = memo(() => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden pt-20">
       {/* Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -68,15 +67,15 @@ export const Hero = memo(() => {
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-12">
+      <div className="relative z-10 container mx-auto px-4 py-12 w-full max-w-full overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Content */}
-          <div className="text-center lg:text-left relative z-20">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+          <div className="text-center lg:text-left relative z-20 overflow-hidden">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
               Building trust for better childcare
             </h1>
             
-            <p className="text-xl text-white mb-3 max-w-xl drop-shadow-md">
+            <p className="text-base sm:text-xl text-white mb-3 max-w-xl drop-shadow-md mx-auto lg:mx-0">
               The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, relatives).
             </p>
             
