@@ -45,6 +45,26 @@ const QRSection = memo(() => (
           <Star className="w-3 h-3" />
           Review Us
         </Button>
+        <Link to="/tutorials" className="w-full">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white text-xs"
+          >
+            <PlayCircle className="w-3 h-3" />
+            Watch Tutorials
+          </Button>
+        </Link>
+        <Link to="/faq" className="w-full">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white text-xs"
+          >
+            <HelpCircle className="w-3 h-3" />
+            FAQs
+          </Button>
+        </Link>
       </div>
     </div>
   </div>
@@ -92,6 +112,26 @@ const QRSectionDesktop = memo(() => (
           <Star className="w-4 h-4" />
           Review Us
         </Button>
+        <Link to="/tutorials" className="w-full">
+          <Button
+            variant="outline"
+            size="default"
+            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+          >
+            <PlayCircle className="w-4 h-4" />
+            Watch Tutorials
+          </Button>
+        </Link>
+        <Link to="/faq" className="w-full">
+          <Button
+            variant="outline"
+            size="default"
+            className="w-full border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
+          >
+            <HelpCircle className="w-4 h-4" />
+            FAQs
+          </Button>
+        </Link>
       </div>
     </div>
   </div>
@@ -124,42 +164,15 @@ export const Hero = memo(() => {
                 The perfect childcare management solution for Indian working parents and home caregivers (maids, babysitters, relatives) managing kids under 5 years. Pilot app available in English for parents and Hindi for caregivers (maids, babysitters, relatives).
               </p>
               
-              {/* Buttons - Stack on mobile, row on larger screens */}
-              <div className="mb-4 lg:mb-6">
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start">
-                  <Link to="/caregiver-game" className="w-full sm:w-auto">
-                    <Button variant="hero" size="default" className="w-full sm:w-auto text-sm lg:text-lg">
-                      <Baby className="w-4 h-4 lg:w-5 lg:h-5" />
-                      Play Detective Game
-                    </Button>
-                  </Link>
-                  <Link to="/tutorials" className="w-full sm:w-auto">
-                    <Button
-                      variant="outline"
-                      size="default"
-                      className="w-full sm:w-auto text-sm lg:text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                    >
-                      <PlayCircle className="w-4 h-4 lg:w-5 lg:h-5" />
-                      Watch Tutorials
-                    </Button>
-                  </Link>
-                  <Link to="/faq" className="w-full sm:w-auto">
-                    <Button
-                      variant="outline"
-                      size="default"
-                      className="w-full sm:w-auto text-sm lg:text-lg border-white/30 text-white bg-white/10 hover:bg-white/20 hover:text-white"
-                    >
-                      <HelpCircle className="w-4 h-4 lg:w-5 lg:h-5" />
-                      FAQs
-                    </Button>
-                  </Link>
-                </div>
+              {/* Play Detective Game button only */}
+              <div className="flex justify-center lg:justify-start">
+                <Link to="/caregiver-game" className="w-full sm:w-auto">
+                  <Button variant="hero" size="default" className="w-full sm:w-auto text-sm lg:text-lg">
+                    <Baby className="w-4 h-4 lg:w-5 lg:h-5" />
+                    Play Detective Game
+                  </Button>
+                </Link>
               </div>
-              
-              {/* Feedback section */}
-              <p className="text-white text-xs sm:text-sm lg:text-base drop-shadow-md text-center lg:text-left mt-2">
-                Want more features? Share your thoughts in the Contact section below.
-              </p>
             </div>
             
             {/* Right side - QR Code for mobile */}
