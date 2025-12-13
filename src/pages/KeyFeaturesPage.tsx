@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Benefits } from "@/components/Benefits";
-import { Comparison } from "@/components/Comparison";
 import { Features } from "@/components/Features";
 
 const KeyFeaturesPage = () => {
@@ -17,7 +16,6 @@ const KeyFeaturesPage = () => {
         <Header />
         <main className="pt-20">
           <Benefits />
-          <Comparison />
           <Features />
         </main>
         <Footer />
