@@ -33,6 +33,13 @@ export const Header = () => {
         </Link>
         
         <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <Button
+            variant="ghost"
+            className="font-medium"
+            asChild
+          >
+            <Link to="/key-features">Key Features</Link>
+          </Button>
 
           <div 
             className="relative"
@@ -124,6 +131,13 @@ export const Header = () => {
           </SheetTrigger>
           <SheetContent side="right" className="w-64">
             <nav className="flex flex-col gap-4 mt-8">
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/key-features">Key Features</Link>
+              </Button>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
