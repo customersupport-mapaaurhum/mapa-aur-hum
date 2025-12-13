@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Sparkles } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
@@ -63,6 +63,16 @@ const QRSection = memo(() => (
           >
             <HelpCircle className="w-3 h-3" />
             FAQs
+          </Button>
+        </Link>
+        <Link to="/key-features" className="w-full">
+          <Button
+            variant="outline"
+            size="sm"
+            className="w-full text-xs"
+          >
+            <Star className="w-3 h-3" />
+            Key Features
           </Button>
         </Link>
       </div>
@@ -131,6 +141,16 @@ const QRSectionDesktop = memo(() => (
           >
             <HelpCircle className="w-4 h-4" />
             FAQs
+          </Button>
+        </Link>
+        <Link to="/key-features" className="w-full">
+          <Button
+            variant="outline"
+            size="default"
+            className="w-full"
+          >
+            <Star className="w-4 h-4" />
+            Key Features
           </Button>
         </Link>
       </div>
