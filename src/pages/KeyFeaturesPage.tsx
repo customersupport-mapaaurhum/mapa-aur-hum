@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Benefits } from "@/components/Benefits";
+import { Features } from "@/components/Features";
 
 const KeyFeaturesPage = () => {
   return (
@@ -15,6 +16,7 @@ const KeyFeaturesPage = () => {
         <Header />
         <main className="pt-20">
           <Benefits />
+          <Features />
         </main>
         <Footer />
       </div>
