@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Features } from "@/components/Features";
+import { About } from "@/components/About";
 
 const KeyFeaturesPage = () => {
   return (
@@ -14,6 +15,7 @@ const KeyFeaturesPage = () => {
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
         <Header />
         <main className="pt-20">
+          <About />
           <Features />
         </main>
         <Footer />
