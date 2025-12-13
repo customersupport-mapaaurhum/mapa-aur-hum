@@ -8,7 +8,6 @@ import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
-const About = lazy(() => import("@/components/About").then(m => ({ default: m.About })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 
 const Index = () => {
@@ -51,11 +50,6 @@ const Index = () => {
           <LazySection>
             <Suspense fallback={null}>
               <WhyMaPa />
-            </Suspense>
-          </LazySection>
-          <LazySection>
-            <Suspense fallback={null}>
-              <About />
             </Suspense>
           </LazySection>
           <LazySection>
