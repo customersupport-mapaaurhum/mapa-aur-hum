@@ -1,22 +1,20 @@
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Features } from "@/components/Features";
-import { About } from "@/components/About";
+import { Benefits } from "@/components/Benefits";
 
 const KeyFeaturesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Key Features - MaPa-Aur-Hum Childcare App</title>
-        <meta name="description" content="Explore the key features of MaPa-Aur-Hum childcare app: routine management, health emergency preparedness, screen time tracking, food plans, and weekly insights for Indian working parents." />
+        <title>Benefits of MaPa-Aur-Hum | Childcare Management for Indian Parents</title>
+        <meta name="description" content="Discover the benefits of MaPa-Aur-Hum: training support, structured communication, emergency guidance, and personalized care alignment for parents and caregivers." />
         <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/key-features" />
       </Helmet>
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
         <Header />
         <main className="pt-20">
-          <About />
-          <Features />
+          <Benefits />
         </main>
         <Footer />
       </div>
