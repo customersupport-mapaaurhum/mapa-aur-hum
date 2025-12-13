@@ -12,9 +12,9 @@ const benefits = [
   },
   {
     icon: Brain,
-    title: "Training & Clarity",
-    description: "Caregivers are enabled with support for each parenting aspect, helping to reduce activity confusion.",
-    tag: "Training",
+    title: "Reinforcement & Support",
+    description: "Caregivers are enabled with clear guidance and support for each parenting aspect, helping to reduce activity confusion.",
+    tag: "Support",
     gradient: "from-purple-500/20 to-pink-500/20",
     iconColor: "text-purple-600",
   },
