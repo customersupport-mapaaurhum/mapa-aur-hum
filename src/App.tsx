@@ -20,6 +20,7 @@ const ChampionsPage = lazy(() => import("./pages/ChampionsPage"));
 const DownloadPage = lazy(() => import("./pages/DownloadPage"));
 const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
+const KeyFeatures2Page = lazy(() => import("./pages/KeyFeatures2Page"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/why-mapa" element={<WhyMaPaPage />} />
           <Route path="/key-features" element={<KeyFeaturesPage />} />
+          <Route path="/key-features-2" element={<KeyFeatures2Page />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
