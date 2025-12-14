@@ -1,15 +1,15 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, memo } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Footer } from "@/components/Footer";
 import { LazySection } from "@/components/LazySection";
 import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
-
+// Lazy load Footer - below fold
+const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 const Index = () => {
   useEffect(() => {
     // Handle hash navigation on page load
@@ -58,10 +58,14 @@ const Index = () => {
             </Suspense>
           </LazySection>
         </main>
-        <Footer />
+        <LazySection>
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
+        </LazySection>
       </div>
     </>
   );
 };
 
-export default Index;
+export default memo(Index);

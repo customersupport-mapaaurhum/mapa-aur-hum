@@ -1,15 +1,13 @@
+import { memo, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
 import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
-import { PrivacyPolicyDialog } from "@/components/PrivacyPolicyDialog";
 
-export const Footer = () => {
+// Lazy load privacy policy dialog - only needed on click
+const PrivacyPolicyDialog = lazy(() => import("@/components/PrivacyPolicyDialog").then(m => ({ default: m.PrivacyPolicyDialog })));
+
+export const Footer = memo(() => {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="bg-foreground text-background py-8">
       <div className="container mx-auto px-4">
@@ -94,11 +92,17 @@ export const Footer = () => {
               © {currentYear} Mapaaurhum Technologies OPC Pvt Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <PrivacyPolicyDialog>
+              <Suspense fallback={
                 <button className="text-background/60 hover:text-background text-sm transition-colors">
                   Privacy Policy
                 </button>
-              </PrivacyPolicyDialog>
+              }>
+                <PrivacyPolicyDialog>
+                  <button className="text-background/60 hover:text-background text-sm transition-colors">
+                    Privacy Policy
+                  </button>
+                </PrivacyPolicyDialog>
+              </Suspense>
             </div>
           </div>
           
@@ -112,4 +116,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
