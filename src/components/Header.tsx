@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, memo } from "react";
-// Use optimized WebP logo (smaller file size)
-import logoImg from "@/assets/mapa-aur-hum-logo-optimized.webp";
+// Use original smaller image
+import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";

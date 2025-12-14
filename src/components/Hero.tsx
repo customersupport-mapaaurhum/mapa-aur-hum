@@ -2,8 +2,8 @@ import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-// Use optimized WebP image (smaller file size)
-import qrCode from "@/assets/mapa-aur-hum-qr-code-optimized.webp";
+// Use original smaller image
+import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 // Memoized QR section to prevent re-renders
 const QRSection = memo(() => (
