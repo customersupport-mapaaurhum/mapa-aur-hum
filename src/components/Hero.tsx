@@ -181,18 +181,15 @@ export const Hero = memo(() => {
                 <span className="text-primary">MaPa-Aur-Hum</span> — Building trust for better childcare
               </h1>
               
-              <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4">
-                MaPa-Aur-Hum, is a technological solution for high transparency childcare.
-                <br className="hidden sm:block" />
-                It is designed to assist urban working and single parents in jointly managing childcare with secondary caregivers at home (maids, babysitters, relatives).
-                <br className="hidden sm:block" />
-                The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.
-              </p>
+              <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
+                <p>MaPa-Aur-Hum, is a technological solution for high transparency childcare.</p>
+                <p>It is designed to assist urban working and single parents in jointly managing childcare with secondary caregivers at home (maids, babysitters, relatives).</p>
+                <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
+              </div>
               
               <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-3">
-                Are you a caregiver agency or staffing firm? Partner with us to offer a seamless childcare experience to your customers.{" "}
-                <Link to="/contact" className="text-primary hover:underline font-medium">
-                  Contact us today
+                <Link to="/why-mapa" className="text-primary hover:underline font-medium">
+                  Do you want to know why MaPa-Aur-Hum?
                 </Link>
               </p>
               
