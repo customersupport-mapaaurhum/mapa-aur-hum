@@ -45,6 +45,23 @@
       *{box-sizing:border-box;margin:0;padding:0}
       body{font-family:system-ui,-apple-system,sans-serif;background:#fffaf5}
       #root{min-height:100vh}
+      /* Critical above-the-fold styles */
+      .min-h-screen{min-height:100vh}
+      .bg-background{background-color:hsl(30 50% 98%)}
+      .text-foreground{color:hsl(220 15% 15%)}
+      .text-primary{color:hsl(25 95% 53%)}
+      .fixed{position:fixed}
+      .relative{position:relative}
+      .flex{display:flex}
+      .items-center{align-items:center}
+      .justify-center{justify-content:center}
+      .justify-between{justify-content:space-between}
+      .container{width:100%;max-width:80rem;margin:0 auto}
+      .px-4{padding-left:1rem;padding-right:1rem}
+      .py-4{padding-top:1rem;padding-bottom:1rem}
+      .font-bold{font-weight:700}
+      .text-xl{font-size:1.25rem;line-height:1.75rem}
+      .rounded-lg{border-radius:0.5rem}
       .loading-spinner{display:flex;align-items:center;justify-content:center;min-height:100vh}
       .loading-spinner::after{content:"";width:32px;height:32px;border:3px solid #f97316;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite}
       @keyframes spin{to{transform:rotate(360deg)}}
