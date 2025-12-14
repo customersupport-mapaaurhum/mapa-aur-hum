@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState, memo, lazy, Suspense } from "react";
+import { useState, memo } from "react";
 // Use optimized WebP logo (smaller file size)
 import logoImg from "@/assets/mapa-aur-hum-logo-optimized.webp";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
-// Lazy load Sheet for mobile - not needed on desktop
-const Sheet = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.Sheet })));
-const SheetContent = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.SheetContent })));
-const SheetTrigger = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.SheetTrigger })));
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = memo(() => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -125,83 +122,77 @@ export const Header = memo(() => {
           </Button>
         </nav>
 
-        {/* Mobile Menu - Lazy loaded */}
-        <Suspense fallback={
-          <Button variant="ghost" size="icon" className="lg:hidden">
-            <Menu className="h-6 w-6" />
-          </Button>
-        }>
-          <Sheet>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+        {/* Mobile Menu */}
+        <Sheet>
+          <SheetTrigger asChild className="lg:hidden">
+            <Button variant="ghost" size="icon">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <nav className="flex flex-col gap-4 mt-8">
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/key-features">Key Features</Link>
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-64">
-              <nav className="flex flex-col gap-4 mt-8">
+
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
                 <Button
                   variant="ghost"
                   className="justify-start"
                   asChild
                 >
-                  <Link to="/key-features">Key Features</Link>
+                  <Link to="/tutorials">Video Tutorials</Link>
                 </Button>
+              </div>
 
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/tutorials">Video Tutorials</Link>
-                  </Button>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/founder">Founder</Link>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/jobs">Careers</Link>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="justify-start"
-                    asChild
-                  >
-                    <Link to="/contributors">Contributors</Link>
-                  </Button>
-                </div>
-
+              <div className="flex flex-col gap-2">
+                <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
                 <Button
                   variant="ghost"
                   className="justify-start"
                   asChild
                 >
-                  <Link to="/faq">FAQ</Link>
+                  <Link to="/founder">Founder</Link>
                 </Button>
-
                 <Button
                   variant="ghost"
                   className="justify-start"
                   asChild
                 >
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/jobs">Careers</Link>
                 </Button>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </Suspense>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/contributors">Contributors</Link>
+                </Button>
+              </div>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/faq">FAQ</Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   );
