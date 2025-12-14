@@ -182,7 +182,7 @@ export const Hero = memo(() => {
               </h1>
               
               <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4">
-                MaPa-Aur-Hum, is a technological solution designed to assist urban working and single parents in jointly managing childcare with secondary caregivers at home (maids, babysitters, relatives). The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.
+                MaPa-Aur-Hum, is a technological solution for high transparency childcare. It is designed to assist urban working and single parents in jointly managing childcare with secondary caregivers at home (maids, babysitters, relatives). The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.
               </p>
               
               <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-3">
