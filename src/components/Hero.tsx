@@ -187,11 +187,6 @@ export const Hero = memo(() => {
                 <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
               </div>
               
-              <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-3">
-                <Link to="/why-mapa" className="text-primary hover:underline font-medium">
-                  Do you want to know why MaPa-Aur-Hum?
-                </Link>
-              </p>
               
               <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
                 Meet the amazing{" "}
