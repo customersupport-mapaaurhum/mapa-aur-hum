@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState, memo, lazy, Suspense } from "react";
-import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
+// Use optimized WebP logo (smaller file size)
+import logoImg from "@/assets/mapa-aur-hum-logo-optimized.webp";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
-
 // Lazy load Sheet for mobile - not needed on desktop
 const Sheet = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.Sheet })));
 const SheetContent = lazy(() => import("@/components/ui/sheet").then(m => ({ default: m.SheetContent })));

@@ -1,7 +1,8 @@
 import { memo, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
-import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
+// Use optimized WebP logo (smaller file size)
+import logoImg from "@/assets/mapa-aur-hum-logo-optimized.webp";
 
 // Lazy load privacy policy dialog - only needed on click
 const PrivacyPolicyDialog = lazy(() => import("@/components/PrivacyPolicyDialog").then(m => ({ default: m.PrivacyPolicyDialog })));
