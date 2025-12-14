@@ -190,7 +190,7 @@ export const Hero = memo(() => {
               <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
                 Meet the amazing{" "}
                 <Link to="/contributors" className="text-primary hover:underline font-medium">
-                  parents and caregivers
+                  parents and caregivers (maids, babysitter, relatives)
                 </Link>
                 {" "}who helped shape MaPa-Aur-Hum.
               </p>
