@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { CheckCircle, Users, Clock, AlertTriangle, MessageSquare, HeartHandshake, Calendar, UserX, RotateCcw, Baby } from "lucide-react";
+import { YouTubeFacade } from "@/components/YouTubeFacade";
 
 // WhyMaPa component
 export const WhyMaPa = () => {
@@ -75,6 +76,17 @@ export const WhyMaPa = () => {
           <p className="text-base text-muted-foreground max-w-3xl mx-auto">
             If any of these situations sound familiar, MaPa-Aur-Hum is designed for you
           </p>
+        </div>
+
+        {/* Video Section */}
+        <div className="flex justify-center mb-8">
+          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
+            <YouTubeFacade 
+              videoId="qNDG6Gf7ZGQ" 
+              title="Why MaPa-Aur-Hum - Introduction"
+              thumbnailQuality="hq"
+            />
+          </div>
         </div>
         
         <Carousel className="w-full mx-auto px-8 md:px-12">
