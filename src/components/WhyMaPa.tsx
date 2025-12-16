@@ -78,18 +78,7 @@ export const WhyMaPa = () => {
           </p>
         </div>
 
-        {/* Video Section */}
-        <div className="flex justify-center mb-8">
-          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
-            <YouTubeFacade 
-              videoId="qNDG6Gf7ZGQ" 
-              title="Why MaPa-Aur-Hum - Introduction"
-              thumbnailQuality="hq"
-            />
-          </div>
-        </div>
-        
-        <Carousel className="w-full mx-auto px-8 md:px-12">
+        <Carousel className="w-full mx-auto px-8 md:px-12 mb-8">
           <CarouselContent className="-ml-2 md:-ml-4">
             {problems.map((problem, index) => (
               <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
@@ -108,6 +97,17 @@ export const WhyMaPa = () => {
           <CarouselPrevious className="left-0 md:left-2" />
           <CarouselNext className="right-0 md:right-2" />
         </Carousel>
+
+        {/* Video Section */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
+            <YouTubeFacade 
+              videoId="qNDG6Gf7ZGQ" 
+              title="Why MaPa-Aur-Hum - Introduction"
+              thumbnailQuality="hq"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
