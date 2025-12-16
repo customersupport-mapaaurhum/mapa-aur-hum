@@ -105,7 +105,7 @@ export const WhyMaPa = () => {
           </p>
           <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
             <YouTubeFacade 
-              videoId="qNDG6Gf7ZGQ" 
+              videoId="un7_naPkFO0" 
               title="Why MaPa-Aur-Hum - Introduction"
               thumbnailQuality="hq"
             />
