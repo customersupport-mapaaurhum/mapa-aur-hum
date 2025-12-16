@@ -99,14 +99,24 @@ export const WhyMaPa = () => {
         </Carousel>
 
         {/* Video Section */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
+        <div className="flex flex-col items-center">
+          <p className="text-base md:text-lg text-foreground font-medium mb-4 text-center">
+            Watch this quick demo to see how MaPa-Aur-Hum can help you!
+          </p>
+          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant mb-6">
             <YouTubeFacade 
               videoId="qNDG6Gf7ZGQ" 
               title="Why MaPa-Aur-Hum - Introduction"
               thumbnailQuality="hq"
             />
           </div>
+          <p className="text-sm md:text-base text-muted-foreground text-center max-w-2xl">
+            Are you a caregiver (maid, babysitter, relatives) agency or staffing firm?{" "}
+            <a href="/contact" className="text-primary font-semibold hover:underline">
+              Contact us today
+            </a>{" "}
+            to partner with us!
+          </p>
         </div>
       </div>
     </section>
