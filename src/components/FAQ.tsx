@@ -33,7 +33,7 @@ export const FAQ = () => {
     },
     {
       question: "Does the app provide suggestions or parenting advice?",
-      answer: "Not yet. This pilot version focuses on helping parents and caregivers (maids, babysitters, relatives) build structured, collaborative routines. Future versions may include personalized insights and parenting suggestions."
+      answer: "Not yet. This pilot version focuses on helping parents and caregivers (maids, babysitters, relatives) build structured, collaborative routines."
     },
     {
       question: "What if my caregiver (maid, babysitter, relative) refuses to use the app?",
