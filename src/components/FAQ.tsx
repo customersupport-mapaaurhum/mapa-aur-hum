@@ -35,10 +35,6 @@ export const FAQ = () => {
       question: "Does the app provide suggestions or parenting advice?",
       answer: "Not yet. This pilot version focuses on helping parents and caregivers (maids, babysitters, relatives) build structured, collaborative routines."
     },
-    {
-      question: "What if my caregiver (maid, babysitter, relative) refuses to use the app?",
-      answer: "In most cases, caregivers (maids, babysitters, relatives) agree once they understand that the app helps build trust, transparency, and appreciation for their efforts. The app also provides reward points for tasks completed successfully — a simple way to convey gratitude and recognition. As you notice improvements in your caregiver's (maid, babysitter, relative) performance or reward score, consider incentivizing or acknowledging them. A small gesture of daily gratitude goes a long way in building trust, consistency, and teamwork in childcare."
-    }
   ];
 
   return (
