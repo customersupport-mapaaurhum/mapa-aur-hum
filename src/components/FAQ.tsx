@@ -45,7 +45,7 @@ export const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground text-center mb-12">
-            Find answers to common questions about MaPa-Aur-Hum
+            Find answers to common questions about the app MaPa-Aur-Hum
           </p>
           
           <Accordion type="single" collapsible className="w-full">
