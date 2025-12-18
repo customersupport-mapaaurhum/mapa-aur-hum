@@ -65,6 +65,12 @@ export const WhyMaPa = () => {
       title: "Caregiver Support",
       description: "Caregivers need enabler tools, gratitude and support rather than repeated criticism",
       color: "bg-gradient-trust"
+    },
+    {
+      icon: Users,
+      title: "Illiterate Caregivers",
+      description: "Visual and audio-based interface helps illiterate caregivers stay accountable, bringing transparency to childcare without literacy barriers",
+      color: "bg-accent"
     }
   ];
 
