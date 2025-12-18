@@ -8,69 +8,75 @@ export const WhyMaPa = () => {
   const problems = [
     {
       icon: Users,
+      title: "Illiterate Caregivers",
+      description: "Visual and audio-based interface helps illiterate caregivers stay accountable, bringing transparency to childcare without literacy barriers",
+      color: "bg-gradient-warm"
+    },
+    {
+      icon: CheckCircle,
+      title: "Transparency & Accountability",
+      description: "Structured daily tracking replaces ad-hoc methods where caregivers aren't recognized for day-to-day efforts, incentivizing consistent quality care",
+      color: "bg-gradient-trust"
+    },
+    {
+      icon: Users,
       title: "Urban Working Parents",
       description: "You both are Urban working parent where both parents are delegating childcare at home to babysitters.",
-      color: "bg-gradient-warm"
+      color: "bg-accent"
     },
     {
       icon: AlertTriangle,
       title: "Inexperienced Caregivers",
       description: "Inexperienced or frequently changing caregivers at home who require repeated instructions and reminders and checks",
-      color: "bg-gradient-trust"
+      color: "bg-secondary"
     },
     {
       icon: Clock,
       title: "Office Unavailability",
       description: "Your Busyness and unavailability in office, makes it difficult to connect frequently",
-      color: "bg-accent"
+      color: "bg-gradient-warm"
     },
     {
       icon: MessageSquare,
       title: "End of Day Updates Don't Work",
       description: "End of day updates don't work for you",
-      color: "bg-secondary"
+      color: "bg-gradient-trust"
     },
     {
       icon: HeartHandshake,
       title: "Trust Issues",
       description: "Trust and stressful interactions only with your caregiver",
-      color: "bg-gradient-warm"
+      color: "bg-accent"
     },
     {
       icon: Baby,
       title: "Grandparents Need Help",
       description: "Grandparents need help with frequent inputs and guidance for childcare",
-      color: "bg-gradient-trust"
+      color: "bg-secondary"
     },
     {
       icon: Calendar,
       title: "Activity Confusion",
       description: "Actual and planned activities are not understood, end of day handovers are a guesswork",
-      color: "bg-accent"
+      color: "bg-gradient-warm"
     },
     {
       icon: UserX,
       title: "Out of Loop Parent",
       description: "One parent is typically out of loop of detailed childcare activities.",
-      color: "bg-secondary"
+      color: "bg-gradient-trust"
     },
     {
       icon: RotateCcw,
       title: "Caregiver Conflicts",
       description: "Caregiver and parent conflicts over instructions",
-      color: "bg-gradient-warm"
+      color: "bg-accent"
     },
     {
       icon: CheckCircle,
       title: "Caregiver Support",
       description: "Caregivers need enabler tools, gratitude and support rather than repeated criticism",
-      color: "bg-gradient-trust"
-    },
-    {
-      icon: Users,
-      title: "Illiterate Caregivers",
-      description: "Visual and audio-based interface helps illiterate caregivers stay accountable, bringing transparency to childcare without literacy barriers",
-      color: "bg-accent"
+      color: "bg-secondary"
     }
   ];
 
