@@ -21,7 +21,7 @@ export const FAQ = () => {
     },
     {
       question: "My caregiver (maid, babysitter, relative) doesn't read Hindi and prefers another language.",
-      answer: "We understand! Please share your feedback with our customer support team. We're actively working to introduce more regional language options to make the app comfortable for every caregiver (maid, babysitter, relative)."
+      answer: "We understand! Please share your feedback with our customer.support@mapaaurhum.com. We're actively working to introduce more regional language options to make the app comfortable for every caregiver (maid, babysitter, relative)."
     },
     {
       question: "What if I don't want to plan for food, nap, or screen time?",
