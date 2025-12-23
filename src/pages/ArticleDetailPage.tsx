@@ -8,6 +8,7 @@ import { Sparkles, ArrowLeft, Calendar, MessageCircle, User } from "lucide-react
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CommentDialog } from "@/components/CommentDialog";
+import { SocialShare } from "@/components/SocialShare";
 import { supabase } from "@/integrations/supabase/client";
 import { format } from "date-fns";
 
@@ -64,15 +65,21 @@ const ArticleDetailPage = () => {
                 </Button>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <Badge variant="secondary" className="gap-1">
-                  <Sparkles className="h-3 w-3" />
-                  Powered by AI
-                </Badge>
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <Calendar className="h-3 w-3" />
-                  December 2024
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Badge variant="secondary" className="gap-1">
+                    <Sparkles className="h-3 w-3" />
+                    Powered by AI
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    December 2024
+                  </div>
                 </div>
+                <SocialShare
+                  title="The Modern Village: How Urban India is Redefining Childcare"
+                  url="https://www.mapa-aur-hum.lovable.app/articles/modern-village-childcare"
+                />
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
@@ -248,15 +255,21 @@ const ArticleDetailPage = () => {
                 </Button>
               </Link>
 
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <Badge variant="secondary" className="gap-1">
-                  <Sparkles className="h-3 w-3" />
-                  Powered by AI
-                </Badge>
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                  <Calendar className="h-3 w-3" />
-                  December 2024
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Badge variant="secondary" className="gap-1">
+                    <Sparkles className="h-3 w-3" />
+                    Powered by AI
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    December 2024
+                  </div>
                 </div>
+                <SocialShare
+                  title="Tech & Trust: Solving the Urban Childcare Puzzle"
+                  url="https://www.mapa-aur-hum.lovable.app/articles/tech-trust-childcare"
+                />
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
