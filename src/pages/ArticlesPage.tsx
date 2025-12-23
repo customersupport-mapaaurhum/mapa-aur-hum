@@ -65,7 +65,7 @@ const ArticlesPage = () => {
                 Parenting Articles & Insights
               </h1>
               <p className="text-muted-foreground text-lg mb-4">
-                Expert insights on childcare, parenting, and building trust with caregivers
+                Insights on childcare, parenting, and building trust with caregivers
               </p>
               <Badge variant="secondary" className="gap-1">
                 <Sparkles className="h-3 w-3" />
