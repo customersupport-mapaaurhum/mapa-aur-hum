@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
-import articleImage from "@/assets/article-urban-parenting-paradox.png";
+import articleImage1 from "@/assets/article-urban-parenting-paradox.png";
+import articleImage2 from "@/assets/article-weekly-reports.png";
 
 interface Article {
   id: string;
@@ -19,13 +20,22 @@ interface Article {
 
 const articles: Article[] = [
   {
-    id: "1",
-    title: "The Urban Parenting Paradox: How We Raise Children in the Modern Indian City",
-    excerpt: "Raising a child under 5 in a city like Mumbai, Bangalore, or Delhi often feels like running a marathon while balancing a tray of eggs. The 'village' that our parents had has largely been replaced by Google searches, nanny interviews, and CCTV apps.",
-    image: articleImage,
+    id: "2",
+    title: "Tech & Trust: Solving the Urban Childcare Puzzle",
+    excerpt: "How do you know your toddler is thriving when you're in a boardroom? The biggest problem urban Indian parents face isn't just 'finding help'—it's quality control.",
+    image: articleImage2,
     month: "December",
     year: 2024,
-    slug: "urban-parenting-paradox"
+    slug: "tech-trust-childcare"
+  },
+  {
+    id: "1",
+    title: "The Modern Village: How Urban India is Redefining Childcare",
+    excerpt: "In cities like Bangalore and Mumbai, the traditional joint family is evolving. With nuclear families becoming the norm, childcare for children under 5 has moved to a Hybrid Model.",
+    image: articleImage1,
+    month: "December",
+    year: 2024,
+    slug: "modern-village-childcare"
   }
 ];
 
