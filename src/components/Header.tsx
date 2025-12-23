@@ -62,6 +62,13 @@ export const Header = memo(() => {
                 >
                   <Link to="/tutorials">Video Tutorials</Link>
                 </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  asChild
+                >
+                  <Link to="/articles">Articles</Link>
+                </Button>
               </div>
             )}
           </div>
@@ -147,6 +154,13 @@ export const Header = memo(() => {
                   asChild
                 >
                   <Link to="/tutorials">Video Tutorials</Link>
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="justify-start"
+                  asChild
+                >
+                  <Link to="/articles">Articles</Link>
                 </Button>
               </div>
 
