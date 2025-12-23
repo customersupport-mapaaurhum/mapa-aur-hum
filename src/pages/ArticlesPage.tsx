@@ -71,9 +71,6 @@ const ArticlesPage = () => {
         <main className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                Thoughts from the Founder
-              </h1>
               <p className="text-muted-foreground text-lg mb-4">
                 Insights on childcare, parenting, and building trust with caregivers
               </p>
@@ -83,43 +80,36 @@ const ArticlesPage = () => {
               </Badge>
             </div>
 
-            {sortedMonths.map((monthYear) => (
-              <div key={monthYear} className="mb-12">
-                <h2 className="text-xl font-semibold mb-6 text-primary border-b border-border pb-2">
-                  {monthYear}
-                </h2>
-                <div className="grid gap-6">
-                  {groupedArticles[monthYear].map((article) => (
-                    <Link key={article.id} to={`/articles/${article.slug}`}>
-                      <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group">
-                        <CardContent className="p-0">
-                          <div className="flex flex-col md:flex-row">
-                            <div className="md:w-1/3 aspect-video md:aspect-square overflow-hidden">
-                              <img
-                                src={article.image}
-                                alt={article.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              />
-                            </div>
-                            <div className="p-6 md:w-2/3 flex flex-col justify-center">
-                              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                                {article.title}
-                              </h3>
-                              <p className="text-muted-foreground line-clamp-3">
-                                {article.excerpt}
-                              </p>
-                              <span className="text-primary font-medium mt-4 inline-block">
-                                Read more →
-                              </span>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <div className="grid gap-6">
+              {articles.map((article) => (
+                <Link key={article.id} to={`/articles/${article.slug}`}>
+                  <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group">
+                    <CardContent className="p-0">
+                      <div className="flex flex-col md:flex-row">
+                        <div className="md:w-1/3 aspect-video md:aspect-square overflow-hidden">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-6 md:w-2/3 flex flex-col justify-center">
+                          <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h3>
+                          <p className="text-muted-foreground line-clamp-3">
+                            {article.excerpt}
+                          </p>
+                          <span className="text-primary font-medium mt-4 inline-block">
+                            Read more →
+                          </span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
           </div>
         </main>
         <Footer />
