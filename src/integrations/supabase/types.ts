@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      article_comments: {
+        Row: {
+          article_slug: string
+          comment: string
+          created_at: string
+          email: string
+          id: string
+          is_approved: boolean
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          article_slug: string
+          comment: string
+          created_at?: string
+          email: string
+          id?: string
+          is_approved?: boolean
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          article_slug?: string
+          comment?: string
+          created_at?: string
+          email?: string
+          id?: string
+          is_approved?: boolean
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       feedback: {
         Row: {
           created_at: string
