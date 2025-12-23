@@ -3,7 +3,7 @@ import { useState, memo } from "react";
 // Use original smaller image
 import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu, Sparkles } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const Header = memo(() => {
@@ -41,37 +41,24 @@ export const Header = memo(() => {
             <Link to="/key-features">Key Features</Link>
           </Button>
 
-          <div 
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('resources')}
-            onMouseLeave={handleMouseLeave}
+          <Button
+            variant="default"
+            className="font-medium gap-1.5"
+            asChild
           >
-            <Button
-              variant="ghost"
-              className="font-medium"
-            >
-              Resources
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </Button>
-            {activeMenu === 'resources' && (
-              <div className="absolute top-full left-0 mt-0 flex gap-2 bg-background border border-border rounded-md shadow-lg p-3 whitespace-nowrap">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
-                  <Link to="/tutorials">Video Tutorials</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
-                  <Link to="/articles">Articles</Link>
-                </Button>
-              </div>
-            )}
-          </div>
+            <Link to="/articles">
+              <Sparkles className="h-4 w-4" />
+              Articles
+            </Link>
+          </Button>
+
+          <Button
+            variant="ghost"
+            className="font-medium"
+            asChild
+          >
+            <Link to="/tutorials">Tutorials</Link>
+          </Button>
 
           <div 
             className="relative"
@@ -146,23 +133,24 @@ export const Header = memo(() => {
                 <Link to="/key-features">Key Features</Link>
               </Button>
 
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold text-sm text-muted-foreground px-2">Resources</p>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/tutorials">Video Tutorials</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/articles">Articles</Link>
-                </Button>
-              </div>
+              <Button
+                variant="default"
+                className="justify-start gap-1.5"
+                asChild
+              >
+                <Link to="/articles">
+                  <Sparkles className="h-4 w-4" />
+                  Articles
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                className="justify-start"
+                asChild
+              >
+                <Link to="/tutorials">Tutorials</Link>
+              </Button>
 
               <div className="flex flex-col gap-2">
                 <p className="font-semibold text-sm text-muted-foreground px-2">About Us</p>
