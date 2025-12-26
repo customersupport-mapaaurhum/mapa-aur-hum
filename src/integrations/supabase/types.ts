@@ -125,24 +125,6 @@ export type Database = {
         }
         Relationships: []
       }
-      poll_responses: {
-        Row: {
-          created_at: string
-          id: string
-          selected_option: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          selected_option: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          selected_option?: string
-        }
-        Relationships: []
-      }
       registrations: {
         Row: {
           city: string | null
