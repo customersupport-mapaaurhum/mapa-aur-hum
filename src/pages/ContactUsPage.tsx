@@ -11,7 +11,7 @@ const ContactUsPage = () => {
         <meta name="description" content="Contact MaPa-Aur-Hum for questions or feedback about our childcare app. Email us or book a call to discuss your parenting needs." />
         <meta property="og:title" content="Contact Us - MaPa-Aur-Hum" />
         <meta property="og:description" content="Contact MaPa-Aur-Hum for questions or feedback about our childcare app. Email us or book a call to discuss your parenting needs." />
-        <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/contact" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/contact" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />

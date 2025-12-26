@@ -10,7 +10,7 @@ const KeyFeaturesPage = () => {
       <Helmet>
         <title>Benefits of MaPa-Aur-Hum | Childcare Management for Indian Parents</title>
         <meta name="description" content="Discover the benefits of MaPa-Aur-Hum: training support, structured communication, emergency guidance, and personalized care alignment for parents and caregivers." />
-        <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/key-features" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/key-features" />
       </Helmet>
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
         <Header />

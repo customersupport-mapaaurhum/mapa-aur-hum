@@ -12,7 +12,7 @@ const TutorialsPage = () => {
           name="description"
           content="Watch video tutorials to learn how to use MaPa-Aur-Hum childcare app. Guides for parents and caregivers."
         />
-        <link rel="canonical" href="https://mapaaurhum.com/tutorials" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/tutorials" />
       </Helmet>
 
       <Header />

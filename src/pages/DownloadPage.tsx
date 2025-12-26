@@ -15,7 +15,7 @@ const DownloadPage = () => {
           name="description"
           content="Download MaPa-Aur-Hum app from Google Play Store. The trusted childcare management app for Indian working parents with real-time updates and Hindi language support."
         />
-        <link rel="canonical" href="https://mapaaurhum.com/download" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/download" />
       </Helmet>
 
       <Header />

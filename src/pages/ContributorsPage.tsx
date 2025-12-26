@@ -11,7 +11,7 @@ const ContributorsPage = () => {
         <meta name="description" content="Meet the parents and caregivers who helped shape MaPa-Aur-Hum with their valuable insights and contributions to our childcare app." />
         <meta property="og:title" content="Contributors - MaPa-Aur-Hum" />
         <meta property="og:description" content="Meet the parents and caregivers who helped shape MaPa-Aur-Hum with their valuable insights and contributions to our childcare app." />
-        <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/contributors" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/contributors" />
       </Helmet>
       <Header />
       <main className="flex-1 pt-20">
