@@ -3,6 +3,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ZoomIn } from "lucide-react";
 import { useState } from "react";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 // Feature images
 import featureRoutine from "@/assets/mapa-aur-hum-routine.png";
@@ -82,13 +83,13 @@ export const Features = () => {
                 <CarouselItem key={index} className="pl-1 md:basis-1/3 lg:basis-1/4">
                   <Card className="border-0 shadow-trust">
                     <div className="relative group cursor-pointer" onClick={() => setSelectedImage(image.src)}>
-                      <img 
+                      <OptimizedImage 
                         src={image.src} 
                         alt={image.alt}
                         className="w-full min-h-[400px] h-auto object-contain rounded-lg transition-all duration-300 group-hover:scale-105"
-                        loading="lazy"
-                        width="300"
-                        height="400"
+                        width={300}
+                        height={400}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">

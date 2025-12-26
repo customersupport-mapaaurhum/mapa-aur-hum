@@ -2,6 +2,7 @@ import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { OptimizedImage } from "@/components/OptimizedImage";
 // Use original smaller image
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
@@ -13,14 +14,14 @@ const QRSection = memo(() => (
         Available on Google Play Store
       </p>
       <div className="bg-white p-2 rounded-xl mx-auto w-fit">
-        <img
+        <OptimizedImage
           src={qrCode}
           alt="QR code to download MaPa-Aur-Hum app"
           className="w-32 h-32 object-contain"
-          width="128"
-          height="128"
-          loading="eager"
-          decoding="async"
+          width={128}
+          height={128}
+          priority
+          sizes="128px"
         />
       </div>
       <p className="text-muted-foreground text-center mt-2 font-medium text-xs">
@@ -91,14 +92,14 @@ const QRSectionDesktop = memo(() => (
         Available on Google Play Store
       </p>
       <div className="bg-white p-4 rounded-xl mx-auto w-fit">
-        <img
+        <OptimizedImage
           src={qrCode}
           alt="QR code to download MaPa-Aur-Hum app"
           className="w-56 h-56 object-contain"
-          width="224"
-          height="224"
-          loading="eager"
-          decoding="async"
+          width={224}
+          height={224}
+          priority
+          sizes="224px"
         />
       </div>
       <p className="text-muted-foreground text-center mt-3 font-medium text-sm">

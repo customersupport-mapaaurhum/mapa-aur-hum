@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import articleImage1 from "@/assets/article-urban-parenting-paradox.png";
 import articleImage2 from "@/assets/article-weekly-reports.png";
 
@@ -88,10 +89,13 @@ const ArticlesPage = () => {
                     <CardContent className="p-0">
                       <div className="flex flex-col md:flex-row">
                         <div className="md:w-1/3 aspect-video md:aspect-square overflow-hidden">
-                          <img
+                          <OptimizedImage
                             src={article.image}
                             alt={article.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            width={400}
+                            height={300}
+                            sizes="(max-width: 768px) 100vw, 33vw"
                           />
                         </div>
                         <div className="p-6 md:w-2/3 flex flex-col justify-center">
