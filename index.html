@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6P1KK58200"></script>
+    <!-- Google tag (gtag.js) - deferred for better performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-6P1KK58200"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-6P1KK58200');
+      gtag('config', 'G-6P1KK58200', { 'send_page_view': false });
+      // Defer pageview until after load
+      window.addEventListener('load', function() {
+        gtag('event', 'page_view');
+      });
     </script>
     
     <meta charset="UTF-8" />
@@ -23,9 +26,9 @@
     <!-- DNS prefetch for non-critical origins -->
     <link rel="dns-prefetch" href="https://play.google.com" />
     
-    <!-- Preload LCP (Largest Contentful Paint) images for faster first render -->
-    <link rel="preload" as="image" href="/src/assets/mapa-aur-hum-qr-code-download.jpeg" fetchpriority="high" />
-    <link rel="preload" as="image" href="/src/assets/mapa-aur-hum-logo.jpg" fetchpriority="high" />
+    <!-- Preload hints for LCP - actual paths set by Vite, these are hints -->
+    <!-- Note: For production, images are bundled by Vite with hashed names -->
+    
     
     <title>MaPa-Aur-Hum - Building trust for better childcare</title>
     <meta name="description" content="Trusted childcare app for Indian working parents and secondary caregivers at home. Communication with picture updates, Hindi language support, and other modules to allow you to provide personalized home-based care." />
@@ -193,18 +196,21 @@
     }
     </script>
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code - deferred for better performance -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '800466356002953');
-    fbq('track', 'PageView');
+    // Defer Meta Pixel initialization until after page load
+    window.addEventListener('load', function() {
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '800466356002953');
+      fbq('track', 'PageView');
+    });
     </script>
     <!-- End Meta Pixel Code -->
   </head>
