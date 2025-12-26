@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Smartphone } from "lucide-react";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 export const Downloads = () => {
@@ -21,12 +22,13 @@ export const Downloads = () => {
               <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
                 <div className="flex-shrink-0">
                   <div className="bg-white p-4 rounded-lg shadow-md">
-                    <img 
+                    <OptimizedImage 
                       src={qrCode} 
                       alt="QR code to download MaPa-Aur-Hum app from Google Play Store"
                       className="w-64 h-64 object-contain"
-                      width="256"
-                      height="256"
+                      width={256}
+                      height={256}
+                      sizes="256px"
                     />
                   </div>
                 </div>
