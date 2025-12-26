@@ -10,7 +10,7 @@ export default function FounderPage() {
       <Helmet>
         <title>Meet Our Founder - Sumita Sarkar | MaPa-Aur-Hum</title>
         <meta name="description" content="Meet Sumita Sarkar, the founder of MaPa-Aur-Hum - a mother and IT professional creating childcare solutions for Indian families." />
-        <link rel="canonical" href="https://mapaaurhum.com/founder" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/founder" />
       </Helmet>
 
       <Header />

@@ -52,7 +52,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>The Modern Village: How Urban India is Redefining Childcare - MaPa-Aur-Hum</title>
           <meta name="description" content="Discover how urban parents in India manage childcare for kids under 5. Explore the shift to nuclear families, the role of grandparents, and the new 'Hybrid Model.'" />
-          <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/articles/modern-village-childcare" />
+          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/modern-village-childcare" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -78,7 +78,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="The Modern Village: How Urban India is Redefining Childcare"
-                  url="https://www.mapa-aur-hum.lovable.app/articles/modern-village-childcare"
+                  url="https://mapa-aur-hum.lovable.app/articles/modern-village-childcare"
                 />
               </div>
 
@@ -242,7 +242,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>Tech & Trust: Solving the Urban Childcare Puzzle - MaPa-Aur-Hum</title>
           <meta name="description" content="Struggle with nanny management? Learn how technology and standardized tools are helping urban Indian parents bridge the trust gap and balance work with peace of mind." />
-          <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/articles/tech-trust-childcare" />
+          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -268,7 +268,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="Tech & Trust: Solving the Urban Childcare Puzzle"
-                  url="https://www.mapa-aur-hum.lovable.app/articles/tech-trust-childcare"
+                  url="https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare"
                 />
               </div>
 

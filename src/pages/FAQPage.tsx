@@ -12,7 +12,7 @@ const FAQPage = () => {
           name="description"
           content="Find answers to frequently asked questions about MaPa-Aur-Hum childcare app for parents and caregivers."
         />
-        <link rel="canonical" href="https://mapaaurhum.com/faq" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/faq" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col bg-background">
