@@ -64,13 +64,14 @@ const ArticlesPage = () => {
       <Helmet>
         <title>Thoughts from the Founder - MaPa-Aur-Hum</title>
         <meta name="description" content="Read AI-powered articles on parenting, childcare, and building trust with caregivers. Insights for working parents in India." />
-        <link rel="canonical" href="https://www.mapa-aur-hum.lovable.app/articles" />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles" />
       </Helmet>
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">Thoughts from the Founder</h1>
               <p className="text-muted-foreground text-lg mb-4">
                 Insights on childcare, parenting, and building trust with caregivers
               </p>
