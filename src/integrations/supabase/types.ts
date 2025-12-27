@@ -125,6 +125,75 @@ export type Database = {
         }
         Relationships: []
       }
+      premium_requests: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          phone: string
+          screenshot_url: string | null
+          status: string
+          updated_at: string
+          utr: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          phone: string
+          screenshot_url?: string | null
+          status?: string
+          updated_at?: string
+          utr: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          phone?: string
+          screenshot_url?: string | null
+          status?: string
+          updated_at?: string
+          utr?: string
+        }
+        Relationships: []
+      }
+      premium_users: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          is_premium: boolean
+          name: string
+          phone: string | null
+          premium_expiry: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          is_premium?: boolean
+          name: string
+          phone?: string | null
+          premium_expiry?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          is_premium?: boolean
+          name?: string
+          phone?: string | null
+          premium_expiry?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       registrations: {
         Row: {
           city: string | null

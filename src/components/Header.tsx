@@ -3,7 +3,7 @@ import { useState, memo } from "react";
 // Use original smaller image
 import logoImg from "@/assets/mapa-aur-hum-logo.jpg";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, Sparkles } from "lucide-react";
+import { ChevronDown, Menu, Sparkles, Crown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { OptimizedImage } from "@/components/OptimizedImage";
 
@@ -109,6 +109,17 @@ export const Header = memo(() => {
           </Button>
 
           <Button
+            variant="outline"
+            className="font-medium gap-1.5 border-primary/30 text-primary hover:bg-primary/10"
+            asChild
+          >
+            <Link to="/pricing">
+              <Crown className="h-4 w-4" />
+              Premium
+            </Link>
+          </Button>
+
+          <Button
             variant="ghost"
             className="font-medium"
             asChild
@@ -184,6 +195,17 @@ export const Header = memo(() => {
                 asChild
               >
                 <Link to="/faq">FAQ</Link>
+              </Button>
+
+              <Button
+                variant="outline"
+                className="justify-start gap-1.5 border-primary/30 text-primary"
+                asChild
+              >
+                <Link to="/pricing">
+                  <Crown className="h-4 w-4" />
+                  Premium
+                </Link>
               </Button>
 
               <Button
