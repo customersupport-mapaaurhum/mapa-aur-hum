@@ -20,7 +20,6 @@ const ChampionsPage = lazy(() => import("./pages/ChampionsPage"));
 const DownloadPage = lazy(() => import("./pages/DownloadPage"));
 const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
-const KeyFeatures2Page = lazy(() => import("./pages/KeyFeatures2Page"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
@@ -55,7 +54,6 @@ const App = () => (
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/why-mapa" element={<WhyMaPaPage />} />
           <Route path="/key-features" element={<KeyFeaturesPage />} />
-          <Route path="/key-features-2" element={<KeyFeatures2Page />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
           <Route path="/pricing" element={<PricingPage />} />
