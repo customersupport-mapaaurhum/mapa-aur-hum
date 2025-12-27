@@ -193,7 +193,7 @@ const PricingPage = () => {
       <Header />
       
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
+        <div className="container mx-auto px-4 pt-20 pb-8 md:pt-16 md:pb-16 max-w-4xl">
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
