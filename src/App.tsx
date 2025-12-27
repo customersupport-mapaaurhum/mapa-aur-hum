@@ -26,6 +26,8 @@ const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
 const AdminLoginPage = lazy(() => import("./pages/AdminLoginPage"));
 const AdminPremiumRequestsPage = lazy(() => import("./pages/AdminPremiumRequestsPage"));
+const ManageLoginPage = lazy(() => import("./pages/ManageLoginPage"));
+const ManagePaymentsPage = lazy(() => import("./pages/ManagePaymentsPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -63,6 +65,8 @@ const App = () => (
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin/premium-requests" element={<AdminPremiumRequestsPage />} />
+          <Route path="/manage/auth" element={<ManageLoginPage />} />
+          <Route path="/manage/payments" element={<ManagePaymentsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
