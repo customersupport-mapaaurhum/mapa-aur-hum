@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Check, Send, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap, Sparkles } from "lucide-react";
+import { Check, Send, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap, Sparkles, Award } from "lucide-react";
 import { z } from "zod";
 
 // ===========================================
@@ -44,6 +44,7 @@ const benefits = [
   { icon: Mic, text: "Audio feature for voice updates" },
   { icon: Image, text: "Picture proof feature" },
   { icon: GraduationCap, text: "Bi-monthly training for caregivers to use the app" },
+  { icon: Award, text: "Annual rewards for best caregiver effort as per yearly reward points" },
   { icon: Sparkles, text: "Early access to new premium features" },
 ];
 
