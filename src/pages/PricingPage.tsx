@@ -21,9 +21,9 @@ import { z } from "zod";
 // Update the PREMIUM_PRICE constant below
 // ===========================================
 
-// Import your UPI QR code image here
-// Example: import qrCodeImage from "@/assets/your-upi-qr.png";
-// For now, using a placeholder - replace with actual QR code
+// UPI QR code image
+import upiQrCode from "@/assets/mapa-aur-hum-upi-qr.jpeg";
+
 const PREMIUM_PRICE = "₹499/month";
 const PREMIUM_PRICE_VALUE = 499;
 
@@ -221,21 +221,14 @@ const PricingPage = () => {
               <div className="bg-card border rounded-2xl p-6 text-center space-y-4">
                 <h2 className="font-semibold text-lg text-foreground">Pay via UPI</h2>
                 
-                {/* 
-                  🔧 REPLACE THIS PLACEHOLDER WITH YOUR ACTUAL QR CODE
-                  Upload your UPI QR image to src/assets/ and import it at the top of this file
-                  Then replace the div below with:
-                  <img src={qrCodeImage} alt="UPI QR Code" className="w-48 h-48 mx-auto" />
-                */}
-                <div className="w-48 h-48 mx-auto bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-muted-foreground/30">
-                  <p className="text-sm text-muted-foreground text-center px-4">
-                    QR Code<br />
-                    <span className="text-xs">(Upload your UPI QR)</span>
-                  </p>
-                </div>
+                <img 
+                  src={upiQrCode} 
+                  alt="UPI QR Code for MaPa-Aur-Hum Premium Payment" 
+                  className="w-56 h-auto mx-auto rounded-lg shadow-md"
+                />
                 
                 <p className="text-sm text-muted-foreground">
-                  Scan this QR using any UPI app (GPay, PhonePe, Paytm) to pay <strong>{PREMIUM_PRICE_VALUE}</strong>
+                  Scan this QR using any UPI app (GPay, PhonePe, Paytm) to pay <strong>₹{PREMIUM_PRICE_VALUE}</strong>
                 </p>
               </div>
             </div>
