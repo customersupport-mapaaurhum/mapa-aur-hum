@@ -87,13 +87,6 @@ export const Header = memo(() => {
                   size="sm"
                   asChild
                 >
-                  <Link to="/jobs">Careers</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  asChild
-                >
                   <Link to="/contributors">Contributors</Link>
                 </Button>
               </div>
@@ -172,13 +165,6 @@ export const Header = memo(() => {
                   asChild
                 >
                   <Link to="/founder">Founder</Link>
-                </Button>
-                <Button
-                  variant="ghost"
-                  className="justify-start"
-                  asChild
-                >
-                  <Link to="/jobs">Careers</Link>
                 </Button>
                 <Button
                   variant="ghost"
