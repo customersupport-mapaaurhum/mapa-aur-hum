@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star, Crown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "@/components/OptimizedImage";
 // Use original smaller image
@@ -75,6 +75,15 @@ const QRSection = memo(() => (
           >
             <Star className="w-3 h-3" />
             Key Features
+          </Button>
+        </Link>
+        <Link to="/pricing" className="w-full">
+          <Button
+            size="sm"
+            className="w-full text-xs bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-0 font-semibold"
+          >
+            <Crown className="w-3 h-3" />
+            Upgrade to Premium
           </Button>
         </Link>
       </div>
@@ -153,6 +162,15 @@ const QRSectionDesktop = memo(() => (
           >
             <Star className="w-4 h-4" />
             Key Features
+          </Button>
+        </Link>
+        <Link to="/pricing" className="w-full">
+          <Button
+            size="default"
+            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-0 font-semibold"
+          >
+            <Crown className="w-4 h-4" />
+            Upgrade to Premium
           </Button>
         </Link>
       </div>
