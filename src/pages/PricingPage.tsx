@@ -201,7 +201,7 @@ const PricingPage = () => {
                   </li>
                   <li className="flex gap-3">
                     <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">2</span>
-                    <span>Our team will send you a payment link via WhatsApp/Email</span>
+                    <span>Our team will send you a payment link via Email</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">3</span>
