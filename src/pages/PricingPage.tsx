@@ -7,32 +7,19 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Check, Upload, Shield, Star, Clock, Users, Sparkles, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap } from "lucide-react";
+import { Check, Send, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap, Sparkles } from "lucide-react";
 import { z } from "zod";
 
 // ===========================================
 // 🔧 CONFIGURATION - UPDATE THESE VALUES
 // ===========================================
-// To change the QR code image:
-// 1. Upload your new QR image to src/assets/
-// 2. Import it below and update the qrCodeImage variable
-// 
-// To change the price:
-// Update the PREMIUM_PRICE constant below
-// ===========================================
-
-// UPI QR code image
-import upiQrCode from "@/assets/mapa-aur-hum-upi-qr.jpeg";
-
 const PREMIUM_PRICE = "₹499/month";
-const PREMIUM_PRICE_VALUE = 499;
 
 // Validation schema
 const formSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
   email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
   phone: z.string().trim().min(10, "Phone must be at least 10 digits").max(15, "Phone too long"),
-  utr: z.string().trim().min(6, "UTR must be at least 6 characters").max(50, "UTR too long"),
 });
 
 const benefits = [
@@ -48,34 +35,16 @@ const benefits = [
 const PricingPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [screenshot, setScreenshot] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    utr: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      // Limit file size to 5MB
-      if (file.size > 5 * 1024 * 1024) {
-        toast({
-          title: "File too large",
-          description: "Please upload a screenshot smaller than 5MB",
-          variant: "destructive",
-        });
-        return;
-      }
-      setScreenshot(file);
-    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,45 +61,16 @@ const PricingPage = () => {
       return;
     }
 
-    // Validate screenshot is provided
-    if (!screenshot) {
-      toast({
-        title: "Screenshot Required",
-        description: "Please upload your payment screenshot",
-        variant: "destructive",
-      });
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      let screenshotUrl = null;
-
-      // Upload screenshot if provided
-      if (screenshot) {
-        const fileExt = screenshot.name.split(".").pop();
-        const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
-        
-        const { error: uploadError, data: uploadData } = await supabase.storage
-          .from("payment-screenshots")
-          .upload(fileName, screenshot);
-
-        if (uploadError) {
-          console.error("Upload error:", uploadError);
-          // Continue without screenshot
-        } else {
-          screenshotUrl = fileName;
-        }
-      }
-
-      // Insert premium request - using type assertion since types may not be updated yet
+      // Insert premium request with pending status
       const { error } = await (supabase.from("premium_requests") as any).insert({
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
         phone: formData.phone.trim(),
-        utr: formData.utr.trim(),
-        screenshot_url: screenshotUrl,
+        utr: "PAYMENT_LINK_PENDING",
+        screenshot_url: null,
         status: "pending",
       });
 
@@ -139,8 +79,7 @@ const PricingPage = () => {
       }
 
       setShowSuccess(true);
-      setFormData({ name: "", email: "", phone: "", utr: "" });
-      setScreenshot(null);
+      setFormData({ name: "", email: "", phone: "" });
       
     } catch (error: any) {
       console.error("Submission error:", error);
@@ -158,7 +97,7 @@ const PricingPage = () => {
     return (
       <div className="min-h-screen flex flex-col bg-background">
         <Helmet>
-          <title>Payment Received - MaPa-Aur-Hum Premium</title>
+          <title>Request Received - MaPa-Aur-Hum Premium</title>
         </Helmet>
         <Header />
         <main className="flex-1 flex items-center justify-center px-4 py-16">
@@ -168,10 +107,10 @@ const PricingPage = () => {
             </div>
             <h1 className="text-2xl font-bold text-foreground">Thank You!</h1>
             <p className="text-muted-foreground">
-              We've received your payment details. Your Premium subscription will be activated within 24 hours.
+              We've received your request. Our team will share the payment link with you shortly via WhatsApp or email.
             </p>
             <p className="text-sm text-muted-foreground">
-              You'll receive a confirmation email once your account is upgraded.
+              Once payment is confirmed, your Premium subscription will be activated within 24 hours.
             </p>
             <Button onClick={() => setShowSuccess(false)} variant="outline">
               Submit Another Request
@@ -205,7 +144,7 @@ const PricingPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Benefits & QR Section */}
+            {/* Benefits Section */}
             <div className="space-y-8">
               {/* Price Card */}
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
@@ -229,29 +168,38 @@ const PricingPage = () => {
                 </ul>
               </div>
 
-              {/* QR Code Section */}
-              <div className="bg-card border rounded-2xl p-6 text-center space-y-4">
-                <h2 className="font-semibold text-lg text-foreground">Pay via UPI</h2>
-                
-                <div className="w-56 h-56 mx-auto rounded-lg shadow-md overflow-hidden">
-                  <img 
-                    src={upiQrCode} 
-                    alt="UPI QR Code for MaPa-Aur-Hum Premium Payment" 
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-                
-                <p className="text-sm text-muted-foreground">
-                  Scan this QR using any UPI app (GPay, PhonePe, Paytm) to pay <strong>₹{PREMIUM_PRICE_VALUE}</strong>
-                </p>
+              {/* How it works */}
+              <div className="bg-muted/50 rounded-2xl p-6 space-y-4">
+                <h2 className="font-semibold text-lg text-foreground">How it works</h2>
+                <ol className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">1</span>
+                    <span>Fill in your details in the form</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">2</span>
+                    <span>Our team will send you a payment link via WhatsApp/Email</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">3</span>
+                    <span>Complete the payment securely</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 text-xs font-semibold">4</span>
+                    <span>Your Premium access will be activated within 24 hours</span>
+                  </li>
+                </ol>
               </div>
             </div>
 
-            {/* Payment Confirmation Form */}
+            {/* Request Form */}
             <div className="bg-card border rounded-2xl p-6 md:p-8">
-              <h2 className="font-semibold text-xl text-foreground mb-6">
-                Confirm Your Payment
+              <h2 className="font-semibold text-xl text-foreground mb-2">
+                Get Your Payment Link
               </h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Share your details and we'll send you a secure payment link
+              </p>
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="space-y-2">
@@ -279,58 +227,25 @@ const PricingPage = () => {
                     required
                     maxLength={255}
                   />
+                  <p className="text-xs text-muted-foreground">
+                    Use the same email you use to log in to the app
+                  </p>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Label htmlFor="phone">WhatsApp Number *</Label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Enter your phone number"
+                    placeholder="Enter your WhatsApp number"
                     required
                     maxLength={15}
                   />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="utr">UPI Transaction ID / UTR *</Label>
-                  <Input
-                    id="utr"
-                    name="utr"
-                    value={formData.utr}
-                    onChange={handleInputChange}
-                    placeholder="Enter transaction ID from your UPI app"
-                    required
-                    maxLength={50}
-                  />
                   <p className="text-xs text-muted-foreground">
-                    You can find this in your UPI app's transaction history
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="screenshot">Payment Screenshot *</Label>
-                  <div className="flex items-center gap-2">
-                    <Input
-                      id="screenshot"
-                      name="screenshot"
-                      type="file"
-                      accept="image/*"
-                      onChange={handleFileChange}
-                      required
-                      className="file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
-                    />
-                  </div>
-                  {screenshot && (
-                    <p className="text-xs text-green-600 flex items-center gap-1">
-                      <Check className="w-3 h-3" /> {screenshot.name}
-                    </p>
-                  )}
-                  <p className="text-xs text-muted-foreground">
-                    Max 5MB. Required for payment verification.
+                    We'll send the payment link to this number
                   </p>
                 </div>
 
@@ -347,17 +262,17 @@ const PricingPage = () => {
                     </>
                   ) : (
                     <>
-                      <Upload className="w-4 h-4 mr-2" />
-                      I Have Paid
+                      <Send className="w-4 h-4 mr-2" />
+                      Request Payment Link
                     </>
                   )}
                 </Button>
               </form>
 
-              {/* MVP Note */}
-              <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg">
-                <p className="text-sm text-amber-800 dark:text-amber-200">
-                  <strong>Note:</strong> This is an MVP flow. Payments are verified manually within 24 hours.
+              {/* Note */}
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
+                  <strong>Secure Payment:</strong> You'll receive a secure payment link from our verified payment partner. We never ask for card details directly.
                 </p>
               </div>
             </div>
