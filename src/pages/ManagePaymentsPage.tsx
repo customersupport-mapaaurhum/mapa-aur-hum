@@ -34,7 +34,9 @@ import {
   Mail,
   Phone,
   CreditCard,
-  Clock
+  Clock,
+  MapPin,
+  Users
 } from "lucide-react";
 import { format, addDays } from "date-fns";
 
@@ -44,6 +46,8 @@ interface PremiumRequest {
   email: string;
   phone: string;
   utr: string;
+  location: string | null;
+  role: string | null;
   screenshot_url: string | null;
   status: string;
   created_at: string;
@@ -407,6 +411,11 @@ const ManagePaymentsPage = () => {
                           <div className="flex items-center gap-2 text-slate-100 font-medium">
                             <User className="w-3.5 h-3.5 text-slate-500" />
                             {request.name}
+                            {request.role && (
+                              <span className="text-xs bg-slate-700 text-slate-300 px-2 py-0.5 rounded capitalize">
+                                {request.role.replace('_', ' ')}
+                              </span>
+                            )}
                           </div>
                           <div className="flex items-center gap-2 text-sm text-slate-400">
                             <Mail className="w-3.5 h-3.5 text-slate-500" />
@@ -416,6 +425,12 @@ const ManagePaymentsPage = () => {
                             <Phone className="w-3.5 h-3.5 text-slate-500" />
                             {request.phone}
                           </div>
+                          {request.location && (
+                            <div className="flex items-center gap-2 text-sm text-slate-400">
+                              <MapPin className="w-3.5 h-3.5 text-slate-500" />
+                              {request.location}
+                            </div>
+                          )}
                         </div>
                       </TableCell>
                       <TableCell>
