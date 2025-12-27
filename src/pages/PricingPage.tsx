@@ -5,6 +5,13 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Check, Send, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap, Sparkles } from "lucide-react";
@@ -15,11 +22,19 @@ import { z } from "zod";
 // ===========================================
 const PREMIUM_PRICE = "₹499/month";
 
+const ROLE_OPTIONS = [
+  { value: "mother", label: "Mother" },
+  { value: "father", label: "Father" },
+  { value: "caregiving_firm", label: "Caregiving Firm" },
+];
+
 // Validation schema
 const formSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
   email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
   phone: z.string().trim().min(10, "Phone must be at least 10 digits").max(15, "Phone too long"),
+  location: z.string().trim().min(2, "Location must be at least 2 characters").max(100, "Location too long"),
+  role: z.string().min(1, "Please select your role"),
 });
 
 const benefits = [
@@ -39,12 +54,18 @@ const PricingPage = () => {
     name: "",
     email: "",
     phone: "",
+    location: "",
+    role: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleRoleChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, role: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,6 +90,8 @@ const PricingPage = () => {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
         phone: formData.phone.trim(),
+        location: formData.location.trim(),
+        role: formData.role,
         utr: "PAYMENT_LINK_PENDING",
         screenshot_url: null,
         status: "pending",
@@ -79,7 +102,7 @@ const PricingPage = () => {
       }
 
       setShowSuccess(true);
-      setFormData({ name: "", email: "", phone: "" });
+      setFormData({ name: "", email: "", phone: "", location: "", role: "" });
       
     } catch (error: any) {
       console.error("Submission error:", error);
@@ -247,6 +270,35 @@ const PricingPage = () => {
                   <p className="text-xs text-muted-foreground">
                     We'll send the payment link to this number
                   </p>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="location">Location / City *</Label>
+                  <Input
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    placeholder="Enter your city"
+                    required
+                    maxLength={100}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="role">You are a *</Label>
+                  <Select value={formData.role} onValueChange={handleRoleChange}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your role" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {ROLE_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <Button

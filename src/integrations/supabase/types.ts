@@ -130,8 +130,10 @@ export type Database = {
           created_at: string
           email: string
           id: string
+          location: string | null
           name: string
           phone: string
+          role: string | null
           screenshot_url: string | null
           status: string
           updated_at: string
@@ -141,8 +143,10 @@ export type Database = {
           created_at?: string
           email: string
           id?: string
+          location?: string | null
           name: string
           phone: string
+          role?: string | null
           screenshot_url?: string | null
           status?: string
           updated_at?: string
@@ -152,8 +156,10 @@ export type Database = {
           created_at?: string
           email?: string
           id?: string
+          location?: string | null
           name?: string
           phone?: string
+          role?: string | null
           screenshot_url?: string | null
           status?: string
           updated_at?: string
