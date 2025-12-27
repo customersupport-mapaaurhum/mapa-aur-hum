@@ -41,7 +41,7 @@ const benefits = [
   { icon: FileText, text: "Weekly Reports on child activities" },
   { icon: Mic, text: "Audio feature for voice updates" },
   { icon: Image, text: "Image upload functionality" },
-  { icon: GraduationCap, text: "Training for caregivers to use the app" },
+  { icon: GraduationCap, text: "Bi-monthly training for caregivers to use the app" },
   { icon: Sparkles, text: "Early access to new premium features" },
 ];
 
@@ -87,6 +87,16 @@ const PricingPage = () => {
       toast({
         title: "Validation Error",
         description: result.error.errors[0].message,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validate screenshot is provided
+    if (!screenshot) {
+      toast({
+        title: "Screenshot Required",
+        description: "Please upload your payment screenshot",
         variant: "destructive",
       });
       return;
@@ -190,7 +200,7 @@ const PricingPage = () => {
               Upgrade to Premium
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get the most out of MaPa-Aur-Hum with our Premium plan. Enjoy priority support and exclusive features.
+              Get the most out of MaPa-Aur-Hum with our Premium plan. Unlock exclusive features for enhanced childcare management.
             </p>
           </div>
 
@@ -223,11 +233,13 @@ const PricingPage = () => {
               <div className="bg-card border rounded-2xl p-6 text-center space-y-4">
                 <h2 className="font-semibold text-lg text-foreground">Pay via UPI</h2>
                 
-                <img 
-                  src={upiQrCode} 
-                  alt="UPI QR Code for MaPa-Aur-Hum Premium Payment" 
-                  className="w-56 h-auto mx-auto rounded-lg shadow-md"
-                />
+                <div className="w-56 h-56 mx-auto rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src={upiQrCode} 
+                    alt="UPI QR Code for MaPa-Aur-Hum Premium Payment" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
                 
                 <p className="text-sm text-muted-foreground">
                   Scan this QR using any UPI app (GPay, PhonePe, Paytm) to pay <strong>₹{PREMIUM_PRICE_VALUE}</strong>
@@ -300,7 +312,7 @@ const PricingPage = () => {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="screenshot">Payment Screenshot (Optional)</Label>
+                  <Label htmlFor="screenshot">Payment Screenshot *</Label>
                   <div className="flex items-center gap-2">
                     <Input
                       id="screenshot"
@@ -308,6 +320,7 @@ const PricingPage = () => {
                       type="file"
                       accept="image/*"
                       onChange={handleFileChange}
+                      required
                       className="file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
                     />
                   </div>
@@ -317,7 +330,7 @@ const PricingPage = () => {
                     </p>
                   )}
                   <p className="text-xs text-muted-foreground">
-                    Max 5MB. Helps us verify your payment faster.
+                    Max 5MB. Required for payment verification.
                   </p>
                 </div>
 
