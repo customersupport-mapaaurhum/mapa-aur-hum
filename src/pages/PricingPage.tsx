@@ -42,7 +42,7 @@ const benefits = [
   { icon: AlertTriangle, text: "Access to Emergency Module" },
   { icon: FileText, text: "Weekly Reports on child activities" },
   { icon: Mic, text: "Audio feature for voice updates" },
-  { icon: Image, text: "Image upload functionality" },
+  { icon: Image, text: "Picture proof feature" },
   { icon: GraduationCap, text: "Bi-monthly training for caregivers to use the app" },
   { icon: Sparkles, text: "Early access to new premium features" },
 ];
