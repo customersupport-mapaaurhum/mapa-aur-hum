@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Check, Upload, Shield, Star, Clock, Users, Sparkles } from "lucide-react";
+import { Check, Upload, Shield, Star, Clock, Users, Sparkles, Heart, AlertTriangle, FileText, Mic, Image, GraduationCap } from "lucide-react";
 import { z } from "zod";
 
 // ===========================================
@@ -36,11 +36,13 @@ const formSchema = z.object({
 });
 
 const benefits = [
-  { icon: Star, text: "Priority support from our team" },
-  { icon: Clock, text: "Unlimited photo/video updates" },
-  { icon: Users, text: "Add multiple caregivers" },
-  { icon: Shield, text: "Advanced activity tracking" },
-  { icon: Sparkles, text: "Early access to new features" },
+  { icon: Heart, text: "Access to Health Module" },
+  { icon: AlertTriangle, text: "Access to Emergency Module" },
+  { icon: FileText, text: "Weekly Reports on child activities" },
+  { icon: Mic, text: "Audio feature for voice updates" },
+  { icon: Image, text: "Image upload functionality" },
+  { icon: GraduationCap, text: "Training for caregivers to use the app" },
+  { icon: Sparkles, text: "Early access to new premium features" },
 ];
 
 const PricingPage = () => {
