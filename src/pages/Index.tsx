@@ -10,6 +10,24 @@ const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: 
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 // Lazy load Footer - below fold
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
+
+// Loading skeleton for WhyMaPa section
+const WhyMaPaSkeleton = () => (
+  <section className="py-8 bg-background">
+    <div className="container mx-auto px-4">
+      <div className="text-center mb-6">
+        <div className="h-8 w-64 bg-muted animate-pulse rounded mx-auto mb-3" />
+        <div className="h-4 w-96 max-w-full bg-muted animate-pulse rounded mx-auto" />
+      </div>
+      <div className="flex gap-4 overflow-hidden px-8 mb-8">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="min-w-[200px] h-[200px] bg-muted animate-pulse rounded-lg" />
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const Index = () => {
   useEffect(() => {
     // Handle hash navigation on page load
@@ -47,8 +65,8 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <LazySection>
-            <Suspense fallback={null}>
+          <LazySection rootMargin="400px">
+            <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
             </Suspense>
           </LazySection>
