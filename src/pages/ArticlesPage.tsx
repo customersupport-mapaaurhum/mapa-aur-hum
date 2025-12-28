@@ -8,6 +8,7 @@ import { Sparkles } from "lucide-react";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import articleImage1 from "@/assets/article-urban-parenting-paradox.png";
 import articleImage2 from "@/assets/article-weekly-reports.png";
+import articleImage3 from "@/assets/article-gratitude-parenting.png";
 
 interface Article {
   id: string;
@@ -20,6 +21,15 @@ interface Article {
 }
 
 const articles: Article[] = [
+  {
+    id: "3",
+    title: "The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset",
+    excerpt: "In the rush of urban parenting, we often focus on 'fixing' behaviors. However, recent research suggests that the most powerful parenting tool isn't a new rule—it's gratitude.",
+    image: articleImage3,
+    month: "January",
+    year: 2025,
+    slug: "gratitude-modern-parenting"
+  },
   {
     id: "2",
     title: "Tech & Trust: Solving the Urban Childcare Puzzle",
