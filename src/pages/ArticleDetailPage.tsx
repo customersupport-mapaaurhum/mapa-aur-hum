@@ -45,6 +45,196 @@ const ArticleDetailPage = () => {
     fetchComments();
   }, [slug]);
 
+  // Article 3: Gratitude in Modern Parenting
+  if (slug === "gratitude-modern-parenting") {
+    return (
+      <>
+        <Helmet>
+          <title>The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset - MaPa-Aur-Hum</title>
+          <meta name="description" content="Discover how gratitude transforms parenting. Research shows perceived gratitude lowers parenting stress. Learn the 'Grateful Reset' for your New Year resolution." />
+          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting" />
+        </Helmet>
+        <div className="min-h-screen bg-background">
+          <Header />
+          <main className="container mx-auto px-4 py-16 md:py-24">
+            <div className="max-w-3xl mx-auto">
+              <Link to="/articles">
+                <Button variant="ghost" className="mb-6 gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Articles
+                </Button>
+              </Link>
+
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Badge variant="secondary" className="gap-1">
+                    <Sparkles className="h-3 w-3" />
+                    Powered by AI
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    January 2025
+                  </div>
+                </div>
+                <SocialShare
+                  title="The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset"
+                  url="https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting"
+                />
+              </div>
+
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset
+              </h1>
+
+              <Separator className="mb-8" />
+
+              <article className="space-y-8">
+                {/* Introduction */}
+                <section className="space-y-4">
+                  <p className="text-lg leading-relaxed text-foreground/90">
+                    In the rush of urban parenting, we often focus on "fixing" behaviors. However, recent research suggests that the most powerful parenting tool isn't a new rule—it's gratitude.
+                  </p>
+                  <p className="leading-relaxed text-foreground/80">
+                    According to a 2024 study in The Journal of Positive Psychology, perceived gratitude from children significantly lowers parenting stress and psychological distress for mothers and fathers alike. When we shift our foundation to gratitude, we move from micromanagement to connection.
+                  </p>
+                </section>
+
+                <Separator />
+
+                {/* How Gratitude Transforms Your Home */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    How Gratitude Transforms Your Home
+                  </h2>
+                  <div className="bg-muted/50 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">Towards Your Child:</strong>
+                        <span className="text-foreground/80"> Expressing gratitude for your child's "likable strong points" (rather than just correcting faults) strengthens neural pathways associated with trust and safety.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">Towards Caregivers:</strong>
+                        <span className="text-foreground/80"> Research indicates that caregivers who feel appreciated experience lower burnout and higher competence, creating a "positive feedback loop" of care for your child.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* New Year Resolution */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    New Year Resolution: The "Grateful Reset"
+                  </h2>
+                  <p className="leading-relaxed">
+                    This year, don't just resolve to "yell less." Resolve to notice more. A simple habit of daily gratitude journaling about your family can improve emotional regulation and resilience.
+                  </p>
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+                    <p className="leading-relaxed text-lg font-medium">
+                      This New Year, let's build a home rooted in appreciation.
+                    </p>
+                    <p className="leading-relaxed text-lg mt-2">
+                      Start your gratitude journey today with MaPa-Aur-Hum.
+                    </p>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* References */}
+                <section className="space-y-4">
+                  <h2 className="text-xl font-bold text-muted-foreground">
+                    References
+                  </h2>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span>1.</span>
+                      <span>Barton, A. W., & Gong, Q. (2024). A 'Thank You' really would be nice: Perceived gratitude in family relationships. The Journal of Positive Psychology.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>2.</span>
+                      <span>Hussong, A. M., et al. (2021). Parenting and the development of children's gratitude. Child Development Perspectives.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>3.</span>
+                      <span>Algoe, S. B. (2012). Find, Remind, and Bind: The functions of gratitude in everyday relationships. Social and Personality Psychology Compass.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>4.</span>
+                      <span>Emmons, R. A., & McCullough, M. E. (2003). Counting blessings versus burdens. Journal of Personality and Social Psychology.</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <Separator />
+
+                {/* Comments Section */}
+                <section className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold flex items-center gap-2">
+                      <MessageCircle className="h-6 w-6" />
+                      Comments
+                    </h2>
+                    <Button onClick={() => setCommentDialogOpen(true)}>
+                      Leave a Comment
+                    </Button>
+                  </div>
+
+                  {isLoadingComments ? (
+                    <div className="text-center py-8 text-muted-foreground">
+                      Loading comments...
+                    </div>
+                  ) : comments.length > 0 ? (
+                    <div className="space-y-4">
+                      {comments.map((comment) => (
+                        <div
+                          key={comment.id}
+                          className="bg-muted/30 rounded-lg p-4 space-y-2"
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className="bg-primary/10 rounded-full p-2">
+                              <User className="h-4 w-4 text-primary" />
+                            </div>
+                            <div>
+                              <p className="font-medium">{comment.name}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {format(new Date(comment.created_at), "MMM d, yyyy")}
+                              </p>
+                            </div>
+                          </div>
+                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 bg-muted/20 rounded-lg">
+                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
+                      <p className="text-muted-foreground">
+                        No comments yet. Be the first to share your thoughts!
+                      </p>
+                    </div>
+                  )}
+                </section>
+              </article>
+            </div>
+          </main>
+          <Footer />
+        </div>
+
+        <CommentDialog
+          open={commentDialogOpen}
+          onOpenChange={setCommentDialogOpen}
+          articleSlug={slug || ""}
+        />
+      </>
+    );
+  }
+
   // Article 1: Modern Village
   if (slug === "modern-village-childcare") {
     return (
