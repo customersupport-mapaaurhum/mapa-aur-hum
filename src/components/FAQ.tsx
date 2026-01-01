@@ -13,7 +13,7 @@ export const FAQ = () => {
     },
     {
       question: "How do I get my caregiver (maid, babysitter, relative) to use the app?",
-      answer: "During this pilot phase, we've made it simple for both parents and caregivers (maids, babysitters, relatives) to learn the app through short video tutorials available on our website and YouTube channel @mapaaurhum. After the initial walkthrough, most caregivers (maids, babysitters, relatives) find the app easy and intuitive to use."
+      answer: "During this pilot phase, we've made it simple for both parents and caregivers (maids, babysitters, relatives) to learn the app through short video tutorials available on our website and YouTube channel @mapaaurhum. After the initial walkthrough, most caregivers (maids, babysitters, relatives) find the app easy and intuitive to use. Take our premium plan to get personalized help to train your caregiver (maid, babysitter, relative) on the app."
     },
     {
       question: "Does my caregiver (maid, babysitter, relative) need to know how to read?",
