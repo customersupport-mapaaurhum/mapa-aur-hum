@@ -151,6 +151,7 @@ const PricingPage = () => {
       <Helmet>
         <title>Upgrade to Premium - MaPa-Aur-Hum</title>
         <meta name="description" content="Upgrade to MaPa-Aur-Hum Premium for priority support, unlimited updates, and advanced features." />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/pricing" />
       </Helmet>
       
       <Header />
