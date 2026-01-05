@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { supabase } from "@/integrations/supabase/client";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -55,6 +56,12 @@ const JobsPage = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>Careers at MaPa-Aur-Hum | Join Our Team</title>
+        <meta name="description" content="Join the MaPa-Aur-Hum team. View open positions and career opportunities in childcare technology." />
+        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/jobs" />
+      </Helmet>
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-primary/5 to-white">
       <Header />
       
@@ -95,6 +102,7 @@ const JobsPage = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 
