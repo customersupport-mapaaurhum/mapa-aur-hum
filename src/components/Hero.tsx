@@ -202,6 +202,7 @@ export const Hero = memo(() => {
               
               <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
                 <p>A personalized childcare operating system that builds trust, accountability, and continuity between parents and secondary caregivers in urban India.</p>
+                <p>Helps you navigate today's challenges of changing, untrusted and inexperienced caregivers (maid, babysitter, relatives).</p>
                 <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
               </div>
               
