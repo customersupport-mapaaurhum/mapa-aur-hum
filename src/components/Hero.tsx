@@ -206,26 +206,38 @@ export const Hero = memo(() => {
                 <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents. The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
               </div>
               
-              {/* Prominent Install Button */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-4">
+              {/* Prominent Install Button and Quick Links */}
+              <div className="flex flex-col gap-3 justify-center lg:justify-start mb-4">
                 <Button
                   onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
                   size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg transition-transform hover:scale-[1.02] animate-pulse hover:animate-none"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg transition-transform hover:scale-[1.02] animate-pulse hover:animate-none w-full sm:w-auto"
                 >
                   <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />
-                  Install Free App Now
+                  Install App Now
                 </Button>
-                <Link to="/caregiver-game">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-sm sm:text-base px-4 sm:px-6 py-3"
-                  >
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
-                    🎮 Play Caregiver Game
-                  </Button>
-                </Link>
+                <div className="flex flex-row gap-2 justify-center lg:justify-start flex-wrap">
+                  <Link to="/key-features">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium text-xs sm:text-sm px-3 sm:px-4"
+                    >
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4" />
+                      Key Features
+                    </Button>
+                  </Link>
+                  <Link to="/faq">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium text-xs sm:text-sm px-3 sm:px-4"
+                    >
+                      <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4" />
+                      FAQs
+                    </Button>
+                  </Link>
+                </div>
               </div>
               
               <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
