@@ -57,26 +57,6 @@ const QRSection = memo(() => (
             Watch Tutorials
           </Button>
         </Link>
-        <Link to="/faq" className="w-full">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full text-xs"
-          >
-            <HelpCircle className="w-3 h-3" />
-            FAQs
-          </Button>
-        </Link>
-        <Link to="/key-features" className="w-full">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full text-xs"
-          >
-            <Star className="w-3 h-3" />
-            Key Features
-          </Button>
-        </Link>
         <Link to="/pricing" className="w-full">
           <Button
             size="sm"
@@ -144,26 +124,6 @@ const QRSectionDesktop = memo(() => (
             Watch Tutorials
           </Button>
         </Link>
-        <Link to="/faq" className="w-full">
-          <Button
-            variant="outline"
-            size="default"
-            className="w-full"
-          >
-            <HelpCircle className="w-4 h-4" />
-            FAQs
-          </Button>
-        </Link>
-        <Link to="/key-features" className="w-full">
-          <Button
-            variant="outline"
-            size="default"
-            className="w-full"
-          >
-            <Star className="w-4 h-4" />
-            Key Features
-          </Button>
-        </Link>
         <Link to="/pricing" className="w-full">
           <Button
             size="default"
@@ -211,7 +171,7 @@ export const Hero = memo(() => {
                 <Button
                   onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
                   size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg transition-transform hover:scale-[1.02] animate-pulse hover:animate-none w-full sm:w-auto"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg transition-transform hover:scale-[1.02] w-full sm:w-auto"
                 >
                   <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />
                   Install App Now
