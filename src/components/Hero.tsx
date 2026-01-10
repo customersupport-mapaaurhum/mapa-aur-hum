@@ -202,7 +202,7 @@ export const Hero = memo(() => {
               
               <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
                 <p className="font-semibold text-foreground">"Your child's daily routine runs smoothly, even when you're at work."</p>
-                <p>Plan, guide and manage your maid, nanny or grandparents with simple pictures and voice reminders.</p>
+                <p>Plan, guide and manage your maid, nanny or grandparents effectively with image and audio support.</p>
                 <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents. The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
               </div>
               
