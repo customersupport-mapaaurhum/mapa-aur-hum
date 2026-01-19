@@ -224,19 +224,8 @@
     <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Defer non-critical redirect script -->
-    <script defer>
-      (function() {
-        var canonical = 'https://mapa-aur-hum.lovable.app';
-        // Redirect www subdomain and trailing slashes
-        if (window.location.hostname === 'www.mapa-aur-hum.lovable.app') {
-          window.location.replace(canonical + window.location.pathname + window.location.search + window.location.hash);
-        }
-        // Remove trailing slashes for consistency with canonical URLs
-        if (window.location.pathname !== '/' && window.location.pathname.endsWith('/')) {
-          window.location.replace(canonical + window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-        }
-      })();
-    </script>
+    <!-- Note: URL canonicalization is handled via <link rel="canonical"> tags in each page.
+         Google automatically consolidates duplicate URLs (with/without trailing slashes) based on canonical tags.
+         JavaScript redirects are intentionally avoided as they can interfere with Googlebot crawling. -->
   </body>
 </html>
