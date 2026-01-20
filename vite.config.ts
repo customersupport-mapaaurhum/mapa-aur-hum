@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
     }
   },
   ssr: {
-    noExternal: ['react-router-dom']
+    // Externalize dependencies that don't work well in SSR
+    noExternal: ['react-router-dom', '@radix-ui/*', 'class-variance-authority', 'clsx', 'tailwind-merge']
   }
 }));
