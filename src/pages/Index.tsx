@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { LazySection } from "@/components/LazySection";
 import { AnnouncementTicker } from "@/components/AnnouncementTicker";
+import { SupportChatButton } from "@/components/SupportChatButton";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
@@ -81,6 +82,7 @@ const Index = () => {
             <Footer />
           </Suspense>
         </LazySection>
+        <SupportChatButton />
       </div>
     </>
   );
