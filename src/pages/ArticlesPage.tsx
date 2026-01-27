@@ -4,7 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Rss } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import articleImage1 from "@/assets/article-urban-parenting-paradox.png";
 import articleImage2 from "@/assets/article-weekly-reports.png";
@@ -96,10 +97,18 @@ const ArticlesPage = () => {
               <p className="text-muted-foreground text-lg mb-4">
                 Insights on childcare, parenting, and building trust with caregivers
               </p>
-              <Badge variant="secondary" className="gap-1">
-                <Sparkles className="h-3 w-3" />
-                Powered by AI
-              </Badge>
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                <Badge variant="secondary" className="gap-1">
+                  <Sparkles className="h-3 w-3" />
+                  Powered by AI
+                </Badge>
+                <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="sm" className="gap-1.5">
+                    <Rss className="h-3.5 w-3.5" />
+                    RSS Feed
+                  </Button>
+                </a>
+              </div>
             </div>
 
             <div className="grid gap-6">

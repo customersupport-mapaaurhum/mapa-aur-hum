@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thoughts from the Founder - MaPa-Aur-Hum</title>
+    <link>https://mapa-aur-hum.lovable.app/articles</link>
+    <description>Insights on childcare, parenting, and building trust with caregivers from the founder of MaPa-Aur-Hum.</description>
+    <language>en-in</language>
+    <lastBuildDate>Mon, 27 Jan 2025 00:00:00 +0530</lastBuildDate>
+    <atom:link href="https://mapa-aur-hum.lovable.app/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success</title>
+      <link>https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership</link>
+      <guid isPermaLink="true">https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership</guid>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 +0530</pubDate>
+      <description>When parents and caregivers work as a synchronized team, the 'Golden Window' of early childhood becomes a foundation for a lifetime of health.</description>
+    </item>
+    
+    <item>
+      <title>The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset</title>
+      <link>https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting</link>
+      <guid isPermaLink="true">https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting</guid>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0530</pubDate>
+      <description>In the rush of urban parenting, we often focus on 'fixing' behaviors. However, recent research suggests that the most powerful parenting tool isn't a new rule—it's gratitude.</description>
+    </item>
+    
+    <item>
+      <title>Tech &amp; Trust: Solving the Urban Childcare Puzzle</title>
+      <link>https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare</link>
+      <guid isPermaLink="true">https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare</guid>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0530</pubDate>
+      <description>How do you know your toddler is thriving when you're in a boardroom? The biggest problem urban Indian parents face isn't just 'finding help'—it's quality control.</description>
+    </item>
+    
+    <item>
+      <title>The Modern Village: How Urban India is Redefining Childcare</title>
+      <link>https://mapa-aur-hum.lovable.app/articles/modern-village-childcare</link>
+      <guid isPermaLink="true">https://mapa-aur-hum.lovable.app/articles/modern-village-childcare</guid>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0530</pubDate>
+      <description>In cities like Bangalore and Mumbai, the traditional joint family is evolving. With nuclear families becoming the norm, childcare for children under 5 has moved to a Hybrid Model.</description>
+    </item>
+  </channel>
+</rss>
