@@ -5,7 +5,7 @@ import { TooltipProvider } from '@radix-ui/react-tooltip';
 
 // Import all page components directly for SSR (no lazy loading)
 import Index from './pages/Index';
-import JobsPage from './pages/JobsPage';
+
 import FounderPage from './pages/FounderPage';
 import ContributorsPage from './pages/ContributorsPage';
 import ContactUsPage from './pages/ContactUsPage';
@@ -23,7 +23,7 @@ import NotFound from './pages/NotFound';
 // Route to component mapping for SSR
 const routeComponents: Record<string, React.ComponentType> = {
   '/': Index,
-  '/jobs': JobsPage,
+  
   '/founder': FounderPage,
   '/contributors': ContributorsPage,
   '/contact': ContactUsPage,
