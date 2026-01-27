@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 
 // Lazy load other pages for code splitting
-const JobsPage = lazy(() => import("./pages/JobsPage"));
+
 const FounderPage = lazy(() => import("./pages/FounderPage"));
 const ContributorsPage = lazy(() => import("./pages/ContributorsPage"));
 const ContactUsPage = lazy(() => import("./pages/ContactUsPage"));
@@ -42,7 +42,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-          <Route path="/jobs" element={<JobsPage />} />
+          
           <Route path="/founder" element={<FounderPage />} />
           <Route path="/contributors" element={<ContributorsPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
