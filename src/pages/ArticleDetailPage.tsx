@@ -647,6 +647,316 @@ const ArticleDetailPage = () => {
     );
   }
 
+  // Article 4: Nutrition and Caregiver Partnership
+  if (slug === "nutrition-caregiver-partnership") {
+    return (
+      <>
+        <Helmet>
+          <title>Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success - MaPa-Aur-Hum</title>
+          <meta name="description" content="Learn how to build a parent-caregiver partnership for your child's nutrition. Research-backed tips on meal planning, mindful eating, and the 'Golden Window' for healthy habits." />
+          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership" />
+        </Helmet>
+        <div className="min-h-screen bg-background">
+          <Header />
+          <main className="container mx-auto px-4 py-16 md:py-24">
+            <div className="max-w-3xl mx-auto">
+              <Link to="/articles">
+                <Button variant="ghost" className="mb-6 gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Articles
+                </Button>
+              </Link>
+
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  <Badge variant="secondary" className="gap-1">
+                    <Sparkles className="h-3 w-3" />
+                    Powered by AI
+                  </Badge>
+                  <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    January 2025
+                  </div>
+                </div>
+                <SocialShare
+                  title="Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success"
+                  url="https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership"
+                />
+              </div>
+
+              <h1 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success
+              </h1>
+
+              <Separator className="mb-8" />
+
+              <article className="space-y-8">
+                {/* Introduction */}
+                <section className="space-y-4">
+                  <p className="text-lg leading-relaxed text-foreground/90">
+                    In the rhythmic hustle of modern Indian life, domestic helpers and nannies are often the unsung heroes of our homes. They provide the support that allows us to pursue our careers while ensuring our children are safe and fed.
+                  </p>
+                  <p className="leading-relaxed text-foreground/80">
+                    However, even the most dedicated caregiver needs a roadmap. Research into early childhood development suggests that the years before age 5 are a "Golden Window" for habit formation (UNICEF India). When parents and caregivers work as a synchronized team, this window becomes a foundation for a lifetime of health.
+                  </p>
+                </section>
+
+                <Separator />
+
+                {/* Section 1: Family Menu */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    1. The Power of the "Family Menu"
+                  </h2>
+                  <p className="leading-relaxed">
+                    In India, food is culture. But for a caregiver, the priority is often simply ensuring the child finishes their meal. Without a plan, they may default to "safe" options like white rice or biscuits.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">The Science of Mimicry:</strong>
+                        <span className="text-foreground/80"> Research in Frontiers in Psychology shows that kids are "social eaters." They learn what to like by watching the adults around them.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">The Partnership:</strong>
+                        <span className="text-foreground/80"> When you plan meals that include traditional grains like ragi or bajra, you empower your caregiver to introduce these flavors. Your role is the Architect (the plan), and theirs is the Builder (the execution).</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* Section 2: Convenience Feeding */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    2. Moving Beyond "Convenience Feeding"
+                  </h2>
+                  <p className="leading-relaxed">
+                    Caregivers often face the pressure of a "crying child" or a "clean plate." To make their own jobs easier and keep the child happy, they might lean on sugary snacks or juices.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">Addressing "Hidden Hunger":</strong>
+                        <span className="text-foreground/80"> The NFHS-5 data shows that many Indian children suffer from anemia and micronutrient deficiencies. This isn't due to a lack of food, but a lack of diversity.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">The Solution:</strong>
+                        <span className="text-foreground/80"> By providing a structured plan that includes proteins (dal, paneer, eggs) and healthy fats, you take the guesswork out of the caregiver's hands, ensuring the child is nourished, not just full.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* Section 3: Mindful Eating */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    3. Mindful Eating: A Team Effort
+                  </h2>
+                  <p className="leading-relaxed">
+                    "Distraction feeding"—using screens or toys to get a child to eat—is a common tool used to avoid mealtime battles.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">The Satiety Cue:</strong>
+                        <span className="text-foreground/80"> Studies in the American Journal of Clinical Nutrition suggest that distraction prevents children from feeling "full," which can lead to overeating later.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">The Partnership:</strong>
+                        <span className="text-foreground/80"> Encourage your caregiver to engage in "responsive feeding"—talking to the child about the textures and colors of the food. When you support your helper in removing the screen, you help the child develop a healthy relationship with hunger.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* Section 4: Tracking */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    4. Tracking What Matters
+                  </h2>
+                  <p className="leading-relaxed">
+                    Monitoring isn't about lack of trust; it's about supporting the caregiver in a high-stakes job.
+                  </p>
+                  <div className="bg-muted/50 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">Hydration & Energy:</strong>
+                        <span className="text-foreground/80"> Toddlers often forget to drink water, leading to irritability that caregivers might mistake for a "tantrum."</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">•</span>
+                      <div>
+                        <strong className="text-foreground">Protein Gap:</strong>
+                        <span className="text-foreground/80"> Since Indian diets can be carb-heavy, a pre-set plan ensures the caregiver knows exactly which protein to add to which meal.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* How to Build Partnership */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
+                    💡 How to Build This Partnership
+                  </h2>
+                  <p className="leading-relaxed">
+                    Support your caregiver with these simple tools:
+                  </p>
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 space-y-4">
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">1.</span>
+                      <div>
+                        <strong className="text-foreground">The Digital Roadmap:</strong>
+                        <span className="text-foreground/80"> Use an app like MaPa-Aur-Hum to set the weekly menu. It gives your caregiver clear instructions so they don't have to decide "what to cook" every day.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">2.</span>
+                      <div>
+                        <strong className="text-foreground">The One-Meal Rule:</strong>
+                        <span className="text-foreground/80"> Ensure at least one meal is a family affair. This reinforces the "Taste Memory" you want to build.</span>
+                      </div>
+                    </div>
+                    <div className="flex gap-3">
+                      <span className="text-primary font-bold">3.</span>
+                      <div>
+                        <strong className="text-foreground">The Hydration Station:</strong>
+                        <span className="text-foreground/80"> Give the caregiver a dedicated, colorful bottle for the child. Make it a shared goal to see it emptied twice a day.</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* Bottom Line */}
+                <section className="space-y-4">
+                  <h2 className="text-2xl font-bold text-primary">
+                    The Bottom Line
+                  </h2>
+                  <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
+                    <p className="leading-relaxed text-lg">
+                      Research in Frontiers in Public Health shows that parental involvement in nutrition decisions leads to better growth and cognitive outcomes. Your caregiver provides the hands, but you provide the vision. Together, you can make the "Golden Window" count.
+                    </p>
+                  </div>
+                </section>
+
+                <Separator />
+
+                {/* References */}
+                <section className="space-y-4">
+                  <h2 className="text-xl font-bold text-muted-foreground">
+                    References
+                  </h2>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span>1.</span>
+                      <span>UNICEF India - Early Childhood Development and the "Golden Window"</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>2.</span>
+                      <span>Frontiers in Psychology - Social learning and food preferences in children</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>3.</span>
+                      <span>National Family Health Survey (NFHS-5) - Child nutrition data</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>4.</span>
+                      <span>American Journal of Clinical Nutrition - Distraction feeding and satiety cues</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span>5.</span>
+                      <span>Frontiers in Public Health - Parental involvement in nutrition outcomes</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <Separator />
+
+                {/* Comments Section */}
+                <section className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-2xl font-bold flex items-center gap-2">
+                      <MessageCircle className="h-6 w-6" />
+                      Comments
+                    </h2>
+                    <Button onClick={() => setCommentDialogOpen(true)}>
+                      Leave a Comment
+                    </Button>
+                  </div>
+
+                  {isLoadingComments ? (
+                    <div className="text-center py-8 text-muted-foreground">
+                      Loading comments...
+                    </div>
+                  ) : comments.length > 0 ? (
+                    <div className="space-y-4">
+                      {comments.map((comment) => (
+                        <div
+                          key={comment.id}
+                          className="bg-muted/30 rounded-lg p-4 space-y-2"
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className="bg-primary/10 rounded-full p-2">
+                              <User className="h-4 w-4 text-primary" />
+                            </div>
+                            <div>
+                              <p className="font-medium">{comment.name}</p>
+                              <p className="text-xs text-muted-foreground">
+                                {format(new Date(comment.created_at), "MMM d, yyyy")}
+                              </p>
+                            </div>
+                          </div>
+                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8 bg-muted/20 rounded-lg">
+                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
+                      <p className="text-muted-foreground">
+                        No comments yet. Be the first to share your thoughts!
+                      </p>
+                    </div>
+                  )}
+                </section>
+              </article>
+            </div>
+          </main>
+          <Footer />
+        </div>
+
+        <CommentDialog
+          open={commentDialogOpen}
+          onOpenChange={setCommentDialogOpen}
+          articleSlug={slug || ""}
+        />
+      </>
+    );
+  }
+
   // Article not found
   return (
     <div className="min-h-screen bg-background">

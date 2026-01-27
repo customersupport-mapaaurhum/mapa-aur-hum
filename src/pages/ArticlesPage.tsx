@@ -9,6 +9,7 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import articleImage1 from "@/assets/article-urban-parenting-paradox.png";
 import articleImage2 from "@/assets/article-weekly-reports.png";
 import articleImage3 from "@/assets/article-gratitude-parenting.png";
+import articleImage4 from "@/assets/article-nutrition-caregiver.png";
 
 interface Article {
   id: string;
@@ -21,6 +22,15 @@ interface Article {
 }
 
 const articles: Article[] = [
+  {
+    id: "4",
+    title: "Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success",
+    excerpt: "When parents and caregivers work as a synchronized team, the 'Golden Window' of early childhood becomes a foundation for a lifetime of health.",
+    image: articleImage4,
+    month: "January",
+    year: 2025,
+    slug: "nutrition-caregiver-partnership"
+  },
   {
     id: "3",
     title: "The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset",
