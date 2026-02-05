@@ -9,7 +9,6 @@ import { SupportChatButton } from "@/components/SupportChatButton";
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
 const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
- const InstagramSection = lazy(() => import("@/components/InstagramSection").then(m => ({ default: m.InstagramSection })));
 // Lazy load Footer - below fold
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 
@@ -77,11 +76,6 @@ const Index = () => {
               <Contact />
             </Suspense>
           </LazySection>
-           <LazySection>
-             <Suspense fallback={null}>
-               <InstagramSection />
-             </Suspense>
-           </LazySection>
         </main>
         <LazySection>
           <Suspense fallback={null}>
