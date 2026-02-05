@@ -30,9 +30,6 @@
                  </div>
                  <div className="text-left">
                    <h3 className="text-lg font-bold text-foreground">@mapaaurhum</h3>
-                   <p className="text-sm text-muted-foreground">
-                     Daily parenting tips & caregiver insights
-                   </p>
                  </div>
                </div>
                
