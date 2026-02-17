@@ -165,7 +165,7 @@ export const Hero = memo(() => {
                 <p>Plan, guide and manage your maid, nanny or relatives to perform childcare effectively with image and audio support for even illiterate caregivers.</p>
                 <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents.</p>
                 <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
-                <p className="font-medium text-primary">We also provide training on how to use the app for your caregivers. Reach out to us if your maid/babysitter/relative needs support.</p>
+                <p className="font-medium text-primary">Are you a caregiver agency or staffing firm? Partner with us to offer a seamless childcare experience to your customers.</p>
               </div>
               
               {/* Prominent Install Button and Quick Links */}
