@@ -161,7 +161,7 @@ export const Hero = memo(() => {
               </h1>
               
               <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
-                <p className="font-semibold text-foreground">"Facing challenges of changing, untrusted and inexperienced caregivers?… Ensure your child's daily routine runs smoothly, even when you're at work."</p>
+                <p className="font-semibold text-foreground">"Facing challenges of changing, untrusted, inexperienced and illiterate caregivers (maid, babysitter, relatives)?… Ensure your child's daily routine runs smoothly, even when you're at work."</p>
                 <p className="font-semibold text-foreground">India's first parenting app that gives the control to the parent to parent as per their personalized home needs. Build trust between parents and caregivers at home.</p>
                 <p>Plan, guide and manage your maid, nanny or relatives to perform childcare effectively with image and audio support for even illiterate caregivers.</p>
                 <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents.</p>
