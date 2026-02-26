@@ -22,7 +22,6 @@ const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
-const PricingPage = lazy(() => import("./pages/PricingPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -56,7 +55,6 @@ const App = () => (
           <Route path="/key-features" element={<KeyFeaturesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/downloads" element={<Navigate to="/download" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
