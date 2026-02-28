@@ -7,8 +7,16 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 // Memoized QR section to prevent re-renders
+const DPIITBadge = memo(() => (
+  <div className="bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-xl border border-primary/20 text-center mb-3">
+    <p className="font-bold text-primary text-sm sm:text-base">🏅 DPIIT Recognised Startup</p>
+  </div>
+));
+DPIITBadge.displayName = "DPIITBadge";
+
 const QRSection = memo(() => (
-  <div className="flex justify-center w-full">
+  <div className="flex flex-col items-center w-full">
+    <DPIITBadge />
     <div className="bg-primary/10 backdrop-blur-sm p-4 rounded-2xl shadow-trust w-full max-w-[280px] border border-primary/20">
       <p className="text-sm font-semibold text-foreground mb-2 text-center">
         Available on Google Play Store
@@ -75,7 +83,8 @@ QRSection.displayName = "QRSection";
 
 // Desktop QR section with larger sizing
 const QRSectionDesktop = memo(() => (
-  <div className="hidden lg:flex justify-end w-full">
+  <div className="hidden lg:flex flex-col items-end w-full">
+    <DPIITBadge />
     <div className="bg-primary/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust max-w-sm border border-primary/20">
       <p className="text-lg font-semibold text-foreground mb-3 text-center">
         Available on Google Play Store
@@ -163,7 +172,7 @@ export const Hero = memo(() => {
               <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
                 <p className="font-semibold text-foreground">"Facing challenges of changing, untrusted, inexperienced and illiterate caregivers (maid, babysitter, relatives)?… Ensure your child's daily routine runs smoothly, even when you're at work."</p>
                 <p className="font-semibold text-foreground">India's first parenting app that empowers parents to manage childcare based on their unique home needs. Build trust and transparency between parents and caregivers (maid, babysitter, relatives).</p>
-                <p className="font-bold text-primary text-sm sm:text-base lg:text-lg">🏅 DPIIT Recognised Startup</p>
+                
                 <p>Plan, guide and manage your maid, nanny or relatives to perform childcare effectively with image and audio support for even illiterate caregivers.</p>
                 <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents.</p>
                 <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
