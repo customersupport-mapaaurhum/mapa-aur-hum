@@ -67,12 +67,12 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <PartnerCTA />
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
             </Suspense>
           </LazySection>
+          <PartnerCTA />
         </main>
         <LazySection>
           <Suspense fallback={null}>
