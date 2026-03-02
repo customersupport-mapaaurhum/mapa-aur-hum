@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { LazySection } from "@/components/LazySection";
+import { PartnerCTA } from "@/components/PartnerCTA";
 import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 import { SupportChatButton } from "@/components/SupportChatButton";
 
@@ -66,6 +67,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
+          <PartnerCTA />
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
