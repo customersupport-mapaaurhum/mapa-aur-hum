@@ -1,234 +1,137 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Sparkles, Star, Crown } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Star, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "@/components/OptimizedImage";
-// Use original smaller image
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
-// Memoized QR section to prevent re-renders
+const VALUE_PROPS = [
+  "Plan & guide caregivers with image and audio support",
+  "Build trust between parents and caregivers (maid, nanny, relatives)",
+  "Reward points for caregivers, proactive planning for parents",
+];
+
 const DPIITBadge = memo(() => (
-  <div className="bg-primary/10 backdrop-blur-sm px-4 py-2 rounded-xl border border-primary/20 text-center mb-3">
-    <p className="font-bold text-primary text-sm sm:text-base">🏅 DPIIT Recognised Startup</p>
+  <div className="inline-flex items-center gap-1.5 bg-primary/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/20">
+    <span className="text-sm">🏅</span>
+    <span className="font-semibold text-primary text-xs sm:text-sm">DPIIT Recognised Startup</span>
   </div>
 ));
 DPIITBadge.displayName = "DPIITBadge";
 
-const QRSection = memo(() => (
-  <div className="flex flex-col items-center w-full">
+const QRCard = memo(({ className = "" }: { className?: string }) => (
+  <div className={`bg-card/80 backdrop-blur-sm p-5 rounded-2xl shadow-elegant border border-border/50 ${className}`}>
     <DPIITBadge />
-    <div className="bg-primary/10 backdrop-blur-sm p-4 rounded-2xl shadow-trust w-full max-w-[280px] border border-primary/20">
-      <p className="text-sm font-semibold text-foreground mb-2 text-center">
-        Available on Google Play Store
-      </p>
-      <div className="bg-white p-2 rounded-xl mx-auto w-fit">
-        <OptimizedImage
-          src={qrCode}
-          alt="QR code to download MaPa-Aur-Hum app"
-          className="w-32 h-32 object-contain"
-          width={128}
-          height={128}
-          priority
-          sizes="128px"
-        />
-      </div>
-      <p className="text-muted-foreground text-center mt-2 font-medium text-xs">
-        Scan to Download
-      </p>
-      <div className="flex flex-col gap-2 mt-3">
-        <Button
-          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
-          variant="default"
-          size="default"
-          className="w-full text-sm"
-        >
-          <Smartphone className="w-4 h-4" />
-          Download App
+    <div className="mt-4 bg-white p-3 rounded-xl mx-auto w-fit">
+      <OptimizedImage
+        src={qrCode}
+        alt="QR code to download MaPa-Aur-Hum app"
+        className="w-36 h-36 lg:w-44 lg:h-44 object-contain"
+        width={176}
+        height={176}
+        priority
+        sizes="(max-width: 1024px) 144px, 176px"
+      />
+    </div>
+    <p className="text-muted-foreground text-center mt-3 font-medium text-xs">
+      Scan to download from Google Play
+    </p>
+    <div className="flex flex-col gap-2 mt-4">
+      <Button
+        onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
+        variant="default"
+        size="default"
+        className="w-full"
+      >
+        <Smartphone className="w-4 h-4" />
+        Download App
+      </Button>
+      <Link to="/tutorials" className="w-full">
+        <Button variant="outline" size="sm" className="w-full text-xs">
+          <PlayCircle className="w-3 h-3" />
+          Watch Tutorials
         </Button>
-        <Link to="/caregiver-game" className="w-full group">
-          <Button
-            size="sm"
-            className="w-full text-xs bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg transition-transform hover:scale-[1.02]"
-          >
-            <Sparkles className="w-3 h-3" />
-            🎮 Play Caregiver Game
-            <span className="ml-1 px-1.5 py-0.5 text-[10px] bg-white/20 rounded-full">NEW</span>
-          </Button>
-        </Link>
-        <Link to="/tutorials" className="w-full">
-          <Button
-            variant="outline"
-            size="sm"
-            className="w-full text-xs"
-          >
-            <PlayCircle className="w-3 h-3" />
-            Watch Tutorials
-          </Button>
-        </Link>
-        <Link to="/pricing" className="w-full">
-          <Button
-            size="sm"
-            className="w-full text-xs bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-0 font-semibold"
-          >
-            <Crown className="w-3 h-3" />
-            Upgrade to Premium
-          </Button>
-        </Link>
-      </div>
+      </Link>
     </div>
   </div>
 ));
-
-QRSection.displayName = "QRSection";
-
-// Desktop QR section with larger sizing
-const QRSectionDesktop = memo(() => (
-  <div className="hidden lg:flex flex-col items-end w-full">
-    <DPIITBadge />
-    <div className="bg-primary/10 backdrop-blur-sm p-6 rounded-2xl shadow-trust max-w-sm border border-primary/20">
-      <p className="text-lg font-semibold text-foreground mb-3 text-center">
-        Available on Google Play Store
-      </p>
-      <div className="bg-white p-4 rounded-xl mx-auto w-fit">
-        <OptimizedImage
-          src={qrCode}
-          alt="QR code to download MaPa-Aur-Hum app"
-          className="w-56 h-56 object-contain"
-          width={224}
-          height={224}
-          priority
-          sizes="224px"
-        />
-      </div>
-      <p className="text-muted-foreground text-center mt-3 font-medium text-sm">
-        Scan to Download
-      </p>
-      <div className="flex flex-col gap-2 mt-4">
-        <Button
-          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
-          variant="default"
-          size="lg"
-          className="w-full"
-        >
-          <Smartphone className="w-5 h-5" />
-          Download App
-        </Button>
-        <Link to="/caregiver-game" className="w-full group">
-          <Button
-            size="default"
-            className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 text-white border-0 font-bold shadow-lg transition-transform hover:scale-[1.02]"
-          >
-            <Sparkles className="w-4 h-4" />
-            🎮 Play Caregiver Game
-            <span className="ml-2 px-2 py-0.5 text-xs bg-white/20 rounded-full">NEW</span>
-          </Button>
-        </Link>
-        <Link to="/tutorials" className="w-full">
-          <Button
-            variant="outline"
-            size="default"
-            className="w-full"
-          >
-            <PlayCircle className="w-4 h-4" />
-            Watch Tutorials
-          </Button>
-        </Link>
-        <Link to="/pricing" className="w-full">
-          <Button
-            size="default"
-            className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white border-0 font-semibold"
-          >
-            <Crown className="w-4 h-4" />
-            Upgrade to Premium
-          </Button>
-        </Link>
-      </div>
-    </div>
-  </div>
-));
-
-QRSectionDesktop.displayName = "QRSectionDesktop";
+QRCard.displayName = "QRCard";
 
 export const Hero = memo(() => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 lg:pt-36 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-      {/* Decorative elements matching logo colors */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
+    <section className="relative min-h-[85vh] flex items-center pt-28 lg:pt-32 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      {/* Decorative blurs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/8 rounded-full blur-3xl" />
       </div>
-      
-      {/* Content */}
-      <div className="relative z-10 w-full px-4 py-6 lg:py-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-            {/* Left side - Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-xl sm:text-3xl lg:text-5xl font-bold text-foreground mb-3 lg:mb-4 leading-tight">
-                <span className="text-primary">MaPa-Aur-Hum</span> — Building trust for better childcare
+
+      <div className="relative z-10 w-full px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+            {/* Left — Content (takes 3 cols) */}
+            <div className="lg:col-span-3 text-center lg:text-left space-y-6">
+              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
+                <span className="text-primary">MaPa-Aur-Hum</span>
+                <br />
+                <span className="text-xl sm:text-2xl lg:text-4xl font-semibold text-foreground/80">
+                  Building trust for better childcare
+                </span>
               </h1>
-              
-              <div className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-4 space-y-2 sm:space-y-3">
-                <p className="font-semibold text-foreground">"Facing challenges of changing, untrusted, inexperienced and illiterate caregivers (maid, babysitter, relatives)?… Ensure your child's daily routine runs smoothly, even when you're at work."</p>
-                <p className="font-semibold text-foreground">India's first parenting app that empowers parents to manage childcare based on their unique home needs. Build trust and transparency between parents and caregivers (maid, babysitter, relatives).</p>
-                
-                <p>Plan, guide and manage your maid, nanny or relatives to perform childcare effectively with image and audio support for even illiterate caregivers.</p>
-                <p>Encourages parents to plan proactively, reward points for caregivers, and enables caregivers to act decisively without physically present parents.</p>
-                <p>The pilot app is available in English for parents and Hindi for caregivers and aimed for managing kids under 5 years.</p>
-                <p className="font-medium text-primary">Are you a caregiver agency or staffing firm? Partner with us to offer a seamless childcare experience to your customers.</p>
-              </div>
-              
-              {/* Prominent Install Button and Quick Links */}
-              <div className="flex flex-col gap-3 justify-center lg:justify-start mb-4">
+
+              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                India's first app that empowers working parents to manage childcare — even with changing or inexperienced caregivers.
+              </p>
+
+              {/* Value props */}
+              <ul className="space-y-2.5 max-w-lg mx-auto lg:mx-0">
+                {VALUE_PROPS.map((prop) => (
+                  <li key={prop} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80">
+                    <CheckCircle className="w-4 h-4 mt-0.5 text-primary shrink-0" />
+                    <span>{prop}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <Button
                   onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
                   size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 shadow-lg transition-transform hover:scale-[1.02] w-full sm:w-auto"
+                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base px-8 shadow-lg transition-transform hover:scale-[1.02]"
                 >
-                  <Smartphone className="w-5 h-5 sm:w-6 sm:h-6" />
+                  <Smartphone className="w-5 h-5" />
                   Install App Now
                 </Button>
-                <div className="flex flex-row gap-2 justify-center lg:justify-start flex-wrap">
+                <div className="flex gap-2 justify-center">
                   <Link to="/key-features">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium text-xs sm:text-sm px-3 sm:px-4"
-                    >
-                      <Star className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <Button size="sm" variant="outline" className="text-xs sm:text-sm">
+                      <Star className="w-3.5 h-3.5" />
                       Key Features
                     </Button>
                   </Link>
                   <Link to="/faq">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium text-xs sm:text-sm px-3 sm:px-4"
-                    >
-                      <HelpCircle className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <Button size="sm" variant="outline" className="text-xs sm:text-sm">
+                      <HelpCircle className="w-3.5 h-3.5" />
                       FAQs
                     </Button>
                   </Link>
                 </div>
               </div>
-              
-              <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                Meet the amazing{" "}
+
+              <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                Meet the{" "}
                 <Link to="/contributors" className="text-primary hover:underline font-medium">
                   parents and caregivers
-                </Link>
-                {" "}who helped shape MaPa-Aur-Hum.
+                </Link>{" "}
+                who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
               </p>
             </div>
-            
-            {/* Right side - QR Code for mobile */}
-            <div className="lg:hidden mt-4">
-              <QRSection />
+
+            {/* Right — QR Card (takes 2 cols) */}
+            <div className="lg:col-span-2 flex justify-center lg:justify-end">
+              <QRCard className="w-full max-w-[280px]" />
             </div>
-            
-            {/* Right side - QR Code for desktop */}
-            <QRSectionDesktop />
           </div>
         </div>
       </div>
