@@ -9,7 +9,7 @@ import { SupportChatButton } from "@/components/SupportChatButton";
 
 // Lazy load below-the-fold components
 const WhyMaPa = lazy(() => import("@/components/WhyMaPa").then(m => ({ default: m.WhyMaPa })));
-const Contact = lazy(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
+
 // Lazy load Footer - below fold
 const Footer = lazy(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 
@@ -71,11 +71,6 @@ const Index = () => {
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
-            </Suspense>
-          </LazySection>
-          <LazySection>
-            <Suspense fallback={null}>
-              <Contact />
             </Suspense>
           </LazySection>
         </main>
