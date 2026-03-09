@@ -25,7 +25,7 @@ const QRCard = memo(({ className = "" }: { className?: string }) => (
     <div className="mt-4 bg-white p-3 rounded-xl mx-auto w-fit">
       <OptimizedImage
         src={qrCode}
-        alt="QR code to download MaPa-Aur-Hum app"
+        alt="Mapaaurhum QR code to download MaPa-Aur-Hum app"
         className="w-36 h-36 lg:w-44 lg:h-44 object-contain"
         width={176}
         height={176}

@@ -118,7 +118,7 @@ export const Features = () => {
               <div className="flex items-center justify-center">
                 <img 
                   src={selectedImage} 
-                  alt="Detailed view of MaPa-Aur-Hum childcare app feature for better understanding"
+                  alt="Mapaaurhum detailed view of MaPa-Aur-Hum childcare app feature for better understanding"
                   className="w-full h-auto rounded-lg shadow-elegant"
                 />
               </div>

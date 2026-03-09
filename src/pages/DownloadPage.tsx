@@ -45,7 +45,7 @@ const DownloadPage = () => {
                 <div className="bg-white p-4 rounded-xl mx-auto w-fit mb-4">
                   <img
                     src={qrCode}
-                    alt="QR code to download MaPa-Aur-Hum app"
+                    alt="Mapaaurhum QR code to download MaPa-Aur-Hum app"
                     className="w-48 h-48 object-contain"
                     width="192"
                     height="192"

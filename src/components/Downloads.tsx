@@ -24,7 +24,7 @@ export const Downloads = () => {
                   <div className="bg-white p-4 rounded-lg shadow-md">
                     <OptimizedImage 
                       src={qrCode} 
-                      alt="QR code to download MaPa-Aur-Hum app from Google Play Store"
+                      alt="Mapaaurhum QR code to download MaPa-Aur-Hum app from Google Play Store"
                       className="w-64 h-64 object-contain"
                       width={256}
                       height={256}
