@@ -26,7 +26,7 @@ export const Header = memo(() => {
     <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 shrink-0">
-          <OptimizedImage src={logoImg} alt="MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width={40} height={40} priority sizes="40px" />
+          <OptimizedImage src={logoImg} alt="Mapaaurhum MaPa-Aur-Hum childcare app logo for Indian parents and families" className="h-10 w-10 rounded-lg object-cover" width={40} height={40} priority sizes="40px" />
           <div className="hidden sm:block">
             <h2 className="text-lg lg:text-xl font-bold text-foreground whitespace-nowrap">MaPa-Aur-Hum</h2>
             <p className="text-xs text-muted-foreground whitespace-nowrap">Building trust for better childcare</p>

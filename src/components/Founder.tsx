@@ -18,7 +18,7 @@ export const Founder = () => {
               <div className="flex-shrink-0">
                 <img 
                   src={founderImg} 
-                  alt="Sumita Sarkar, Founder of MaPa-Aur-Hum - experienced mother and IT professional creating childcare solutions for Indian families"
+                  alt="Mapaaurhum Sumita Sarkar, Founder of MaPa-Aur-Hum - experienced mother and IT professional creating childcare solutions for Indian families"
                   className="w-48 h-48 lg:w-64 lg:h-64 rounded-2xl object-cover shadow-elegant"
                   width="256"
                   height="256"
