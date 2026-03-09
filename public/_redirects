@@ -1,0 +1,15 @@
+# Remove trailing slashes - redirect to canonical non-trailing-slash URLs
+# This prevents Google "Alternate page with proper canonical tag" errors
+/faq/ /faq 301
+/tutorials/ /tutorials 301
+/champions/ /champions 301
+/download/ /download 301
+/why-mapa/ /why-mapa 301
+/key-features/ /key-features 301
+/articles/ /articles 301
+/articles/*/ /articles/:splat 301
+/founder/ /founder 301
+/contributors/ /contributors 301
+/contact/ /contact 301
+/caregiver-game/ /caregiver-game 301
+/jobs/ /jobs 301
