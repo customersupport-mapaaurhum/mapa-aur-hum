@@ -22,6 +22,7 @@ const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
+const UnsubscribePage = lazy(() => import("./pages/UnsubscribePage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
