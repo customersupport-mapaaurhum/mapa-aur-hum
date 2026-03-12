@@ -56,6 +56,7 @@ const App = () => (
           <Route path="/key-features" element={<KeyFeaturesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
+          <Route path="/unsubscribe" element={<UnsubscribePage />} />
           <Route path="/downloads" element={<Navigate to="/download" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
