@@ -2,6 +2,17 @@ import fs from 'node:fs'
 import path from 'node:path'
 import url from 'node:url'
 
+if (typeof globalThis.localStorage === 'undefined') {
+  globalThis.localStorage = {
+    getItem: () => null,
+    setItem: () => {},
+    removeItem: () => {},
+    clear: () => {},
+    length: 0,
+    key: () => null,
+  }
+}
+
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
