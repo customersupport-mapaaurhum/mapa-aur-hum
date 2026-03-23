@@ -98,7 +98,7 @@ const routeMeta = {
   },
 }
 
-const BASE_URL = 'https://mapa-aur-hum.lovable.app'
+const BASE_URL = 'https://www.mapaaurhum.com'
 
 console.log('Starting pre-rendering...')
 console.log(`Routes to pre-render: ${routesToPrerender.length}`)

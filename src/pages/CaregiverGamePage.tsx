@@ -204,7 +204,7 @@ const CaregiverGamePage = () => {
         <meta name="description" content="Play the Caregiver Detective Game to assess your babysitter or maid's childcare practices. Get a score and coaching tips based on your child's age." />
         <meta property="og:title" content="Caregiver Detective Game - MaPa-Aur-Hum" />
         <meta property="og:description" content="Interactive game for parents to check childcare practices when they're away. Score your caregiver and get coaching tips." />
-        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/caregiver-game" />
+        <link rel="canonical" href="https://www.mapaaurhum.com/caregiver-game" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-b from-red-50 via-green-50 to-red-50 dark:from-red-950/20 dark:via-green-950/20 dark:to-red-950/20 relative overflow-hidden">
       {/* Simplified decorative elements - CSS only, no JS animations */}

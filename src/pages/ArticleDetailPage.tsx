@@ -52,7 +52,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset - MaPa-Aur-Hum</title>
           <meta name="description" content="Discover how gratitude transforms parenting. Research shows perceived gratitude lowers parenting stress. Learn the 'Grateful Reset' for your New Year resolution." />
-          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting" />
+          <link rel="canonical" href="https://www.mapaaurhum.com/articles/gratitude-modern-parenting" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -78,7 +78,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset"
-                  url="https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting"
+                  url="https://www.mapaaurhum.com/articles/gratitude-modern-parenting"
                 />
               </div>
 
@@ -242,7 +242,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>The Modern Village: How Urban India is Redefining Childcare - MaPa-Aur-Hum</title>
           <meta name="description" content="Discover how urban parents in India manage childcare for kids under 5. Explore the shift to nuclear families, the role of grandparents, and the new 'Hybrid Model.'" />
-          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/modern-village-childcare" />
+          <link rel="canonical" href="https://www.mapaaurhum.com/articles/modern-village-childcare" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -268,7 +268,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="The Modern Village: How Urban India is Redefining Childcare"
-                  url="https://mapa-aur-hum.lovable.app/articles/modern-village-childcare"
+                  url="https://www.mapaaurhum.com/articles/modern-village-childcare"
                 />
               </div>
 
@@ -432,7 +432,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>Tech & Trust: Solving the Urban Childcare Puzzle - MaPa-Aur-Hum</title>
           <meta name="description" content="Struggle with nanny management? Learn how technology and standardized tools are helping urban Indian parents bridge the trust gap and balance work with peace of mind." />
-          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare" />
+          <link rel="canonical" href="https://www.mapaaurhum.com/articles/tech-trust-childcare" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -458,7 +458,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="Tech & Trust: Solving the Urban Childcare Puzzle"
-                  url="https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare"
+                  url="https://www.mapaaurhum.com/articles/tech-trust-childcare"
                 />
               </div>
 
@@ -654,7 +654,7 @@ const ArticleDetailPage = () => {
         <Helmet>
           <title>Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success - MaPa-Aur-Hum</title>
           <meta name="description" content="Learn how to build a parent-caregiver partnership for your child's nutrition. Research-backed tips on meal planning, mindful eating, and the 'Golden Window' for healthy habits." />
-          <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership" />
+          <link rel="canonical" href="https://www.mapaaurhum.com/articles/nutrition-caregiver-partnership" />
         </Helmet>
         <div className="min-h-screen bg-background">
           <Header />
@@ -680,7 +680,7 @@ const ArticleDetailPage = () => {
                 </div>
                 <SocialShare
                   title="Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success"
-                  url="https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership"
+                  url="https://www.mapaaurhum.com/articles/nutrition-caregiver-partnership"
                 />
               </div>
 

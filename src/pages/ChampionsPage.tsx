@@ -12,7 +12,7 @@ const ChampionsPage = () => {
           name="description"
           content="Meet our MaPa-Aur-Hum champions - parents and caregivers who trust and support our childcare app."
         />
-        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/champions" />
+        <link rel="canonical" href="https://www.mapaaurhum.com/champions" />
       </Helmet>
 
       <Header />

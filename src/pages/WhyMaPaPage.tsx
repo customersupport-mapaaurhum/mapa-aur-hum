@@ -13,7 +13,7 @@ const WhyMaPaPage = () => {
           name="description"
           content="Discover why MaPa-Aur-Hum is the trusted childcare platform for Indian working parents. Build trust, stay connected, and save time with our complete management solution."
         />
-        <link rel="canonical" href="https://mapa-aur-hum.lovable.app/why-mapa" />
+        <link rel="canonical" href="https://www.mapaaurhum.com/why-mapa" />
       </Helmet>
 
       <Header />
