@@ -25,15 +25,7 @@ export const Contact = () => {
           
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-muted-foreground">Want more features? Share your thoughts with us.</p>
-            <Suspense fallback={
-              <Button variant="default" size="lg">Share Feedback</Button>
-            }>
-              <FeedbackDialog>
-                <Button variant="default" size="lg">
-                  Share Feedback
-                </Button>
-              </FeedbackDialog>
-            </Suspense>
+          
           </div>
         </div>
       </div>
