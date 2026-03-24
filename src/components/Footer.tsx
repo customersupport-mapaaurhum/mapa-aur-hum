@@ -109,7 +109,7 @@ export const Footer = memo(() => {
           {/* SEO Keywords Section */}
           <div className="mt-4 pt-4 border-t border-background/10">
             <p className="text-background/30 text-xs leading-relaxed">
-              mapaaurhum | mapa aur hum | ma pa aur hum | MaPaAurHum | Caregiver App | Parenting App | Childcare App | Maid for baby care ,  Japa maid for newborn baby, Full time maid for baby care in Delhi near me, Best agencies to hire a maid for baby care in India, Affordable baby maids near me for newborn care, How to find a trustworthy maid for baby at home. Top-rated baby care maid services with verified profiles. #maidforbaby #mapaaurhum #caregiverapp #parentingapp #childcareapp
+              mapaaurhum | mapa aur hum | ma pa aur hum | MaPaAurHum | Caregiver App | Parenting App | Childcare App | Maid for baby care ,  Japa maid for newborn baby, Full time maid for baby care in Delhi near me, Best agencies to hire a maid for baby care in India, Affordable baby maids near me for newborn care, How to find a trustworthy maid for baby at home. Top-rated baby care maid services with verified profiles. 
             </p>
           </div>
         </div>
