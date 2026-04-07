@@ -60,52 +60,65 @@ const QRCard = memo(({ className = "" }: { className?: string }) => (
 QRCard.displayName = "QRCard";
 
 export const Hero = memo(() => {
+  const [showDemo, setShowDemo] = useState(false);
+
   return (
-    <section className="relative min-h-[85vh] flex items-center pt-28 lg:pt-32 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-      {/* Decorative blurs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/8 rounded-full blur-3xl" />
-      </div>
+    <>
+      <section className="relative min-h-[85vh] flex items-center pt-28 lg:pt-32 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        {/* Decorative blurs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/8 rounded-full blur-3xl" />
+        </div>
 
-      <div className="relative z-10 w-full px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
-            {/* Left — Content (takes 3 cols) */}
-            <div className="lg:col-span-3 text-center lg:text-left space-y-6">
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-                <span className="text-primary">MaPa-Aur-Hum</span>
-                <br />
-                <span className="text-xl sm:text-2xl lg:text-4xl font-semibold text-foreground/80">
-                  Building trust for better childcare
-                </span>
-              </h1>
+        <div className="relative z-10 w-full px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+              {/* Left — Content (takes 3 cols) */}
+              <div className="lg:col-span-3 text-center lg:text-left space-y-6">
+                <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
+                  <span className="text-primary">MaPa-Aur-Hum</span>
+                  <br />
+                  <span className="text-xl sm:text-2xl lg:text-4xl font-semibold text-foreground/80">
+                    Building trust for better childcare
+                  </span>
+                </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
-                India's first app that empowers working parents to manage childcare — even with changing or inexperienced caregivers.
-              </p>
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                  India's first app that empowers working parents to manage childcare — even with changing or inexperienced caregivers.
+                </p>
 
-              {/* Value props */}
-              <ul className="space-y-2.5 max-w-lg mx-auto lg:mx-0">
-                {VALUE_PROPS.map((prop) => (
-                  <li key={prop} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80">
-                    <CheckCircle className="w-4 h-4 mt-0.5 text-primary shrink-0" />
-                    <span>{prop}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Value props */}
+                <ul className="space-y-2.5 max-w-lg mx-auto lg:mx-0">
+                  {VALUE_PROPS.map((prop) => (
+                    <li key={prop} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80">
+                      <CheckCircle className="w-4 h-4 mt-0.5 text-primary shrink-0" />
+                      <span>{prop}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                <Button
-                  onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
-                  size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base px-8 shadow-lg transition-transform hover:scale-[1.02]"
-                >
-                  <Smartphone className="w-5 h-5" />
-                  Install App Now
-                </Button>
-                <div className="flex gap-2 justify-center">
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <Button
+                    onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
+                    size="lg"
+                    className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base px-8 shadow-lg transition-transform hover:scale-[1.02]"
+                  >
+                    <Smartphone className="w-5 h-5" />
+                    Install App Now
+                  </Button>
+                  <Button
+                    onClick={() => setShowDemo(true)}
+                    size="lg"
+                    variant="outline"
+                    className="font-semibold text-base px-6 border-primary/30 hover:bg-primary/5"
+                  >
+                    <Play className="w-5 h-5 text-primary" />
+                    Watch Demo
+                  </Button>
+                </div>
+                <div className="flex gap-2 justify-center lg:justify-start">
                   <Link to="/key-features">
                     <Button size="sm" variant="outline" className="text-xs sm:text-sm">
                       <Star className="w-3.5 h-3.5" />
@@ -119,25 +132,47 @@ export const Hero = memo(() => {
                     </Button>
                   </Link>
                 </div>
+
+                <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                  Meet the{" "}
+                  <Link to="/contributors" className="text-primary hover:underline font-medium">
+                    parents and caregivers
+                  </Link>{" "}
+                  who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
+                </p>
               </div>
 
-              <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
-                Meet the{" "}
-                <Link to="/contributors" className="text-primary hover:underline font-medium">
-                  parents and caregivers
-                </Link>{" "}
-                who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
-              </p>
-            </div>
-
-            {/* Right — QR Card (takes 2 cols) */}
-            <div className="lg:col-span-2 flex justify-center lg:justify-end">
-              <QRCard className="w-full max-w-[280px]" />
+              {/* Right — QR Card (takes 2 cols) */}
+              <div className="lg:col-span-2 flex justify-center lg:justify-end">
+                <QRCard className="w-full max-w-[280px]" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Demo Video Dialog */}
+      <Dialog open={showDemo} onOpenChange={setShowDemo}>
+        <DialogContent className="sm:max-w-3xl p-0 overflow-hidden">
+          <DialogHeader className="p-4 pb-0">
+            <DialogTitle>MaPa-Aur-Hum Demo</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video w-full">
+            {showDemo && (
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/Knc1ifxoyiQ?autoplay=1"
+                title="MaPa-Aur-Hum Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 });
 
