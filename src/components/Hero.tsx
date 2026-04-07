@@ -6,9 +6,10 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
 const VALUE_PROPS = [
-  "Plan & guide caregivers with image and audio support",
+  "Plan & guide all caregivers with image and audio support for critical areas like health, emergency, first aid, food as per home needs",
   "Build trust between parents and caregivers (maid, nanny, relatives)",
-  "Reward points for caregivers, proactive planning for parents",
+  "Award reward points to caregivers, and enable proactive planning by parents",
+  "Use weekly reports to identify gaps in childcare and take corrective action",
 ];
 
 const DPIITBadge = memo(() => (
