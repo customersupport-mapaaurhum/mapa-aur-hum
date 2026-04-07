@@ -103,7 +103,7 @@ export const Hero = memo(() => {
                   <Button
                     onClick={() => window.open('https://play.google.com/store/apps/details?id=com.mapaaurhum&pcampaignid=web_share', '_blank')}
                     size="lg"
-                    className="flex-1 sm:max-w-[220px] bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base px-8 shadow-lg transition-transform hover:scale-[1.02]"
+                    className="sm:w-[200px] bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-bold text-base shadow-lg transition-transform hover:scale-[1.02]"
                   >
                     <Smartphone className="w-5 h-5" />
                     Install App Now
@@ -112,21 +112,21 @@ export const Hero = memo(() => {
                     onClick={() => setShowDemo(true)}
                     size="lg"
                     variant="outline"
-                    className="flex-1 sm:max-w-[220px] font-semibold text-base px-8 border-primary/30 hover:bg-primary/5"
+                    className="sm:w-[200px] font-semibold text-base border-primary/30 hover:bg-primary/5"
                   >
                     <Play className="w-5 h-5 text-primary" />
                     Watch Demo
                   </Button>
                 </div>
                 <div className="flex gap-3 justify-center lg:justify-start">
-                  <Link to="/key-features" className="flex-1 sm:flex-none">
-                    <Button size="sm" variant="outline" className="w-full sm:w-[140px] text-xs sm:text-sm">
+                  <Link to="/key-features">
+                    <Button size="sm" variant="outline" className="w-[130px] text-xs sm:text-sm">
                       <Star className="w-3.5 h-3.5" />
                       Key Features
                     </Button>
                   </Link>
-                  <Link to="/faq" className="flex-1 sm:flex-none">
-                    <Button size="sm" variant="outline" className="w-full sm:w-[140px] text-xs sm:text-sm">
+                  <Link to="/faq">
+                    <Button size="sm" variant="outline" className="w-[130px] text-xs sm:text-sm">
                       <HelpCircle className="w-3.5 h-3.5" />
                       FAQs
                     </Button>
