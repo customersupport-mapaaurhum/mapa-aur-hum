@@ -1,7 +1,8 @@
-import { memo } from "react";
+import { memo, useState, lazy, Suspense } from "react";
 import { Button } from "@/components/ui/button";
-import { Smartphone, PlayCircle, HelpCircle, Star, CheckCircle } from "lucide-react";
+import { Smartphone, PlayCircle, HelpCircle, Star, CheckCircle, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
