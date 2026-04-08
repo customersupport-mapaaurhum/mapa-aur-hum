@@ -133,6 +133,10 @@ export const Hero = memo(() => {
                   </Link>
                 </div>
 
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto lg:mx-0font-medium">
+                  📲 Download the app on both the parents' and caregivers' mobile device with different roles.
+                </p>
+
                 <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
                   Meet the{" "}
                   <Link to="/contributors" className="text-primary hover:underline font-medium">
