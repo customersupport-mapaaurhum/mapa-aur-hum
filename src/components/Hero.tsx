@@ -11,6 +11,7 @@ const VALUE_PROPS = [
   "Build trust between parents and caregivers (maid, nanny, relatives)",
   "Award reward points to caregivers, and enable proactive planning by parents",
   "Use weekly reports to identify gaps in childcare and take corrective action",
+  "Download the app on both the parents' and caregivers' mobile device with different roles",
 ];
 
 const DPIITBadge = memo(() => (
