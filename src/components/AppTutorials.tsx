@@ -15,8 +15,8 @@ export const AppTutorials = () => {
 
         {/* Welcome / Starter Video */}
         <div className="max-w-2xl mx-auto mb-10">
-          <div className="bg-card rounded-lg overflow-hidden shadow-lg">
-            <div className="aspect-video">
+          <div className="max-w-sm mx-auto">
+            <div className="aspect-[9/16]">
               <YouTubeFacade
                 videoId="tjDYjIpApyU"
                 title="Welcome to MaPa-Aur-Hum – Get Started"
