@@ -13,6 +13,31 @@ export const AppTutorials = () => {
           </p>
         </div>
 
+        {/* Welcome / Starter Video */}
+        <div className="max-w-2xl mx-auto mb-10">
+          <div className="bg-card rounded-lg overflow-hidden shadow-lg">
+            <div className="aspect-video">
+              <YouTubeFacade
+                videoId="tjDYjIpApyU"
+                title="Welcome to MaPa-Aur-Hum – Get Started"
+              />
+            </div>
+            <div className="p-6 text-center">
+              <h3 className="text-xl font-semibold mb-2 text-foreground">
+                🎉 Welcome – Get Started
+              </h3>
+              <p className="text-muted-foreground">
+                New here? Watch this quick welcome video to get started with MaPa-Aur-Hum
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Videos */}
+        <div className="text-center mb-6">
+          <h3 className="text-2xl font-semibold text-foreground">Feature Tutorials</h3>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8">
           {/* Parents Tutorial */}
           <div className="bg-card rounded-lg overflow-hidden shadow-lg">
