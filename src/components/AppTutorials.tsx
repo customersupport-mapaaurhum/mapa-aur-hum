@@ -14,8 +14,8 @@ export const AppTutorials = () => {
         </div>
 
         {/* Welcome / Starter Video */}
-        <div className="max-w-2xl mx-auto mb-10">
-          <div className="max-w-sm mx-auto">
+        <div className="max-w-sm mx-auto mb-10">
+          <div className="bg-card rounded-lg overflow-hidden shadow-lg">
             <div className="aspect-[9/16]">
               <YouTubeFacade
                 videoId="tjDYjIpApyU"
