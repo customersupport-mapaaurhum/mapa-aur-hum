@@ -9,7 +9,7 @@ export const AppTutorials = () => {
             MaPa-Aur-Hum Tutorials
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Learn how to use MaPa-Aur-Hum with our step-by-step video guides
+            Welcome to MaPa-Aur-Hum. Also find tutorials on our app.
           </p>
         </div>
 
