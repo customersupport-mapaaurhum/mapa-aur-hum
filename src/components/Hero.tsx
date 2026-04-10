@@ -1,8 +1,9 @@
-import { memo, useState, lazy, Suspense } from "react";
+import { memo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Smartphone, PlayCircle, HelpCircle, Star, CheckCircle, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { YouTubeFacade } from "@/components/YouTubeFacade";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
