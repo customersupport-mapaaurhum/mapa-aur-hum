@@ -136,22 +136,13 @@ export const Hero = memo(() => {
                 </div>
 
 
-                {/* Welcome Video */}
-                <div className="max-w-xs mx-auto lg:mx-0">
-                  <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border/50">
-                    <div className="aspect-[9/16] max-h-[280px]">
-                      <YouTubeFacade
-                        videoId="tjDYjIpApyU"
-                        title="Welcome to MaPa-Aur-Hum – Get Started"
-                      />
-                    </div>
-                    <p className="text-xs text-center text-muted-foreground py-2 font-medium">
-                      🎉 Watch: Get Started with MaPa-Aur-Hum
-                    </p>
-                  </div>
-                </div>
-
                 <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                  Meet the{" "}
+                  <Link to="/contributors" className="text-primary hover:underline font-medium">
+                    parents and caregivers
+                  </Link>{" "}
+                  who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
+                </p>
                   Meet the{" "}
                   <Link to="/contributors" className="text-primary hover:underline font-medium">
                     parents and caregivers
