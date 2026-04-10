@@ -143,12 +143,6 @@ export const Hero = memo(() => {
                   </Link>{" "}
                   who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
                 </p>
-                  Meet the{" "}
-                  <Link to="/contributors" className="text-primary hover:underline font-medium">
-                    parents and caregivers
-                  </Link>{" "}
-                  who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
-                </p>
               </div>
 
               {/* Right — QR Card (takes 2 cols) */}
