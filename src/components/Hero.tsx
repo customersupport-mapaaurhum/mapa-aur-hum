@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Smartphone, PlayCircle, HelpCircle, Star, CheckCircle, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { YouTubeFacade } from "@/components/YouTubeFacade";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import qrCode from "@/assets/mapa-aur-hum-qr-code-download.jpeg";
 
@@ -135,21 +134,6 @@ export const Hero = memo(() => {
                   </Link>
                 </div>
 
-
-                {/* Welcome Video */}
-                <div className="max-w-xs mx-auto lg:mx-0">
-                  <div className="bg-card rounded-lg overflow-hidden shadow-md border border-border/50">
-                    <div className="aspect-[9/16] max-h-[280px]">
-                      <YouTubeFacade
-                        videoId="tjDYjIpApyU"
-                        title="Welcome to MaPa-Aur-Hum – Get Started"
-                      />
-                    </div>
-                    <p className="text-xs text-center text-muted-foreground py-2 font-medium">
-                      🎉 Watch: Get Started with MaPa-Aur-Hum
-                    </p>
-                  </div>
-                </div>
 
                 <p className="text-xs text-muted-foreground max-w-lg mx-auto lg:mx-0">
                   Meet the{" "}

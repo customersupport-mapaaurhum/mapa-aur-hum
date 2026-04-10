@@ -115,12 +115,27 @@ export const WhyMaPa = () => {
           <p className="text-base md:text-lg text-foreground font-medium mb-4 text-center">
             Watch this quick demo to see how MaPa-Aur-Hum can help you!
           </p>
-          <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
-            <YouTubeFacade 
-              videoId="un7_naPkFO0" 
-              title="Why MaPa-Aur-Hum - Introduction"
-              thumbnailQuality="hq"
-            />
+          <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
+                <YouTubeFacade 
+                  videoId="un7_naPkFO0" 
+                  title="Why MaPa-Aur-Hum - Introduction"
+                  thumbnailQuality="hq"
+                />
+              </div>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">App Demo</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
+                <YouTubeFacade 
+                  videoId="tjDYjIpApyU" 
+                  title="Welcome to MaPa-Aur-Hum – Get Started"
+                  thumbnailQuality="hq"
+                />
+              </div>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">🎉 Welcome – Get Started</p>
+            </div>
           </div>
         </div>
       </div>
