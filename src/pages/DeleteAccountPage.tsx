@@ -97,7 +97,7 @@ const DeleteAccountPage = () => {
               <p className="text-muted-foreground">
                 Your account deletion request has been submitted successfully. Our team will
                 review your request and process the deletion of your account and associated
-                data within 7 business days. You will receive a confirmation email once the
+                data within 90 days. You will receive a confirmation email once the
                 deletion is complete.
               </p>
               <Link to="/">
