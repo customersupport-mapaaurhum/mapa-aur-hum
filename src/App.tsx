@@ -23,6 +23,7 @@ const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
 const UnsubscribePage = lazy(() => import("./pages/UnsubscribePage"));
+const DeleteAccountPage = lazy(() => import("./pages/DeleteAccountPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
           <Route path="/unsubscribe" element={<UnsubscribePage />} />
+          <Route path="/delete-account" element={<DeleteAccountPage />} />
           <Route path="/downloads" element={<Navigate to="/download" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
