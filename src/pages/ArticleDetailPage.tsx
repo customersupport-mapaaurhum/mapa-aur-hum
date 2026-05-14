@@ -1,49 +1,17 @@
-import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useParams, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, ArrowLeft, Calendar, MessageCircle, User } from "lucide-react";
+import { Sparkles, ArrowLeft, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { CommentDialog } from "@/components/CommentDialog";
 import { SocialShare } from "@/components/SocialShare";
-import { supabase } from "@/integrations/supabase/client";
-import { format } from "date-fns";
 
-interface Comment {
-  id: string;
-  name: string;
-  comment: string;
-  created_at: string;
-}
 
 const ArticleDetailPage = () => {
   const { slug } = useParams();
-  const [commentDialogOpen, setCommentDialogOpen] = useState(false);
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [isLoadingComments, setIsLoadingComments] = useState(true);
 
-  useEffect(() => {
-    const fetchComments = async () => {
-      if (!slug) return;
-      
-      const { data, error } = await supabase
-        .from("article_comments")
-        .select("id, name, comment, created_at")
-        .eq("article_slug", slug)
-        .eq("is_approved", true)
-        .order("created_at", { ascending: false });
-
-      if (!error && data) {
-        setComments(data);
-      }
-      setIsLoadingComments(false);
-    };
-
-    fetchComments();
-  }, [slug]);
 
   // Article 3: Gratitude in Modern Parenting
   if (slug === "gratitude-modern-parenting") {
@@ -171,66 +139,12 @@ const ArticleDetailPage = () => {
                   </ul>
                 </section>
 
-                <Separator />
-
-                {/* Comments Section */}
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold flex items-center gap-2">
-                      <MessageCircle className="h-6 w-6" />
-                      Comments
-                    </h2>
-                    <Button onClick={() => setCommentDialogOpen(true)}>
-                      Leave a Comment
-                    </Button>
-                  </div>
-
-                  {isLoadingComments ? (
-                    <div className="text-center py-8 text-muted-foreground">
-                      Loading comments...
-                    </div>
-                  ) : comments.length > 0 ? (
-                    <div className="space-y-4">
-                      {comments.map((comment) => (
-                        <div
-                          key={comment.id}
-                          className="bg-muted/30 rounded-lg p-4 space-y-2"
-                        >
-                          <div className="flex items-center gap-2">
-                            <div className="bg-primary/10 rounded-full p-2">
-                              <User className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <p className="font-medium">{comment.name}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {format(new Date(comment.created_at), "MMM d, yyyy")}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 bg-muted/20 rounded-lg">
-                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
-                      <p className="text-muted-foreground">
-                        No comments yet. Be the first to share your thoughts!
-                      </p>
-                    </div>
-                  )}
-                </section>
               </article>
             </div>
           </main>
           <Footer />
         </div>
 
-        <CommentDialog
-          open={commentDialogOpen}
-          onOpenChange={setCommentDialogOpen}
-          articleSlug={slug || ""}
-        />
       </>
     );
   }
@@ -361,66 +275,12 @@ const ArticleDetailPage = () => {
                   </ul>
                 </section>
 
-                <Separator />
-
-                {/* Comments Section */}
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold flex items-center gap-2">
-                      <MessageCircle className="h-6 w-6" />
-                      Comments
-                    </h2>
-                    <Button onClick={() => setCommentDialogOpen(true)}>
-                      Leave a Comment
-                    </Button>
-                  </div>
-
-                  {isLoadingComments ? (
-                    <div className="text-center py-8 text-muted-foreground">
-                      Loading comments...
-                    </div>
-                  ) : comments.length > 0 ? (
-                    <div className="space-y-4">
-                      {comments.map((comment) => (
-                        <div
-                          key={comment.id}
-                          className="bg-muted/30 rounded-lg p-4 space-y-2"
-                        >
-                          <div className="flex items-center gap-2">
-                            <div className="bg-primary/10 rounded-full p-2">
-                              <User className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <p className="font-medium">{comment.name}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {format(new Date(comment.created_at), "MMM d, yyyy")}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 bg-muted/20 rounded-lg">
-                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
-                      <p className="text-muted-foreground">
-                        No comments yet. Be the first to share your thoughts!
-                      </p>
-                    </div>
-                  )}
-                </section>
               </article>
             </div>
           </main>
           <Footer />
         </div>
 
-        <CommentDialog
-          open={commentDialogOpen}
-          onOpenChange={setCommentDialogOpen}
-          articleSlug={slug || ""}
-        />
       </>
     );
   }
@@ -583,66 +443,12 @@ const ArticleDetailPage = () => {
                   </ul>
                 </section>
 
-                <Separator />
-
-                {/* Comments Section */}
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold flex items-center gap-2">
-                      <MessageCircle className="h-6 w-6" />
-                      Comments
-                    </h2>
-                    <Button onClick={() => setCommentDialogOpen(true)}>
-                      Leave a Comment
-                    </Button>
-                  </div>
-
-                  {isLoadingComments ? (
-                    <div className="text-center py-8 text-muted-foreground">
-                      Loading comments...
-                    </div>
-                  ) : comments.length > 0 ? (
-                    <div className="space-y-4">
-                      {comments.map((comment) => (
-                        <div
-                          key={comment.id}
-                          className="bg-muted/30 rounded-lg p-4 space-y-2"
-                        >
-                          <div className="flex items-center gap-2">
-                            <div className="bg-primary/10 rounded-full p-2">
-                              <User className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <p className="font-medium">{comment.name}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {format(new Date(comment.created_at), "MMM d, yyyy")}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 bg-muted/20 rounded-lg">
-                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
-                      <p className="text-muted-foreground">
-                        No comments yet. Be the first to share your thoughts!
-                      </p>
-                    </div>
-                  )}
-                </section>
               </article>
             </div>
           </main>
           <Footer />
         </div>
 
-        <CommentDialog
-          open={commentDialogOpen}
-          onOpenChange={setCommentDialogOpen}
-          articleSlug={slug || ""}
-        />
       </>
     );
   }
@@ -893,66 +699,12 @@ const ArticleDetailPage = () => {
                   </ul>
                 </section>
 
-                <Separator />
-
-                {/* Comments Section */}
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-2xl font-bold flex items-center gap-2">
-                      <MessageCircle className="h-6 w-6" />
-                      Comments
-                    </h2>
-                    <Button onClick={() => setCommentDialogOpen(true)}>
-                      Leave a Comment
-                    </Button>
-                  </div>
-
-                  {isLoadingComments ? (
-                    <div className="text-center py-8 text-muted-foreground">
-                      Loading comments...
-                    </div>
-                  ) : comments.length > 0 ? (
-                    <div className="space-y-4">
-                      {comments.map((comment) => (
-                        <div
-                          key={comment.id}
-                          className="bg-muted/30 rounded-lg p-4 space-y-2"
-                        >
-                          <div className="flex items-center gap-2">
-                            <div className="bg-primary/10 rounded-full p-2">
-                              <User className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <p className="font-medium">{comment.name}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {format(new Date(comment.created_at), "MMM d, yyyy")}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-foreground/80 pl-10">{comment.comment}</p>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-8 bg-muted/20 rounded-lg">
-                      <MessageCircle className="h-12 w-12 mx-auto text-muted-foreground/50 mb-3" />
-                      <p className="text-muted-foreground">
-                        No comments yet. Be the first to share your thoughts!
-                      </p>
-                    </div>
-                  )}
-                </section>
               </article>
             </div>
           </main>
           <Footer />
         </div>
 
-        <CommentDialog
-          open={commentDialogOpen}
-          onOpenChange={setCommentDialogOpen}
-          articleSlug={slug || ""}
-        />
       </>
     );
   }

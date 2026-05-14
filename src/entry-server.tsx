@@ -17,7 +17,6 @@ import DownloadPage from './pages/DownloadPage';
 import WhyMaPaPage from './pages/WhyMaPaPage';
 import KeyFeaturesPage from './pages/KeyFeaturesPage';
 import ArticlesPage from './pages/ArticlesPage';
-import PricingPage from './pages/PricingPage';
 import NotFound from './pages/NotFound';
 
 // Route to component mapping for SSR
@@ -35,7 +34,6 @@ const routeComponents: Record<string, React.ComponentType> = {
   '/why-mapa': WhyMaPaPage,
   '/key-features': KeyFeaturesPage,
   '/articles': ArticlesPage,
-  '/pricing': PricingPage,
 };
 
 export function render(url: string) {
