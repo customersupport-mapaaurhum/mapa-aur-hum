@@ -47,39 +47,6 @@ export type Database = {
         }
         Relationships: []
       }
-      article_comments: {
-        Row: {
-          article_slug: string
-          comment: string
-          created_at: string
-          email: string
-          id: string
-          is_approved: boolean
-          name: string
-          updated_at: string
-        }
-        Insert: {
-          article_slug: string
-          comment: string
-          created_at?: string
-          email: string
-          id?: string
-          is_approved?: boolean
-          name: string
-          updated_at?: string
-        }
-        Update: {
-          article_slug?: string
-          comment?: string
-          created_at?: string
-          email?: string
-          id?: string
-          is_approved?: boolean
-          name?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
       feedback: {
         Row: {
           created_at: string
@@ -179,150 +146,15 @@ export type Database = {
         }
         Relationships: []
       }
-      premium_requests: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          location: string | null
-          name: string
-          phone: string
-          role: string | null
-          screenshot_url: string | null
-          status: string
-          updated_at: string
-          utr: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          location?: string | null
-          name: string
-          phone: string
-          role?: string | null
-          screenshot_url?: string | null
-          status?: string
-          updated_at?: string
-          utr: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          location?: string | null
-          name?: string
-          phone?: string
-          role?: string | null
-          screenshot_url?: string | null
-          status?: string
-          updated_at?: string
-          utr?: string
-        }
-        Relationships: []
-      }
-      premium_users: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          is_premium: boolean
-          name: string
-          phone: string | null
-          premium_expiry: string | null
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          is_premium?: boolean
-          name: string
-          phone?: string | null
-          premium_expiry?: string | null
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          is_premium?: boolean
-          name?: string
-          phone?: string | null
-          premium_expiry?: string | null
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      registrations: {
-        Row: {
-          city: string | null
-          created_at: string
-          email: string
-          has_existing_caregiver: boolean | null
-          id: string
-          name: string
-          phone_number: string
-          updated_at: string
-        }
-        Insert: {
-          city?: string | null
-          created_at?: string
-          email: string
-          has_existing_caregiver?: boolean | null
-          id?: string
-          name: string
-          phone_number: string
-          updated_at?: string
-        }
-        Update: {
-          city?: string | null
-          created_at?: string
-          email?: string
-          has_existing_caregiver?: boolean | null
-          id?: string
-          name?: string
-          phone_number?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      has_role: {
-        Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -449,8 +281,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "moderator", "user"],
-    },
+    Enums: {},
   },
 } as const
