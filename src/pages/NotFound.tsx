@@ -59,9 +59,6 @@ const NotFound = () => {
                     <Link to="/key-features">Key Features</Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
-                    <Link to="/pricing">Pricing</Link>
-                  </Button>
-                  <Button asChild variant="ghost" size="sm">
                     <Link to="/articles">Articles</Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
