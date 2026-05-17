@@ -146,6 +146,33 @@ export type Database = {
         }
         Relationships: []
       }
+      poll_responses: {
+        Row: {
+          created_at: string
+          customer_email: string
+          id: string
+          question_1: string | null
+          question_2: string | null
+          response_date: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email: string
+          id?: string
+          question_1?: string | null
+          question_2?: string | null
+          response_date?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string
+          id?: string
+          question_1?: string | null
+          question_2?: string | null
+          response_date?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
