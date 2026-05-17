@@ -78,6 +78,20 @@ Deno.serve(async (req) => {
       });
     }
 
+    if (req.method === 'GET' && redirect_url) {
+      return new Response(null, {
+        status: 302,
+        headers: { ...corsHeaders, Location: redirect_url },
+      });
+    }
+
+    if (req.method === 'GET') {
+      return new Response(
+        '<!doctype html><html><body style="font-family:system-ui;text-align:center;padding:40px"><h2>Thanks! Your response was recorded.</h2></body></html>',
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'text/html; charset=utf-8' } }
+      );
+    }
+
     return new Response(JSON.stringify({ success: true, data }), {
       status: 201,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
