@@ -3,7 +3,7 @@ import { createClient } from 'npm:@supabase/supabase-js@2';
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 };
 
 const isEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
@@ -13,7 +13,7 @@ Deno.serve(async (req) => {
     return new Response('ok', { headers: corsHeaders });
   }
 
-  if (req.method !== 'POST') {
+  if (req.method !== 'POST' && req.method !== 'GET') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -21,18 +21,33 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const body = await req.json().catch(() => null);
-    if (!body || typeof body !== 'object') {
-      return new Response(JSON.stringify({ error: 'Invalid JSON body' }), {
-        status: 400,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
+    let customer_email = '';
+    let question_1: string | null = null;
+    let question_2: string | null = null;
+    let response_date: string | undefined;
+    let redirect_url: string | null = null;
 
-    const customer_email = typeof body.customer_email === 'string' ? body.customer_email.trim() : '';
-    const question_1 = typeof body.question_1 === 'string' ? body.question_1.trim().slice(0, 2000) : null;
-    const question_2 = typeof body.question_2 === 'string' ? body.question_2.trim().slice(0, 2000) : null;
-    const response_date = typeof body.response_date === 'string' ? body.response_date : undefined;
+    if (req.method === 'GET') {
+      const url = new URL(req.url);
+      const p = url.searchParams;
+      customer_email = (p.get('customer_email') || p.get('email') || '').trim();
+      question_1 = (p.get('question_1') || p.get('q1') || '').trim().slice(0, 2000) || null;
+      question_2 = (p.get('question_2') || p.get('q2') || '').trim().slice(0, 2000) || null;
+      response_date = p.get('response_date') || undefined;
+      redirect_url = p.get('redirect') || p.get('redirect_url');
+    } else {
+      const body = await req.json().catch(() => null);
+      if (!body || typeof body !== 'object') {
+        return new Response(JSON.stringify({ error: 'Invalid JSON body' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      customer_email = typeof body.customer_email === 'string' ? body.customer_email.trim() : '';
+      question_1 = typeof body.question_1 === 'string' ? body.question_1.trim().slice(0, 2000) : null;
+      question_2 = typeof body.question_2 === 'string' ? body.question_2.trim().slice(0, 2000) : null;
+      response_date = typeof body.response_date === 'string' ? body.response_date : undefined;
+    }
 
     if (!customer_email || customer_email.length > 255 || !isEmail(customer_email)) {
       return new Response(JSON.stringify({ error: 'Valid customer_email is required' }), {
@@ -61,6 +76,20 @@ Deno.serve(async (req) => {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
+    }
+
+    if (req.method === 'GET' && redirect_url) {
+      return new Response(null, {
+        status: 302,
+        headers: { ...corsHeaders, Location: redirect_url },
+      });
+    }
+
+    if (req.method === 'GET') {
+      return new Response(
+        '<!doctype html><html><body style="font-family:system-ui;text-align:center;padding:40px"><h2>Thanks! Your response was recorded.</h2></body></html>',
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'text/html; charset=utf-8' } }
+      );
     }
 
     return new Response(JSON.stringify({ success: true, data }), {
