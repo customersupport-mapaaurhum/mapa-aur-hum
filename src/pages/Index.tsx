@@ -5,7 +5,6 @@ import { Hero } from "@/components/Hero";
 import { UpcomingSection } from "@/components/UpcomingSection";
 import { LazySection } from "@/components/LazySection";
 import { PartnerCTA } from "@/components/PartnerCTA";
-import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 import { SupportChatButton } from "@/components/SupportChatButton";
 
 // Lazy load below-the-fold components
