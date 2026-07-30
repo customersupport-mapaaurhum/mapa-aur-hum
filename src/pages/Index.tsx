@@ -68,6 +68,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
+          <UpcomingSection />
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
