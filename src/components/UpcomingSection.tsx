@@ -4,7 +4,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export const UpcomingSection = memo(() => {
   return (
-    <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/5 border-b border-border py-2.5">
+    <div className="fixed top-[72px] left-0 right-0 z-40 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/5 border-b border-border py-2.5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center sm:text-left">
           <div className="inline-flex items-center gap-2">
