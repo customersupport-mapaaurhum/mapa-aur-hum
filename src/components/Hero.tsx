@@ -65,7 +65,7 @@ export const Hero = memo(() => {
 
   return (
     <>
-      <section className="relative min-h-[85vh] flex items-center pt-12 lg:pt-16 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <section className="relative flex items-center pt-12 lg:pt-16 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         {/* Decorative blurs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl" />
