@@ -64,11 +64,10 @@ const Index = () => {
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app" />
       </Helmet>
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
-        <AnnouncementTicker />
+        <UpcomingSection />
         <Header />
         <main>
           <Hero />
-          <UpcomingSection />
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
