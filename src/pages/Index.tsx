@@ -5,7 +5,6 @@ import { Hero } from "@/components/Hero";
 import { UpcomingSection } from "@/components/UpcomingSection";
 import { LazySection } from "@/components/LazySection";
 import { PartnerCTA } from "@/components/PartnerCTA";
-import { AnnouncementTicker } from "@/components/AnnouncementTicker";
 import { SupportChatButton } from "@/components/SupportChatButton";
 
 // Lazy load below-the-fold components
@@ -64,11 +63,10 @@ const Index = () => {
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app" />
       </Helmet>
       <div className="min-h-screen bg-background overflow-x-hidden w-full max-w-full">
-        <AnnouncementTicker />
+        <UpcomingSection />
         <Header />
         <main>
           <Hero />
-          <UpcomingSection />
           <LazySection rootMargin="400px">
             <Suspense fallback={<WhyMaPaSkeleton />}>
               <WhyMaPa />
