@@ -149,27 +149,30 @@ export type Database = {
       poll_responses: {
         Row: {
           created_at: string
-          customer_email: string
+          customer_email: string | null
           id: string
           question_1: string | null
           question_2: string | null
           response_date: string
+          uid: string | null
         }
         Insert: {
           created_at?: string
-          customer_email: string
+          customer_email?: string | null
           id?: string
           question_1?: string | null
           question_2?: string | null
           response_date?: string
+          uid?: string | null
         }
         Update: {
           created_at?: string
-          customer_email?: string
+          customer_email?: string | null
           id?: string
           question_1?: string | null
           question_2?: string | null
           response_date?: string
+          uid?: string | null
         }
         Relationships: []
       }
