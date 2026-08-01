@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ArrowRight, EyeOff, MessageSquareOff, Ban } from "lucide-react";
 
@@ -21,6 +22,8 @@ const problems = [
 ];
 
 export const UpcomingSection = memo(() => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="new-in-mapa"
@@ -65,7 +68,7 @@ export const UpcomingSection = memo(() => {
             variant="secondary"
             size="lg"
             className="w-[200px] bg-background text-foreground hover:bg-background/90 group"
-            onClick={() => window.open("https://mapaaurhum-money-magic-pilot.lovable.app/", "_blank")}
+            onClick={() => navigate("/money-magic")}
           >
             Explore Money Magic
             <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
