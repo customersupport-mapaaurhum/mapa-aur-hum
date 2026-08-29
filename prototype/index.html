@@ -1881,6 +1881,13 @@
     document.getElementById('idxPanel').classList.remove('open');
     document.getElementById('idxBackdrop').classList.remove('open');
   }
+  document.addEventListener('click', function unlockAudioOnce(){
+    try {
+      lessonAudioCtx = lessonAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (lessonAudioCtx.state === 'suspended') lessonAudioCtx.resume();
+    } catch (e) {}
+    document.removeEventListener('click', unlockAudioOnce);
+  }, { once: true });
   document.addEventListener('click', function(e){
     var navEl = e.target.closest('[data-nav]');
     if (navEl){ goTo(parseInt(navEl.getAttribute('data-nav'), 10)); return; }
@@ -2045,6 +2052,7 @@
   function playCelebrationSound(big){
     try {
       lessonAudioCtx = lessonAudioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      if (lessonAudioCtx.state === 'suspended') lessonAudioCtx.resume();
       var notes = big ? [523.25, 659.25, 783.99, 1046.5] : [523.25, 783.99];
       notes.forEach(function(freq, i){
         var osc = lessonAudioCtx.createOscillator();
@@ -2146,8 +2154,9 @@
     if (!isLastLessonOfDay){
       root.innerHTML =
         '<div class="ink-card lesson-complete" style="padding:26px 20px;">' +
-          '<div style="font-size:44px;">🎉</div>' +
-          '<h3 style="font-family:\'Fredoka\',sans-serif;font-weight:600;font-size:16px;color:var(--ink);margin-top:8px;">Lesson ' + (lessonSubIdx+1) + ' of ' + day.length + ' done!</h3>' +
+          '<div class="dance-gif" style="width:110px;height:110px;"><img src="' + KUBI_DANCE_GIF + '" alt="Kubi dancing"></div>' +
+          '<div style="font-size:26px;margin-top:8px;">🎉</div>' +
+          '<h3 style="font-family:\'Fredoka\',sans-serif;font-weight:600;font-size:16px;color:var(--ink);margin-top:4px;">Lesson ' + (lessonSubIdx+1) + ' of ' + day.length + ' done!</h3>' +
           '<p style="font-size:13px;font-weight:700;color:#3A4A68;margin-top:6px;">Nice work — that idea just got a little more real.</p>' +
           '<div class="pts">+' + pts + '</div>' +
           '<div class="pts-label">points earned</div>' +
@@ -2156,6 +2165,8 @@
           '<button class="gum-btn ghost sm" style="flex:1;justify-content:center;" onclick="closeLesson()">Back to modules</button>' +
           '<button class="gum-btn sky sm" style="flex:1;justify-content:center;" onclick="goNextLesson()">Next lesson →</button>' +
         '</div>';
+      fireConfetti(false);
+      playCelebrationSound(false);
       return;
     }
     lessonDoneSet(lessonModuleIdx).add(lessonDayIdx);
