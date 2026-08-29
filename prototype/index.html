@@ -574,6 +574,11 @@
   .lesson-dots span.done{ background:var(--ink); }
   .lesson-story-card{ text-align:center; }
   .lesson-sub-tag{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:600; font-size:11px; letter-spacing:.03em; text-transform:uppercase; color:var(--ink); background:var(--sun-tint); border:2px solid var(--ink); border-radius:999px; padding:4px 12px; margin-bottom:12px; }
+  .lesson-illustration{ position:relative; margin-top:16px; border-radius:20px; background:linear-gradient(160deg,var(--sky-tint) 0%,var(--sky-light) 100%); border:2.5px solid var(--ink); padding:26px 20px; overflow:hidden; }
+  .lesson-illustration .big-icon{ font-size:60px; line-height:1; }
+  .lesson-illustration .deco{ position:absolute; font-size:22px; opacity:.8; }
+  .lesson-illustration .deco.d1{ top:12px; left:18px; transform:rotate(-12deg); }
+  .lesson-illustration .deco.d2{ bottom:12px; right:18px; transform:rotate(14deg); }
   .lesson-story-card .circ{ width:64px; height:64px; border-radius:50%; background:var(--sun-tint); border:2.5px solid var(--ink); display:flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 12px; }
   .lesson-story-card h3{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:17px; color:var(--ink); margin-bottom:8px; }
   .lesson-story-card p{ font-size:13.5px; font-weight:700; color:#3A4A68; line-height:1.6; }
@@ -2057,6 +2062,7 @@
     } catch (e) { /* Web Audio unavailable -- celebration stays silent, confetti still plays */ }
   }
 
+  var LESSON_DECOR = ['🪙','✨','💰','⭐','🎈','💵'];
   function openLesson(moduleIdx){
     lessonModuleIdx = moduleIdx;
     var mergedDays = lessonMergedDays(LESSON_MODULES[moduleIdx]);
@@ -2066,24 +2072,36 @@
     lessonSubIdx = 0;
     lessonDayPoints = 0;
     goTo(40);
-    renderLessonDay();
+    renderLessonStory();
   }
   function closeLesson(){ goBack(); }
+  function renderLessonDay(){ renderLessonStory(); }
 
-  function renderLessonDay(){
+  function lessonHeaderText(){
     var m = LESSON_MODULES[lessonModuleIdx];
     var mergedDays = lessonMergedDays(m);
-    var day = mergedDays[lessonDayIdx];
-    var lesson = day[lessonSubIdx];
     document.getElementById('lessonModuleTitle').textContent = m.t + ' · Day ' + (lessonDayIdx+1) + '/' + mergedDays.length;
-    var dots = mergedDays.map(function(_, i){
+    return { m: m, mergedDays: mergedDays };
+  }
+  function lessonDots(mergedDays){
+    return mergedDays.map(function(_, i){
       var cls = i === lessonDayIdx ? 'on' : (lessonDoneSet(lessonModuleIdx).has(i) ? 'done' : '');
       return '<span class="' + cls + '"></span>';
     }).join('');
-    var subDots = day.map(function(_, i){
+  }
+  function lessonSubDots(day){
+    return day.map(function(_, i){
       var cls = i === lessonSubIdx ? 'on' : (i < lessonSubIdx ? 'done' : '');
       return '<span class="' + cls + '"></span>';
     }).join('');
+  }
+
+  function renderLessonStory(){
+    var ctx = lessonHeaderText();
+    var day = ctx.mergedDays[lessonDayIdx];
+    var lesson = day[lessonSubIdx];
+    var d1 = LESSON_DECOR[(lessonSubIdx*2) % LESSON_DECOR.length];
+    var d2 = LESSON_DECOR[(lessonSubIdx*2+3) % LESSON_DECOR.length];
     var root = document.getElementById('lessonRoot');
     root.innerHTML =
       '<div class="ink-card lesson-story-card" style="padding:22px 20px;">' +
@@ -2091,14 +2109,28 @@
         '<div class="circ">' + lesson.card.i + '</div>' +
         '<h3>' + lesson.card.h + '</h3>' +
         '<p>' + lesson.card.b + '</p>' +
-        '<div class="lesson-dots" style="margin-top:6px;">' + subDots + '</div>' +
-        '<div class="lesson-dots">' + dots + '</div>' +
+        '<div class="lesson-illustration">' +
+          '<span class="deco d1">' + d1 + '</span><span class="deco d2">' + d2 + '</span>' +
+          '<div class="big-icon">' + lesson.card.i + '</div>' +
+        '</div>' +
+        '<div class="lesson-dots" style="margin-top:14px;">' + lessonSubDots(day) + '</div>' +
+        '<div class="lesson-dots">' + lessonDots(ctx.mergedDays) + '</div>' +
       '</div>' +
+      '<button class="gum-btn sky" style="justify-content:center;margin-top:14px;" onclick="renderLessonGame()">▶ Play: ' + lesson.gameLabel + '</button>';
+  }
+
+  function renderLessonGame(){
+    var ctx = lessonHeaderText();
+    var day = ctx.mergedDays[lessonDayIdx];
+    var lesson = day[lessonSubIdx];
+    var root = document.getElementById('lessonRoot');
+    root.innerHTML =
       '<div class="lesson-tip">' +
         '<div class="av kubi-main-bg" style="width:30px;height:30px;"></div>' +
         '<p><b>Kubi:</b> Let\'s play today\'s game together — ' + lesson.gameLabel + '</p>' +
       '</div>' +
-      '<div class="ink-card" id="lessonGameStage" style="padding:18px 17px;margin-top:14px;"></div>';
+      '<div class="ink-card" id="lessonGameStage" style="padding:18px 17px;margin-top:14px;"></div>' +
+      '<button class="gum-btn ghost sm" style="width:100%;justify-content:center;margin-top:12px;" onclick="renderLessonStory()">← Back to lesson</button>';
     LESSON_GAMES[lesson.game](lesson.cfg, document.getElementById('lessonGameStage'), onLessonGameComplete);
   }
 
