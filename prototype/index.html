@@ -163,12 +163,12 @@
   .s-meet .signin{ margin-top:16px; font-size:14px; font-weight:700; color:var(--ink); background:var(--paper); border:2px solid var(--ink); border-radius:999px; padding:7px 15px; text-decoration:none; }
 
   /* ================= WALKTHROUGH (shared) ================= */
-  .s-wk{ flex:1; padding:20px 20px 20px; background:var(--cream); display:flex; flex-direction:column; position:relative; }
+  .s-wk{ flex:1; min-height:0; padding:20px 20px 20px; background:var(--cream); display:flex; flex-direction:column; position:relative; }
   .s-wk::before{ content:""; position:absolute; inset:0; background-image:radial-gradient(rgba(24,43,77,.06) 1.4px, transparent 1.4px); background-size:16px 16px; pointer-events:none; }
   .s-wk .topline{ display:flex; justify-content:space-between; align-items:center; position:relative; z-index:1; }
   .s-wk .topline a{ font-size:14px; font-weight:700; color:var(--ink); }
   .s-wk .topline .skip{ opacity:.6; }
-  .s-wk .note{ position:relative; z-index:1; margin-top:14px; background:var(--paper); border:3px solid var(--ink); border-radius:4px; box-shadow:5px 5px 0 var(--ink); padding:19px 19px 17px; transform:rotate(-.6deg); flex:1; overflow-y:auto; }
+  .s-wk .note{ position:relative; z-index:1; margin-top:14px; background:var(--paper); border:3px solid var(--ink); border-radius:4px; box-shadow:5px 5px 0 var(--ink); padding:19px 19px 17px; transform:rotate(-.6deg); flex:1; min-height:0; overflow-y:auto; }
   .s-wk .note .tape{ top:-14px; left:50%; transform:translateX(-50%) rotate(-3deg); width:74px; }
   .s-wk .head{ display:flex; gap:12px; align-items:center; }
   .s-wk .mascot{ width:54px; height:54px; }
@@ -698,8 +698,12 @@
                 <span class="pc">🚀 Intermediate · 10–14</span>
               </div>
               <div class="info-list" style="margin-top:13px;">
+                <div class="row"><span class="e">📚</span><p>2 full courses, matched to your child's age — Junior (6–10) and Intermediate (10+).</p></div>
                 <div class="row"><span class="e">🎯</span><p>Every lesson is a short story plus a mini-game — sorting, quizzes, memory match.</p></div>
-                <div class="row"><span class="e">🎓</span><p>Rooted in NEP 2020, aligned to the NFLAT syllabus.</p></div>
+                <div class="row"><span class="e">🎮</span><p>Every module comes with its own set of games — not just one mini-game per lesson.</p></div>
+                <div class="row"><span class="e">🎉</span><p>Fun on the outside, valuable money lessons underneath — kids play, and real habits stick.</p></div>
+                <div class="row"><span class="e">🎓</span><p>Aligned to the <b style="color:var(--sky);">NEP 2020</b> philosophy of experiential learning.</p></div>
+                <div class="row"><span class="e">📝</span><p>Also aligned to the <b style="color:var(--sky);">NFLAT</b> exam syllabus.</p></div>
               </div>
             </div>
             <div class="steps-path"><i class="done"></i><span class="ln"></span><i class="on"></i><span class="ln"></span><i></i><span class="ln"></span><i></i></div>
@@ -1351,7 +1355,7 @@
               </div>
               <div class="ink-card" style="cursor:pointer;display:flex;align-items:center;gap:13px;padding:16px 17px;" data-nav="26">
                 <span style="font-size:27px;">🎓</span>
-                <div style="flex:1;"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink);">Intermediate syllabus · age 10+</div><div style="font-size:12px;font-weight:700;color:#3A4A68;margin-top:2px;">8 more modules, aligned to NFLAT</div></div>
+                <div style="flex:1;"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink);">Intermediate syllabus · age 10+</div><div style="font-size:12px;font-weight:700;color:#3A4A68;margin-top:2px;">8 more modules, aligned to <b style="color:var(--sky);">NFLAT</b></div></div>
                 <span style="font-size:17px;color:var(--sky);">→</span>
               </div>
             </div>
@@ -1366,7 +1370,7 @@
           <div class="s-syllabus" style="display:flex;flex-direction:column;height:100%;">
             <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🎓 Intermediate syllabus</h1><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">Age 10+</span></div></div>
             <div class="body-scroll">
-              <p style="font-size:14px;font-weight:700;color:#3A4A68;line-height:1.55;">Additional modules for age 10 onwards, aligned to the National Financial Literacy Assessment Test (NFLAT) syllabus.</p>
+              <p style="font-size:14px;font-weight:700;color:#3A4A68;line-height:1.55;">Additional modules for age 10 onwards, aligned to the National Financial Literacy Assessment Test (<b style="color:var(--sky);">NFLAT</b>) syllabus.</p>
               <div class="module-grid">
                 <div class="module-card"><span class="e">🥇</span><span>Module 1: Money Matters</span></div>
                 <div class="module-card"><span class="e">🏦</span><span>Module 2: Banking — Deposits, Credit &amp; Payments</span></div>
