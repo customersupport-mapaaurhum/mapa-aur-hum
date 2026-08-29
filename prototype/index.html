@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Kubi Sticker Club — Full Review</title>
+<title>Kubi Sticker Club — Clickable Prototype</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
   /* ---------------------------------------------------------------
      MoneyMagic / Kubi — "Sticker Club" — full review, one file.
@@ -532,101 +531,57 @@
   .brand-strip{ display:inline-flex; align-items:center; gap:6px; font-family:'Fredoka',sans-serif; font-weight:600; font-size:11.5px; color:var(--ink); background:var(--paper); border:2px solid var(--ink); border-radius:999px; padding:6px 13px 6px 9px; }
   .brand-strip .coin{ font-size:14px; }
   .brand-strip-row{ display:flex; justify-content:center; padding:14px 20px 0; flex-shrink:0; }
+
+  /* ================= Interactive prototype shell ================= */
+  html, body { height: auto; }
+  .proto-topbar{
+    position: sticky; top: 0; z-index: 60;
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    padding:12px 22px; background:var(--paper); border-bottom:3px solid var(--ink);
+  }
+  .proto-btn{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:14px;
+    border:2.5px solid var(--ink); background:var(--paper); color:var(--ink);
+    border-radius:999px; padding:9px 18px; cursor:pointer; display:flex; align-items:center; gap:6px;
+    box-shadow:0 3px 0 var(--ink);
+  }
+  .proto-btn:active{ transform:translateY(2px); box-shadow:0 1px 0 var(--ink); }
+  .proto-btn[disabled]{ opacity:.35; cursor:not-allowed; box-shadow:none; }
+  .proto-btn.sky{ background:var(--sky-2); color:var(--paper); }
+  .proto-title{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:15px; color:var(--ink);
+    text-align:center; flex:1;
+  }
+  .proto-title b{ color:var(--sky); }
+  .proto-stage{
+    display:flex; justify-content:center; align-items:flex-start;
+    padding:44px 20px 90px; min-height:calc(100vh - 66px);
+  }
+  .scr{ display:none; }
+  .scr.active{ display:block; animation:scr-in .22s ease; }
+  @keyframes scr-in{ from{ opacity:0; transform:translateY(8px) scale(.99);} to{ opacity:1; transform:none; } }
+  [data-nav], [data-back]{ cursor:pointer; }
+  .idx-group{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:12px; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--sky); margin:20px 0 8px;
+  }
+  .idx-group:first-child{ margin-top:0; }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-<div class="idx-backdrop" id="idxBackdrop" onclick="idxClose()"></div>
-<div class="idx-panel" id="idxPanel">
-  <div class="idx-panel-head"><h2>All 33 screens</h2><button class="idx-close" onclick="idxClose()">✕</button></div>
-  <div class="idx-sub">Tap any screen to jump straight to it.</div>
-      <div class="idx-group">Welcome</div>
-      <button class="idx-link" data-slot="1" onclick="idxGoTo(1)"><span class="no">1</span>Meet Kubi</button>
-      <div class="idx-group">Walkthrough</div>
-      <button class="idx-link" data-slot="2" onclick="idxGoTo(2)"><span class="no">2</span>The problem</button>
-      <button class="idx-link" data-slot="3" onclick="idxGoTo(3)"><span class="no">3</span>The Coin Purse</button>
-      <button class="idx-link" data-slot="4" onclick="idxGoTo(4)"><span class="no">4</span>One day, one lesson</button>
-      <button class="idx-link" data-slot="5" onclick="idxGoTo(5)"><span class="no">5</span>Rewards &amp; real talk</button>
-      <div class="idx-group">Create account</div>
-      <button class="idx-link" data-slot="6" onclick="idxGoTo(6)"><span class="no">6</span>Parent details</button>
-      <button class="idx-link" data-slot="7" onclick="idxGoTo(7)"><span class="no">7</span>Child details</button>
-      <button class="idx-link" data-slot="8" onclick="idxGoTo(8)"><span class="no">8</span>Verify it&#39;s you</button>
-      <button class="idx-link" data-slot="9" onclick="idxGoTo(9)"><span class="no">9</span>Choose how to start</button>
-      <button class="idx-link" data-slot="10" onclick="idxGoTo(10)"><span class="no">10</span>Sign in</button>
-      <div class="idx-group">Role select &amp; parent PIN</div>
-      <button class="idx-link" data-slot="11" onclick="idxGoTo(11)"><span class="no">11</span>Who&#39;s playing?</button>
-      <button class="idx-link" data-slot="12" onclick="idxGoTo(12)"><span class="no">12</span>Enter parent PIN</button>
-      <div class="idx-group">Home &amp; everyday tools</div>
-      <button class="idx-link" data-slot="13" onclick="idxGoTo(13)"><span class="no">13</span>Welcome back</button>
-      <button class="idx-link" data-slot="14" onclick="idxGoTo(14)"><span class="no">14</span>Home · child view</button>
-      <button class="idx-link" data-slot="15" onclick="idxGoTo(15)"><span class="no">15</span>Home · parent view</button>
-      <button class="idx-link" data-slot="16" onclick="idxGoTo(16)"><span class="no">16</span>New expense</button>
-      <button class="idx-link" data-slot="17" onclick="idxGoTo(17)"><span class="no">17</span>Coin Purse</button>
-      <div class="idx-group">Reports</div>
-      <button class="idx-link" data-slot="18" onclick="idxGoTo(18)"><span class="no">18</span>Reports</button>
-      <div class="idx-group">Progress &amp; Play</div>
-      <button class="idx-link" data-slot="19" onclick="idxGoTo(19)"><span class="no">19</span>Progress</button>
-      <button class="idx-link" data-slot="20" onclick="idxGoTo(20)"><span class="no">20</span>Play &amp; Rewards</button>
-      <button class="idx-link" data-slot="21" onclick="idxGoTo(21)"><span class="no">21</span>Badge roadmap</button>
-      <button class="idx-link" data-slot="22" onclick="idxGoTo(22)"><span class="no">22</span>Monthly Challenge</button>
-      <button class="idx-link" data-slot="23" onclick="idxGoTo(23)"><span class="no">23</span>Leaderboard</button>
-      <div class="idx-group">Friends &amp; Learning</div>
-      <button class="idx-link" data-slot="24" onclick="idxGoTo(24)"><span class="no">24</span>Friends</button>
-      <button class="idx-link" data-slot="25" onclick="idxGoTo(25)"><span class="no">25</span>Learn</button>
-      <button class="idx-link" data-slot="26" onclick="idxGoTo(26)"><span class="no">26</span>Intermediate syllabus</button>
-      <div class="idx-group">Settings</div>
-      <button class="idx-link" data-slot="27" onclick="idxGoTo(27)"><span class="no">27</span>Settings</button>
-      <button class="idx-link" data-slot="28" onclick="idxGoTo(28)"><span class="no">28</span>Nickname</button>
-      <button class="idx-link" data-slot="29" onclick="idxGoTo(29)"><span class="no">29</span>Notifications</button>
-      <button class="idx-link" data-slot="30" onclick="idxGoTo(30)"><span class="no">30</span>Privacy</button>
-      <div class="idx-group">Weekly recap &amp; subscription</div>
-      <button class="idx-link" data-slot="31" onclick="idxGoTo(31)"><span class="no">31</span>Weekly recap</button>
-      <button class="idx-link" data-slot="32" onclick="idxGoTo(32)"><span class="no">32</span>Upgrade (parent)</button>
-      <button class="idx-link" data-slot="33" onclick="idxGoTo(33)"><span class="no">33</span>Refer a friend</button>
+<div class="proto-topbar">
+  <button class="proto-btn" id="btnBack" disabled>← Back</button>
+  <div class="proto-title"><b id="screenNum">1</b>/33 · <span id="screenName">Meet Kubi</span></div>
+  <div style="display:flex;gap:10px;">
+    <button class="proto-btn" id="btnRestart">↺ Restart</button>
+    <button class="proto-btn sky" id="idxToggleBtn" onclick="idxOpen()">☰ Screens</button>
+  </div>
 </div>
-<button class="idx-toggle" id="idxToggleBtn" onclick="idxOpen()"><span>☰</span><span>Index</span></button>
 
-
-  <div class="masthead">
-    <span class="eyebrow">Mapaaurhum MoneyMagic · Sticker Club — full review</span>
-    <h1>Every screen, all 33, in <span>blue and sun</span>.</h1>
-    <p>Everything merged into a single page, with the full prototype now redesigned to match and this round's feedback folded in. Use the Index (top right) to jump to any screen. Fonts are up across the board — screens now scroll where needed instead of shrinking text to fit, since a scroll is a much smaller price than small type for a kids' app.</p>
-    <div class="changelog">
-      <h3>What changed in this pass</h3>
-      <ul>
-        <li><b>Fonts enlarged everywhere</b> — body text, labels and buttons are all a size up from the last round; screens scroll instead of compressing.</li>
-        <li><b>Home (child)</b> simplified — dropped the Monthly Challenge banner and extra decoration; down to progress, today's lesson, and Explore.</li>
-        <li><b>Reports</b> — removed the Family/You/child toggle; just Week/Month now.</li>
-        <li><b>Rewards split in two</b> — <i>Progress</i> (streak, badges, weekly goal) and <i>Play &amp; Rewards</i> (Challenge, Leaderboard, Friends) instead of one long page.</li>
-        <li><b>Badge Roadmap</b> — bigger tiles, 3 per row instead of 4.</li>
-        <li><b>Leaderboard</b> now ranks by points earned through learning, not ₹ saved, and gets its own "share your rank" action (moved off the Rewards page).</li>
-        <li><b>11 new screens added</b> — Friends, Learn, Intermediate syllabus, Settings (+ Nickname, Notifications, Privacy), Weekly recap, Upgrade, Refer a friend, and Feedback — the whole app is now covered, groups 8–10 below.</li>
-        <li><b>Mascot renamed</b> Kuber → <b>Kubi</b> everywhere, and Meet Kubi's brand row is bigger and sits above the sky art, with a rupee badge added to the scene.</li>
-        <li><b>Onboarding screen removed</b> as redundant; role select now leads straight into a new <b>Enter parent PIN</b> screen (tap the parent card's lock).</li>
-        <li><b>New expense</b> — payment mode removed for the child version; <b>Who's playing?</b> intro line trimmed.</li>
-        <li><b>Reports</b> — now weekly only (Month toggle dropped) and the by-day bar chart removed.</li>
-        <li><b>Play &amp; Rewards</b> — dropped the duplicate Friends row (it already lives on Home), added a standing card and made the remaining tiles bigger.</li>
-        <li><b>Leaderboard</b> — added a Coin Purse savings % under every name.</li>
-        <li><b>Index added</b> — the "Index" button (top right) opens a full list of all screens; tap any one to jump straight to it.</li>
-        <li><b>Fixed a layout bug</b> — Friends &amp; Learning, Settings, and Weekly recap were rendering sideways instead of as their own rows.</li>
-        <li><b>Full wordmark on every screen</b> — tried per your ask: "Mapaaurhum MoneyMagic" now sits in the status bar row on every screen, not just the entry/exit ones. (First attempt floated it over the title and collided — moved it into the status bar itself so nothing overlaps.)</li>
-        <li><b>Feedback screen removed</b>, "Not now" removed from Upgrade, Copy code + Email removed from Refer a friend, both timing dropdowns + test-notification button removed from Notifications, "Danger zone" renamed to "Delete account", Leaderboard rows decluttered and footer note shortened, Progress's goal card and Play &amp; Rewards' Friends note removed, Learn's mascot icon fixed to the real Kubi photo, Home's "Play" tile renamed "Rewards", Sign in's redundant line removed, Weekly recap's extra insight row removed.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="legend">
-    <div class="item"><span class="swatch" style="background:var(--sky)"></span>Blue — every action &amp; information</div>
-    <div class="item"><span class="swatch" style="background:var(--sun)"></span>Sun — Kubi, rewards &amp; warmth</div>
-    <div class="item"><span class="swatch" style="background:var(--ink);border-color:var(--ink);"></span>Ink &amp; cream — neutral text, outline, paper</div>
-  </div>
-
-  <div class="group-label"><span class="n">1</span>Welcome</div>
-  <div class="gallery">
-    <div class="slot" id="slot-1">
-      <div class="slot-head"><span class="slot-num">1</span><span class="slot-title">Meet Kubi</span></div>
-      <div class="phone"><div class="notch"></div>
+<div class="proto-stage">
+<section class="scr active" id="scr-1" data-title="Meet Kubi">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span>●●●●</span></div>
           <div class="s-meet">
@@ -639,20 +594,14 @@
               <h1>Hi, I'm Kubi! 👋</h1>
               <p class="lede">I'm your money buddy! I'll cheer you on while you learn to save, spend, and grow your coins.</p>
             </div>
-            <button class="gum-btn sky" style="justify-content:center;">Let's go! 🎉</button>
+            <button class="gum-btn sky" style="justify-content:center;" data-nav="2">Let's go! 🎉</button>
             <a class="signin" href="#">Already playing? Sign in</a>
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Brand row enlarged</b> and lifted above the clouds/sun so the app name does not get lost, and a <b>rupee badge</b> added to the scene per your note.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">2</span>Walkthrough <small>all four slides</small></div>
-  <div class="gallery">
-    <div class="slot" id="slot-2">
-      <div class="slot-head"><span class="slot-num">2</span><span class="slot-title">The problem · 1 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-2" data-title="The problem · 1 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-wk">
@@ -674,17 +623,14 @@
             <div class="steps-path"><i class="on"></i><span class="ln"></span><i></i><span class="ln"></span><i></i><span class="ln"></span><i></i></div>
             <div class="foot">
               <button class="arrowbtn dim">←</button>
-              <button class="gum-btn sky" style="justify-content:center;">Continue</button>
+              <button class="gum-btn sky" style="justify-content:center;" data-nav="3">Continue</button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Icon list instead of a stat-tile row, since none of these three lines are actually numbers.</p>
-    </div>
-
-    <div class="slot" id="slot-3">
-      <div class="slot-head"><span class="slot-num">3</span><span class="slot-title">The Coin Purse · 2 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-3" data-title="The Coin Purse · 2 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-wk">
@@ -707,18 +653,15 @@
             </div>
             <div class="steps-path"><i class="done"></i><span class="ln"></span><i class="on"></i><span class="ln"></span><i></i><span class="ln"></span><i></i></div>
             <div class="foot">
-              <button class="arrowbtn">←</button>
-              <button class="gum-btn sky" style="justify-content:center;">Continue</button>
+              <button class="arrowbtn" data-back="1">←</button>
+              <button class="gum-btn sky" style="justify-content:center;" data-nav="4">Continue</button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Balance shown in the same blue hero-card style used everywhere real amounts appear.</p>
-    </div>
-
-    <div class="slot" id="slot-4">
-      <div class="slot-head"><span class="slot-num">4</span><span class="slot-title">One day, one lesson · 3 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-4" data-title="One day, one lesson · 3 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-wk">
@@ -745,18 +688,15 @@
             </div>
             <div class="steps-path"><i class="done"></i><span class="ln"></span><i class="done"></i><span class="ln"></span><i class="on"></i><span class="ln"></span><i></i></div>
             <div class="foot">
-              <button class="arrowbtn">←</button>
-              <button class="gum-btn sky" style="justify-content:center;">Continue</button>
+              <button class="arrowbtn" data-back="1">←</button>
+              <button class="gum-btn sky" style="justify-content:center;" data-nav="5">Continue</button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">The three headline numbers keep their own bigger tile row — the one place worth making larger than the surrounding text.</p>
-    </div>
-
-    <div class="slot" id="slot-5">
-      <div class="slot-head"><span class="slot-num">5</span><span class="slot-title">Rewards &amp; real talk · 4 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-5" data-title="Rewards & real talk · 4 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-wk">
@@ -781,21 +721,15 @@
             </div>
             <div class="steps-path"><i class="done"></i><span class="ln"></span><i class="done"></i><span class="ln"></span><i class="done"></i><span class="ln"></span><i class="on"></i></div>
             <div class="foot">
-              <button class="arrowbtn">←</button>
-              <button class="gum-btn sky" style="justify-content:center;">Get started</button>
+              <button class="arrowbtn" data-back="1">←</button>
+              <button class="gum-btn sky" style="justify-content:center;" data-nav="6">Get started</button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Four badges in a bigger 2×2 grid instead of a tight row, so each one is actually recognizable.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">3</span>Create account <small>all four steps of sign-up</small></div>
-  <div class="gallery">
-    <div class="slot" id="slot-6">
-      <div class="slot-head"><span class="slot-num">6</span><span class="slot-title">Parent details · 1 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-6" data-title="Parent details · 1 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-auth">
@@ -813,19 +747,16 @@
             <input placeholder="you@email.com" />
             <label>Your mobile number</label>
             <input placeholder="+91 98765 43210" />
-            <button class="gum-btn sky">
+            <button class="gum-btn sky" data-nav="7">
               <span class="ic">✅</span>
               <span class="t">Continue<span class="s">Next: tell us about your child</span></span>
             </button>
           </div>
         </div>
       </div>
-      <p class="slot-note">Input text is up to 16px, labels to 13.5px — comfortably above small print.</p>
-    </div>
-
-    <div class="slot" id="slot-7">
-      <div class="slot-head"><span class="slot-num">7</span><span class="slot-title">Child details · 2 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-7" data-title="Child details · 2 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-auth">
@@ -851,20 +782,17 @@
               <span class="box">✓</span>
               <span>I'm the parent/guardian and accept the <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a> on behalf of my child.</span>
             </div>
-            <button class="gum-btn sky">
+            <button class="gum-btn sky" data-nav="8">
               <span class="ic">✅</span>
               <span class="t">Continue<span class="s">Next: verify it's you</span></span>
             </button>
-            <a class="back-link" href="#">← Back</a>
+            <a class="back-link" href="#" data-back="1">← Back</a>
           </div>
         </div>
       </div>
-      <p class="slot-note">Avatars are big ink-outlined tiles a small thumb can hit; the terms checkbox is one tappable card.</p>
-    </div>
-
-    <div class="slot" id="slot-8">
-      <div class="slot-head"><span class="slot-num">8</span><span class="slot-title">Verify it's you · 3 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-8" data-title="Verify it's you · 3 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-auth">
@@ -883,19 +811,16 @@
               <div class="d">·</div><div class="d">·</div><div class="d">·</div>
             </div>
             <p class="otp-status">Code sent — confirming you received it verifies you're a reachable adult, not the child.</p>
-            <button class="gum-btn sky" style="margin-top:21px;">
+            <button class="gum-btn sky" style="margin-top:21px;" data-nav="9">
               <span class="ic">✅</span>
               <span class="t">Verify &amp; create account<span class="s">Confirms you're the parent</span></span>
             </button>
           </div>
         </div>
       </div>
-      <p class="slot-note">Six chunky OTP boxes instead of one small input with letter-spacing tricks.</p>
-    </div>
-
-    <div class="slot" id="slot-9">
-      <div class="slot-head"><span class="slot-num">9</span><span class="slot-title">Choose how to start · 4 of 4</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-9" data-title="Choose how to start · 4 of 4">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-auth">
@@ -910,23 +835,20 @@
               <span class="check">✓</span>
               <div><div class="name">Annual</div><div class="price">₹499 / yr</div></div>
             </div>
-            <button class="gum-btn sky" style="margin-top:17px;">
+            <button class="gum-btn sky" style="margin-top:17px;" data-nav="11">
               <span class="ic">🎉</span>
               <span class="t">Start 7-day free trial<span class="s">No charge today · cancel anytime</span></span>
             </button>
-            <button class="gum-btn" style="margin-top:11px;background:var(--sun);">
+            <button class="gum-btn" style="margin-top:11px;background:var(--sun);" data-nav="11">
               <span class="ic">💳</span>
               <span class="t">Subscribe now<span class="s">Skip the trial, pay ₹499/yr today</span></span>
             </button>
           </div>
         </div>
       </div>
-      <p class="slot-note">Selected plan gets its own confirmed-looking row so it's obvious there's nothing left to choose.</p>
-    </div>
-
-    <div class="slot" id="slot-10">
-      <div class="slot-head"><span class="slot-num">10</span><span class="slot-title">Sign in</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-10" data-title="Sign in">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span>●●●●</span></div>
           <div class="s-auth" style="padding-left:20px;">
@@ -935,7 +857,7 @@
               <div class="mascot" style="width:66px;height:66px;"><img src="images/kubi-main.png" alt="Kubi the mascot"></div>
               <div><h2 style="font-size:22px;">Welcome back</h2></div>
             </div>
-            <button class="gum-btn sky" style="margin-top:21px;">
+            <button class="gum-btn sky" style="margin-top:21px;" data-nav="13">
               <span class="ic">🔵</span>
               <span class="t">Sign in with Google<span class="s">Pick up where you left off</span></span>
             </button>
@@ -947,15 +869,9 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Feature bullets get real spacing and their own icon, sized to read at a glance.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">4</span>Role select &amp; parent PIN</div>
-  <div class="gallery">
-    <div class="slot" id="slot-11">
-      <div class="slot-head"><span class="slot-num">11</span><span class="slot-title">Who's playing?</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-11" data-title="Who's playing?">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-role">
@@ -964,12 +880,12 @@
               <h1>Who's using the app?</h1>
             </div>
             <div class="paths">
-              <div class="role-panel parent"><span class="lock">🔐</span>
+              <div class="role-panel parent" data-nav="12"><span class="lock">🔐</span>
                 <span class="icon">🧑‍🤝‍🧑</span>
                 <h4>Parent</h4>
                 <span class="go">Enter →</span>
               </div>
-              <div class="role-panel child">
+              <div class="role-panel child" data-nav="14">
                 <span class="icon">🧒</span>
                 <h4>Child</h4>
                 <span class="go">Enter →</span>
@@ -978,16 +894,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Trimmed</b> the intro line per your note. Tapping the parent card's 🔐 lock leads to the PIN screen next.</p>
-    </div>
-
-    <div class="slot" id="slot-12">
-      <div class="slot-head"><span class="slot-num">12</span><span class="slot-title">Enter parent PIN</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-12" data-title="Enter parent PIN">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-pin" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🔐 Enter parent PIN</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🔐 Enter parent PIN</h1></div></div>
             <div class="body-scroll" style="align-items:center;text-align:center;justify-content:center;">
               <span style="font-size:52px;">🔐</span>
               <h2 style="font-size:19px;color:var(--ink);margin-top:6px;">This bit's for the grown-up</h2>
@@ -995,21 +908,15 @@
               <div class="otp-boxes" style="margin-top:8px;">
                 <span class="d on">•</span><span class="d on">•</span><span class="d"></span><span class="d"></span>
               </div>
-              <button class="gum-btn sky" style="justify-content:center;margin-top:20px;max-width:260px;">Unlock Parent view</button>
+              <button class="gum-btn sky" style="justify-content:center;margin-top:20px;max-width:260px;" data-nav="15">Unlock Parent view</button>
               <a href="#" style="font-size:13.5px;font-weight:700;color:var(--ink);opacity:.65;margin-top:14px;">Forgot your PIN?</a>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>New —</b> the PIN screen you asked to see, gating Parent view. Set once in Settings › Data &amp; privacy.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">5</span>Home &amp; everyday tools</div>
-  <div class="gallery">
-    <div class="slot" id="slot-13">
-      <div class="slot-head"><span class="slot-num">13</span><span class="slot-title">Welcome back</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-13" data-title="Welcome back">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span>●●●●</span></div>
           <div class="s-cel">
@@ -1032,16 +939,13 @@
                 <div class="box"><div class="n">4</div><div class="l">DAY STREAK</div></div>
               </div>
             </div>
-            <button class="gum-btn sky" style="justify-content:center;">Pick today's lesson →</button>
+            <button class="gum-btn sky" style="justify-content:center;" data-nav="25">Pick today's lesson →</button>
           </div>
         </div>
       </div>
-      <p class="slot-note">Kubi's celebratory pose with flat confetti; level/points/badges/streak in one card.</p>
-    </div>
-
-    <div class="slot" id="slot-14">
-      <div class="slot-head"><span class="slot-num">14</span><span class="slot-title">Home · child view</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-14" data-title="Home · child view">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-home" style="display:flex;flex-direction:column;height:100%;">
@@ -1051,10 +955,10 @@
                 <h1>Hi, Star Saver 👋</h1>
                 <span class="pill-chip points-chip">🌟 120 pts</span>
               </div>
-              <button class="switch">🔁 Switch</button>
+              <button class="switch" data-nav="11">🔁 Switch</button>
             </div>
             <div class="body-scroll">
-              <div class="ink-card stat-row">
+              <div class="ink-card stat-row" data-nav="19">
                 <div class="cell"><div class="n">Lvl 1</div><div class="l">LEVEL</div></div>
                 <div class="div"></div>
                 <div class="cell"><div class="n">2/13</div><div class="l">BADGES</div></div>
@@ -1063,30 +967,27 @@
                 <span class="arrow">→</span>
               </div>
               <div class="section-label">✨ Today's lesson</div>
-              <div class="ink-card lesson-card">
+              <div class="ink-card lesson-card" data-nav="25">
                 <div class="ic">🧙</div>
                 <div class="mid"><b>Coins vs. notes</b><span>5 min · Junior</span></div>
                 <span class="go">Start</span>
               </div>
               <div class="section-label">Explore</div>
               <div class="tool-grid">
-                <div class="tool"><span class="ic sky">🧙</span><span class="l">Learn</span></div>
-                <div class="tool"><span class="ic sun">🪙</span><span class="l">Coin Purse</span></div>
-                <div class="tool"><span class="ic sky">🏆</span><span class="l">Progress</span></div>
-                <div class="tool"><span class="ic sun">➕</span><span class="l">Add expense</span></div>
-                <div class="tool"><span class="ic sky">👥</span><span class="l">Friends</span></div>
-                <div class="tool"><span class="ic sun">🎮</span><span class="l">Rewards</span></div>
+                <div class="tool" data-nav="25"><span class="ic sky">🧙</span><span class="l">Learn</span></div>
+                <div class="tool" data-nav="17"><span class="ic sun">🪙</span><span class="l">Coin Purse</span></div>
+                <div class="tool" data-nav="19"><span class="ic sky">🏆</span><span class="l">Progress</span></div>
+                <div class="tool" data-nav="16"><span class="ic sun">➕</span><span class="l">Add expense</span></div>
+                <div class="tool" data-nav="24"><span class="ic sky">👥</span><span class="l">Friends</span></div>
+                <div class="tool" data-nav="20"><span class="ic sun">🎮</span><span class="l">Rewards</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Decluttered —</b> dropped the Monthly Challenge banner and the extra cheer band from the last round; three blocks total instead of five, each bigger. <b>Explore links:</b> Learn -&gt; screen 25, Coin Purse -&gt; 17, Progress -&gt; 19, Add expense -&gt; 16, Friends -&gt; 24, Play -&gt; 20.</p>
-    </div>
-
-    <div class="slot" id="slot-15">
-      <div class="slot-head"><span class="slot-num">15</span><span class="slot-title">Home · parent view</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-15" data-title="Home · parent view">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-phome" style="display:flex;flex-direction:column;height:100%;">
@@ -1096,38 +997,35 @@
                 <h1>Star Saver's progress</h1>
                 <span class="pill-chip" style="background:var(--paper);">👪 Parent view</span>
               </div>
-              <button class="switch">🔁 Switch</button>
+              <button class="switch" data-nav="11">🔁 Switch</button>
             </div>
             <div class="body-scroll">
               <div class="ink-card convo-card">
                 <span class="e">💬</span>
                 <p><b>Tonight's conversation starter:</b> "What's something you want right now — could you wait a week and still want it?"</p>
               </div>
-              <div class="week-card">
+              <div class="week-card" data-nav="31">
                 <div class="top"><span>✨ Your week</span><span class="go">See recap →</span></div>
                 <div class="amt">₹1,240 spent</div>
               </div>
               <div class="section-label">Explore</div>
               <div class="tool-grid2">
-                <div class="tool-wide"><span class="ic sky">🧠</span><span class="l">Child's<br>learning</span></div>
-                <div class="tool-wide"><span class="ic sun">🪙</span><span class="l">Coin<br>Purse</span></div>
-                <div class="tool-wide"><span class="ic sky">🏆</span><span class="l">Rewards</span></div>
-                <div class="tool-wide"><span class="ic sun">⚙️</span><span class="l">Settings</span></div>
+                <div class="tool-wide" data-nav="25"><span class="ic sky">🧠</span><span class="l">Child's<br>learning</span></div>
+                <div class="tool-wide" data-nav="17"><span class="ic sun">🪙</span><span class="l">Coin<br>Purse</span></div>
+                <div class="tool-wide" data-nav="20"><span class="ic sky">🏆</span><span class="l">Rewards</span></div>
+                <div class="tool-wide" data-nav="27"><span class="ic sun">⚙️</span><span class="l">Settings</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Same outline-and-shadow language as the child screens, larger throughout.</p>
-    </div>
-
-    <div class="slot" id="slot-16">
-      <div class="slot-head"><span class="slot-num">16</span><span class="slot-title">New expense</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-16" data-title="New expense">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-add" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>New expense 🎉</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>New expense 🎉</h1></div></div>
             <div class="body-scroll">
               <div class="amount-card">
                 <div class="lbl">Amount (₹)</div>
@@ -1154,20 +1052,17 @@
                 </div>
               </div>
             </div>
-            <div class="fixed-cta"><button class="gum-btn sky" style="justify-content:center;">Save expense</button></div>
+            <div class="fixed-cta"><button class="gum-btn sky" style="justify-content:center;" data-nav="14">Save expense</button></div>
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Payment mode removed</b> for a child's version of this screen, per your note — category grid stays big and thumb-sized.</p>
-    </div>
-
-    <div class="slot" id="slot-17">
-      <div class="slot-head"><span class="slot-num">17</span><span class="slot-title">Coin Purse</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-17" data-title="Coin Purse">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-budget" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🪙 Coin Purse</h1></div><span class="back">💡</span></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🪙 Coin Purse</h1></div><span class="back" data-nav="18">💡</span></div>
             <div class="body-scroll">
               <div class="ink-card">
                 <div class="purse-split">
@@ -1204,19 +1099,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Coin Purse and Savings side by side; each category is a full-width row with its own bar.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">6</span>Reports</div>
-  <div class="gallery">
-    <div class="slot" id="slot-18">
-      <div class="slot-head"><span class="slot-num">18</span><span class="slot-title">Reports</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-18" data-title="Reports">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-reports" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>✨ Reports</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>✨ Reports</h1></div></div>
             <div class="body-scroll">
               <p style="font-size:14px;font-weight:700;color:#3A4A68;">This week's report</p>
               <div class="spend-hero">
@@ -1242,19 +1131,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Weekly only now</b> — dropped the Month toggle and the by-day bar chart, per your notes; straight to spend total and categories.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">7</span>Progress &amp; Play <small>split from one crowded Rewards page into two</small></div>
-  <div class="gallery">
-    <div class="slot" id="slot-19">
-      <div class="slot-head"><span class="slot-num">19</span><span class="slot-title">Progress</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-19" data-title="Progress">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-progress" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>📈 Progress</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>📈 Progress</h1></div></div>
             <div class="body-scroll">
               <div class="streak-hero">
                 <div class="av"><img src="images/kubi-alt.png" alt="Kubi celebrating" style="width:100%;height:100%;object-fit:contain;object-position:center bottom;"></div>
@@ -1269,7 +1152,7 @@
                   <div class="badge-tile earned"><span class="ico">🌳<span class="flag">⭐</span></span><span>Wishful Saver</span></div>
                   <div class="badge-tile locked"><span class="ico">🐷</span><span>Super Saver</span></div>
                 </div>
-                <div class="see-more" style="margin-top:11px;">✨ See the full roadmap →</div>
+                <div class="see-more" style="margin-top:11px;" data-nav="21">✨ See the full roadmap →</div>
               </div>
               <div class="ink-card" style="padding:17px 19px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -1290,28 +1173,25 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>New —</b> everything about how you're doing — streak, badges, weekly goal — now lives on its own page instead of sharing one long screen with Play.</p>
-    </div>
-
-    <div class="slot" id="slot-20">
-      <div class="slot-head"><span class="slot-num">20</span><span class="slot-title">Play &amp; Rewards</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-20" data-title="Play & Rewards">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-play" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🎮 Play &amp; Rewards</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🎮 Play &amp; Rewards</h1></div></div>
             <div class="body-scroll">
               <div class="streak-hero">
                 <div class="lbl">🏆 Your standing</div>
                 <div class="num">Rank #4</div>
                 <div class="sub">850 pts this month · keep playing to climb</div>
               </div>
-              <div class="ink-card play-tile" style="padding:22px 20px;">
+              <div class="ink-card play-tile" style="padding:22px 20px;" data-nav="22">
                 <span class="ic sky" style="width:60px;height:60px;font-size:28px;">💎</span>
                 <div class="mid"><b style="font-size:18px;">Monthly Challenge</b><span style="font-size:13.5px;">Wishing Well Woods · 3 of 6 days</span></div>
                 <span class="arrow">→</span>
               </div>
-              <div class="ink-card play-tile" style="padding:22px 20px;">
+              <div class="ink-card play-tile" style="padding:22px 20px;" data-nav="23">
                 <span class="ic sun" style="width:60px;height:60px;font-size:28px;">🏆</span>
                 <div class="mid"><b style="font-size:18px;">Leaderboard</b><span style="font-size:13.5px;">See where you rank this month</span></div>
                 <span class="arrow">→</span>
@@ -1320,16 +1200,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Friends removed</b> from here per your note — it already lives on Home, so keeping it here was a duplicate. Added a standing card up top and made the two remaining tiles bigger to fill the page.</p>
-    </div>
-
-    <div class="slot" id="slot-21">
-      <div class="slot-head"><span class="slot-num">21</span><span class="slot-title">Badge roadmap</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-21" data-title="Badge roadmap">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-roadmap" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🎖️ Badge roadmap</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🎖️ Badge roadmap</h1></div></div>
             <div class="body-scroll">
               <p style="font-size:14px;font-weight:700;color:#3A4A68;">2/13 earned — every module has one waiting.</p>
               <div class="roadmap-grid">
@@ -1351,16 +1228,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Enlarged</b> per your note — 3 tiles per row instead of 4, bigger icons and labels.</p>
-    </div>
-
-    <div class="slot" id="slot-22">
-      <div class="slot-head"><span class="slot-num">22</span><span class="slot-title">Monthly Challenge</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-22" data-title="Monthly Challenge">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-challenge" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>💎 Monthly Challenge</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>💎 Monthly Challenge</h1></div></div>
             <div class="body-scroll">
               <div class="challenge-hero">
                 <div class="lbl">August challenge</div>
@@ -1377,21 +1251,18 @@
                 <span class="e">🔄</span>
                 <p>A new challenge module is picked at the start of every month, shared by every family using the app.</p>
               </div>
-              <button class="gum-btn sky" style="justify-content:center;">Continue the challenge →</button>
+              <button class="gum-btn sky" style="justify-content:center;" data-nav="25">Continue the challenge →</button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Same light-blue hero card used everywhere else, so this detail screen matches the rest of the app.</p>
-    </div>
-
-    <div class="slot" id="slot-23">
-      <div class="slot-head"><span class="slot-num">23</span><span class="slot-title">Leaderboard</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-23" data-title="Leaderboard">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-leaderboard" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🏆 Leaderboard</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🏆 Leaderboard</h1></div></div>
             <div class="body-scroll">
               <p style="font-size:14px;font-weight:700;color:#3A4A68;">Top learners this month, by points earned</p>
               <div class="ink-card" style="padding:6px 8px;">
@@ -1411,19 +1282,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note"><b>Changed —</b> ranks by points earned through learning instead of ₹ saved. Also added, per your note, how much of each Coin Purse is saved under every name, and "Share your rank" now lives right here instead of on the Rewards page.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">8</span>Friends &amp; Learning</div>
-  <div class="gallery">
-    <div class="slot" id="slot-24">
-      <div class="slot-head"><span class="slot-num">24</span><span class="slot-title">Friends</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-24" data-title="Friends">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-friends" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>👥 Friends</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>👥 Friends</h1></div></div>
             <div class="body-scroll">
               <input class="search-field" placeholder="Search by nickname…" />
               <div class="section-label">Suggested nicknames</div>
@@ -1442,16 +1307,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Search up top, a scrollable list of nicknames below, and the same one-line privacy note kept front and center.</p>
-    </div>
-
-    <div class="slot" id="slot-25">
-      <div class="slot-head"><span class="slot-num">25</span><span class="slot-title">Learn</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-25" data-title="Learn">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-learn" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🧙 Money wizard school</h1><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">Level 2 · Coin Collector</span></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🧙 Money wizard school</h1><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">Level 2 · Coin Collector</span></div></div>
             <div class="body-scroll">
               <div class="ink-card" style="display:flex;align-items:center;gap:12px;padding:14px 16px;">
                 <div style="width:44px;height:44px;border-radius:50%;background:var(--sun-tint);border:2.5px solid var(--ink);overflow:hidden;flex-shrink:0;"><img src="images/kubi-main.png" alt="Kubi" style="width:100%;height:100%;object-fit:contain;object-position:center bottom;"></div>
@@ -1471,7 +1333,7 @@
                 <div class="lesson-node"><span class="num">7</span><div class="mid"><b>Team Family</b><span>Making smart choices together</span><div class="track"><div style="width:0%;"></div></div></div></div>
                 <div class="lesson-node"><span class="num">8</span><div class="mid"><b>Piggy Bank Power-Up</b><span>The super saver guide</span><div class="track"><div style="width:0%;"></div></div></div></div>
               </div>
-              <div class="ink-card" style="cursor:pointer;display:flex;align-items:center;gap:13px;padding:16px 17px;">
+              <div class="ink-card" style="cursor:pointer;display:flex;align-items:center;gap:13px;padding:16px 17px;" data-nav="26">
                 <span style="font-size:27px;">🎓</span>
                 <div style="flex:1;"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink);">Intermediate syllabus · age 10+</div><div style="font-size:12px;font-weight:700;color:#3A4A68;margin-top:2px;">8 more modules, aligned to NFLAT</div></div>
                 <span style="font-size:17px;color:var(--sky);">→</span>
@@ -1480,16 +1342,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Kubi's road-map, now as a straightforward scrolling list — challenges up top, quick quests below, each with its own progress bar.</p>
-    </div>
-
-    <div class="slot" id="slot-26">
-      <div class="slot-head"><span class="slot-num">26</span><span class="slot-title">Intermediate syllabus</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-26" data-title="Intermediate syllabus">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-syllabus" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🎓 Intermediate syllabus</h1><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">Age 10+</span></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🎓 Intermediate syllabus</h1><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">Age 10+</span></div></div>
             <div class="body-scroll">
               <p style="font-size:14px;font-weight:700;color:#3A4A68;line-height:1.55;">Additional modules for age 10 onwards, aligned to the National Financial Literacy Assessment Test (NFLAT) syllabus.</p>
               <div class="module-grid">
@@ -1519,42 +1378,33 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Two-column module grid, bigger touch targets, and a plain-language note that this syllabus is coming soon.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">9</span>Settings</div>
-  <div class="gallery">
-    <div class="slot" id="slot-27">
-      <div class="slot-head"><span class="slot-num">27</span><span class="slot-title">Settings</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-27" data-title="Settings">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-settings" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>⚙️ Settings</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>⚙️ Settings</h1></div></div>
             <div class="body-scroll">
-              <button class="settings-row"><span class="ic">👤</span><div class="mid"><b>Child's nickname</b><span>Star Saver</span></div><span class="chev">→</span></button>
-              <button class="settings-row"><span class="ic">💳</span><div class="mid"><b>Subscription</b><span>Free trial — 4 days left</span></div><span class="chev">→</span></button>
-              <div class="week-card" style="cursor:pointer;">
+              <button class="settings-row" data-nav="28"><span class="ic">👤</span><div class="mid"><b>Child's nickname</b><span>Star Saver</span></div><span class="chev">→</span></button>
+              <button class="settings-row" data-nav="32"><span class="ic">💳</span><div class="mid"><b>Subscription</b><span>Free trial — 4 days left</span></div><span class="chev">→</span></button>
+              <div class="week-card" style="cursor:pointer;" data-nav="17">
                 <div class="top"><span>🪙 Coin Purse</span><span class="go">Manage →</span></div>
                 <div class="amt">₹640</div>
               </div>
-              <button class="settings-row"><span class="ic">🔔</span><div class="mid"><b>Reminders &amp; notifications</b><span>Nudges for spending and lessons</span></div><span class="chev">→</span></button>
-              <button class="settings-row"><span class="ic">🔒</span><div class="mid"><b>Data &amp; privacy</b><span>How we handle your data</span></div><span class="chev">→</span></button>
+              <button class="settings-row" data-nav="29"><span class="ic">🔔</span><div class="mid"><b>Reminders &amp; notifications</b><span>Nudges for spending and lessons</span></div><span class="chev">→</span></button>
+              <button class="settings-row" data-nav="30"><span class="ic">🔒</span><div class="mid"><b>Data &amp; privacy</b><span>How we handle your data</span></div><span class="chev">→</span></button>
             </div>
           </div>
         </div>
       </div>
-      <p class="slot-note">Same settings list as the prototype, rebuilt as big tappable rows with icon chips and a Coin Purse shortcut in the middle.</p>
-    </div>
-
-    <div class="slot" id="slot-28">
-      <div class="slot-head"><span class="slot-num">28</span><span class="slot-title">Settings · Nickname</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-28" data-title="Settings · Nickname">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-nick" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>👤 Child's nickname</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>👤 Child's nickname</h1></div></div>
             <div class="body-scroll">
               <div class="ink-card" style="padding:18px 19px;">
                 <div class="field-note">A fun nickname, not their real name — shown everywhere in the app.</div>
@@ -1564,16 +1414,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">One clear field, one clear reason it's there.</p>
-    </div>
-
-    <div class="slot" id="slot-29">
-      <div class="slot-head"><span class="slot-num">29</span><span class="slot-title">Settings · Notifications</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-29" data-title="Settings · Notifications">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-notif" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🔔 Notifications</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🔔 Notifications</h1></div></div>
             <div class="body-scroll">
               <div class="ink-card" style="padding:17px 18px;">
                 <div class="field-note">Get nudged to log spending, and let money lessons pop up on your phone.</div>
@@ -1584,16 +1431,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Two big toggle rows first, timing details folded below them so the screen isn't front-loaded with fine print.</p>
-    </div>
-
-    <div class="slot" id="slot-30">
-      <div class="slot-head"><span class="slot-num">30</span><span class="slot-title">Settings · Privacy</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-30" data-title="Settings · Privacy">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-privacy" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🔒 Data &amp; privacy</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🔒 Data &amp; privacy</h1></div></div>
             <div class="body-scroll">
               <div class="note-row">
                 <span class="e">🗓️</span>
@@ -1613,19 +1457,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Privacy explained in plain language up top, PIN in the middle, and the destructive action visually set apart at the bottom.</p>
-    </div>
-  </div>
-
-  <div class="group-label"><span class="n">10</span>Weekly recap &amp; subscription</div>
-  <div class="gallery">
-    <div class="slot" id="slot-31">
-      <div class="slot-head"><span class="slot-num">31</span><span class="slot-title">Weekly recap</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-31" data-title="Weekly recap">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-recap" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">✕</span><div class="who"><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">JUL 7 – JUL 13</span><h1>Your week ✨</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">✕</span><div class="who"><span style="font-size:12.5px;font-weight:700;color:#3A4A68;">JUL 7 – JUL 13</span><h1>Your week ✨</h1></div></div>
             <div class="body-scroll">
               <div class="spend-hero">
                 <div class="lbl">Total spent</div>
@@ -1639,16 +1477,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">A shareable end-of-week summary — same spend-hero card style used on Reports, so it feels like part of the same app.</p>
-    </div>
-
-    <div class="slot" id="slot-32">
-      <div class="slot-head"><span class="slot-num">32</span><span class="slot-title">Upgrade (parent)</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-32" data-title="Upgrade (parent)">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span>●●●●</span></div>
           <div class="s-paywall" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🔓 Keep the adventure going</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🔓 Keep the adventure going</h1></div></div>
             <div class="brand-strip-row"><div class="brand-strip"><span class="coin">🪙</span><span>Mapaaurhum MoneyMagic</span></div></div>
             <div class="body-scroll">
               <div class="paywall-recap">
@@ -1657,7 +1492,7 @@
               </div>
               <div class="plan-row"><span class="check">✓</span><div><div class="name">Annual</div><div class="price">₹499 / yr</div></div></div>
               <button class="gum-btn" style="justify-content:center;">💳 Subscribe now<span class="s" style="display:block;">Secure checkout</span></button>
-              <div class="ink-card" style="padding:15px 16px;">
+              <div class="ink-card" style="padding:15px 16px;" data-nav="33">
                 <div style="display:flex;align-items:center;gap:11px;"><span style="font-size:22px;">🎁</span><div style="flex:1;"><div style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14px;color:var(--ink);">Or give 7 days, get 7 days free</div><div style="font-size:12px;font-weight:700;color:#3A4A68;margin-top:3px;">Share this code — you both get a week free</div></div></div>
                 <div class="code-box sm" style="margin-top:12px;">WIZARD7X2</div>
               </div>
@@ -1666,16 +1501,13 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Progress recap first so the upgrade feels earned, one clear plan, and the referral offer folded in rather than a separate ask.</p>
-    </div>
-
-    <div class="slot" id="slot-33">
-      <div class="slot-head"><span class="slot-num">33</span><span class="slot-title">Refer a friend</span></div>
-      <div class="phone"><div class="notch"></div>
+</section>
+<section class="scr" id="scr-33" data-title="Refer a friend">
+<div class="phone"><div class="notch"></div>
         <div class="screen">
           <div class="statusbar"><span>9:41</span><span class="brand-tag">🪙 Mapaaurhum MoneyMagic</span><span>●●●●</span></div>
           <div class="s-referral" style="display:flex;flex-direction:column;height:100%;">
-            <div class="topbar2"><span class="back">←</span><div class="who"><h1>🎁 Refer a friend</h1></div></div>
+            <div class="topbar2"><span class="back" data-back="1">←</span><div class="who"><h1>🎁 Refer a friend</h1></div></div>
             <div class="body-scroll">
               <div class="week-card">
                 <div class="top"><span>Give 7 days, get 7 days</span></div>
@@ -1694,13 +1526,97 @@
           </div>
         </div>
       </div>
-      <p class="slot-note">Code front and center, big share buttons underneath, and the fine print about when the reward lands kept close by.</p>
-    </div>
+</section>
+</div>
 
-  </div>
+<div class="idx-backdrop" id="idxBackdrop" onclick="idxClose()"></div>
+<div class="idx-panel" id="idxPanel">
+  <div class="idx-panel-head"><h2>Jump to a screen</h2><button class="idx-close" onclick="idxClose()">✕</button></div>
+  <p style="font-size:13px;font-weight:700;color:#7A88A6;margin:-6px 0 14px;">Tap any screen to jump straight to it (resets the back trail).</p>
+  <div class="idx-group">Welcome</div>
+<button class="idx-link" data-slot="1" onclick="jumpTo(1)"><span class="no">1</span>Meet Kubi</button>
+
+<div class="idx-group">Walkthrough</div>
+<button class="idx-link" data-slot="2" onclick="jumpTo(2)"><span class="no">2</span>The problem · 1 of 4</button>
+<button class="idx-link" data-slot="3" onclick="jumpTo(3)"><span class="no">3</span>The Coin Purse · 2 of 4</button>
+<button class="idx-link" data-slot="4" onclick="jumpTo(4)"><span class="no">4</span>One day, one lesson · 3 of 4</button>
+<button class="idx-link" data-slot="5" onclick="jumpTo(5)"><span class="no">5</span>Rewards & real talk · 4 of 4</button>
+
+<div class="idx-group">Create account</div>
+<button class="idx-link" data-slot="6" onclick="jumpTo(6)"><span class="no">6</span>Parent details · 1 of 4</button>
+<button class="idx-link" data-slot="7" onclick="jumpTo(7)"><span class="no">7</span>Child details · 2 of 4</button>
+<button class="idx-link" data-slot="8" onclick="jumpTo(8)"><span class="no">8</span>Verify it's you · 3 of 4</button>
+<button class="idx-link" data-slot="9" onclick="jumpTo(9)"><span class="no">9</span>Choose how to start · 4 of 4</button>
+<button class="idx-link" data-slot="10" onclick="jumpTo(10)"><span class="no">10</span>Sign in</button>
+
+<div class="idx-group">Role select & parent PIN</div>
+<button class="idx-link" data-slot="11" onclick="jumpTo(11)"><span class="no">11</span>Who's playing?</button>
+<button class="idx-link" data-slot="12" onclick="jumpTo(12)"><span class="no">12</span>Enter parent PIN</button>
+
+<div class="idx-group">Home & everyday tools</div>
+<button class="idx-link" data-slot="13" onclick="jumpTo(13)"><span class="no">13</span>Welcome back</button>
+<button class="idx-link" data-slot="14" onclick="jumpTo(14)"><span class="no">14</span>Home · child view</button>
+<button class="idx-link" data-slot="15" onclick="jumpTo(15)"><span class="no">15</span>Home · parent view</button>
+<button class="idx-link" data-slot="16" onclick="jumpTo(16)"><span class="no">16</span>New expense</button>
+<button class="idx-link" data-slot="17" onclick="jumpTo(17)"><span class="no">17</span>Coin Purse</button>
+
+<div class="idx-group">Reports</div>
+<button class="idx-link" data-slot="18" onclick="jumpTo(18)"><span class="no">18</span>Reports</button>
+
+<div class="idx-group">Progress & Play</div>
+<button class="idx-link" data-slot="19" onclick="jumpTo(19)"><span class="no">19</span>Progress</button>
+<button class="idx-link" data-slot="20" onclick="jumpTo(20)"><span class="no">20</span>Play & Rewards</button>
+<button class="idx-link" data-slot="21" onclick="jumpTo(21)"><span class="no">21</span>Badge roadmap</button>
+<button class="idx-link" data-slot="22" onclick="jumpTo(22)"><span class="no">22</span>Monthly Challenge</button>
+<button class="idx-link" data-slot="23" onclick="jumpTo(23)"><span class="no">23</span>Leaderboard</button>
+
+<div class="idx-group">Friends & Learning</div>
+<button class="idx-link" data-slot="24" onclick="jumpTo(24)"><span class="no">24</span>Friends</button>
+<button class="idx-link" data-slot="25" onclick="jumpTo(25)"><span class="no">25</span>Learn</button>
+<button class="idx-link" data-slot="26" onclick="jumpTo(26)"><span class="no">26</span>Intermediate syllabus</button>
+
+<div class="idx-group">Settings</div>
+<button class="idx-link" data-slot="27" onclick="jumpTo(27)"><span class="no">27</span>Settings</button>
+<button class="idx-link" data-slot="28" onclick="jumpTo(28)"><span class="no">28</span>Settings · Nickname</button>
+<button class="idx-link" data-slot="29" onclick="jumpTo(29)"><span class="no">29</span>Settings · Notifications</button>
+<button class="idx-link" data-slot="30" onclick="jumpTo(30)"><span class="no">30</span>Settings · Privacy</button>
+
+<div class="idx-group">Recap, upgrade & referral</div>
+<button class="idx-link" data-slot="31" onclick="jumpTo(31)"><span class="no">31</span>Weekly recap</button>
+<button class="idx-link" data-slot="32" onclick="jumpTo(32)"><span class="no">32</span>Upgrade (parent)</button>
+<button class="idx-link" data-slot="33" onclick="jumpTo(33)"><span class="no">33</span>Refer a friend</button>
+
 </div>
 
 <script>
+  var HISTORY = [1];
+  function showScreen(n){
+    document.querySelectorAll('.scr').forEach(function(s){ s.classList.remove('active'); });
+    var target = document.getElementById('scr-' + n);
+    if (!target) return;
+    target.classList.add('active');
+    document.getElementById('screenNum').textContent = n;
+    document.getElementById('screenName').textContent = target.getAttribute('data-title');
+    document.getElementById('btnBack').disabled = HISTORY.length <= 1;
+    document.querySelectorAll('.idx-link').forEach(function(b){ b.classList.remove('active'); });
+    var link = document.querySelector('.idx-link[data-slot="' + n + '"]');
+    if (link) link.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  function goTo(n){
+    HISTORY.push(n);
+    showScreen(n);
+  }
+  function goBack(){
+    if (HISTORY.length <= 1) return;
+    HISTORY.pop();
+    showScreen(HISTORY[HISTORY.length - 1]);
+  }
+  function jumpTo(n){
+    HISTORY = [n];
+    showScreen(n);
+    idxClose();
+  }
   function idxOpen(){
     document.getElementById('idxPanel').classList.add('open');
     document.getElementById('idxBackdrop').classList.add('open');
@@ -1709,22 +1625,21 @@
     document.getElementById('idxPanel').classList.remove('open');
     document.getElementById('idxBackdrop').classList.remove('open');
   }
-  function idxGoTo(n){
-    var el = document.getElementById('slot-' + n);
-    if (!el) return;
-    document.querySelectorAll('.idx-link').forEach(function(b){ b.classList.remove('active'); });
-    var btn = document.querySelector('.idx-link[data-slot="' + n + '"]');
-    if (btn) btn.classList.add('active');
-    el.scrollIntoView({ behavior:'smooth', block:'center', inline:'center' });
-    el.classList.remove('flash');
-    void el.offsetWidth;
-    el.classList.add('flash');
-    if (window.innerWidth <= 900) idxClose();
-  }
+  document.addEventListener('click', function(e){
+    var navEl = e.target.closest('[data-nav]');
+    if (navEl){ goTo(parseInt(navEl.getAttribute('data-nav'), 10)); return; }
+    var backEl = e.target.closest('[data-back]');
+    if (backEl){ goBack(); return; }
+  });
+  document.getElementById('btnBack').addEventListener('click', goBack);
+  document.getElementById('btnRestart').addEventListener('click', function(){ jumpTo(1); });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') idxClose();
+    if (e.key === 'Backspace' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){
+      e.preventDefault(); goBack();
+    }
   });
+  showScreen(1);
 </script>
-
 </body>
 </html>
