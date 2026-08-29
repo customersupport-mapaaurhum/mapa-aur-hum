@@ -573,6 +573,7 @@
   .lesson-dots span.on{ background:var(--sky); }
   .lesson-dots span.done{ background:var(--ink); }
   .lesson-story-card{ text-align:center; }
+  .lesson-sub-tag{ display:inline-block; font-family:'Fredoka',sans-serif; font-weight:600; font-size:11px; letter-spacing:.03em; text-transform:uppercase; color:var(--ink); background:var(--sun-tint); border:2px solid var(--ink); border-radius:999px; padding:4px 12px; margin-bottom:12px; }
   .lesson-story-card .circ{ width:64px; height:64px; border-radius:50%; background:var(--sun-tint); border:2.5px solid var(--ink); display:flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 12px; }
   .lesson-story-card h3{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:17px; color:var(--ink); margin-bottom:8px; }
   .lesson-story-card p{ font-size:13.5px; font-weight:700; color:#3A4A68; line-height:1.6; }
@@ -1492,8 +1493,8 @@
               </div>
               <span class="tier-tag">5 deep-dive challenges · 6–11 days each</span>
               <div class="ink-card" style="padding:2px 6px;">
-                <div class="lesson-node done" style="cursor:pointer;" onclick="openLesson(0)"><span class="num">✓</span><div class="mid"><b>Coin Kingdom</b><span>6-day challenge · Quiz passed · ▶ Try it</span><div class="track"><div style="width:100%;background:var(--sky);"></div></div></div></div>
-                <div class="lesson-node done" style="cursor:pointer;" onclick="openLesson(1)"><span class="num">✓</span><div class="mid"><b>Wishing Well Woods</b><span>3/6 days done · ▶ Try it</span><div class="track"><div style="width:50%;"></div></div></div></div>
+                <div class="lesson-node done" style="cursor:pointer;" onclick="openLesson(0)"><span class="num">✓</span><div class="mid"><b>Coin Kingdom</b><span>2 days · 3 lessons/day · Quiz passed · ▶ Try it</span><div class="track"><div style="width:100%;background:var(--sky);"></div></div></div></div>
+                <div class="lesson-node done" style="cursor:pointer;" onclick="openLesson(1)"><span class="num">✓</span><div class="mid"><b>Wishing Well Woods</b><span>1/2 days done · ▶ Try it</span><div class="track"><div style="width:50%;"></div></div></div></div>
                 <div class="lesson-node"><span class="num">3</span><div class="mid"><b>Budget Bazaar</b><span>0/11 days done</span><div class="track"><div style="width:0%;"></div></div></div></div>
                 <div class="lesson-node"><span class="num">4</span><div class="mid"><b>Wealth Watchtower</b><span>0/9 days done</span><div class="track"><div style="width:0%;"></div></div></div></div>
                 <div class="lesson-node"><span class="num">5</span><div class="mid"><b>Digital Wizard Tower</b><span>0/8 days done</span><div class="track"><div style="width:0%;"></div></div></div></div>
@@ -1981,67 +1982,102 @@
     ] }
   ];
 
-  var lessonModuleIdx = 0, lessonDayIdx = 0, lessonPoints = 0;
+  var LESSONS_PER_DAY = 3;
+  var lessonModuleIdx = 0, lessonDayIdx = 0, lessonSubIdx = 0, lessonPoints = 0, lessonDayPoints = 0;
   var LESSON_DONE = {};
   function lessonDoneSet(m){ return LESSON_DONE[m] || (LESSON_DONE[m] = new Set()); }
+  function lessonMergedDays(m){
+    var out = [];
+    for (var i = 0; i < m.days.length; i += LESSONS_PER_DAY) out.push(m.days.slice(i, i + LESSONS_PER_DAY));
+    return out;
+  }
 
   function openLesson(moduleIdx){
     lessonModuleIdx = moduleIdx;
-    var m = LESSON_MODULES[moduleIdx];
+    var mergedDays = lessonMergedDays(LESSON_MODULES[moduleIdx]);
     var doneSet = lessonDoneSet(moduleIdx);
-    var firstOpen = m.days.findIndex(function(_, i){ return !doneSet.has(i); });
+    var firstOpen = mergedDays.findIndex(function(_, i){ return !doneSet.has(i); });
     lessonDayIdx = firstOpen === -1 ? 0 : firstOpen;
+    lessonSubIdx = 0;
+    lessonDayPoints = 0;
     goTo(40);
     renderLessonDay();
   }
   function closeLesson(){ goBack(); }
-  function jumpLessonDay(i){ lessonDayIdx = i; renderLessonDay(); }
 
   function renderLessonDay(){
     var m = LESSON_MODULES[lessonModuleIdx];
-    var day = m.days[lessonDayIdx];
-    document.getElementById('lessonModuleTitle').textContent = m.t + ' · Day ' + (lessonDayIdx+1) + '/' + m.days.length;
-    var dots = m.days.map(function(_, i){
+    var mergedDays = lessonMergedDays(m);
+    var day = mergedDays[lessonDayIdx];
+    var lesson = day[lessonSubIdx];
+    document.getElementById('lessonModuleTitle').textContent = m.t + ' · Day ' + (lessonDayIdx+1) + '/' + mergedDays.length;
+    var dots = mergedDays.map(function(_, i){
       var cls = i === lessonDayIdx ? 'on' : (lessonDoneSet(lessonModuleIdx).has(i) ? 'done' : '');
+      return '<span class="' + cls + '"></span>';
+    }).join('');
+    var subDots = day.map(function(_, i){
+      var cls = i === lessonSubIdx ? 'on' : (i < lessonSubIdx ? 'done' : '');
       return '<span class="' + cls + '"></span>';
     }).join('');
     var root = document.getElementById('lessonRoot');
     root.innerHTML =
       '<div class="ink-card lesson-story-card" style="padding:22px 20px;">' +
-        '<div class="circ">' + day.card.i + '</div>' +
-        '<h3>' + day.card.h + '</h3>' +
-        '<p>' + day.card.b + '</p>' +
+        '<div class="lesson-sub-tag">Lesson ' + (lessonSubIdx+1) + ' of ' + day.length + ' today</div>' +
+        '<div class="circ">' + lesson.card.i + '</div>' +
+        '<h3>' + lesson.card.h + '</h3>' +
+        '<p>' + lesson.card.b + '</p>' +
+        '<div class="lesson-dots" style="margin-top:6px;">' + subDots + '</div>' +
         '<div class="lesson-dots">' + dots + '</div>' +
       '</div>' +
       '<div class="lesson-tip">' +
         '<div class="av kubi-main-bg" style="width:30px;height:30px;"></div>' +
-        '<p><b>Kubi:</b> Let\'s play today\'s game together — ' + day.gameLabel + '</p>' +
+        '<p><b>Kubi:</b> Let\'s play today\'s game together — ' + lesson.gameLabel + '</p>' +
       '</div>' +
       '<div class="ink-card" id="lessonGameStage" style="padding:18px 17px;margin-top:14px;"></div>';
-    LESSON_GAMES[day.game](day.cfg, document.getElementById('lessonGameStage'), onLessonDayComplete);
+    LESSON_GAMES[lesson.game](lesson.cfg, document.getElementById('lessonGameStage'), onLessonGameComplete);
   }
 
-  function onLessonDayComplete(score){
+  function onLessonGameComplete(score){
     var pts = (score || 0) * 10;
     lessonPoints += pts;
-    lessonDoneSet(lessonModuleIdx).add(lessonDayIdx);
+    lessonDayPoints += pts;
     var m = LESSON_MODULES[lessonModuleIdx];
-    var isLast = lessonDayIdx === m.days.length - 1;
+    var mergedDays = lessonMergedDays(m);
+    var day = mergedDays[lessonDayIdx];
+    var isLastLessonOfDay = lessonSubIdx === day.length - 1;
     var root = document.getElementById('lessonRoot');
+    if (!isLastLessonOfDay){
+      root.innerHTML =
+        '<div class="ink-card lesson-complete" style="padding:26px 20px;">' +
+          '<div style="font-size:44px;">🎉</div>' +
+          '<h3 style="font-family:\'Fredoka\',sans-serif;font-weight:600;font-size:16px;color:var(--ink);margin-top:8px;">Lesson ' + (lessonSubIdx+1) + ' of ' + day.length + ' done!</h3>' +
+          '<p style="font-size:13px;font-weight:700;color:#3A4A68;margin-top:6px;">Nice work — that idea just got a little more real.</p>' +
+          '<div class="pts">+' + pts + '</div>' +
+          '<div class="pts-label">points earned</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:10px;margin-top:14px;">' +
+          '<button class="gum-btn ghost sm" style="flex:1;justify-content:center;" onclick="closeLesson()">Back to modules</button>' +
+          '<button class="gum-btn sky sm" style="flex:1;justify-content:center;" onclick="goNextLesson()">Next lesson →</button>' +
+        '</div>';
+      return;
+    }
+    lessonDoneSet(lessonModuleIdx).add(lessonDayIdx);
+    var isLastDay = lessonDayIdx === mergedDays.length - 1;
     root.innerHTML =
       '<div class="ink-card lesson-complete" style="padding:26px 20px;">' +
-        '<div style="font-size:52px;">' + (isLast ? '🏆' : '🎉') + '</div>' +
+        '<div style="font-size:52px;">' + (isLastDay ? '🏆' : '🎉') + '</div>' +
         '<h3 style="font-family:\'Fredoka\',sans-serif;font-weight:600;font-size:17px;color:var(--ink);margin-top:8px;">Day ' + (lessonDayIdx+1) + ' complete!</h3>' +
-        '<p style="font-size:13px;font-weight:700;color:#3A4A68;margin-top:6px;">' + (isLast ? ('You\'ve finished the whole ' + m.t + ' challenge!') : 'Nice work — that idea just got a little more real.') + '</p>' +
-        '<div class="pts">+' + pts + '</div>' +
-        '<div class="pts-label">points earned</div>' +
+        '<p style="font-size:13px;font-weight:700;color:#3A4A68;margin-top:6px;">' + (isLastDay ? ('You\'ve finished the whole ' + m.t + ' challenge!') : (day.length + ' lessons done today — that\'s a solid session.')) + '</p>' +
+        '<div class="pts">+' + lessonDayPoints + '</div>' +
+        '<div class="pts-label">points earned today</div>' +
       '</div>' +
       '<div style="display:flex;gap:10px;margin-top:14px;">' +
         '<button class="gum-btn ghost sm" style="flex:1;justify-content:center;" onclick="closeLesson()">Back to modules</button>' +
-        (isLast ? '' : '<button class="gum-btn sky sm" style="flex:1;justify-content:center;" onclick="goNextLessonDay()">Day ' + (lessonDayIdx+2) + ' →</button>') +
+        (isLastDay ? '' : '<button class="gum-btn sky sm" style="flex:1;justify-content:center;" onclick="goNextLessonDay()">Day ' + (lessonDayIdx+2) + ' →</button>') +
       '</div>';
   }
-  function goNextLessonDay(){ lessonDayIdx++; renderLessonDay(); }
+  function goNextLesson(){ lessonSubIdx++; renderLessonDay(); }
+  function goNextLessonDay(){ lessonDayIdx++; lessonSubIdx = 0; lessonDayPoints = 0; renderLessonDay(); }
 
   function lessonEngineQuiz(cfg, stage, onComplete){
     var qs = cfg.questions, idx = 0, score = 0;
