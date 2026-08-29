@@ -594,6 +594,9 @@
   .quiz-opt.correct{ background:#DFF3E1; border-color:#2E8F4A; }
   .quiz-opt.wrong{ background:#FDE4E1; border-color:#D0410F; }
   .quiz-opt[disabled]{ opacity:.85; }
+  .quiz-explain{ margin-top:14px; background:var(--sun-tint); border:2.5px solid var(--ink); border-radius:16px; padding:14px 16px; }
+  .quiz-explain-head{ font-family:'Fredoka',sans-serif; font-weight:600; font-size:13px; color:var(--ink); margin-bottom:6px; }
+  .quiz-explain p{ margin:0; font-size:12.5px; font-weight:700; color:#3A4A68; line-height:1.55; }
   .day-feedback{ margin-top:12px; font-size:13px; font-weight:700; text-align:center; min-height:18px; }
   .day-feedback.good{ color:#2E8F4A; }
   .day-feedback.bad{ color:#D0410F; }
@@ -1910,11 +1913,11 @@
       { card:{i:"💰",h:"What is money",b:"Money is what people use to buy things they need or want, like food or a toy. Long ago people traded things directly (like eggs for rice) — now we use coins and notes instead, because they're easier to carry and share."},
         game:"quiz", gameLabel:"💰 Trade or Money",
         cfg:{ questions:[
-          { icon:"💰", q:"Long ago, if you had eggs but needed cloth, what did people do before money existed?", options:[
+          { icon:"💰", q:"Long ago, if you had eggs but needed cloth, what did people do before money existed?", explain:"Before money existed, people swapped goods directly with each other — that's called bartering. Money came later to make trading easier.", options:[
             {text:"Traded eggs directly for cloth (barter)",correct:true},{text:"Used a credit card",correct:false},{text:"Ordered it online",correct:false} ] },
-          { icon:"🪙", q:"Why is money easier than trading things directly?", options:[
+          { icon:"🪙", q:"Why is money easier than trading things directly?", explain:"With barter, you had to find someone who both wanted what you had and had what you wanted — money removes that problem, since everyone accepts it.", options:[
             {text:"You don't need to find someone who wants exactly what you have",correct:true},{text:"It's heavier to carry",correct:false},{text:"It only works in one shop",correct:false} ] },
-          { icon:"🍎", q:"Which of these can you use as money in a shop today?", options:[
+          { icon:"🍎", q:"Which of these can you use as money in a shop today?", explain:"Only official coins and notes issued by a government count as money — a drawing or a leaf isn't accepted anywhere, no matter how good it looks.", options:[
             {text:"A ₹10 coin",correct:true},{text:"A drawing of a coin",correct:false},{text:"A leaf",correct:false} ] }
         ] } },
       { card:{i:"🧠",h:"What kind of money person are you?",b:"Some people spend all their money right away, some save a little, some plan ahead, and some panic and worry about money. Knowing which one you are helps you make smarter choices."},
@@ -1949,9 +1952,9 @@
       { card:{i:"🔍",h:"Know your note",b:"Every Indian currency note has special features — a portrait, a watermark, numbers and a security thread — that prove it's real and show its value."},
         game:"quiz", gameLabel:"🔍 Spot the Real Note",
         cfg:{ questions:[
-          { icon:"🔍", q:"What is a watermark on a note used for?", options:[
+          { icon:"🔍", q:"What is a watermark on a note used for?", explain:"A watermark is a hidden image built into the paper that you can only see clearly when you hold the note up to light — it proves the note is real, not a fake.", options:[
             {text:"Proving the note is genuine",correct:true},{text:"Making it smell nice",correct:false},{text:"Making it a different colour",correct:false} ] },
-          { icon:"🔢", q:"What helps tell one note apart from another?", options:[
+          { icon:"🔢", q:"What helps tell one note apart from another?", explain:"Every note printed has its own serial number, like a fingerprint — no two genuine notes ever share the same one.", options:[
             {text:"Its unique serial number",correct:true},{text:"Its smell",correct:false},{text:"Its favourite colour",correct:false} ] }
         ] } },
       { card:{i:"📊",h:"What is money management",b:"Money management means deciding wisely how you earn, spend, save and share your money, instead of spending it all the moment you get it."},
@@ -2199,16 +2202,34 @@
         '<div class="day-progress"><span>Question ' + (idx+1) + '/' + qs.length + '</span><span>Score: ' + score + '</span></div>' +
         '<div class="day-progress-bar"><div class="day-progress-fill" style="width:' + (idx/qs.length*100) + '%"></div></div>' +
         '<h3 style="margin:0 0 12px;font-family:\'Fredoka\',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink);">' + (item.icon ? item.icon + ' ' : '') + item.q + '</h3>' +
-        '<div class="quiz-options" id="opts"></div>';
+        '<div class="quiz-options" id="opts"></div>' +
+        '<div id="explainBox"></div>';
       var optsEl = stage.querySelector('#opts');
+      var explainBox = stage.querySelector('#explainBox');
       item.options.forEach(function(o, i){
         var b = document.createElement('button');
         b.className = 'quiz-opt'; b.textContent = o.text;
         b.onclick = function(){
           Array.prototype.forEach.call(optsEl.querySelectorAll('.quiz-opt'), function(x){ x.disabled = true; });
-          if (o.correct) { b.classList.add('correct'); score++; }
-          else { b.classList.add('wrong'); Array.prototype.forEach.call(optsEl.children, function(c, ci){ if (item.options[ci].correct) c.classList.add('correct'); }); }
-          setTimeout(function(){ idx++; render(); }, 850);
+          if (o.correct) {
+            b.classList.add('correct'); score++;
+            setTimeout(function(){ idx++; render(); }, 850);
+          } else {
+            b.classList.add('wrong');
+            var correctText = '';
+            Array.prototype.forEach.call(optsEl.children, function(c, ci){ if (item.options[ci].correct) { c.classList.add('correct'); correctText = item.options[ci].text; } });
+            if (item.explain){
+              explainBox.innerHTML =
+                '<div class="quiz-explain">' +
+                  '<div class="quiz-explain-head">💡 The right answer: ' + correctText + '</div>' +
+                  '<p>' + item.explain + '</p>' +
+                '</div>' +
+                '<button class="gum-btn sky sm" style="width:100%;justify-content:center;margin-top:12px;" id="quizNextBtn">Got it, next question →</button>';
+              stage.querySelector('#quizNextBtn').onclick = function(){ idx++; render(); };
+            } else {
+              setTimeout(function(){ idx++; render(); }, 1400);
+            }
+          }
         };
         optsEl.appendChild(b);
       });
