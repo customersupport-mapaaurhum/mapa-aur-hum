@@ -203,23 +203,6 @@ const MoneyMagicPage = () => {
         </div>
       </div>
 
-      {/* Quote */}
-      <div className="py-16 my-4" style={{ background: "#262a60" }}>
-        <div className="max-w-[1180px] mx-auto px-5 sm:px-10">
-          <blockquote className="m-0 max-w-[720px]">
-            <div
-              className="text-2xl sm:text-[28px] font-medium leading-[1.3] mb-3.5 tracking-tight"
-              style={{ color: "#f3f5fe" }}
-            >
-              "200 real trade-offs by age 12 build sharper instincts than 20 memorized definitions."
-            </div>
-            <div className="text-[15px]" style={{ color: "#d2cefd" }}>
-              Not more curriculum. Just the conversation you're already half-having.
-            </div>
-          </blockquote>
-        </div>
-      </div>
-
       {/* Inside the app */}
       <div id="inside" className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-14 scroll-mt-20">
         <div className="text-[11px] tracking-[0.1em] uppercase mb-3.5" style={{ color: "#9184d9" }}>
