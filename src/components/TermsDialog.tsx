@@ -70,9 +70,9 @@ export const TermsDialog = ({ children }: TermsDialogProps) => {
               <h3 className="text-lg font-semibold mb-2">6. Data Collection and Usage</h3>
               <p>The App collects and stores data regarding:</p>
               <ol className="list-decimal pl-6 space-y-1">
-                <li>Food – to remind caregivers of meal plans and create weekly food intake reports.</li>
-                <li>Nap, diaper change, and screen time – to generate tasks and weekly reports.</li>
-                <li>Medicinal data – should be entered only as per medical advice and checked for expiry before uploading.</li>
+                <li>Food: to remind caregivers of meal plans and create weekly food intake reports.</li>
+                <li>Nap, diaper change, and screen time: to generate tasks and weekly reports.</li>
+                <li>Medicinal data: should be entered only as per medical advice and checked for expiry before uploading.</li>
               </ol>
               <p className="mt-2">The Company does not provide medical advice and shall not be held responsible for misuse of health or medicinal data.</p>
             </section>
