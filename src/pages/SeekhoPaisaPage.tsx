@@ -8,7 +8,7 @@ const FEEDBACK_URL =
 const problems = [
   {
     title: "Money's gone invisible",
-    description: "A tap replaces counting cash — the decision behind it never surfaces.",
+    description: "A tap replaces counting cash, the decision behind it never surfaces.",
   },
   {
     title: "Trade-offs go unspoken",
@@ -23,7 +23,7 @@ const problems = [
 const tools = [
   {
     title: "Coin Purse",
-    description: "Logs spending as \"need\" or \"want\" — each entry attached to the lesson it comes from.",
+    description: "Logs spending as \"need\" or \"want\", each entry attached to the lesson it comes from.",
   },
   {
     title: "Budget",
@@ -31,7 +31,7 @@ const tools = [
   },
   {
     title: "Reports",
-    description: "Weekly and monthly charts — kids start reading their habits like a statement.",
+    description: "Weekly and monthly charts, kids start reading their habits like a statement.",
   },
   {
     title: "Rewards",
@@ -39,7 +39,7 @@ const tools = [
   },
   {
     title: "Parent Home view",
-    description: "Log the whole family's expenses together — your child's progress and your household budget, side by side.",
+    description: "Log the whole family's expenses together, your child's progress and your household budget, side by side.",
   },
   {
     title: "Daily talking point",
@@ -61,7 +61,7 @@ const pilotPerks = [
   "First access to new features, before anyone else",
 ];
 
-const MoneyMagicPage = () => {
+const SeekhoPaisaPage = () => {
   return (
     <div
       className="min-h-screen"
@@ -72,10 +72,10 @@ const MoneyMagicPage = () => {
       }}
     >
       <Helmet>
-        <title>Money Magic — Teach your child real money management, together</title>
+        <title>SeekhoPaisa: teach your child real money management, together</title>
         <meta
           name="description"
-          content="Money Magic gives your family a shared language for the everyday decisions behind cash, UPI and every 'can I have this?' Try the pilot."
+          content="SeekhoPaisa gives your family a shared language for the everyday decisions behind cash, UPI and every 'can I have this?' Try the pilot."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/money-magic" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,7 +94,7 @@ const MoneyMagicPage = () => {
             className="text-[19px] font-medium mr-auto"
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
           >
-            Money Magic
+            SeekhoPaisa
           </Link>
           <a href="#problem" className="hidden sm:inline text-sm text-[#e9e9ed]/80 no-underline hover:text-[#a7a1db]">
             The problem
@@ -119,14 +119,14 @@ const MoneyMagicPage = () => {
       <div className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-16 pb-16 sm:pb-24 relative overflow-hidden">
         <div className="max-w-[660px] relative z-10">
           <div className="text-[11px] tracking-[0.1em] uppercase mb-4" style={{ color: "#9184d9" }}>
-            Why Money Magic exists
+            Why SeekhoPaisa exists
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] mb-6 font-medium tracking-tight">
             Real money management, learned side by side.
           </h1>
           <p className="text-lg sm:text-[19px] opacity-80 max-w-[560px] mb-9">
             Not another worksheet. Every spend your child logs ties back to a lesson, delivered as a daily nugget
-            through a fun game — while you talk it through, together.
+            through a fun game, while you talk it through, together.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <a
@@ -159,13 +159,13 @@ const MoneyMagicPage = () => {
       {/* Problem */}
       <div id="problem" className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-14 scroll-mt-20">
         <div className="text-[11px] tracking-[0.1em] uppercase mb-3.5" style={{ color: "#9184d9" }}>
-          01 — The problem
+          01. The problem
         </div>
         <h2 className="text-2xl sm:text-[32px] max-w-[620px] mb-4 font-medium tracking-tight">
           Kids learn money by watching. That's gotten quieter.
         </h2>
         <p className="text-base opacity-75 max-w-[600px] mb-10">
-          Cash used to teach out loud — counting change, hearing a trade-off said aloud. A tap doesn't.
+          Cash used to teach out loud, counting change, hearing a trade-off said aloud. A tap doesn't.
         </p>
         <div className="grid gap-4 sm:grid-cols-3">
           {problems.map((item) => (
@@ -180,14 +180,14 @@ const MoneyMagicPage = () => {
       {/* Approach */}
       <div id="approach" className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-14 scroll-mt-20">
         <div className="text-[11px] tracking-[0.1em] uppercase mb-3.5" style={{ color: "#9184d9" }}>
-          02 — Our approach
+          02. Our approach
         </div>
         <h2 className="text-2xl sm:text-[32px] max-w-[620px] mb-4 font-medium tracking-tight">
           One shared language for money decisions.
         </h2>
         <p className="text-base opacity-75 max-w-[600px] mb-5">
-          The whole family manages expenses together, in one place — while your child learns a new money concept
-          each day. Money Magic gives your family a shared vocabulary for cash, UPI, and every "can I have this?"
+          The whole family manages expenses together, in one place, while your child learns a new money concept
+          each day. SeekhoPaisa gives your family a shared vocabulary for cash, UPI, and every "can I have this?"
           You stay the teacher. We hand you both the words.
         </p>
         <div className="flex flex-wrap gap-2.5">
@@ -206,7 +206,7 @@ const MoneyMagicPage = () => {
       {/* Inside the app */}
       <div id="inside" className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-14 scroll-mt-20">
         <div className="text-[11px] tracking-[0.1em] uppercase mb-3.5" style={{ color: "#9184d9" }}>
-          03 — What's inside
+          03. What's inside
         </div>
         <h2 className="text-2xl sm:text-[32px] max-w-[660px] mb-4 font-medium tracking-tight">
           Six everyday tools, and 40 mini-courses to grow into.
@@ -227,7 +227,7 @@ const MoneyMagicPage = () => {
         <div className="pt-9" style={{ borderTop: "1px solid color-mix(in srgb, #e9e9ed 16%, transparent)" }}>
           <h3 className="text-xl sm:text-[22px] mb-2.5 font-medium tracking-tight">The Learn module</h3>
           <p className="text-sm sm:text-[15px] opacity-75 max-w-[600px] mb-5">
-            40 mini-courses and counting — story-driven, game-based, split across five deep-dive worlds. Every
+            40 mini-courses and counting, story-driven, game-based, split across five deep-dive worlds. Every
             real spend your child logs surfaces a matching lesson, so learning arrives in daily nuggets, not a
             syllabus.
           </p>
@@ -248,20 +248,20 @@ const MoneyMagicPage = () => {
       {/* Pilot */}
       <div id="pilot" className="max-w-[1180px] mx-auto px-5 sm:px-10 pt-12 sm:pt-16 pb-10 scroll-mt-20">
         <div className="text-[11px] tracking-[0.1em] uppercase mb-3.5" style={{ color: "#9184d9" }}>
-          04 — Try the pilot
+          04. Try the pilot
         </div>
         <h2 className="text-2xl sm:text-[32px] max-w-[640px] mb-4 font-medium tracking-tight">
           Try it with your child, then tell us what you think.
         </h2>
         <p className="text-base opacity-75 max-w-[580px] mb-7">
-          An early build — about 10 minutes to explore together, plus two to share feedback. Nothing real,
+          An early build, about 10 minutes to explore together, plus two to share feedback. Nothing real,
           nothing stored.
         </p>
         <ul className="list-none m-0 mb-9 p-0 flex flex-col gap-2.5 max-w-[520px]">
           {pilotPerks.map((perk) => (
             <li key={perk} className="text-sm opacity-85 pl-[18px] relative">
               <span className="absolute left-0" style={{ color: "#9184d9" }}>
-                —
+                •
               </span>
               {perk}
             </li>
@@ -295,9 +295,9 @@ const MoneyMagicPage = () => {
         style={{ borderTop: "1px solid color-mix(in srgb, #e9e9ed 16%, transparent)" }}
       >
         <p className="text-base max-w-[520px] opacity-85 mb-3">
-          Real money management isn't read. It's practiced — by you and your child, together.
+          Real money management isn't read. It's practiced, by you and your child, together.
         </p>
-        <div className="font-medium text-sm opacity-60">Money Magic</div>
+        <div className="font-medium text-sm opacity-60">SeekhoPaisa</div>
         <Link to="/" className="inline-block mt-4 text-sm underline" style={{ color: "#a7a1db" }}>
           ← Back to Mapa-aur-hum
         </Link>
@@ -306,4 +306,4 @@ const MoneyMagicPage = () => {
   );
 };
 
-export default MoneyMagicPage;
+export default SeekhoPaisaPage;
