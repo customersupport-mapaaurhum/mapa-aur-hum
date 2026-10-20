@@ -72,10 +72,10 @@ const MoneyMagicPage = () => {
       }}
     >
       <Helmet>
-        <title>Money Magic — Teach your child real money management, together</title>
+        <title>SeekhoPaisa — Teach your child real money management, together</title>
         <meta
           name="description"
-          content="Money Magic gives your family a shared language for the everyday decisions behind cash, UPI and every 'can I have this?' Try the pilot."
+          content="SeekhoPaisa gives your family a shared language for the everyday decisions behind cash, UPI and every 'can I have this?' Try the pilot."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/money-magic" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -94,7 +94,7 @@ const MoneyMagicPage = () => {
             className="text-[19px] font-medium mr-auto"
             style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
           >
-            Money Magic
+            SeekhoPaisa
           </Link>
           <a href="#problem" className="hidden sm:inline text-sm text-[#e9e9ed]/80 no-underline hover:text-[#a7a1db]">
             The problem
@@ -119,7 +119,7 @@ const MoneyMagicPage = () => {
       <div className="max-w-[1180px] mx-auto px-5 sm:px-10 py-12 sm:py-16 pb-16 sm:pb-24 relative overflow-hidden">
         <div className="max-w-[660px] relative z-10">
           <div className="text-[11px] tracking-[0.1em] uppercase mb-4" style={{ color: "#9184d9" }}>
-            Why Money Magic exists
+            Why SeekhoPaisa exists
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.08] mb-6 font-medium tracking-tight">
             Real money management, learned side by side.
@@ -187,7 +187,7 @@ const MoneyMagicPage = () => {
         </h2>
         <p className="text-base opacity-75 max-w-[600px] mb-5">
           The whole family manages expenses together, in one place — while your child learns a new money concept
-          each day. Money Magic gives your family a shared vocabulary for cash, UPI, and every "can I have this?"
+          each day. SeekhoPaisa gives your family a shared vocabulary for cash, UPI, and every "can I have this?"
           You stay the teacher. We hand you both the words.
         </p>
         <div className="flex flex-wrap gap-2.5">
@@ -297,7 +297,7 @@ const MoneyMagicPage = () => {
         <p className="text-base max-w-[520px] opacity-85 mb-3">
           Real money management isn't read. It's practiced — by you and your child, together.
         </p>
-        <div className="font-medium text-sm opacity-60">Money Magic</div>
+        <div className="font-medium text-sm opacity-60">SeekhoPaisa</div>
         <Link to="/" className="inline-block mt-4 text-sm underline" style={{ color: "#a7a1db" }}>
           ← Back to Mapa-Aur-Hum
         </Link>

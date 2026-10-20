@@ -38,10 +38,10 @@ export const UpcomingSection = memo(() => {
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
-            Money Magic Pilot — teach your child real money management, together
+            SeekhoPaisa Pilot — teach your child real money management, together
           </h2>
           <p className="text-sm sm:text-base text-secondary-foreground/80">
-            Kids learn money by watching — and that has gotten harder. Money Magic gives your family a
+            Kids learn money by watching — and that has gotten harder. SeekhoPaisa gives your family a
             shared language for the everyday decisions behind cash, UPI and every "can I have this?"
           </p>
         </div>
@@ -70,7 +70,7 @@ export const UpcomingSection = memo(() => {
             className="w-[200px] bg-background text-foreground hover:bg-background/90 group"
             onClick={() => navigate("/money-magic")}
           >
-            Explore Money Magic
+            Explore SeekhoPaisa
             <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
           </Button>
         </div>
