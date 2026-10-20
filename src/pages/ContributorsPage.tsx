@@ -7,10 +7,10 @@ const ContributorsPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Contributors - MaPa-Aur-Hum | Thank You to Our Community</title>
-        <meta name="description" content="Meet the parents and caregivers who helped shape MaPa-Aur-Hum with their valuable insights and contributions to our childcare app." />
-        <meta property="og:title" content="Contributors - MaPa-Aur-Hum" />
-        <meta property="og:description" content="Meet the parents and caregivers who helped shape MaPa-Aur-Hum with their valuable insights and contributions to our childcare app." />
+        <title>Contributors - Mapa-aur-hum | Thank You to Our Community</title>
+        <meta name="description" content="Meet the parents and caregivers who helped shape Mapa-aur-hum with their valuable insights and contributions to our childcare app." />
+        <meta property="og:title" content="Contributors - Mapa-aur-hum" />
+        <meta property="og:description" content="Meet the parents and caregivers who helped shape Mapa-aur-hum with their valuable insights and contributions to our childcare app." />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/contributors" />
       </Helmet>
       <Header />

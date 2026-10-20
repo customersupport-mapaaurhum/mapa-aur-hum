@@ -84,9 +84,9 @@ export const WhyMaPa = () => {
     <section id="why-mapa" className="py-8 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Why MaPa-Aur-Hum</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Why Mapa-aur-hum</h2>
           <p className="text-base text-muted-foreground max-w-3xl mx-auto">
-            If any of these situations sound familiar, MaPa-Aur-Hum is designed for you
+            If any of these situations sound familiar, Mapa-aur-hum is designed for you
           </p>
         </div>
 
@@ -113,14 +113,14 @@ export const WhyMaPa = () => {
         {/* Video Section */}
         <div className="flex flex-col items-center">
           <p className="text-base md:text-lg text-foreground font-medium mb-4 text-center">
-            Watch this quick demo to see how MaPa-Aur-Hum can help you!
+            Watch this quick demo to see how Mapa-aur-hum can help you!
           </p>
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center">
             <div className="flex flex-col items-center">
               <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
                 <YouTubeFacade 
                   videoId="un7_naPkFO0" 
-                  title="Why MaPa-Aur-Hum - Introduction"
+                  title="Why Mapa-aur-hum - Introduction"
                   thumbnailQuality="hq"
                 />
               </div>
@@ -130,7 +130,7 @@ export const WhyMaPa = () => {
               <div className="w-full max-w-[300px] aspect-[9/16] rounded-xl overflow-hidden shadow-elegant">
                 <YouTubeFacade 
                   videoId="tjDYjIpApyU" 
-                  title="Welcome to MaPa-Aur-Hum – Get Started"
+                  title="Welcome to Mapa-aur-hum – Get Started"
                   thumbnailQuality="hq"
                 />
               </div>

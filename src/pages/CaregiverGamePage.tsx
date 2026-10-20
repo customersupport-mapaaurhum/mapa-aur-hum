@@ -200,9 +200,9 @@ const CaregiverGamePage = () => {
   return (
     <>
       <Helmet>
-        <title>Caregiver Detective Game - MaPa-Aur-Hum | Check Your Childcare Quality</title>
+        <title>Caregiver Detective Game - Mapa-aur-hum | Check Your Childcare Quality</title>
         <meta name="description" content="Play the Caregiver Detective Game to assess your babysitter or maid's childcare practices. Get a score and coaching tips based on your child's age." />
-        <meta property="og:title" content="Caregiver Detective Game - MaPa-Aur-Hum" />
+        <meta property="og:title" content="Caregiver Detective Game - Mapa-aur-hum" />
         <meta property="og:description" content="Interactive game for parents to check childcare practices when they're away. Score your caregiver and get coaching tips." />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/caregiver-game" />
       </Helmet>

@@ -18,7 +18,7 @@ const ArticleDetailPage = () => {
     return (
       <>
         <Helmet>
-          <title>The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset - MaPa-Aur-Hum</title>
+          <title>The Foundation of Modern Parenting: Why Gratitude is the Ultimate Reset - Mapa-aur-hum</title>
           <meta name="description" content="Discover how gratitude transforms parenting. Research shows perceived gratitude lowers parenting stress. Learn the 'Grateful Reset' for your New Year resolution." />
           <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/gratitude-modern-parenting" />
         </Helmet>
@@ -107,7 +107,7 @@ const ArticleDetailPage = () => {
                       This New Year, let's build a home rooted in appreciation.
                     </p>
                     <p className="leading-relaxed text-lg mt-2">
-                      Start your gratitude journey today with MaPa-Aur-Hum.
+                      Start your gratitude journey today with Mapa-aur-hum.
                     </p>
                   </div>
                 </section>
@@ -154,7 +154,7 @@ const ArticleDetailPage = () => {
     return (
       <>
         <Helmet>
-          <title>The Modern Village: How Urban India is Redefining Childcare - MaPa-Aur-Hum</title>
+          <title>The Modern Village: How Urban India is Redefining Childcare - Mapa-aur-hum</title>
           <meta name="description" content="Discover how urban parents in India manage childcare for kids under 5. Explore the shift to nuclear families, the role of grandparents, and the new 'Hybrid Model.'" />
           <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/modern-village-childcare" />
         </Helmet>
@@ -240,10 +240,10 @@ const ArticleDetailPage = () => {
 
                 <Separator />
 
-                {/* The MaPa-Aur-Hum Take */}
+                {/* The Mapa-aur-hum Take */}
                 <section className="space-y-4">
                   <h2 className="text-2xl font-bold text-primary">
-                    The MaPa-Aur-Hum Take
+                    The Mapa-aur-hum Take
                   </h2>
                   <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
                     <p className="leading-relaxed text-lg">
@@ -290,7 +290,7 @@ const ArticleDetailPage = () => {
     return (
       <>
         <Helmet>
-          <title>Tech & Trust: Solving the Urban Childcare Puzzle - MaPa-Aur-Hum</title>
+          <title>Tech & Trust: Solving the Urban Childcare Puzzle - Mapa-aur-hum</title>
           <meta name="description" content="Struggle with nanny management? Learn how technology and standardized tools are helping urban Indian parents bridge the trust gap and balance work with peace of mind." />
           <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/tech-trust-childcare" />
         </Helmet>
@@ -415,7 +415,7 @@ const ArticleDetailPage = () => {
                   </h2>
                   <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
                     <p className="leading-relaxed text-lg">
-                      At MaPa-Aur-Hum, we help you move from monitoring to mentoring your caregivers. When the "Hum" (support system) is empowered with the right tools, the "MaPa" (parents) can work without the guilt.
+                      At Mapa-aur-hum, we help you move from monitoring to mentoring your caregivers. When the "Hum" (support system) is empowered with the right tools, the "MaPa" (parents) can work without the guilt.
                     </p>
                   </div>
                 </section>
@@ -458,7 +458,7 @@ const ArticleDetailPage = () => {
     return (
       <>
         <Helmet>
-          <title>Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success - MaPa-Aur-Hum</title>
+          <title>Raising a Healthy Child: How to Partner with Your Caregiver for Nutritional Success - Mapa-aur-hum</title>
           <meta name="description" content="Learn how to build a parent-caregiver partnership for your child's nutrition. Research-backed tips on meal planning, mindful eating, and the 'Golden Window' for healthy habits." />
           <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles/nutrition-caregiver-partnership" />
         </Helmet>
@@ -634,7 +634,7 @@ const ArticleDetailPage = () => {
                       <span className="text-primary font-bold">1.</span>
                       <div>
                         <strong className="text-foreground">The Digital Roadmap:</strong>
-                        <span className="text-foreground/80"> Use an app like MaPa-Aur-Hum to set the weekly menu. It gives your caregiver clear instructions so they don't have to decide "what to cook" every day.</span>
+                        <span className="text-foreground/80"> Use an app like Mapa-aur-hum to set the weekly menu. It gives your caregiver clear instructions so they don't have to decide "what to cook" every day.</span>
                       </div>
                     </div>
                     <div className="flex gap-3">

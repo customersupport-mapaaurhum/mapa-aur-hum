@@ -8,8 +8,8 @@ export default function FounderPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Meet Our Founder - Sumita Sarkar | MaPa-Aur-Hum</title>
-        <meta name="description" content="Meet Sumita Sarkar, the founder of MaPa-Aur-Hum - a mother and IT professional creating childcare solutions for Indian families." />
+        <title>Meet Our Founder - Sumita Sarkar | Mapa-aur-hum</title>
+        <meta name="description" content="Meet Sumita Sarkar, the founder of Mapa-aur-hum - a mother and IT professional creating childcare solutions for Indian families." />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/founder" />
       </Helmet>
 
@@ -21,7 +21,7 @@ export default function FounderPage() {
             <div className="text-center mb-8">
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Meet Our Founder</h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                The inspiration and vision behind MaPa-Aur-Hum
+                The inspiration and vision behind Mapa-aur-hum
               </p>
             </div>
 
@@ -32,7 +32,7 @@ export default function FounderPage() {
                   <div className="flex flex-col space-y-4">
                     <div>
                       <h2 className="text-2xl font-bold text-foreground mb-2">Sumita Sarkar</h2>
-                      <p className="text-primary font-medium mb-4">Founder, MaPa-Aur-Hum</p>
+                      <p className="text-primary font-medium mb-4">Founder, Mapa-aur-hum</p>
                       
                       <a 
                         href="https://www.linkedin.com/in/sumitasarkar/" 

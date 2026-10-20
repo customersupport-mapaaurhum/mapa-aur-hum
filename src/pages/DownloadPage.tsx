@@ -10,10 +10,10 @@ const DownloadPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Download MaPa-Aur-Hum | Childcare App for Indian Working Parents</title>
+        <title>Download Mapa-aur-hum | Childcare App for Indian Working Parents</title>
         <meta
           name="description"
-          content="Download MaPa-Aur-Hum app from Google Play Store. The trusted childcare management app for Indian working parents with real-time updates and Hindi language support."
+          content="Download Mapa-aur-hum app from Google Play Store. The trusted childcare management app for Indian working parents with real-time updates and Hindi language support."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/download" />
       </Helmet>
@@ -29,7 +29,7 @@ const DownloadPage = () => {
             
             <div className="text-center mb-12">
               <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Download MaPa-Aur-Hum
+                Download Mapa-aur-hum
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Get the trusted childcare management app for Indian working parents. Available now on Google Play Store.
@@ -45,7 +45,7 @@ const DownloadPage = () => {
                 <div className="bg-white p-4 rounded-xl mx-auto w-fit mb-4">
                   <img
                     src={qrCode}
-                    alt="Mapaaurhum QR code to download MaPa-Aur-Hum app"
+                    alt="Mapaaurhum QR code to download Mapa-aur-hum app"
                     className="w-48 h-48 object-contain"
                     width="192"
                     height="192"

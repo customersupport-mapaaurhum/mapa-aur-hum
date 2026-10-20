@@ -7,10 +7,10 @@ const FAQPage = () => {
   return (
     <>
       <Helmet>
-        <title>FAQs | MaPa-Aur-Hum - Childcare App Questions</title>
+        <title>FAQs | Mapa-aur-hum - Childcare App Questions</title>
         <meta
           name="description"
-          content="Find answers to frequently asked questions about MaPa-Aur-Hum childcare app for parents and caregivers."
+          content="Find answers to frequently asked questions about Mapa-aur-hum childcare app for parents and caregivers."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/faq" />
       </Helmet>

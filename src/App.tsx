@@ -20,7 +20,7 @@ const ChampionsPage = lazy(() => import("./pages/ChampionsPage"));
 const DownloadPage = lazy(() => import("./pages/DownloadPage"));
 const WhyMaPaPage = lazy(() => import("./pages/WhyMaPaPage"));
 const KeyFeaturesPage = lazy(() => import("./pages/KeyFeaturesPage"));
-const MoneyMagicPage = lazy(() => import("./pages/MoneyMagicPage"));
+const SeekhoPaisaPage = lazy(() => import("./pages/SeekhoPaisaPage"));
 const ArticlesPage = lazy(() => import("./pages/ArticlesPage"));
 const ArticleDetailPage = lazy(() => import("./pages/ArticleDetailPage"));
 const UnsubscribePage = lazy(() => import("./pages/UnsubscribePage"));
@@ -56,7 +56,8 @@ const App = () => (
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/why-mapa" element={<WhyMaPaPage />} />
           <Route path="/key-features" element={<KeyFeaturesPage />} />
-          <Route path="/money-magic" element={<MoneyMagicPage />} />
+          <Route path="/seekhopaisa" element={<SeekhoPaisaPage />} />
+          <Route path="/money-magic" element={<Navigate to="/seekhopaisa" replace />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticleDetailPage />} />
           <Route path="/unsubscribe" element={<UnsubscribePage />} />

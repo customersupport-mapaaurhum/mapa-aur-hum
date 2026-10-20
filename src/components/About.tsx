@@ -13,7 +13,7 @@ export const About = () => {
         <div className="text-center mb-6">
           <div className="text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4 space-y-3">
             <p>
-              MaPa-Aur-Hum is the trusted, specialized childcare platform designed for working parents in India, offering a complete management solution to build trust and consistency in your home care.
+              Mapa-aur-hum is the trusted, specialized childcare platform designed for working parents in India, offering a complete management solution to build trust and consistency in your home care.
             </p>
             <p>
               Easily set clear, structured, and personalized instructions for your caregiver (maid, babysitter, relative), and receive real-time updates with picture evidence to ensure transparency and peace of mind.
@@ -28,7 +28,7 @@ export const About = () => {
               onClick={() => document.getElementById('downloads')?.scrollIntoView({ behavior: 'smooth' })}
               className="underline hover:opacity-80 transition-opacity cursor-pointer"
             >
-              Download MaPa-Aur-Hum
+              Download Mapa-aur-hum
             </button>
           </p>
         </div>

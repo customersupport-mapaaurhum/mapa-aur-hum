@@ -11,7 +11,7 @@ export const FAQ = () => {
       question: "Does my caregiver (maid, babysitter, relative) need to have the app?",
       answer: (
         <>
-          Yes. Your caregiver (maid, babysitter, relative) will also need access to the MaPa-aur-Hum app. You (the parent) can register the caregiver (maid, babysitter, relative) from within your own app. Both of you will log in using the same email ID — you as the parent, and the caregiver (maid, babysitter, relative) as the caregiver role.
+          Yes. Your caregiver (maid, babysitter, relative) will also need access to the Mapa-aur-hum app. You (the parent) can register the caregiver (maid, babysitter, relative) from within your own app. Both of you will log in using the same email ID — you as the parent, and the caregiver (maid, babysitter, relative) as the caregiver role.
           <br /><br />
           <strong>If your maid/babysitter agency is not using the app, contact us with details and we will reach out for partnerships.</strong>
         </>
@@ -57,7 +57,7 @@ export const FAQ = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground text-center mb-12">
-            Find answers to common questions about the app MaPa-Aur-Hum
+            Find answers to common questions about the app Mapa-aur-hum
           </p>
           
           <Accordion type="single" collapsible className="w-full">

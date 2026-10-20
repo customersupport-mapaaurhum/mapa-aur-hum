@@ -6,10 +6,10 @@ export const AppTutorials = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
-            MaPa-Aur-Hum Tutorials
+            Mapa-aur-hum Tutorials
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Welcome to MaPa-Aur-Hum. Also find tutorials on our app.
+            Welcome to Mapa-aur-hum. Also find tutorials on our app.
           </p>
         </div>
 
@@ -19,7 +19,7 @@ export const AppTutorials = () => {
             <div className="aspect-[9/16]">
               <YouTubeFacade
                 videoId="tjDYjIpApyU"
-                title="Welcome to MaPa-Aur-Hum – Get Started"
+                title="Welcome to Mapa-aur-hum – Get Started"
               />
             </div>
             <div className="p-6 text-center">
@@ -27,7 +27,7 @@ export const AppTutorials = () => {
                 🎉 Welcome – Get Started
               </h3>
               <p className="text-muted-foreground">
-                New here? Watch this quick welcome video to get started with MaPa-Aur-Hum
+                New here? Watch this quick welcome video to get started with Mapa-aur-hum
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ export const AppTutorials = () => {
                 For Parents
               </h3>
               <p className="text-muted-foreground">
-                Complete guide for parents to get started with MaPa-Aur-Hum
+                Complete guide for parents to get started with Mapa-aur-hum
               </p>
             </div>
           </div>

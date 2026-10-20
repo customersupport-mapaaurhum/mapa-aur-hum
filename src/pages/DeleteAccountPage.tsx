@@ -110,7 +110,7 @@ const DeleteAccountPage = () => {
                 <Trash2 className="h-12 w-12 text-destructive mx-auto" />
                 <h1 className="text-2xl font-bold text-foreground">Delete Your Account</h1>
                 <p className="text-muted-foreground">
-                  Submit a request to permanently delete your MaPa-Aur-Hum account and all
+                  Submit a request to permanently delete your Mapa-aur-hum account and all
                   associated data.
                 </p>
               </div>

@@ -3,7 +3,7 @@ import { MessageCircle, Instagram } from "lucide-react";
 
 export const SupportChatButton = memo(() => {
   const phoneNumber = "917217615508";
-  const message = "Hi! I need help with MaPa-Aur-Hum app.";
+  const message = "Hi! I need help with Mapa-aur-hum app.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

@@ -27,11 +27,10 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
         <ScrollArea className="max-h-[60vh] pr-4">
           <div className="space-y-6 text-sm">
             <div className="text-center text-muted-foreground">
-              Last updated: 20/09/2025
+              Last updated: 20/10/2026
             </div>
             
             <p className="text-muted-foreground">
-              At MaPaAurHum, we respect your privacy and are committed to keeping your family's information safe. 
               This policy explains what information we collect, how we use it, and how we protect it.
             </p>
 
@@ -104,7 +103,7 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
                   If you have questions or requests about your information, please reach out:
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  📧 Email: <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
+                  Email: <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
                     customer.support@mapaaurhum.com
                   </a>
                 </p>

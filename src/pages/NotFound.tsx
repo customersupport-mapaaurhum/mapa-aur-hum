@@ -16,8 +16,8 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page Not Found - MaPa Aur Hum</title>
-        <meta name="description" content="The page you are looking for does not exist. Return to MaPa Aur Hum homepage to explore our parenting and caregiver management app." />
+        <title>Page Not Found - Mapa-aur-hum</title>
+        <meta name="description" content="The page you are looking for does not exist. Return to Mapa-aur-hum homepage to explore our parenting and caregiver management app." />
         <meta name="robots" content="noindex, follow" />
       </Helmet>
       <div className="min-h-screen bg-background flex flex-col">

@@ -58,10 +58,10 @@ export const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary">
-            Why Choose MaPa-Aur-Hum
+            Why Choose Mapa-aur-hum
           </span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Benefits of Using MaPa-Aur-Hum
+            Benefits of Using Mapa-aur-hum
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             Empowering parents and caregivers (maid, babysitter, relatives) with tools designed for seamless childcare management
