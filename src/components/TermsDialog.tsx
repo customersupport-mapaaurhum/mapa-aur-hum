@@ -29,7 +29,7 @@ export const TermsDialog = ({ children }: TermsDialogProps) => {
           <div className="space-y-4 text-sm">
             <section>
               <h3 className="text-lg font-semibold mb-2">1. Introduction</h3>
-              <p>Welcome to MaPa-Aur-Hum ("App"). This App is operated by MaPaAurHum Technologies OPC Pvt Ltd ("Company"). By accessing or using the App, you ("User"), being the parent, legal guardian, or authorized caregiver, agree to comply with and be bound by the following Terms and Conditions.</p>
+              <p>Welcome to MaPa-Aur-Hum ("App"). This App is operated by Mapaaurhum Technologies OPC Pvt Ltd ("Company"). By accessing or using the App, you ("User"), being the parent, legal guardian, or authorized caregiver, agree to comply with and be bound by the following Terms and Conditions.</p>
             </section>
 
             <section>
@@ -220,7 +220,7 @@ export const TermsDialog = ({ children }: TermsDialogProps) => {
             <section className="border-t pt-4 mt-6">
               <h2 className="text-xl font-bold mb-4">SECTION 4 - PARENTAL CONSENT FORM</h2>
               
-              <p>This Parental Consent Form ("Form") is provided by MaPaAurHum Technologies OPC Pvt Ltd ("Company"), operator of the MaPa-Aur-Hum mobile application ("App"). This Form is to be accepted by the parent or legal guardian ("Parent/Guardian") of the child before using the App.</p>
+              <p>This Parental Consent Form ("Form") is provided by Mapaaurhum Technologies OPC Pvt Ltd ("Company"), operator of the MaPa-Aur-Hum mobile application ("App"). This Form is to be accepted by the parent or legal guardian ("Parent/Guardian") of the child before using the App.</p>
 
               <ol className="list-decimal pl-6 space-y-2 mt-4">
                 <li>I confirm that I am the parent or legal guardian of the child whose information will be entered in the App.</li>
