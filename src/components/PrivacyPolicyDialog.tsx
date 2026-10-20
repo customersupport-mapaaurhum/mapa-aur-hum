@@ -31,7 +31,6 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
             </div>
             
             <p className="text-muted-foreground">
-              At MaPaAurHum, we respect your privacy and are committed to keeping your family's information safe. 
               This policy explains what information we collect, how we use it, and how we protect it.
             </p>
 
@@ -104,7 +103,7 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
                   If you have questions or requests about your information, please reach out:
                 </p>
                 <p className="text-muted-foreground mt-2">
-                  📧 Email: <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
+                  Email: <a href="mailto:customer.support@mapaaurhum.com" className="text-primary hover:underline">
                     customer.support@mapaaurhum.com
                   </a>
                 </p>
