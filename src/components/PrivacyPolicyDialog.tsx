@@ -27,7 +27,7 @@ export const PrivacyPolicyDialog = ({ children }: PrivacyPolicyDialogProps) => {
         <ScrollArea className="max-h-[60vh] pr-4">
           <div className="space-y-6 text-sm">
             <div className="text-center text-muted-foreground">
-              Last updated: 20/09/2025
+              Last updated: 20/10/2026
             </div>
             
             <p className="text-muted-foreground">
