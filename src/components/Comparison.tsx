@@ -68,10 +68,10 @@ export const Comparison = () => {
             The Problem with Current Methods
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why MaPa-Aur-Hum is Better
+            Why Mapa-aur-hum is Better
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
-            Current modes used for close parenting in absence suffer from being either intrusive, unstructured, or inconvenient for joint parenting. MaPa-Aur-Hum solves these specific challenges.
+            Current modes used for close parenting in absence suffer from being either intrusive, unstructured, or inconvenient for joint parenting. Mapa-aur-hum solves these specific challenges.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export const Comparison = () => {
                 <div className="flex items-start gap-3 p-4 rounded-lg bg-primary/10 border border-primary/20">
                   <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-medium text-primary mb-1">MaPa-Aur-Hum Advantage</p>
+                    <p className="text-sm font-medium text-primary mb-1">Mapa-aur-hum Advantage</p>
                     <p className="text-sm text-foreground/80">{item.solution}</p>
                   </div>
                 </div>

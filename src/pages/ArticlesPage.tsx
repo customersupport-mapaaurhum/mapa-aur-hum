@@ -84,7 +84,7 @@ const ArticlesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Thoughts from the Founder - MaPa-Aur-Hum</title>
+        <title>Thoughts from the Founder - Mapa-aur-hum</title>
         <meta name="description" content="Read AI-powered articles on parenting, childcare, and building trust with caregivers. Insights for working parents in India." />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/articles" />
       </Helmet>

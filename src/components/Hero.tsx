@@ -28,7 +28,7 @@ const QRCard = memo(({ className = "" }: { className?: string }) => (
     <div className="mt-4 bg-white p-3 rounded-xl mx-auto w-fit">
       <OptimizedImage
         src={qrCode}
-        alt="Mapaaurhum QR code to download MaPa-Aur-Hum app"
+        alt="Mapaaurhum QR code to download Mapa-aur-hum app"
         className="w-36 h-36 lg:w-44 lg:h-44 object-contain"
         width={176}
         height={176}
@@ -78,7 +78,7 @@ export const Hero = memo(() => {
               {/* Left — Content (takes 3 cols) */}
               <div className="lg:col-span-3 text-center lg:text-left space-y-6">
                 <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-                  <span className="text-primary">MaPa-Aur-Hum</span>
+                  <span className="text-primary">Mapa-aur-hum</span>
                   <br />
                   <span className="text-xl sm:text-2xl lg:text-4xl font-semibold text-foreground/80">
                     Building trust for better childcare
@@ -140,7 +140,7 @@ export const Hero = memo(() => {
                   <Link to="/contributors" className="text-primary hover:underline font-medium">
                     parents and caregivers
                   </Link>{" "}
-                  who helped shape MaPa-Aur-Hum. Available in English & Hindi for kids under 5.
+                  who helped shape Mapa-aur-hum. Available in English & Hindi for kids under 5.
                 </p>
               </div>
 
@@ -157,7 +157,7 @@ export const Hero = memo(() => {
       <Dialog open={showDemo} onOpenChange={setShowDemo}>
         <DialogContent className="sm:max-w-3xl p-0 overflow-hidden">
           <DialogHeader className="p-4 pb-0">
-            <DialogTitle>MaPa-Aur-Hum Demo</DialogTitle>
+            <DialogTitle>Mapa-aur-hum Demo</DialogTitle>
           </DialogHeader>
           <div className="aspect-video w-full">
             {showDemo && (
@@ -165,7 +165,7 @@ export const Hero = memo(() => {
                 width="100%"
                 height="100%"
                 src="https://www.youtube.com/embed/Knc1ifxoyiQ?autoplay=1"
-                title="MaPa-Aur-Hum Demo"
+                title="Mapa-aur-hum Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full"

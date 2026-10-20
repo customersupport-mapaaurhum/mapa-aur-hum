@@ -12,7 +12,7 @@ export const Downloads = () => {
             Downloads
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Scan the QR code below to download MaPa-Aur-Hum from the Google Play Store
+            Scan the QR code below to download Mapa-aur-hum from the Google Play Store
           </p>
         </div>
 
@@ -24,7 +24,7 @@ export const Downloads = () => {
                   <div className="bg-white p-4 rounded-lg shadow-md">
                     <OptimizedImage 
                       src={qrCode} 
-                      alt="Mapaaurhum QR code to download MaPa-Aur-Hum app from Google Play Store"
+                      alt="Mapaaurhum QR code to download Mapa-aur-hum app from Google Play Store"
                       className="w-64 h-64 object-contain"
                       width={256}
                       height={256}
@@ -36,7 +36,7 @@ export const Downloads = () => {
                 <div className="flex-1 text-center md:text-left">
                   <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
                     <Smartphone className="h-6 w-6 text-primary" />
-                    <h3 className="text-2xl font-semibold">MaPa-Aur-Hum mobile app</h3>
+                    <h3 className="text-2xl font-semibold">Mapa-aur-hum mobile app</h3>
                   </div>
                   <p className="text-lg mb-4">
                     Available now on{" "}

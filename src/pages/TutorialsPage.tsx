@@ -7,10 +7,10 @@ const TutorialsPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Helmet>
-        <title>Tutorials | MaPa-Aur-Hum - Learn How to Use the App</title>
+        <title>Tutorials | Mapa-aur-hum - Learn How to Use the App</title>
         <meta
           name="description"
-          content="Watch video tutorials to learn how to use MaPa-Aur-Hum childcare app. Guides for parents and caregivers."
+          content="Watch video tutorials to learn how to use Mapa-aur-hum childcare app. Guides for parents and caregivers."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/tutorials" />
       </Helmet>

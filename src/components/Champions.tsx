@@ -7,13 +7,13 @@ export const Champions = () => {
       name: "Thejas R",
       city: "Bangalore",
       role: "Father of an infant child",
-      contribution: "We thank our Pa Champion for his views on the initial design of the MaPa-Aur-Hum solution"
+      contribution: "We thank our Pa Champion for his views on the initial design of the Mapa-aur-hum solution"
     },
     {
       name: "Subhra Sarker",
       city: "Delhi",
       role: "Mother of a 9 yr old",
-      contribution: "We thank our Ma Champion for views on the initial design of the MaPa-Aur-Hum solution"
+      contribution: "We thank our Ma Champion for views on the initial design of the Mapa-aur-hum solution"
     },
     {
       name: "Simala Rawat",
@@ -25,13 +25,13 @@ export const Champions = () => {
       name: "Pooja Singh",
       city: "Gurgaon",
       role: "Mother of 2 kids",
-      contribution: "We thank our Ma Champion for her views on the initial design of the MaPa-Aur-Hum solution"
+      contribution: "We thank our Ma Champion for her views on the initial design of the Mapa-aur-hum solution"
     },
     {
       name: "Ashish Bansal",
       city: "Gurgaon",
       role: "Father of 2 kids",
-      contribution: "We thank our Pa Champion for her views on the initial design of the MaPa-Aur-Hum solution"
+      contribution: "We thank our Pa Champion for her views on the initial design of the Mapa-aur-hum solution"
     },
     {
       name: "Special thanks",
@@ -48,7 +48,7 @@ export const Champions = () => {
         <div className="text-center mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Thank You to Our Contributors</h2>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto px-2">
-            We're grateful to the parents and caregivers (maids, babysitters, relatives) who helped shape MaPa-Aur-Hum with their valuable insights
+            We're grateful to the parents and caregivers (maids, babysitters, relatives) who helped shape Mapa-aur-hum with their valuable insights
           </p>
         </div>
 

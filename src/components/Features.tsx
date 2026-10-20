@@ -23,7 +23,7 @@ export const Features = () => {
   const featureImages = [
     {
       src: featureRoutine,
-      alt: "MaPa-Aur-Hum routine management screen showing daily childcare tasks with audio guidance for caregivers (maids, babysitters, relatives)",
+      alt: "Mapa-aur-hum routine management screen showing daily childcare tasks with audio guidance for caregivers (maids, babysitters, relatives)",
       title: "Routine Management"
     },
     {
@@ -118,7 +118,7 @@ export const Features = () => {
               <div className="flex items-center justify-center">
                 <img 
                   src={selectedImage} 
-                  alt="Mapaaurhum detailed view of MaPa-Aur-Hum childcare app feature for better understanding"
+                  alt="Mapaaurhum detailed view of Mapa-aur-hum childcare app feature for better understanding"
                   className="w-full h-auto rounded-lg shadow-elegant"
                 />
               </div>

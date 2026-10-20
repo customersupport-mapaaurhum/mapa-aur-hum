@@ -7,10 +7,10 @@ const ChampionsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Thank You Champions | MaPa-Aur-Hum</title>
+        <title>Thank You Champions | Mapa-aur-hum</title>
         <meta
           name="description"
-          content="Meet our MaPa-Aur-Hum champions - parents and caregivers who trust and support our childcare app."
+          content="Meet our Mapa-aur-hum champions - parents and caregivers who trust and support our childcare app."
         />
         <link rel="canonical" href="https://mapa-aur-hum.lovable.app/champions" />
       </Helmet>

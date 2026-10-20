@@ -299,7 +299,7 @@ const MoneyMagicPage = () => {
         </p>
         <div className="font-medium text-sm opacity-60">Money Magic</div>
         <Link to="/" className="inline-block mt-4 text-sm underline" style={{ color: "#a7a1db" }}>
-          ← Back to Mapa-Aur-Hum
+          ← Back to Mapa-aur-hum
         </Link>
       </div>
     </div>
